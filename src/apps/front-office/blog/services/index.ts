@@ -4,13 +4,13 @@ import _post from "./post.json";
 
 const post = _post as Post;
 
-export function getPosts(params: PostsListQueryParams = {}) {
+export function getPosts(_params: PostsListQueryParams = {}) {
   return responseMockup({
     posts: [post],
   });
 }
 
-export function getPost(id: string) {
+export function getPost(_id: string) {
   return responseMockup({
     post,
   });

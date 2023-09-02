@@ -1,9 +1,9 @@
 import cache from "@mongez/cache";
 import {
-  setCurrentUser,
   User as BaseUser,
   UserCacheDriverInterface,
   UserInterface,
+  setCurrentUser,
 } from "@mongez/user";
 
 class User extends BaseUser implements UserInterface {

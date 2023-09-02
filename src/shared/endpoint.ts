@@ -26,6 +26,7 @@ const endpoint = new Endpoint({
 
 const endpointEvents = endpoint.events;
 
+// interceptors requests
 endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
   headers["os"] = apiOS;

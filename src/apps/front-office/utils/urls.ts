@@ -1,6 +1,10 @@
 // append urls here, DO NOT remove this line
 
+import { Post } from "apps/front-office/blog/utils";
+
 const URLS = {
+  meals: "/meals",
+  posts: "/posts",
   home: "/",
   notFound: "/404",
   contactUs: "/contact-us",
@@ -16,6 +20,7 @@ const URLS = {
     list: "/menu",
     viewMealRoute: "/menu/:id/:slug",
     viewMeal: (meal: any) => `/menu/${meal.id}/${meal.slug}`,
+    search: "/menu/search",
   },
   account: {
     profile: "/account",
@@ -26,7 +31,7 @@ const URLS = {
   blog: {
     list: "/blog",
     viewPostRoute: "/blog/:id/:slug",
-    viewPost: (post: any) => `/blog/${post.id}/${post.slug}`,
+    viewPost: (post: Post) => `/blog/${post.id}/${post.slug}`,
   },
   cart: "/cart",
   orders: {

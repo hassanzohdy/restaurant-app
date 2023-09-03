@@ -1,31 +1,49 @@
 {
-  "path": "/",
-  "name": "front-office",
-  "modules": [
-    {
-      "entry": [
-        "/account",
-        "/login",
-        "/register",
-        "/forget-password",
-        "/rest-password"
-      ],
-      "name": "account"
-    },
-    {
-      "entry": [
-        "/",
-        "/404"
-      ],
-      "name": "home"
-    },
-    {
-      "entry": [
-        "/about-us",
-        "/privacy-policy",
-        "/terms-conditions"
-      ],
-      "name": "informative-pages"
-    }
-  ]
+    "path": "/",
+    "name": "front-office",
+    "modules": [
+        {
+            "entry": [
+                "/account",
+                "/login",
+                "/register",
+                "/forget-password",
+                "/rest-password"
+            ],
+            "name": "account"
+        },
+        {
+            "entry": [
+                "/",
+                "/404"
+            ],
+            "name": "home"
+        },
+        {
+            "entry": [
+                "/about-us",
+                "/privacy-policy",
+                "/terms-conditions"
+            ],
+            "name": "informative-pages"
+        },
+        {
+            "entry": [
+                "/blog"
+            ],
+            "name": "blog"
+        },
+        {
+            "entry": [
+                "/posts"
+            ],
+            "name": "posts"
+        },
+        {
+            "entry": [
+                "/meals"
+            ],
+            "name": "meals"
+        }
+    ]
 }

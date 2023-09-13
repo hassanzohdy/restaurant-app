@@ -8,6 +8,10 @@ export default function PopularDishesTabs() {
       <div className={styles.tabs}>
         <ul>
           <li>pizza</li>
+          <li>sushi</li>
+          <li>salats</li>
+          <li>burger</li>
+          <li>Dersest</li>
         </ul>
       </div>
     </>

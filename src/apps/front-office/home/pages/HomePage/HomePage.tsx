@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
-import "./HomePage.scss";
 import Helmet from "@mongez/react-helmet";
+import "./HomePage.scss";
 import PopularDishes from "./PopularDishes/PopularDishes";
 
 export default function HomePage() {

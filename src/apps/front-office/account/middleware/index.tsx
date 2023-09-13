@@ -28,6 +28,6 @@ export function ReverseGuardian() {
  */
 export function hasOTP() {
   if (!resetPasswordAtom.get("code")) {
-    return navigateTo(URLS.auth.forgetPassword);
+    return navigateTo(URLS.auth.forgotPassword);
   }
 }

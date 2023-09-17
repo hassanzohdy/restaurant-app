@@ -1,18 +1,17 @@
 import { atom } from "@mongez/react-atom";
 import Helmet from "@mongez/react-helmet";
-import { useState } from "react";
 import { BreadCrumbs } from "../../components/BreadCrumbs";
 import DescriptionAndReiews from "./components/DescriptionAndReiews";
 import { MealImagesSide } from "./components/MealImagesSide";
 import { MealRightSide } from "./components/MealRightSide";
 import MealsNavigateBtns from "./components/MealsNavigateBtns";
 
-export type MealDetailsPageProps = {
-  params: {
-    id: string;
-    slug: string;
-  };
-};
+// export type MealDetailsPageProps = {
+//   params: {
+//     id: string;
+//     slug: string;
+//   };
+// };
 
 export type ReviewType = {
   name: string;
@@ -52,12 +51,12 @@ export const mealAtom = atom<MealType>({
   default: {},
 });
 
-export default function MealDetailsPage({ params }: MealDetailsPageProps) {
-  const [data, setData] = useState({
-    data: undefined,
-    isLoading: true,
-    error: undefined,
-  });
+export default function MealDetailsPage() {
+  // const [data, setData] = useState({
+  //   data: undefined,
+  //   isLoading: true,
+  //   error: undefined,
+  // });
 
   const meal: MealType = {
     id: 2,

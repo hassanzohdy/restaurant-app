@@ -7,12 +7,11 @@ import ReviewsSection from "./ReviewsSection";
 type Props = {
   description: string;
   ingredients: string[];
-  reviews?: any;
 };
 
 type variant = "description" | "reviews";
 
-const DescriptionAndReiews = ({ description, ingredients, reviews }: Props) => {
+const DescriptionAndReiews = ({ description, ingredients }: Props) => {
   const [section, setSection] = useState<variant>("description");
 
   const sectionToggler = (value: variant) => {
@@ -46,7 +45,7 @@ const DescriptionAndReiews = ({ description, ingredients, reviews }: Props) => {
             ingredients={ingredients}
           />
         ) : (
-          <ReviewsSection reviews={reviews} />
+          <ReviewsSection />
         )}
       </div>
 

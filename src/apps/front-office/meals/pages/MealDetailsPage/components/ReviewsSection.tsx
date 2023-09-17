@@ -1,8 +1,8 @@
-type Props = {
-  reviews?: any;
-};
+// type Props = {
+//   reviews?: ReviewType[];
+// };
 
-const ReviewsSection = ({ reviews }: Props) => {
+const ReviewsSection = () => {
   return <section>ReviewsSection</section>;
 };
 

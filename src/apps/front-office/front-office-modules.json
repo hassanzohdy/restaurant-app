@@ -29,8 +29,12 @@
       "name": "posts"
     },
     {
-      "entry": ["/meals"],
+      "entry": ["/menu"],
       "name": "meals"
+    },
+    {
+      "entry": ["/menu/:id/:slug"],
+      "name": "meal-details"
     }
   ]
 }

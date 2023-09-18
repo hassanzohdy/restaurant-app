@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   createStyles,
   Header,
@@ -305,5 +306,16 @@ export default function BaseHeader() {
         </ScrollArea>
       </Drawer>
     </Box>
+=======
+import HeaderBottom from "apps/front-office/design-system/layouts/Header/HeaderBottom";
+import HeaderTop from "apps/front-office/design-system/layouts/Header/HeaderTop";
+
+export default function Header() {
+  return (
+    <>
+      <HeaderTop />
+      <HeaderBottom />
+    </>
+>>>>>>> 5543f2e296a7b63c7f0c66cff41e569ef5fcd3d4
   );
 }

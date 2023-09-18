@@ -1,6 +1,6 @@
 export const __DEV__ = import.meta.env.MODE === "development";
 export const defaultLocaleCode = import.meta.env.APP_DEFAULT_LOCALE_CODE;
-export const fallbackLocaleCode = import.meta.env.APP_DEFAULT_LOCALE_CODE;
+export const fallbackLocaleCode = import.meta.env.APP_FALLBACK_LOCALE_CODE;
 export const appCode: string = import.meta.env.APP_CODE_NAME;
 export const appName = import.meta.env.APP_NAME;
 export const productionBasePath = import.meta.env.APP_BASE_PATH;

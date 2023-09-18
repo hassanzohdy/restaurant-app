@@ -3,7 +3,7 @@ import {
   Guardian,
   ReverseGuardian,
 } from "apps/front-office/account/middleware";
-import AccountLayout from "apps/front-office/design-system/layouts/AccountLayout/AccountLayout";
+import AccountLayout from "apps/front-office/design-system/layouts/AccountLayout";
 import BaseLayout from "../design-system/layouts/BaseLayout";
 // import AccountLayout from "../design-system/layouts/AccountLayout";
 

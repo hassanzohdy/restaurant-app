@@ -1,10 +1,8 @@
 import { atom } from "@mongez/react-atom";
 import Helmet from "@mongez/react-helmet";
-import { BreadCrumbs } from "../../components/BreadCrumbs";
 import DescriptionAndReiews from "./components/DescriptionAndReiews";
-import { MealImagesSide } from "./components/MealImagesSide";
-import { MealRightSide } from "./components/MealRightSide";
-import MealsNavigateBtns from "./components/MealsNavigateBtns";
+import MealDetailsSection from "./components/MealDetailsSection";
+import MealTopSection from "./components/MealTopSection";
 
 // export type MealDetailsPageProps = {
 //   params: {
@@ -136,27 +134,8 @@ export default function MealDetailsPage() {
         description={meal.shortDescription}
         image={meal.image}
       />
-      <section className="bg-primary-orange-100 py-6 text-primary-text relative">
-        <div className="container flex justify-between">
-          <img
-            src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/09/breadcrumb1.jpg"
-            alt="Breadcrumbs background image"
-            className="absolute h-full inset-0 w-full object-cover"
-            aria-hidden="true"
-          />
-          <BreadCrumbs />
-          <MealsNavigateBtns
-            nextMeal={meal.nextMeal}
-            prevMeal={meal.prevMeal}
-          />
-        </div>
-      </section>
-
-      <section className="py-20 flex gap-10 sm:flex-row flex-col container relative">
-        <MealImagesSide images={meal.images} />
-        <MealRightSide {...meal} />
-      </section>
-
+      <MealTopSection nexMeal={meal.nextMeal} prevMeal={meal.prevMeal} />
+      <MealDetailsSection meal={meal} />
       <DescriptionAndReiews
         description={meal.description}
         ingredients={meal.ingredients}

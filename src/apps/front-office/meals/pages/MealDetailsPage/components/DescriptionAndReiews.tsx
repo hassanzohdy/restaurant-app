@@ -1,8 +1,8 @@
 import { Button } from "apps/front-office/design-system/components/Button";
 import SectionHeading from "apps/front-office/design-system/components/SectionHeading";
 import { useState } from "react";
-import DescriptionSection from "./DescriptionSection";
-import ReviewsSection from "./ReviewsSection";
+import DescriptionPart from "./DescriptionPart";
+import ReviewsPart from "./ReviewsPart";
 
 type Props = {
   description: string;
@@ -40,12 +40,12 @@ const DescriptionAndReiews = ({ description, ingredients }: Props) => {
       </div>
       <div className="container py-10">
         {section === "description" ? (
-          <DescriptionSection
+          <DescriptionPart
             description={description}
             ingredients={ingredients}
           />
         ) : (
-          <ReviewsSection />
+          <ReviewsPart />
         )}
       </div>
 

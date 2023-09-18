@@ -35,7 +35,7 @@ const ShippingFeatures = () => {
   );
 };
 
-export const MealRightSide = ({
+export const DetailsSide = ({
   description,
   isFavourite,
   price,

@@ -2,8 +2,8 @@
 //   reviews?: ReviewType[];
 // };
 
-const ReviewsSection = () => {
+const ReviewsPart = () => {
   return <section>ReviewsSection</section>;
 };
 
-export default ReviewsSection;
+export default ReviewsPart;

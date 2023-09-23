@@ -1,4 +1,4 @@
-import { headerSearchAtom } from "apps/front-office/design-system/atoms/header-search-atom";
+import { headerSearchAtom } from "apps/front-office/design-system/atoms/headerAtoms";
 import { AiOutlineSearch } from "react-icons/ai";
 import HeaderSearchForm from "./HeaderSearchForm";
 

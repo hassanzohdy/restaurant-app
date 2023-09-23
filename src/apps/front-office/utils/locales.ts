@@ -6,11 +6,11 @@ groupedTranslations({
     en: "Description",
     ar: "الوصف",
   },
-  "SHOPPING CART": {
+  shoppingCart: {
     en: "SHOPPING CART",
     ar: "عربه التسوق",
   },
-  CLOSE: {
+  close: {
     en: "CLOSE",
     ar: "أغلاق",
   },
@@ -26,11 +26,11 @@ groupedTranslations({
     en: "About",
     ar: "عننا",
   },
-  Shop: {
+  shop: {
     en: "Shop",
     ar: "المتجر",
   },
-  "Sale 25%": {
+  Sale25: {
     en: "Sale 25%",
     ar: "خصم 25%",
   },
@@ -38,60 +38,116 @@ groupedTranslations({
     en: "Delicious",
     ar: "لذيذ",
   },
-  "Food Menu": {
+  foodMenu: {
     en: "Food Menu",
     ar: "قائمة الطعام",
   },
-  Blog: {
+  blog: {
     en: "Blog",
     ar: "المدونة",
   },
-  Page: {
+  page: {
     en: "Page",
     ar: "الصفحة",
   },
-  Contact: {
+  contact: {
     en: "Contact",
     ar: "تواصل معنا",
   },
-  "SHOP LIST": {
+  shopList: {
     en: "SHOP LIST",
     ar: "قائمة المتجر",
   },
-  "Product Sidebar": {
+  productSidebar: {
     en: "Product Sidebar",
     ar: "شريط المنتج",
   },
-  "Bought Together": {
+  boughtTogether: {
     en: "Bought Together",
     ar: "تم شراؤهم معًا",
   },
-  "Product Countdown": {
+  productCountdown: {
     en: "Product Countdown",
     ar: "عداد المنتج",
   },
-  "Grouped Product": {
+  groupedProduct: {
     en: "Grouped Product",
     ar: "منتجات مجمعة",
   },
-  Faq: {
+  faq: {
     en: "Faq",
     ar: "الأسئلة الشائعة",
   },
-  "Our Teams": {
+  ourTeams: {
     en: "Our Teams",
     ar: "فريقنا",
   },
-  "Call and Order in": {
+  callandOrderin: {
     en: "Call and Order in",
-    ar: "اتصل واطلب في",
+    ar: "اتصل واطلب من",
   },
-  "Search products…": {
+  searchProducts: {
     en: "Search products…",
     ar: "ابحث عن منتج",
   },
   "+1 718-904-4450": {
     en: "+1 718-904-4450",
     ar: "+1 4450-904-718",
+  },
+  signIn: {
+    en: "Sign in",
+    ar: "تسجيل الدخول",
+  },
+  createAnAccount: {
+    en: "Create an Account",
+    ar: "إنشاء حساب",
+  },
+  usernameOrEmail: {
+    en: "Username or email",
+    ar: "اسم المستخدم أو البريد الإلكتروني",
+  },
+  username: {
+    en: "Username",
+    ar: "اسم المستخدم",
+  },
+  password: {
+    en: "Password",
+    ar: "كلمة المرور",
+  },
+  passwordLabel: {
+    en: "Password",
+    ar: "كلمة المرور",
+  },
+  login: {
+    en: "LOGIN",
+    ar: "تسجيل الدخول",
+  },
+  lostYourPassword: {
+    en: "Lost your password?",
+    ar: "هل نسيت كلمة المرور؟",
+  },
+  noProductsInCart: {
+    en: "No products in the cart",
+    ar: "لا توجد منتجات في العربة",
+  },
+  language: {
+    en: "Language",
+    ar: "اللغه",
+  },
+  search: {
+    en: "Search",
+    ar: "بحث",
+  },
+  myAccount: {
+    en: "My Account",
+    ar: "حسابى",
+  },
+  wishList: {
+    en: "Wishlist",
+    ar: "المفضل",
+  },
+  cart: {
+    en: "Cart",
+    ar: "العربة",
   },
 });

@@ -6,7 +6,7 @@ export default function HeaderContact() {
       <MdOutlineDeliveryDining className="text-[48px] text-[#079447]" />
       <div>
         <span className="text-light text-[13px] font-medium">
-          {trans("Call and Order in")}
+          {trans("callandOrderin")}
         </span>
         <p className="text-primary text-[24px] font-bold leading-[1em]">
           {trans("+1 718-904-4450")}

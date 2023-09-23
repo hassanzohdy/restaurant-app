@@ -1,5 +1,5 @@
 import { trans } from "@mongez/localization";
-import { headerSearchAtom } from "apps/front-office/design-system/atoms/header-search-atom";
+import { headerSearchAtom } from "apps/front-office/design-system/atoms/headerAtoms";
 import { AiOutlineClose } from "react-icons/ai";
 
 export default function HeaderSearchForm() {
@@ -11,12 +11,12 @@ export default function HeaderSearchForm() {
       }`}>
       <input
         type="text"
-        placeholder={trans("Search products…")}
+        placeholder={trans("searchProducts")}
         className="w-full h-full outline-none border-none text-2xl"
       />
       <AiOutlineClose
         onClick={headerSearchAtom.close}
-        className="absolute right-0 top-[40%] text-3xl hover:text-primary_hover cursor-pointer"
+        className="absolute ltr:right-0 rtl:left-0 top-[40%] text-3xl hover:text-primary_hover cursor-pointer"
       />
     </form>
   );

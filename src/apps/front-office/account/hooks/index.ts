@@ -6,7 +6,7 @@ import router, {
 } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import React from "react";
-import { resetPasswordAtom } from "../atoms";
+import { resetPasswordAtom } from "../pages/Register/atoms";
 import {
   forgetPassword,
   login,

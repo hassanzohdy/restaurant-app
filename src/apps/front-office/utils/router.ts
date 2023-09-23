@@ -3,6 +3,7 @@ import {
   Guardian,
   ReverseGuardian,
 } from "apps/front-office/account/middleware";
+import AccountLayout from "apps/front-office/design-system/layouts/AccountLayout/AccountLayout";
 import BaseLayout from "../design-system/layouts/BaseLayout";
 // import AccountLayout from "../design-system/layouts/AccountLayout";
 
@@ -13,6 +14,19 @@ import BaseLayout from "../design-system/layouts/BaseLayout";
  */
 export function publicRoutes(routes: Route[]) {
   return router.partOf(BaseLayout, routes);
+}
+
+/**
+ * Should be used with routes that only un-logged in users can access it
+ * For example a logged in user can not access the /login route as he/she is already logged in
+ * The Reverse guardian will redirect the user back to the home
+ */
+export function reverseGuardedRoutes(routes: Route[]) {
+  return router.group({
+    // layout: BaseLayout,
+    middleware: [ReverseGuardian],
+    routes,
+  });
 }
 
 /**
@@ -29,24 +43,13 @@ export function guardedRoutes(routes: Route[]) {
 }
 
 /**
- * Should be used with routes that only un-logged in users can access it
- * For example a logged in user can not access the /login route as he/she is already logged in
- * The Reverse guardian will redirect the user back to the home
- */
-export function reverseGuardedRoutes(routes: Route[]) {
-  return router.group({
-    middleware: [ReverseGuardian],
-    routes,
-  });
-}
-
-/**
  * Should be used with guarded routes inside the account dashboard page
  * As the account dashboard routes will have similar layout, this is the preferred way to group them im one layout
  */
 export function accountRoutes(routes: Route[]) {
   return router.group({
     middleware: [Guardian],
+    layout: AccountLayout,
     routes,
   });
 }

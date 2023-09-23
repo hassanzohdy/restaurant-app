@@ -13,19 +13,24 @@
       "name": "account"
     },
     {
-      "entry": [
-        "/",
-        "/404"
-      ],
+      "entry": ["/", "/404"],
       "name": "home"
     },
     {
-      "entry": [
-        "/about-us",
-        "/privacy-policy",
-        "/terms-conditions"
-      ],
+      "entry": ["/about-us", "/privacy-policy", "/terms-conditions"],
       "name": "informative-pages"
+    },
+    {
+      "entry": ["/blog"],
+      "name": "blog"
+    },
+    {
+      "entry": ["/posts"],
+      "name": "posts"
+    },
+    {
+      "entry": ["/meals"],
+      "name": "meals"
     }
   ]
 }

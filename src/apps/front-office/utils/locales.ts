@@ -58,6 +58,10 @@ groupedTranslations({
     en: "Phone number is required",
     ar: "رقم الهاتف مطلوب",
   },
+  phoneValidate: {
+    en: "Phone number must be exactly 11 digits",
+    ar: "يجب ان يكون رقم الهاتف 11 رقم",
+  },
   emailRequired: {
     en: "Email is required",
     ar: "البريد الإلكتروني مطلوب",

@@ -1,27 +1,28 @@
 .PopularDishesItemWrapper {
   display: flex;
   flex-wrap: wrap;
-  gap:40px;
+  gap: 40px;
   .PopularDishesItem {
     // padding: 10px;
     border-radius: 30px;
     position: relative;
     flex-basis: 22%;
-    transition: all .5s ease-in-out;
- 
- 
-    @media(max-width:1024px){
-      flex-basis: 45%; 
+    transition: all 0.5s ease-in-out;
+        padding: 10px 0;
+
+
+    @media (max-width: 1024px) {
+      flex-basis: 45%;
     }
-    @media(max-width:768px){
-      flex-basis: 45%; 
+    @media (max-width: 768px) {
+      flex-basis: 45%;
     }
-    @media(max-width:425px){
-      flex-basis: 100%; 
+    @media (max-width: 425px) {
+      flex-basis: 100%;
     }
-    &:hover{
-      background-color: #ffc222;
-      transition: all .5s ease-in-out;
+    &:hover {
+      background-color: #ffc22285;
+      transition: all 0.5s ease-in-out;
     }
     .heartIcon {
       position: absolute;
@@ -30,30 +31,32 @@
     }
     .imageWrapper {
       margin-top: 20px;
-      transition: all .5s ease-in-out;
+      transition: all 0.5s ease-in-out;
       display: flex;
       justify-content: center;
       align-items: center;
-      &:hover .image{
-        img{
+      &:hover .image {
+        img {
           transform: scale(1.2);
-          transition: all .5s ease-in-out;
+          transition: all 0.5s ease-in-out;
         }
+       
       }
       .image {
         width: 250px;
-        height: 250px;
+        height: 200px;
         margin: auto;
 
         img {
           width: 100%;
           height: 100%;
-          transition: all .5s ease-in-out;
+          transition: all 0.5s ease-in-out;
         }
       }
     }
     .info {
       padding-bottom: 10px;
+      position: relative;
 
       h3 {
         font-size: 18px;
@@ -76,6 +79,27 @@
         color: #ffc222;
         font-weight: 700;
         font-size: 20px;
+      }
+      .shopCard {
+        position: absolute;
+        background-color: #ffc222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all  .5s ease-in-out;
+        width: 40px;
+        height: 40px;
+        border-radius: 16px;
+        inset-inline-end: -5px;
+        bottom: 0px;
+        &:hover{
+          background-color: #fff
+          // svg{
+          //   stroke:#fff;
+          //   transition: all  .5s ease-in-out;
+          // }
+        }
       }
     }
   }

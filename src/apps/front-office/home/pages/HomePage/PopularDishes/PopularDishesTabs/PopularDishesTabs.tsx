@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import styles from "./styles.module.scss";
 export type PopularDishesTabsProps = {
   children: React.ReactNode;
@@ -7,11 +8,11 @@ export default function PopularDishesTabs() {
     <>
       <div className={styles.tabs}>
         <ul>
-          <li>pizza</li>
-          <li>sushi</li>
-          <li>salats</li>
-          <li>burger</li>
-          <li>Dersest</li>
+          <li>{trans("pizza")}</li>
+          <li>{trans("sushi")}</li>
+          <li>{trans("salats")}</li>
+          <li>{trans("burger")}</li>
+          <li>{trans("sweets")}</li>
         </ul>
       </div>
     </>

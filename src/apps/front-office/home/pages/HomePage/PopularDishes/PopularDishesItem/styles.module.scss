@@ -1,0 +1,82 @@
+.PopularDishesItemWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap:40px;
+  .PopularDishesItem {
+    // padding: 10px;
+    border-radius: 30px;
+    position: relative;
+    flex-basis: 22%;
+    transition: all .5s ease-in-out;
+ 
+ 
+    @media(max-width:1024px){
+      flex-basis: 45%; 
+    }
+    @media(max-width:768px){
+      flex-basis: 45%; 
+    }
+    @media(max-width:425px){
+      flex-basis: 100%; 
+    }
+    &:hover{
+      background-color: #ffc222;
+      transition: all .5s ease-in-out;
+    }
+    .heartIcon {
+      position: absolute;
+      inset-inline-end: 15px;
+      cursor: pointer;
+    }
+    .imageWrapper {
+      margin-top: 20px;
+      transition: all .5s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover .image{
+        img{
+          transform: scale(1.2);
+          transition: all .5s ease-in-out;
+        }
+      }
+      .image {
+        width: 250px;
+        height: 250px;
+        margin: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          transition: all .5s ease-in-out;
+        }
+      }
+    }
+    .info {
+      padding-bottom: 10px;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 6px;
+        text-transform: capitalize;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+        min-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        margin-bottom: 10px;
+      }
+      .itemPrice {
+        color: #ffc222;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+  }
+}

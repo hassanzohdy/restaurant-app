@@ -19,7 +19,7 @@ export default function PopularDishesItem() {
           <Card variant="outlined" className={styles.PopularDishesItem}>
             <Container>
               <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+                <IconHeart color="#ddd" fill="#ddd" size={30}></IconHeart>
               </div>
               <div className={styles.imageWrapper}>
                 <div className={styles.image}>

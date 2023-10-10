@@ -1,0 +1,146 @@
+@use '../../colors' as *;
+@use '../../mixin' as *;
+
+
+@mixin roundedElement($dimension) {
+    width: $dimension;
+    height: $dimension;
+    @include borderRaduis(50%)
+}
+
+.site-footer {
+    margin-top: auto;
+    background: $foote-background;
+    color: $footer-font-color;
+
+    .footer-top {
+        padding: 100px 0;
+        font-size: 15px;
+        font-weight: 400;
+        .footer-logo {
+            margin-bottom: 85px;
+            position: relative;
+            &::before {
+                content: "";
+                width: 100%;
+                height: 0;
+                border-top: 1px solid #303030;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            span { 
+                display: block;
+                padding: 0 32px;
+                background: $foote-background;
+                position: relative;
+                img {
+                    width: 152px;
+                }
+            }
+        }
+
+        .heading {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        p {
+            width: 85%;
+            margin: auto;
+            line-height: 1.8;
+            color: #808080;
+        }
+
+        li { line-height: 1.8; }
+
+        li span {
+            color: #808080;
+        }
+
+        a {
+            color: $primary-color;
+        }
+
+        .footer-social-icons {
+            margin-top: 20px;
+
+            li:not(:last-of-type) { margin-right: 10px; }
+
+            a {
+                @include roundedElement(36px);
+                background: #fff;
+                color: #000;
+
+                &:hover {
+                    background: $primary-color;
+                }
+                
+                svg {
+                    width: 20px;
+                }
+            }
+        }
+
+        .newsletter {
+            margin-top: 20px;
+
+            .form-group {
+                height: 54px;
+                border: 1px solid #262626;
+                padding: 5px;
+                @include borderRaduis(3px);
+
+                input {
+                    padding: 0 15px;
+                    text-transform: capitalize;
+                    color: #fff;
+                    &::placeholder {
+                        color: #808080;
+                        opacity: 1;
+                    }
+                      
+                    &:-ms-input-placeholder {
+                        color: #808080;
+                    }
+                      
+                    &::-ms-input-placeholder {
+                        color: #808080;
+                    }
+                }
+
+                button {
+                    padding: 0 15px;
+                    background: $primary-color;
+                    color: $main-font-color;
+                    text-transform: uppercase;
+                    @include borderRaduis(3px);
+                    &:hover {
+                        background: $sub-color;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        padding: 32px 0;
+        background: $main-color;
+
+        .copy-rights {
+            font-size: 14px;
+            font-weight: 400;
+
+            a {
+                color: $primary-color;
+            }
+        }
+
+        .footer-payment-methods {
+            .payment-method:not(:last-of-type) { margin-right: 12px; }
+        }
+    }
+}

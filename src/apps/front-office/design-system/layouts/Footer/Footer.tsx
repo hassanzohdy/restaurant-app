@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Link } from "@mongez/react-router";
 import FooterCopyRights from "./FooterCopyRights";
 import FooterLogo from "./FooterLogo";
@@ -56,3 +57,14 @@ export default function Footer() {
     </>
   );
 }
+=======
+export default function Footer() {
+  return <h1>This is A Footer</h1>;
+}
+
+// Scss module
+// Styled components => Emotion Styled
+// Tailwind
+// Mantine UI
+// Tabler Icons
+>>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e

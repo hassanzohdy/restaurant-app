@@ -2,10 +2,13 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import HeaderDropdownMenu from "../HeaderDropdownMenu";
-import { type } from "os";
 import { IconChevronDown } from "@tabler/icons-react";
 
-export default function HeaderMenus() {
+export type HeaderMenus = {
+  open: boolean
+};
+
+export default function HeaderMenus({open}: HeaderMenus)  {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ")
   }
@@ -42,7 +45,7 @@ export default function HeaderMenus() {
   
   return (
     <>
-      <ul className="navbar-menu flex items-center h-full">
+      <ul className={`navbar-menu flex items-center h-full ${open ? "show" : ''}`}>
         {navigation.map((item) => (
           <li className={
             classNames(

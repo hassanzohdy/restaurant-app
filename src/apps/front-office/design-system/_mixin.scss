@@ -19,3 +19,27 @@
     -o-transition: $property $duration $timingFunction;
     transition: $property $duration $timingFunction
 }
+
+@mixin media-breakpoints($point) {
+    @if($point == mobile) {
+        @media (max-width: 575px) {
+            @content;
+        }
+    } @else if ($point == small) {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if ($point == medium) {
+        @media (max-width: 1023px) {
+            @content;
+        }
+    } @else if ($point == large) {
+        @media (max-width: 1199px) {
+            @content;
+        }
+    } @else if ($point == x-large) {
+        @media (min-width: 1280px) {
+            @content;
+        }
+    }
+}

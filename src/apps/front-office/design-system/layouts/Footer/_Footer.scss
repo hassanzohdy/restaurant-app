@@ -17,6 +17,16 @@
         padding: 100px 0;
         font-size: 15px;
         font-weight: 400;
+        @include media-breakpoints(small) {
+            padding: 70px 0;
+        }
+        .grid {
+            > div:not(:last-of-type) {
+               @include media-breakpoints(medium) {
+                    margin-bottom: 20px;
+               }
+            }
+        }
         .footer-logo {
             margin-bottom: 85px;
             position: relative;
@@ -29,6 +39,11 @@
                 top: 50%;
                 transform: translateY(-50%);
             }
+
+            @include media-breakpoints(small) {
+                margin-bottom: 60px;
+            }
+
             span { 
                 display: block;
                 padding: 0 32px;
@@ -36,6 +51,9 @@
                 position: relative;
                 img {
                     width: 152px;
+                    @include media-breakpoints(small) {
+                        max-width: mobiles;
+                    }
                 }
             }
         }
@@ -45,6 +63,9 @@
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 20px;
+            @include media-breakpoints(large) {
+                font-size: 18px;
+            }
         }
 
         p {
@@ -52,6 +73,9 @@
             margin: auto;
             line-height: 1.8;
             color: #808080;
+            @include media-breakpoints(large) {
+                width: 100%;
+            }
         }
 
         li { line-height: 1.8; }
@@ -92,7 +116,10 @@
                 border: 1px solid #262626;
                 padding: 5px;
                 @include borderRaduis(3px);
-
+                @include media-breakpoints(small) {
+                    max-width: 320px;
+                    margin: auto;
+                }
                 input {
                     padding: 0 15px;
                     text-transform: capitalize;
@@ -109,6 +136,11 @@
                     &::-ms-input-placeholder {
                         color: #808080;
                     }
+
+                    @include media-breakpoints(large) {
+                        max-width: 130px;
+                        font-size: 13px;
+                    }
                 }
 
                 button {
@@ -121,6 +153,10 @@
                         background: $sub-color;
                         color: #fff;
                     }
+                    @include media-breakpoints(large) {
+                        padding: 0 5px;
+                        font-size: 13px;
+                    }
                 }
             }
         }
@@ -130,10 +166,19 @@
         padding: 32px 0;
         background: $main-color;
 
+        .container {
+            @include media-breakpoints(small) {
+                text-align: center;
+                flex-direction: column;
+            } 
+        }
+              
         .copy-rights {
             font-size: 14px;
             font-weight: 400;
-
+            @include media-breakpoints(small) {
+                margin-bottom: 15px;
+            }
             a {
                 color: $primary-color;
             }

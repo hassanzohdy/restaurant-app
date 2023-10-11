@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Link } from "@mongez/react-router";
 import FooterCopyRights from "./FooterCopyRights";
 import FooterLogo from "./FooterLogo";
@@ -14,7 +13,7 @@ export default function Footer() {
         <div className="footer-top text-center">
             <FooterLogo/>
             <div className="container mx-auto px-4">
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 md:gap-2 lg:gap-4">
                 <div>
                   <h3 className="heading">{trans('address')}</h3>
                   <p>
@@ -57,14 +56,3 @@ export default function Footer() {
     </>
   );
 }
-=======
-export default function Footer() {
-  return <h1>This is A Footer</h1>;
-}
-
-// Scss module
-// Styled components => Emotion Styled
-// Tailwind
-// Mantine UI
-// Tabler Icons
->>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e

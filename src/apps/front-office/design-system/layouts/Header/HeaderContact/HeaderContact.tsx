@@ -5,7 +5,7 @@ import { IconMoped } from '@tabler/icons-react';
 export default function HeaderContact() {
   return (
     <>
-      <div className="call-number flex">
+      <div className="call-number hidden md:flex">
         <span className="icon"><IconMoped stroke="1"/></span>
         <div>
           <span>{trans('call')}</span>

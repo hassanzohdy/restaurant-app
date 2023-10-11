@@ -22,6 +22,9 @@
             z-index: -1;
         }
         @include transition(all, .35s , ease-in-out);
+        @include media-breakpoints(medium) {
+            width: 320px;
+        }
         .heading {
             padding: 20px;
             color: $main-font-color;
@@ -54,12 +57,12 @@
         z-index: 9;
         &.show {
             opacity: 1;
-            z-index: 9;
+            visibility: visible;
         }
 
         &.hide {
             opacity: 0;
-            z-index: -1;
+            visibility: hidden
         }
         @include transition(all, .35s , ease-in-out);
     }

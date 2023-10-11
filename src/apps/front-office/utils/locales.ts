@@ -2,7 +2,6 @@ import { groupedTranslations } from "@mongez/localization";
 
 // Add only common localization
 groupedTranslations({
-<<<<<<< HEAD
   home: {
     en: "Home",
     ar: "الرئيسية",
@@ -23,13 +22,10 @@ groupedTranslations({
     en: "Contact Us",
     ar: "اتصل بنا",
   },
-=======
->>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e
   description: {
     en: "Description",
     ar: "الوصف",
   },
-<<<<<<< HEAD
   call: {
     en :  "Call and Order in",
     ar : "اتصل واطلب على"
@@ -102,6 +98,4 @@ groupedTranslations({
     en: "All Rights Reserved",
     ar: "جميع الحقوق محفوظة"
   }
-=======
->>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e
 });

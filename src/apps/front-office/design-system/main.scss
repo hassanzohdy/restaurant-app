@@ -1,0 +1,38 @@
+@use './layouts/Header/Header';
+@use './layouts/Footer/Footer';
+@use './colors' as *;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* Starting Global Style */
+
+a,
+button {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.container { max-width: 1322px; }
+
+input:focus {
+    border-color: $primary-color!important;
+    outline: 0!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+/* Endinf Global Style */

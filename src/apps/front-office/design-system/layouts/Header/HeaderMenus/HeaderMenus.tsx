@@ -5,10 +5,10 @@ import HeaderDropdownMenu from "../HeaderDropdownMenu";
 import { IconChevronDown } from "@tabler/icons-react";
 
 export type HeaderMenus = {
-  open: boolean
+  opened: boolean
 };
 
-export default function HeaderMenus({open}: HeaderMenus)  {
+export default function HeaderMenus({opened}: HeaderMenus)  {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ")
   }
@@ -45,7 +45,7 @@ export default function HeaderMenus({open}: HeaderMenus)  {
   
   return (
     <>
-      <ul className={`navbar-menu flex items-center h-full ${open ? "show" : ''}`}>
+      <ul className={`navbar-menu flex items-center h-full ${opened ? "show" : ''}`}>
         {navigation.map((item) => (
           <li className={
             classNames(

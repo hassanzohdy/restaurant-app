@@ -1,4 +1,4 @@
-import { atom, openAtom } from "@mongez/react-atom";
+import { atom } from "@mongez/react-atom";
 
 export type headerAccountAtom = {
     opened: false

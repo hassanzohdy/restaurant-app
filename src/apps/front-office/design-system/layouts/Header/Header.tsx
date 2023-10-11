@@ -1,43 +1,41 @@
-import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { IconMenu2, IconX } from '@tabler/icons-react'
 import HeaderLogo from './HeaderLogo'
 import HeaderMenus from './HeaderMenus'
 import HeaderContact from './HeaderContact'
 import HeaderIcons from './HeaderIcons';
+import { headerMobileMenuAtom } from '../../atoms/header-mobile-menu-atom'
 
 export default function Header() {
+  const opened = headerMobileMenuAtom.use("opened");
   return (
     <>
     <header className='site-header flex items-center justify-center'>
       <div className="container mx-auto px-4">
-        <Disclosure as="nav" className="nav-bar">
-          {({ open }) => (
+        <nav className="nav-bar">
             <>
               <div className="flex h-16 items-center justify-between">
                 <div className='flex'>
                   <HeaderLogo/>
                   <div className="md:block">
-                      <HeaderMenus open={open}/>
+                      <HeaderMenus opened={opened}/>
                   </div>
                 </div>
-               <div className='flex'>
+               <div className='flex items-center'>
                   <HeaderContact/>
                   <HeaderIcons/>
                   {/* Mobile menu button*/}
-                  <Disclosure.Button className="header-menu-toggle relative inline-flex items-center justify-center md:hidden">
-                      <span className="absolute -inset-0.5" />
-                      <span className="sr-only">Open main menu</span>
-                      {open ? (
-                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  <button className="header-menu-toggle relative inline-flex items-center justify-center lg:hidden"
+                   >
+                      {opened ? (
+                        <span onClick={() => headerMobileMenuAtom.change('opened', false)}><IconX className="block h-6 w-6" /></span>
                       ) : (
-                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                        <span onClick={() => headerMobileMenuAtom.change('opened', true)}><IconMenu2 className="block h-6 w-6" /></span>
                       )}
-                    </Disclosure.Button>
+                    </button>
                 </div>
               </div>
             </>
-          )}
-        </Disclosure>
+        </nav>
       </div>
     </header>
     </>

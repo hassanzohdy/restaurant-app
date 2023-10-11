@@ -17,7 +17,6 @@
   "dependencies": {
     "@emotion/react": "11.10.0",
     "@emotion/styled": "11.10.0",
-    "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@mongez/cache": "^1.2.1",
     "@mongez/config": "^1.0.26",

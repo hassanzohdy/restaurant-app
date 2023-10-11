@@ -257,8 +257,11 @@
 
     .header-menu-toggle {
         @include roundedElement(45px);
+        background: #fff;
         border: 1px solid #e5e5e5;
         margin-left: 10px;
+        position: relative;
+        z-index: 99;
         @include transition(all, .35s , ease-in-out );
         &:hover {
             background: $sub-color;

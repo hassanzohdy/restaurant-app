@@ -4,6 +4,7 @@ import HeaderMenus from './HeaderMenus'
 import HeaderContact from './HeaderContact'
 import HeaderIcons from './HeaderIcons';
 import { headerMobileMenuAtom } from '../../atoms/header-mobile-menu-atom'
+import OverLay from '../OverLay';
 
 export default function Header() {
   const opened = headerMobileMenuAtom.use("opened");
@@ -32,6 +33,7 @@ export default function Header() {
                         <span onClick={() => headerMobileMenuAtom.change('opened', true)}><IconMenu2 className="block h-6 w-6" /></span>
                       )}
                     </button>
+                    <OverLay atom={headerMobileMenuAtom} opened={opened}/>
                 </div>
               </div>
             </>

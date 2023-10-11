@@ -1,11 +1,11 @@
 import { IconShoppingBag } from '@tabler/icons-react';
 import { headerCartAtom } from 'apps/front-office/design-system/atoms/header-cart-atom';
 import HeaderCartSidebar from './HeaderCartSidebar';
-import HeaderCartOverlay from './HeaderCartOverlay';
+import OverLay from '../../OverLay';
 
 export default function HeaderCart() {
 
-  const {cartCount} = headerCartAtom.useValue();
+  const {cartCount, opened} = headerCartAtom.useValue();
   return (
     <>
       <div className="header-cart">
@@ -13,7 +13,7 @@ export default function HeaderCart() {
         <span className='cart-count'>{cartCount}</span>
         </span>
         <HeaderCartSidebar/>
-        <HeaderCartOverlay/>
+        <OverLay atom={headerCartAtom} opened={opened} />
       </div>
     </>
   );

@@ -15,10 +15,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@emotion/react": "11.10.0",
     "@emotion/styled": "11.10.0",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+=======
+>>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e
     "@mongez/cache": "^1.2.1",
     "@mongez/config": "^1.0.26",
     "@mongez/dom": "^1.1.2",
@@ -37,11 +40,20 @@
     "@mongez/supportive-is": "^1.0.12",
     "@mongez/user": "^1.0.12",
     "@mongez/validator": "^1.0.18",
+<<<<<<< HEAD
     "@tabler/icons-react": "^2.38.0",
     "@tailwindcss/forms": "^0.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "1.54.4"
+=======
+    "@tabler/icons-react": "^2.32.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "1.54.4",
+    "@emotion/react": "11.10.0",
+    "@emotion/styled": "11.10.0"
+>>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e
   },
   "devDependencies": {
     "@mongez/vite": "^1.0.26",
@@ -52,7 +64,10 @@
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "@vitejs/plugin-react-swc": "^3.3.2",
+<<<<<<< HEAD
     "autoprefixer": "^10.4.16",
+=======
+>>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -60,11 +75,17 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "npm-check-updates": "^16.13.0",
+<<<<<<< HEAD
     "postcss": "^8.4.31",
     "prettier": "^2.8.8",
     "prettier-plugin-organize-imports": "^3.2.2",
     "sass": "1.66.1",
     "tailwindcss": "^3.3.3",
+=======
+    "prettier": "^2.8.8",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "sass": "1.66.1",
+>>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
     "vite-plugin-svgr": "^3.2.0"

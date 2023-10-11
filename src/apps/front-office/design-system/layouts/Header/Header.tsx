@@ -1,13 +1,19 @@
+<<<<<<< HEAD
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import HeaderLogo from './HeaderLogo'
 import HeaderMenus from './HeaderMenus'
 import HeaderContact from './HeaderContact'
 import HeaderIcons from './HeaderIcons';
+=======
+import HeaderBottom from "apps/front-office/design-system/layouts/Header/HeaderBottom";
+import HeaderTop from "apps/front-office/design-system/layouts/Header/HeaderTop";
+>>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e
 
 export default function Header() {
   return (
     <>
+<<<<<<< HEAD
     <header className='site-header flex items-center justify-center'>
       <div className="container mx-auto px-4">
         <Disclosure as="nav" className="nav-bar">
@@ -49,3 +55,10 @@ export default function Header() {
   )
 }
 
+=======
+      <HeaderTop />
+      <HeaderBottom />
+    </>
+  );
+}
+>>>>>>> 390b99f2ef7d7c76d772104a7471a4862c6fbb1e

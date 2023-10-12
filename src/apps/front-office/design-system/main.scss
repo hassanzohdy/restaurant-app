@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // Global Styles here
 
 :root {
@@ -88,4 +92,10 @@ footer h3 {
 .footerEmailButton:hover {
   color: white;
 }
-/* end footer*/
+
+@layer base {
+  html {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+      Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+}

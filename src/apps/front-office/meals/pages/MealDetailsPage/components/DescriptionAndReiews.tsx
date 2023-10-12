@@ -19,7 +19,7 @@ const DescriptionAndReiews = ({ description, ingredients }: Props) => {
   };
 
   return (
-    <section className="">
+    <section>
       <div className="flex gap-6 items-center justify-center flex-wrap">
         <Button
           onClick={() => sectionToggler("description")}

@@ -8,8 +8,8 @@ type Props = {
 };
 
 const ImagesSide = ({ images }: { images: string[] }) => {
-  const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
-  const [src, setSrc] = useState<string>("");
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [src, setSrc] = useState("");
 
   const overlayHandler = () => {
     setIsOverlayOpen(oldState => !oldState);
@@ -18,7 +18,7 @@ const ImagesSide = ({ images }: { images: string[] }) => {
   return (
     <>
       {isOverlayOpen ? (
-        <Overlay closeHandler={overlayHandler}>
+        <Overlay onClose={overlayHandler}>
           <img
             onClick={e => e.stopPropagation()}
             src={src}

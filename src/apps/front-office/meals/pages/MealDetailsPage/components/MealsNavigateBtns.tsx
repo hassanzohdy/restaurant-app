@@ -65,14 +65,14 @@ const MealsNavigateBtns = ({ nextMeal, prevMeal }: Props) => {
         onMouseOver={() => mouseEnterHandler("next")}
         onMouseLeave={mouseLeaveHandler}>
         <RiArrowDropLeftLine className="shrink-0" />
-        {navigationMeal.next ? <PopupMeal meal={prevMeal} /> : null}
+        {navigationMeal.next && <PopupMeal meal={prevMeal} />}
       </Link>
       <Link
         className="btn btn-primary rounded-full w-8 h-8 hover:bg-primary-orange-500 hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("prev")}
         onMouseLeave={mouseLeaveHandler}>
         <RiArrowDropRightLine className="shrink-0" />
-        {navigationMeal.prev ? <PopupMeal meal={nextMeal} /> : null}
+        {navigationMeal.prev && <PopupMeal meal={nextMeal} />}
       </Link>
     </div>
   );

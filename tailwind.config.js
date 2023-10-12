@@ -8,13 +8,21 @@ export default {
         DEFAULT: "1rem",
         sm: "2rem",
       },
+    },
+    extend: {
       screens: {
         "2xl": "1400px",
       },
-    },
-    extend: {
       colors: {
-        primary: "#ffc222",
+        // primary: "#ffc222",
+        primary: {
+          text: "#808080",
+          orange: {
+            100: "#f7f2e2",
+            400: "#ffc222",
+            500: "#eeac00",
+          },
+        },
         primaryHover: "#eeac00",
         secondary: "#00a149",
         headingTextColor: "#808080",
@@ -27,14 +35,6 @@ export default {
       },
       boxShadow: {
         list: "0 0 30px 0 rgba(0,0,0,.08)",
-        primary: {
-          text: "#808080",
-          orange: {
-            100: "#f7f2e2",
-            400: "#ffc222",
-            500: "#eeac00",
-          },
-        },
       },
     },
   },

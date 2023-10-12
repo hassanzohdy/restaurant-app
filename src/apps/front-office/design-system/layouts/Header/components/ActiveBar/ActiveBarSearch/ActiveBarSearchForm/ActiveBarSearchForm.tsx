@@ -12,7 +12,7 @@ export default function ActiveBarSearchForm() {
       <div className="relative h-full">
         <input
           type="search"
-          className="w-full h-full rtl:text-left px-5 outline-none border-primary border rounded-full "
+          className="w-full h-full rtl:text-left px-5 outline-none border-primary-main border rounded-full "
           placeholder={trans("searchProducts")}
         />
         <AiOutlineSearch className="absolute right-4 text-2xl top-[27%]" />

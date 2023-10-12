@@ -14,9 +14,9 @@ export default {
         "2xl": "1400px",
       },
       colors: {
-        // primary: "#ffc222",
         primary: {
           text: "#808080",
+          main: "#ffc222",
           orange: {
             100: "#f7f2e2",
             400: "#ffc222",

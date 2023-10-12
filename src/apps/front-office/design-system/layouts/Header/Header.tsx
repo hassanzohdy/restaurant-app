@@ -21,10 +21,10 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-white fixed w-full top-0 left-0">
+    <header className="bg-white sticky w-full top-0 left-0 z-10">
       <nav
         className={`flex py flex-row items-center justify-between relative transition-all container ${
-          scrollTop != 0 ? "h-[50px]" : "h-[120px]"
+          scrollTop != 0 ? "h-[50px]" : "h-[80px]"
         }`}>
         <BurgerIcon /> {/* for small screens */}
         <HeaderLogo />

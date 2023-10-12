@@ -10,8 +10,19 @@ export default {
       },
     },
     extend: {
+      screens: {
+        "2xl": "1400px",
+      },
       colors: {
-        primary: "#ffc222",
+        // primary: "#ffc222",
+        primary: {
+          text: "#808080",
+          orange: {
+            100: "#f7f2e2",
+            400: "#ffc222",
+            500: "#eeac00",
+          },
+        },
         primaryHover: "#eeac00",
         secondary: "#00a149",
         headingTextColor: "#808080",

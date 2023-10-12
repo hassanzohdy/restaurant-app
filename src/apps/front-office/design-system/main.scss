@@ -37,6 +37,7 @@ html {
 body {
   background-color: var(--backgroundColor);
 }
+
 .textWhite {
   color: var(--backgroundColor);
 }
@@ -93,9 +94,20 @@ footer h3 {
   color: white;
 }
 
-@layer base {
-  html {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-      Helvetica, Arial, "Lucida Grande", sans-serif;
+// @layer base {
+//   html {
+//     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+//   }
+// }
+
+@layer components {
+  .btn {
+    @apply rounded-lg p-4 transition-colors flex items-center justify-center font-bold;
+  }
+  .btn-primary {
+    @apply bg-primary-orange-400 hover:text-white;
+  }
+  .btn-secondary {
+    @apply bg-white hover:bg-primary-orange-400;
   }
 }

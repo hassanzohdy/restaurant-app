@@ -1,5 +1,10 @@
 import { reverseGuardedRoutes } from "../utils/router";
+import URLS from "../utils/urls";
+import Register from "./pages/Register";
 
 reverseGuardedRoutes([
-  // login routes
+  {
+    path: URLS.auth.register,
+    component: Register,
+  },
 ]);

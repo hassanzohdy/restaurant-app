@@ -94,11 +94,11 @@ footer h3 {
   color: white;
 }
 
-// @layer base {
-//   html {
-//     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-//   }
-// }
+@layer base {
+  html {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+}
 
 @layer components {
   .btn {

@@ -7,7 +7,7 @@ export default function UserDropDown() {
   const open = userIconAtom.use("opened");
   return (
     <div
-      className={`absolute top-[50px] border-primary border-t overflow-hidden duration-200 shadow-list transition-all bg-white ${
+      className={`absolute top-[50px] border-primary-main border-t overflow-hidden duration-200 shadow-list transition-all bg-white ${
         open ? "w-[280px] h-[356.469px] p-5" : "h-0 w-0 p-0"
       } rtl:left-[0px] ltr:-right-[0px]`}>
       <div className="h-[48px]">

@@ -1,0 +1,35 @@
+.rtl {
+  @apply rtl:bg-red-500 ltr:bg-black;
+}
+
+.register {
+  border: 1px solid rgb(233, 236, 239);
+}
+
+.hr::after,
+.hr::before {
+  content: "";
+  flex: 1 1 0%;
+  width: 100px;
+  border-top: 0.0625rem solid #000;
+  margin-left: 8px;
+  margin-right: 8px;
+  opacity: 0.4;
+}
+
+@media (max-width: 330px) {
+  .hr::before,
+  .hr::after {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}
+
+input {
+  @apply mt-1 block w-full px-3 py-2 bg-white border border-slate-400 rounded-md text-base shadow-sm placeholder-slate-400
+  focus:outline-none focus:border-primary-main;
+}
+
+span {
+  @apply text-sm text-red-600;
+}

@@ -51,6 +51,7 @@ const URLS = {
     register: "/register",
     forgotPassword: "/forgot-password",
     resetPassword: "/reset-password",
+    verifyForgetPassword: "/verifyForgetPassword",
   },
 };
 

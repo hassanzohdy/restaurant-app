@@ -1,3 +1,4 @@
+import { groupedTranslations } from "@mongez/localization";
 import { current, LocaleCodes } from "@mongez/react";
 import Is from "@mongez/supportive-is";
 
@@ -31,6 +32,59 @@ export const localeCodesList: LocaleCodes = {
   },
 };
 
+groupedTranslations({
+  home: {
+    en: "Home Page",
+    ar: "الصفحة الرئيسية",
+  },
+  contactUs: {
+    en: "Contact Us",
+    ar: "اتصل بنا",
+  },
+  PopularDishes: {
+    en: "Popular dishes",
+    ar: "الاطباق الشائعة",
+  },
+  pizza: {
+    en: "pizza",
+    ar: " بيتزا",
+  },
+  sushi: {
+    en: "sushi",
+    ar: " سوشي",
+  },
+  salats: {
+    en: "salats",
+    ar: " السلطات",
+  },
+  burger: {
+    en: "burger",
+    ar: " برجر",
+  },
+  sweets: {
+    en: "sweet",
+    ar: "الحلوي ",
+  },
+
+  Italiano: {
+    en: "Italiano Original",
+    ar: "ايطاليانو اصلي ",
+  },
+  Pepperoni: {
+    en: "Pepperoni Pizza",
+    ar: "بيتزا بيبروني",
+  },
+
+  Blueberry: {
+    en: "Blueberry Shake",
+    ar: "ميلك شيك بلوبيري",
+  },
+
+  Lemon: {
+    en: "Lemon Shake",
+    ar: "ميلك شيك ليمون",
+  },
+});
 export type LocaleCode = {
   localeCode: string;
   direction: "ltr" | "rtl";

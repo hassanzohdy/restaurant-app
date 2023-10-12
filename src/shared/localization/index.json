@@ -1,4 +1,4 @@
-{  
+{
   "newYork": {
     "en": "New York",
     "ar": "نيويورك"
@@ -24,8 +24,8 @@
     "ar": "مساء"
   },
   "subscribe": {
-    "en":"Subscribe",
-    "ar":"اشترك"
+    "en": "Subscribe",
+    "ar": "اشترك"
   },
   "subscribeNewsletter": {
     "en": "Subscribe to the weekly newsletter for all",
@@ -34,7 +34,7 @@
   "latestUpdate": {
     "en": "the latest updates",
     "ar": "آخر التحديثات"
-  },  
+  },
 
   "test": {
     "en": "Test",

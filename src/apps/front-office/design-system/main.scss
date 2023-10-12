@@ -34,28 +34,28 @@ body {
   background-color: var(--backgroundColor);
 }
 .textWhite {
-  color:var(--backgroundColor);
+  color: var(--backgroundColor);
 }
-.textSize20{
+.textSize20 {
   font-size: 20px;
 }
-.primaryColor{
+.primaryColor {
   color: var(--primaryColor);
 }
 /* start footer*/
 footer h3 {
   font-size: 20px;
   text-transform: uppercase;
-  color:var(--backgroundColor);
+  color: var(--backgroundColor);
 }
-.bookNumber{
+.bookNumber {
   font-size: 18px;
   font-weight: 700;
 }
-.footerParagraph{
-  color:#b0b0b0
+.footerParagraph {
+  color: #b0b0b0;
 }
-.socialIcon{
+.socialIcon {
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -63,18 +63,16 @@ footer h3 {
   -o-transition: all 0.3s;
 }
 
-.socialIcon:hover{
+.socialIcon:hover {
   background-color: var(--primaryColor);
 }
 .footerEmailInput {
   border: 1px solid var(--darkColor);
   padding: 8px;
-
 }
 .footerEmailInput > input {
   color: white;
   padding: 8px;
-
 }
 .footerEmailButton {
   color: #000;

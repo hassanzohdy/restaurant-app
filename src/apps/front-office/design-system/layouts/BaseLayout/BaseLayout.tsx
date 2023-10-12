@@ -18,7 +18,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
       <ChartMenu />
       <BurgerMenu />
       <ActiveBar /> {/* for small screens */}
-      <main>{children}</main>
+      <main className="min-h-screen">{children}</main>
       <Footer />
     </div>
   );

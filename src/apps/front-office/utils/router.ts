@@ -23,7 +23,7 @@ export function publicRoutes(routes: Route[]) {
  */
 export function reverseGuardedRoutes(routes: Route[]) {
   return router.group({
-    layout: BaseLayout,
+    // layout: BaseLayout,
     middleware: [ReverseGuardian],
     routes,
   });

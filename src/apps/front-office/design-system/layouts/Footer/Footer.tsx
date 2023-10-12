@@ -9,8 +9,3 @@ export default function Footer() {
     </>
   );
 }
-// Scss module
-// Styled components => Emotion Styled
-// Tailwind
-// Mantine UI
-// Tabler Icons

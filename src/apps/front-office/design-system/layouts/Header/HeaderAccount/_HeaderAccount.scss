@@ -1,0 +1,76 @@
+// Import Variables
+@use "../../../colors" as *;
+@use "../../../mixin" as *;
+
+.header-account-dropdwon {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 324px;
+  padding: 20px;
+  margin-top: 20px;
+  background: #fff;
+  border-top: 2px solid $primary-color;
+  -webkit-box-shadow: 0 2px 10px rgb(0 0 0 / 9%);
+  -moz-box-shadow: 0 2px 10px rgb(0 0 0 / 9%);
+  -ms-box-shadow: 0 2px 10px rgb(0 0 0 / 9%);
+  -o-box-shadow: 0 2px 10px rgb(0 0 0 / 9%);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 9%);
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: capitalize;
+
+  @include media-breakpoints(mobile) {
+    width: 290px;
+    right: -83px;
+  }
+
+  .heading {
+    margin-bottom: 15px;
+    .title {
+      font-size: 18px;
+      color: #333;
+    }
+  }
+
+  form {
+    margin-bottom: 42px;
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      margin-bottom: 5px;
+      color-scheme: #808080;
+    }
+
+    input {
+      height: 50px;
+      padding: 10px 15px;
+      border-color: #e5e5e5;
+      @include borderRaduis(8px);
+    }
+
+    button {
+      height: 45px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: $primary-color;
+      color: $main-font-color;
+      @include borderRaduis(8px);
+      &:hover {
+        background: $sub-color;
+        color: #fff;
+      }
+    }
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: 300;
+    color: $primary-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

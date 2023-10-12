@@ -1,6 +1,8 @@
-import { Flex } from "@mantine/core";
 import Footer from "../Footer";
-import BaseHeader from "../Header";
+import Header from "../Header";
+import ActiveBar from "../Header/components/ActiveBar";
+import BurgerMenu from "../Header/components/HeaderIcons/BurgerIcon/BurgerMenu";
+import ChartMenu from "../Header/components/HeaderIcons/HeaderCart/ChartMenu";
 
 export type BaseLayoutProps = {
   children: React.ReactNode;
@@ -11,12 +13,13 @@ export type BaseLayoutProps = {
  */
 export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
-    <>
-      <Flex direction="column" justify="space-between" h={"100vh"}>
-        <BaseHeader />
-        <main style={{ flex: "1" }}>{children}</main>
-        <Footer />
-      </Flex>
-    </>
+    <div className="relative h-[200vh] overflow-x-hidden">
+      <Header />
+      <ChartMenu />
+      <BurgerMenu />
+      <ActiveBar /> {/* for small screens */}
+      <main>{children}</main>
+      <Footer />
+    </div>
   );
 }

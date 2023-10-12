@@ -1,10 +1,10 @@
 import {
-  createStyles,
-  Text,
-  Container,
-  Group,
   Box,
+  Container,
   Footer,
+  Group,
+  Text,
+  createStyles,
 } from "@mantine/core";
 import { transX } from "@mongez/react-localization";
 const useStyles = createStyles(theme => ({

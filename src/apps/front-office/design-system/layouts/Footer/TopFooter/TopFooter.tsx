@@ -1,21 +1,21 @@
 import {
-  createStyles,
-  Text,
-  Container,
   ActionIcon,
-  Group,
-  TypographyStylesProvider,
-  Input,
-  Divider,
   Anchor,
+  Container,
+  Divider,
+  Group,
+  Input,
+  Text,
+  TypographyStylesProvider,
+  createStyles,
 } from "@mantine/core";
 import { trans } from "@mongez/localization";
 
 import {
-  IconBrandTwitter,
-  IconBrandYoutube,
   IconBrandFacebook,
+  IconBrandTwitter,
   IconBrandWordpress,
+  IconBrandYoutube,
 } from "@tabler/icons-react";
 import Buttons from "apps/front-office/design-system/components/Buttons";
 

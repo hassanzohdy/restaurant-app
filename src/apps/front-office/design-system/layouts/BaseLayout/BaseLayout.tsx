@@ -1,5 +1,6 @@
+import { Flex } from "@mantine/core";
 import Footer from "../Footer";
-import Header from "../Header";
+import BaseHeader from "../Header";
 
 export type BaseLayoutProps = {
   children: React.ReactNode;
@@ -11,9 +12,11 @@ export type BaseLayoutProps = {
 export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
     <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <Flex direction="column" justify="space-between" h={"100vh"}>
+        <BaseHeader />
+        <main style={{ flex: "1" }}>{children}</main>
+        <Footer />
+      </Flex>
     </>
   );
 }

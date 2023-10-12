@@ -1,4 +1,41 @@
-{
+{  
+  "newYork": {
+    "en": "New York",
+    "ar": "نيويورك"
+  },
+  "unitedStates": {
+    "en": "United States",
+    "ar": "الولايات المتحدة الأمريكية"
+  },
+  "bookTable": {
+    "en": "Book A Table",
+    "ar": "حجز طاولة"
+  },
+  "openingHours": {
+    "en": "Opening Hours",
+    "ar": "ساعات العمل"
+  },
+  "am": {
+    "en": "AM",
+    "ar": "صباحا"
+  },
+  "pm": {
+    "en": "PM",
+    "ar": "مساء"
+  },
+  "subscribe": {
+    "en":"Subscribe",
+    "ar":"اشترك"
+  },
+  "subscribeNewsletter": {
+    "en": "Subscribe to the weekly newsletter for all",
+    "ar": "اشترك في النشرة الإخبارية الأسبوعية للحصول على "
+  },
+  "latestUpdate": {
+    "en": "the latest updates",
+    "ar": "آخر التحديثات"
+  },  
+
   "test": {
     "en": "Test",
     "ar": "التجربة"
@@ -484,8 +521,8 @@
     "ar": "سيتم تحويلك الان الى التبطيق"
   },
   "copyright": {
-    "en": "All Rights Reserved © %d",
-    "ar": "جميع الحقوق محفوظة © %d"
+    "en": "Copyright © :d. 2022 All Rights Reserved",
+    "ar": " حقوق الطبع والنشر © :d 2022 كل الحقوق محفوظة"
   },
   "close": {
     "en": "Close",
@@ -1116,8 +1153,8 @@
     "ar": "إعادة تحميل"
   },
   "email": {
-    "en": "Email Address",
-    "ar": "البريد الالكتروني"
+    "en": "Your Email ...",
+    "ar": " ... بريدك الإلكتروني"
   },
   "password": {
     "en": "Password",

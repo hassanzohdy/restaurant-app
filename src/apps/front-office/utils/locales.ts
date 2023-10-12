@@ -1,9 +1,5 @@
 import { groupedTranslations } from "@mongez/localization";
+import index from "../../../shared/localization/index.json";
 
 // Add only common localization
-groupedTranslations({
-  description: {
-    en: "Description",
-    ar: "الوصف",
-  },
-});
+groupedTranslations(index);

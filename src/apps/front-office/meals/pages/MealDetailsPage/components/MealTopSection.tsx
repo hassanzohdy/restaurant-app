@@ -9,7 +9,7 @@ type Props = {
 
 const MealTopSection = ({ nexMeal, prevMeal }: Props) => {
   return (
-    <section className="bg-primary-orange-100 py-6 text-primary-text relative">
+    <section className="bg-primary-light py-6 text-primary-text relative">
       <div className="container flex justify-between">
         <img
           src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/09/breadcrumb1.jpg"

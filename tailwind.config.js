@@ -17,20 +17,16 @@ export default {
         primary: {
           text: "#808080",
           main: "#ffc222",
-          orange: {
-            100: "#f7f2e2",
-            400: "#ffc222",
-            500: "#eeac00",
-          },
+          hover: "#eeac00",
+          light: "#f7f2e2",
         },
-        primaryHover: "#eeac00",
+        "footer-paragraph": "#b0b0b0",
         secondary: "#00a149",
         headingTextColor: "#808080",
         bodyTextColor: "#1e1d23",
         light: "#999999",
         dark: "#282828",
         border: "#e5e5e5",
-        background: "#ffffff",
         backgroundHover: "#f7f7f7",
       },
       boxShadow: {

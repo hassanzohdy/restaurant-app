@@ -29,9 +29,7 @@ const PopupMeal = ({ meal }: { meal: PopupMealType }) => {
           <span className="inline-block text-rose-600">{displayedSale}</span>
           <span
             className={`inline-block  ${
-              displayedSale
-                ? "text-black line-through"
-                : "text-primary-orange-400"
+              displayedSale ? "text-black line-through" : "text-primary-main"
             }`}>
             {displayedPrice}
           </span>
@@ -61,14 +59,14 @@ const MealsNavigateBtns = ({ nextMeal, prevMeal }: Props) => {
   return (
     <div className="flex items-center relative gap-4 text-2xl text-black">
       <Link
-        className="btn btn-primary rounded-full w-8 h-8 hover:bg-primary-orange-500 hover:text-black relative"
+        className="btn btn-primary rounded-full w-8 h-8 hover:bg-primary-hover hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("next")}
         onMouseLeave={mouseLeaveHandler}>
         <RiArrowDropLeftLine className="shrink-0" />
         {navigationMeal.next && <PopupMeal meal={prevMeal} />}
       </Link>
       <Link
-        className="btn btn-primary rounded-full w-8 h-8 hover:bg-primary-orange-500 hover:text-black relative"
+        className="btn btn-primary rounded-full w-8 h-8 hover:bg-primary-hover hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("prev")}
         onMouseLeave={mouseLeaveHandler}>
         <RiArrowDropRightLine className="shrink-0" />

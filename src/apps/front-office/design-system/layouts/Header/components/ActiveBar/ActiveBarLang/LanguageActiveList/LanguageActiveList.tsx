@@ -5,7 +5,7 @@ export default function LanguageActiveList() {
   const opened = languageSwitchAtom.use("opened");
   return (
     <ul
-      className={`absolute z-30 w-full bg-background transition-all ${
+      className={`absolute z-30 w-full bg-white transition-all ${
         !opened ? "top-full" : "-top-full"
       }`}>
       <li

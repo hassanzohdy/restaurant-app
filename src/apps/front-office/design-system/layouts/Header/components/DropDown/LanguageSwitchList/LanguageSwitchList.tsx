@@ -6,7 +6,7 @@ export default function LanguageSwitchList() {
   const open = languageSwitchAtom.use("opened");
   return (
     <ul
-      className={`absolute shadow-list transition-all bg-background  overflow-hidden my-2 py-2 rounded-md ${
+      className={`absolute shadow-list transition-all bg-white  overflow-hidden my-2 py-2 rounded-md ${
         open ? "w-[100px] h-[71px]" : "w-[0px] h-[0px]"
       } `}>
       <li

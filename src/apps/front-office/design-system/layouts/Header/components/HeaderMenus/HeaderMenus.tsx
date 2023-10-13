@@ -56,16 +56,16 @@ export default function HeaderMenus() {
           {/* page drop down list */}
           <div
             className="absolute h-0 w-0 overflow-hidden py-0 top-[60px] text-[1em] rounded-md
-            font-normal leading-[1.5] bg-background shadow-list z-50 group-hover:w-[200px] 
+            font-normal leading-[1.5] bg-white shadow-list z-50 group-hover:w-[200px] 
             group-hover:py-[.5em] group-hover:h-[86px] transition-all duration-500">
             <Link
               to={URLS.faq}
-              className="block hover:text-primaryHover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover   ">
+              className="block hover:text-primary-hover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover   ">
               {trans("faq")}
             </Link>
             <Link
               to={URLS.ourChefs}
-              className="block hover:text-primaryHover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover">
+              className="block hover:text-primary-hover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover">
               {trans("ourTeams")}
             </Link>
           </div>

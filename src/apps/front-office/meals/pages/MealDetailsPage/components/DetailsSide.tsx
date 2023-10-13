@@ -11,7 +11,7 @@ type Props = {
   title: string;
   description: string;
   price: number;
-  isFavourite: boolean;
+  isFavorite: boolean;
   category: string;
   ratings: number;
 };
@@ -37,7 +37,7 @@ const ShippingFeatures = () => {
 
 export const DetailsSide = ({
   description,
-  isFavourite,
+  isFavorite,
   price,
   title,
   category,
@@ -65,7 +65,7 @@ export const DetailsSide = ({
           <h1 className="text-5xl font-bold">{title}</h1>
           <Stars ratings={ratings} />
           <p className="text-primary-text text-base">{description}</p>
-          <span className="inline-block text-2xl font-bold text-primary-orange-400">
+          <span className="inline-block text-2xl font-bold text-primary-main">
             {displayedPrice}
           </span>
         </div>
@@ -73,13 +73,13 @@ export const DetailsSide = ({
         <div className="flex items-center gap-10 text-sm font-semibold pb-6 border-b flex-wrap">
           <div className="flex gap-3 items-center font-bold">
             <Button
-              className="w-8 h-8 bg-primary-orange-100 hover:bg-primary-orange-100 hover:text-primary-orange-400 p-2 rounded-full"
+              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-2 rounded-full"
               onClick={decrementAmount}>
               -
             </Button>
             <span>{amount}</span>
             <Button
-              className="w-8 h-8 bg-primary-orange-100 hover:bg-primary-orange-100 hover:text-primary-orange-400 p-2 rounded-full"
+              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-2 rounded-full"
               onClick={incrementAmount}>
               +
             </Button>
@@ -93,8 +93,8 @@ export const DetailsSide = ({
               add to cart
             </Button>
             <Button
-              className={`text-gray-500 btn bg-primary-orange-100 ${
-                isFavourite ? "text-rose-600" : "hover:text-primary-orange-400"
+              className={`text-gray-500 btn bg-primary-light ${
+                isFavorite ? "text-rose-600" : "hover:text-primary-main"
               } px-5 rounded-xl`}
               onClick={handleFavoriteChange}>
               <AiTwotoneHeart />

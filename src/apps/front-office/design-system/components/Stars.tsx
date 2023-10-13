@@ -12,7 +12,7 @@ const Stars = ({ ratings }: Props) => {
         .map((item, idx) => (
           <span key={idx} className="inline-block">
             {idx < Math.round(ratings) ? (
-              <AiFillStar className="text-primary-orange-400" />
+              <AiFillStar className="text-primary-main" />
             ) : (
               item
             )}

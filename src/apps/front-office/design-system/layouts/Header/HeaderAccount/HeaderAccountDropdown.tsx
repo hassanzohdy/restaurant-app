@@ -19,7 +19,11 @@ export default function HeaderAccountDropdown() {
         <form>
           <div className="form-group flex flex-col">
             <label>{trans("userNameOrEmail")}</label>
-            <input type="text" placeholder={trans("userName")} />
+            <input
+              type="text"
+              className="bg-red-400"
+              placeholder={trans("userName")}
+            />
           </div>
           <div className="form-group flex flex-col">
             <label>{trans("password")}</label>

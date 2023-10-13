@@ -31,7 +31,7 @@ const ImagesSide = ({ images }: { images: string[] }) => {
         {images.map((image, idx) => (
           <div
             key={idx}
-            className="rounded-xl overflow-hidden bg-primary-orange-100 w-fit">
+            className="rounded-xl overflow-hidden bg-primary-light w-fit">
             <img
               onClick={() => {
                 overlayHandler();

@@ -13,7 +13,7 @@ export type BaseLayoutProps = {
  */
 export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
-    <div className="relative h-[200vh] overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden">
       <Header />
       <ChartMenu />
       <BurgerMenu />

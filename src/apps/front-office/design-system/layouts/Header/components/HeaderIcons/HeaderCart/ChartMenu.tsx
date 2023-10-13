@@ -7,7 +7,7 @@ const ChartMenu = () => {
 
   return (
     <div
-      className={`absolute top-0 h-screen rtl:left-0 ltr:right-0 w-1/4 bg-background shadow-list transition-all ${
+      className={`absolute top-0 h-screen rtl:left-0 ltr:right-0 w-1/4 bg-white shadow-list transition-all ${
         !isOpened
           ? "ltr:translate-x-full rtl:-translate-x-full"
           : "translate-x-0"

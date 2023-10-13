@@ -8,7 +8,7 @@ export default function ShopDropDown() {
   return (
     <div
       className={`absolute h-0 flex flex-row justify-between overflow-hidden py-0 px-0  text-[1em]
-    rounded-md font-normal leading-[1.5] bg-background shadow-list z-50 
+    rounded-md font-normal leading-[1.5] bg-white shadow-list z-50 
     w-[900px] group-hover:py-[40px] group-hover:px-[60px] group-hover:h-[250px] transition-[height,_padding] 
     duration-500 ${isRTL() ? "top-[60px] -right-32" : "top-[60px] -left-32"}`}>
       <div className="flex flex-row items-center justify-center">
@@ -23,22 +23,22 @@ export default function ShopDropDown() {
           </h5>
           <ul>
             <li className="py-1">
-              <Link className="duration-300 transition-colors text-[#1E1D23]  pt-[2px] font-normal text-[15px] leading-[27px] hover:text-primaryHover">
+              <Link className="duration-300 transition-colors text-[#1E1D23]  pt-[2px] font-normal text-[15px] leading-[27px] hover:text-primary-hover">
                 {trans("productSidebar")}
               </Link>
             </li>
             <li className="py-1">
-              <Link className="text-[#1E1D23]  pt-[2px] font-normal text-[15px] leading-[27px] duration-300 transition-colors hover:text-primaryHover">
+              <Link className="text-[#1E1D23]  pt-[2px] font-normal text-[15px] leading-[27px] duration-300 transition-colors hover:text-primary-hover">
                 {trans("boughtTogether")}
               </Link>
             </li>
             <li className="py-1">
-              <Link className="text-[#1E1D23] duration-300 transition-colors pt-[2px] font-normal text-[15px] leading-[27px] hover:text-primaryHover">
+              <Link className="text-[#1E1D23] duration-300 transition-colors pt-[2px] font-normal text-[15px] leading-[27px] hover:text-primary-hover">
                 {trans("productCountdown")}
               </Link>
             </li>
             <li className="py-1">
-              <Link className="text-[#1E1D23] duration-300 transition-colors pt-[2px] font-normal text-[15px] leading-[27px] hover:text-primaryHover">
+              <Link className="text-[#1E1D23] duration-300 transition-colors pt-[2px] font-normal text-[15px] leading-[27px] hover:text-primary-hover">
                 {trans("groupedProduct")}
               </Link>
             </li>

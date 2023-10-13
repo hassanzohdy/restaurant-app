@@ -11,7 +11,7 @@ type Props = {
 
 type variant = "description" | "reviews";
 
-const DescriptionAndReiews = ({ description, ingredients }: Props) => {
+const DescriptionAndReviews = ({ description, ingredients }: Props) => {
   const [section, setSection] = useState<variant>("description");
 
   const sectionToggler = (value: variant) => {
@@ -24,17 +24,15 @@ const DescriptionAndReiews = ({ description, ingredients }: Props) => {
         <Button
           onClick={() => sectionToggler("description")}
           className={`${
-            section === "description"
-              ? "bg-primary-orange-400"
-              : "bg-transparent"
-          } text-2xl capitalize py-4 px-10 hover:bg-primary-orange-400`}>
+            section === "description" ? "bg-primary-main" : "bg-transparent"
+          } text-2xl capitalize py-4 px-10 hover:bg-primary-main`}>
           description
         </Button>
         <Button
           onClick={() => sectionToggler("reviews")}
           className={`${
-            section === "reviews" ? "bg-primary-orange-400" : "bg-transparent"
-          } text-2xl capitalize px-10 hover:bg-primary-orange-400`}>
+            section === "reviews" ? "bg-primary-main" : "bg-transparent"
+          } text-2xl capitalize px-10 hover:bg-primary-main`}>
           reviews
         </Button>
       </div>
@@ -54,4 +52,4 @@ const DescriptionAndReiews = ({ description, ingredients }: Props) => {
   );
 };
 
-export default DescriptionAndReiews;
+export default DescriptionAndReviews;

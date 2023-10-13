@@ -50,10 +50,10 @@ export default function BottomFooter() {
               position="apart"
               sx={{ height: "100%" }}
               className={classes.flex}>
-              <div className="textWhite">
+              <div className="text-white">
                 {transX("copyright", {
                   d: (
-                    <Text span className="primaryColor">
+                    <Text span className="text-primary-main">
                       pocofood
                     </Text>
                   ),

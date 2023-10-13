@@ -15,7 +15,9 @@ export default function Footer() {
           <div className="container mx-auto px-4">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 md:gap-2 lg:gap-4">
               <div>
-                <h3 className="heading">{trans("address")}</h3>
+                <h3 className="heading text-xl uppercase text-white">
+                  {trans("address")}
+                </h3>
                 <p>
                   570 8th Ave, <br />
                   New York, NY 10018 <br />
@@ -23,14 +25,18 @@ export default function Footer() {
                 </p>
               </div>
               <div>
-                <h3 className="heading">{trans("bookTable")}</h3>
+                <h3 className="heading text-xl uppercase text-white">
+                  {trans("bookTable")}
+                </h3>
                 <p>Dogfood och Sliders foodtruck. Under Om oss kan ni läsa</p>
                 <Link tel="(850) 435-4155" className="block mt-4">
                   (850) 435-4155
                 </Link>
               </div>
               <div>
-                <h3 className="heading">{trans("openingHours")}</h3>
+                <h3 className="heading text-xl uppercase text-white">
+                  {trans("openingHours")}
+                </h3>
                 <ul>
                   <li>
                     <span>Monday – Friday:</span> 8am – 4pm
@@ -42,7 +48,9 @@ export default function Footer() {
                 <FooterSocialIcons />
               </div>
               <div>
-                <h3 className="heading">{trans("newsLetter")}</h3>
+                <h3 className="heading text-xl uppercase text-white">
+                  {trans("newsLetter")}
+                </h3>
                 <p>
                   Subscribe to the weekly newsletter for all the latest updates
                 </p>

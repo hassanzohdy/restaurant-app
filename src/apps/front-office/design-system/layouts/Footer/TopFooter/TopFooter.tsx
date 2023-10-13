@@ -79,7 +79,7 @@ export default function TopFooter() {
             <Text>
               <TypographyStylesProvider>
                 <h3>{trans("address")}</h3>
-                <p className="footerParagraph">
+                <p className="text-footer-paragraph">
                   570 8th Ave,
                   <br /> {trans("newYork")}, NY 10018 <br />{" "}
                   {trans("unitedStates")}.
@@ -89,22 +89,24 @@ export default function TopFooter() {
             <Text>
               <TypographyStylesProvider>
                 <h3>{trans("bookTable")}</h3>
-                <p className="footerParagraph">
+                <p className="text-footer-paragraph">
                   Dogfood och Sliders foodtruck. <br /> Under Om oss kan ni läsa
                 </p>
-                <Text className="primaryColor bookNumber">(850) 435-4155</Text>
+                <Text className="text-primary-main text-lg font-bold">
+                  (850) 435-4155
+                </Text>
               </TypographyStylesProvider>
             </Text>
             <Text>
               <TypographyStylesProvider>
                 <h3>{trans("openingHours")}</h3>
-                <p className="footerParagraph">
+                <p className="text-footer-paragraph">
                   {trans("monday")} – {trans("friday")}:{" "}
-                  <span className="textWhite">
+                  <span className="text-white">
                     8{trans("am")} – 4{trans("pm")}{" "}
                   </span>
                   <br /> {trans("saturday")}:{" "}
-                  <span className="textWhite">
+                  <span className="text-white">
                     9{trans("am")} – 5{trans("pm")}
                   </span>
                 </p>
@@ -117,7 +119,7 @@ export default function TopFooter() {
                     href="https://www.facebook.com/opalwordpress/"
                     target="_blank">
                     <ActionIcon
-                      className="socialIcon"
+                      className="transition-all duration-300 hover:bg-primary-main"
                       size="lg"
                       variant="filled"
                       bg="white"
@@ -131,7 +133,7 @@ export default function TopFooter() {
                   </Anchor>
                   <Anchor href="https://www.twitter.com" target="_blank">
                     <ActionIcon
-                      className="socialIcon"
+                      className="transition-all duration-300 hover:bg-primary-main"
                       size="lg"
                       variant="filled"
                       bg="white"
@@ -147,7 +149,7 @@ export default function TopFooter() {
                     href="https://www.youtube.com/user/WPOpalTheme"
                     target="_blank">
                     <ActionIcon
-                      className="socialIcon"
+                      className="transition-all duration-300 hover:bg-primary-main"
                       size="lg"
                       variant="filled"
                       bg="white"
@@ -161,7 +163,7 @@ export default function TopFooter() {
                   </Anchor>
                   <Anchor href="https://www.wordpress.com" target="_blank">
                     <ActionIcon
-                      className="socialIcon"
+                      className="transition-all duration-300 hover:bg-primary-main"
                       size="lg"
                       variant="filled"
                       bg="white"
@@ -179,14 +181,14 @@ export default function TopFooter() {
             <Text>
               <TypographyStylesProvider>
                 <h3>{trans("newsletter")}</h3>
-                <p className="footerParagraph">
+                <p className="text-footer-paragraph">
                   {trans("subscribeNewsletter")} <br />
                   {trans("latestUpdate")}
                 </p>
               </TypographyStylesProvider>
 
               <Input
-                className="footerEmailInput"
+                className="border border-dark p-2 text-white"
                 type="email"
                 variant="unstyled"
                 size="md"

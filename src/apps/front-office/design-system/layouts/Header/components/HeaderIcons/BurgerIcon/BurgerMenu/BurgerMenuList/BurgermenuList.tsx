@@ -11,21 +11,21 @@ export default function BurgerMenuList() {
       <li>
         <Link
           to={URLS.home}
-          className="border-b border-headingTextColor block  hover:text-primaryHover p-[7.5px]">
+          className="border-b border-headingTextColor block  hover:text-primary-hover p-[7.5px]">
           {trans("Home")}
         </Link>
       </li>
       <li>
         <Link
           to={URLS.menu.list}
-          className="border-b border-headingTextColor block hover:text-primaryHover p-[7.5px]">
+          className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
           {trans("Menu")}
         </Link>
       </li>
       <li>
         <Link
           to={URLS.aboutUs}
-          className="border-b border-headingTextColor block hover:text-primaryHover p-[7.5px]">
+          className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
           {trans("About")}
         </Link>
       </li>
@@ -33,16 +33,16 @@ export default function BurgerMenuList() {
         <div className="flex flex-row items-center justify-between">
           <Link
             to={URLS.aboutUs}
-            className=" block hover:text-primaryHover p-[7.5px]">
+            className=" block hover:text-primary-hover p-[7.5px]">
             {trans("shop")}
           </Link>
-          <div className="hover:bg-primaryHover py-2 px-3 text-white rounded-md cursor-pointer"></div>
+          <div className="hover:bg-primary-hover py-2 px-3 text-white rounded-md cursor-pointer"></div>
         </div>
       </li>
       <li className="flex flex-row justify-between items-center border-b border-headingTextColor ">
         <Link
           to={URLS.aboutUs}
-          className="block hover:text-primaryHover p-[7.5px]">
+          className="block hover:text-primary-hover p-[7.5px]">
           {trans("blog")}
         </Link>
       </li>
@@ -50,12 +50,12 @@ export default function BurgerMenuList() {
         <div className="flex flex-row items-center  justify-between">
           <Link
             to={URLS.aboutUs}
-            className=" block hover:text-primaryHover p-[7.5px]">
+            className=" block hover:text-primary-hover p-[7.5px]">
             {trans("page")}
           </Link>
           <div
             onClick={pageMenuList.toggle}
-            className={`hover:bg-primaryHover py-2 px-3 text-white rounded-md cursor-pointer`}>
+            className={`hover:bg-primary-hover py-2 px-3 text-white rounded-md cursor-pointer`}>
             <IoChevronUpOutline
               className={`transition-all ${
                 isOpened ? "rotate-180" : "rotate-0"
@@ -71,14 +71,14 @@ export default function BurgerMenuList() {
             <li className="border-b border-headingTextColor">
               <Link
                 to={URLS.aboutUs}
-                className=" block hover:text-primaryHover p-[7.5px]">
+                className=" block hover:text-primary-hover p-[7.5px]">
                 {trans("faq")}
               </Link>
             </li>
             <li>
               <Link
                 to={URLS.aboutUs}
-                className=" block hover:text-primaryHover p-[7.5px]">
+                className=" block hover:text-primary-hover p-[7.5px]">
                 {trans("ourTeams")}
               </Link>
             </li>
@@ -88,7 +88,7 @@ export default function BurgerMenuList() {
       <li>
         <Link
           to={URLS.aboutUs}
-          className="border-b border-headingTextColor block hover:text-primaryHover p-[7.5px]">
+          className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
           {trans("contact")}
         </Link>
       </li>

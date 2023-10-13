@@ -31,10 +31,7 @@ export const DetailsCategorySection = ({ category }: Props) => {
       <div className="first-letter:uppercase flex items-center gap-2 text-primary-text">
         Share:{" "}
         {socialLinks.map((link, idx) => (
-          <Link
-            key={idx}
-            className="hover:text-primary-orange-400"
-            to={link.href}>
+          <Link key={idx} className="hover:text-primary-main" to={link.href}>
             {link.icon}
           </Link>
         ))}

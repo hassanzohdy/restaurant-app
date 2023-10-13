@@ -6,7 +6,7 @@ export default function ActiveBarSearchForm() {
   const opened = headerSearchAtom.use("opened");
   return (
     <div
-      className={`absolute px-5 z-30 w-full h-full bg-background transition-all ${
+      className={`absolute px-5 z-30 w-full h-full bg-white transition-all ${
         !opened ? "top-full" : "-top-full"
       }`}>
       <div className="relative h-full">

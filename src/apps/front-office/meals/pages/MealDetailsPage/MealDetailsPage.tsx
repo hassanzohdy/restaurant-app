@@ -1,6 +1,6 @@
 import { atom } from "@mongez/react-atom";
 import Helmet from "@mongez/react-helmet";
-import DescriptionAndReiews from "./components/DescriptionAndReiews";
+import DescriptionAndReviews from "./components/DescriptionAndReiews";
 import MealDetailsSection from "./components/MealDetailsSection";
 import MealTopSection from "./components/MealTopSection";
 
@@ -36,7 +36,7 @@ export type MealType = {
   images: string[];
   price: number;
   category: string;
-  isFavourite: boolean;
+  isFavorite: boolean;
   ratings: number;
   ingredients: string[];
   reviews: ReviewType[];
@@ -64,7 +64,7 @@ const meal: MealType = {
   ],
   price: 20.5,
   category: "pizza",
-  isFavourite: false,
+  isFavorite: false,
   ratings: 4,
   ingredients: [
     "Dr. Praeger’s Black Bean Burger",
@@ -102,7 +102,7 @@ export default function MealDetailsPage() {
       />
       <MealTopSection nexMeal={meal.nextMeal} prevMeal={meal.prevMeal} />
       <MealDetailsSection meal={meal} />
-      <DescriptionAndReiews
+      <DescriptionAndReviews
         description={meal.description}
         ingredients={meal.ingredients}
       />

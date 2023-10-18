@@ -1,0 +1,24 @@
+.popularMealItem {
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .image {
+    background: url(assets/images/about-us/popular-meal-bg.png) no-repeat center;
+    background-size: contain;
+  }
+
+  @media (min-width: 640px) {
+    &:nth-child(even) {
+      .grid {
+        > div:first-child {
+          grid-column-start: 2;
+        }
+
+        > div:last-child {
+          grid-row-start: 1;
+        }
+      }
+    }
+  }
+}

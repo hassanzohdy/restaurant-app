@@ -169,8 +169,12 @@
   width: 16px;
   margin-left: 5px;
 }
+<<<<<<< HEAD
 .site-header .navbar-menu .menu-item:hover .menu-link,
 .site-header .navbar-menu .menu-item.current-menu-item .menu-link {
+=======
+.site-header .navbar-menu .menu-item:hover .menu-link, .site-header .navbar-menu .menu-item.current-menu-item .menu-link {
+>>>>>>> 771d18da8db3945a77e32c400e14e2e57b22ffd5
   color: #ffc222;
 }
 .site-header .call-number {
@@ -403,10 +407,14 @@
 .site-footer .footer-bottom .copy-rights a {
   color: #ffc222;
 }
+<<<<<<< HEAD
 .site-footer
   .footer-bottom
   .footer-payment-methods
   .payment-method:not(:last-of-type) {
+=======
+.site-footer .footer-bottom .footer-payment-methods .payment-method:not(:last-of-type) {
+>>>>>>> 771d18da8db3945a77e32c400e14e2e57b22ffd5
   margin-right: 12px;
 }
 
@@ -438,4 +446,8 @@ input:focus {
   box-shadow: none !important;
 }
 
+<<<<<<< HEAD
 /* Endinf Global Style */ /*# sourceMappingURL=main.css.map */
+=======
+/* Endinf Global Style *//*# sourceMappingURL=main.css.map */
+>>>>>>> 771d18da8db3945a77e32c400e14e2e57b22ffd5

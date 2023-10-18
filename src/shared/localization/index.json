@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "newYork": {
     "en": "New York",
     "ar": "نيويورك"
@@ -36,6 +37,8 @@
     "ar": "آخر التحديثات"
   },
 
+=======
+>>>>>>> 771d18da8db3945a77e32c400e14e2e57b22ffd5
   "test": {
     "en": "Test",
     "ar": "التجربة"
@@ -521,8 +524,13 @@
     "ar": "سيتم تحويلك الان الى التبطيق"
   },
   "copyright": {
+<<<<<<< HEAD
     "en": "Copyright © :d. 2022 All Rights Reserved",
     "ar": " حقوق الطبع والنشر © :d 2022 كل الحقوق محفوظة"
+=======
+    "en": "All Rights Reserved © %d",
+    "ar": "جميع الحقوق محفوظة © %d"
+>>>>>>> 771d18da8db3945a77e32c400e14e2e57b22ffd5
   },
   "close": {
     "en": "Close",
@@ -1153,8 +1161,13 @@
     "ar": "إعادة تحميل"
   },
   "email": {
+<<<<<<< HEAD
     "en": "Your Email ...",
     "ar": " ... بريدك الإلكتروني"
+=======
+    "en": "Email Address",
+    "ar": "البريد الالكتروني"
+>>>>>>> 771d18da8db3945a77e32c400e14e2e57b22ffd5
   },
   "password": {
     "en": "Password",

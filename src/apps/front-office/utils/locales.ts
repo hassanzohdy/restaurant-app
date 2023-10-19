@@ -51,8 +51,8 @@ groupedTranslations({
     ar: "عنوان البريد الإلكتروني *",
   },
   password: {
-    en: "Password *",
-    ar: "كلمة المرور *",
+    en: "Password ",
+    ar: "كلمة المرور ",
   },
   confirmPassword: {
     en: "Confirm Password *",
@@ -116,7 +116,7 @@ groupedTranslations({
   },
   Home: {
     en: "Home",
-    ar: "الصفحة الرئيسية",
+    ar: "الرئيسية",
   },
   Menu: {
     en: "Menu",

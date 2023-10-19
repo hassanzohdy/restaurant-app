@@ -1,12 +1,12 @@
 import { changeLocaleCode } from "@mongez/react-router";
-import { languageSwitchAtom } from "apps/front-office/design-system/atoms/headerAtoms";
+import useToggleState from "../../../../Hooks/HeaderStateHook";
 
 export default function LanguageActiveList() {
-  const opened = languageSwitchAtom.use("opened");
+  const { state } = useToggleState();
   return (
     <ul
       className={`absolute z-30 w-full bg-white transition-all ${
-        !opened ? "top-full" : "-top-full"
+        !state.langSwitch ? "translate-y-0" : "-translate-y-full"
       }`}>
       <li
         className="rtl:bg-backgroundHover text-center w-full"

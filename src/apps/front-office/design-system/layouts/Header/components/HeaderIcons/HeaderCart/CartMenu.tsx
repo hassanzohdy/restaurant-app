@@ -1,21 +1,21 @@
 import { trans } from "@mongez/localization";
-import { chartIconAtom } from "apps/front-office/design-system/atoms/headerAtoms";
 import { IoCloseSharp } from "react-icons/io5";
+import useToggleState from "../../../Hooks/HeaderStateHook";
 
 const ChartMenu = () => {
-  const isOpened = chartIconAtom.use("opened");
+  const { state, toggleState } = useToggleState();
 
   return (
     <div
-      className={`absolute top-0 h-screen rtl:left-0 ltr:right-0 w-1/4 bg-white shadow-list transition-all ${
-        !isOpened
+      className={`absolute hidden md:block z-50 top-0 h-screen rtl:left-0 ltr:right-0 w-1/4 bg-white shadow-list transition-all ${
+        !state.cartIcon
           ? "ltr:translate-x-full rtl:-translate-x-full"
           : "translate-x-0"
       }`}>
       <div className="flex flex-row justify-between py-5 px-[15px] border-b">
         <h1 className="text-xl font-bold uppercase">{trans("shoppingCart")}</h1>
         <h2
-          onClick={chartIconAtom.close}
+          onClick={() => toggleState("chartIcon")}
           className="flex flex-row items-center cursor-pointer text-bodyTextColor text-sm font-semibold">
           {trans("close")} <IoCloseSharp />
         </h2>

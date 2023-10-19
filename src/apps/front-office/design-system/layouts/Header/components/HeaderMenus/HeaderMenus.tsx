@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import ShopDropDown from "../DropDown/ShopDropDown";
 
 export default function HeaderMenus() {
@@ -30,12 +30,10 @@ export default function HeaderMenus() {
           </Link>
         </li>
         <li className="relative group flex flex-row items-center gap-1 cursor-pointer">
-          <Link
-            to={URLS.meals}
-            className="font-bold text-[16px] py-3 text-heading">
+          <Link to={URLS.meals} className="font-bold text-[16px] py-3">
             {trans("shop")}
           </Link>
-          <IoIosArrowUp className="group-hover:rotate-180 transition-transform duration-500" />
+          <IoIosArrowDown className="group-hover:rotate-180 transition-transform duration-500" />
 
           {/* Link drop down list */}
           <ShopDropDown />
@@ -51,7 +49,7 @@ export default function HeaderMenus() {
           <Link to="#" className="font-bold text-[16px] py-3 text-heading">
             {trans("page")}
           </Link>
-          <IoIosArrowUp className="group-hover:rotate-180 transition-transform duration-500" />
+          <IoIosArrowDown className="group-hover:rotate-180 transition-transform duration-500" />
 
           {/* page drop down list */}
           <div
@@ -60,12 +58,12 @@ export default function HeaderMenus() {
             group-hover:py-[.5em] group-hover:h-[86px] transition-all duration-500">
             <Link
               to={URLS.faq}
-              className="block hover:text-primary-hover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover   ">
+              className="block hover:text-primary-hover text-[16px] py-[.4em] px-[30px] hover:bg-backgroundHover   ">
               {trans("faq")}
             </Link>
             <Link
               to={URLS.ourChefs}
-              className="block hover:text-primary-hover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover">
+              className="block hover:text-primary-hover text-[16px] py-[.4em] px-[30px] hover:bg-backgroundHover">
               {trans("ourTeams")}
             </Link>
           </div>

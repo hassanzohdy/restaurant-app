@@ -1,11 +1,11 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { pageMenuList } from "apps/front-office/design-system/atoms/headerAtoms";
 import URLS from "apps/front-office/utils/urls";
-import { IoChevronUpOutline } from "react-icons/io5";
+import { useState } from "react";
+import { IoChevronDownOutline } from "react-icons/io5";
 
 export default function BurgerMenuList() {
-  const isOpened = pageMenuList.use("opened"); // any use call will cause a component re-render
+  const [pageList, setPageList] = useState(false);
   return (
     <ul className="flex flex-col w-full">
       <li>
@@ -54,18 +54,18 @@ export default function BurgerMenuList() {
             {trans("page")}
           </Link>
           <div
-            onClick={pageMenuList.toggle}
+            onClick={() => setPageList(prev => !prev)}
             className={`hover:bg-primary-hover py-2 px-3 text-white rounded-md cursor-pointer`}>
-            <IoChevronUpOutline
+            <IoChevronDownOutline
               className={`transition-all ${
-                isOpened ? "rotate-180" : "rotate-0"
+                pageList ? "rotate-180" : "rotate-0"
               }`}
             />
           </div>
         </div>
         <div
           className={`ltr:ml-4 rtl:mr-4 overflow-hidden transition-all ${
-            isOpened ? "h-[90px]" : "h-[0px]"
+            pageList ? "h-[90px]" : "h-[0px]"
           }`}>
           <ul>
             <li className="border-b border-headingTextColor">

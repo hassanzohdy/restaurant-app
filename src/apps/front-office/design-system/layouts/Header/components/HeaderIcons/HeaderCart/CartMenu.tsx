@@ -7,10 +7,10 @@ const ChartMenu = () => {
 
   return (
     <div
-      className={`absolute hidden md:block z-50 top-0 h-screen rtl:left-0 ltr:right-0 w-1/4 bg-white shadow-list transition-all ${
+      className={`absolute hidden md:block z-50 top-0 h-screen rtl:left-0 ltr:right-0 w-1/4 bg-white transition-all ${
         !state.cartIcon
-          ? "ltr:translate-x-full rtl:-translate-x-full"
-          : "translate-x-0"
+          ? "ltr:translate-x-full rtl:-translate-x-full "
+          : "translate-x-0 shadow-list"
       }`}>
       <div className="flex flex-row justify-between py-5 px-[15px] border-b">
         <h1 className="text-xl font-bold uppercase">{trans("shoppingCart")}</h1>

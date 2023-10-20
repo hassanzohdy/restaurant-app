@@ -1,7 +1,7 @@
-import { ToggleAtom } from "../atoms/HeaderAtoms";
+import { ToggleGroupAtom } from "../atoms/HeaderAtoms";
 
 export default function useToggleState() {
-  const [state, setState] = ToggleAtom.useState();
+  const [state, setState] = ToggleGroupAtom.useState();
 
   const toggleState = stateName => {
     setState(prevState => {

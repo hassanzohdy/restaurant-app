@@ -2,14 +2,14 @@ import { Link, routerEvents } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import { useEffect } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
-import { ToggleAtom } from "../../atoms/HeaderAtoms";
+import { ToggleGroupAtom } from "../../atoms/HeaderAtoms";
 import HeaderSearch from "../HeaderSearch/HeaderSearch";
 import HeaderCart from "./HeaderCart";
 import UserIcon from "./HeaderUser/UserIcon";
 import LanguageSwitch from "./LanguageSwitch";
 
 export default function HeaderIcons() {
-  const [state, setStates] = ToggleAtom.useState();
+  const [, setStates] = ToggleGroupAtom.useState();
   useEffect(() => {
     // Listen for route changes and reset the states
     const subscription = routerEvents.onNavigating(() => {

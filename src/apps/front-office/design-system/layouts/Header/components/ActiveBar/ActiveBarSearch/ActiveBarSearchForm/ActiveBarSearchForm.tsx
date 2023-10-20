@@ -19,7 +19,7 @@ export default function ActiveBarSearchForm() {
       className={`absolute px-5 z-30 w-full h-full bg-white transition-all ${
         !state.headerSearch ? "translate-y-0" : "-translate-y-full"
       }`}>
-      <div className="relative h-fit">
+      <div className="relative h-full">
         <input
           ref={inputRef}
           type="search"

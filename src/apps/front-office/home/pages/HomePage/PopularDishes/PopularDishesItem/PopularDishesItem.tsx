@@ -1,5 +1,3 @@
-import { Card } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
 import { trans } from "@mongez/localization";
 import { IconHeart, IconShoppingBag } from "@tabler/icons-react";
 import styles from "./styles.module.scss";
@@ -14,129 +12,121 @@ export type PopularDishesItemProps = {
 export default function PopularDishesItem() {
   return (
     <>
-      <Container className={styles.cardContainer}>
+      <div className={styles.cardContainer}>
+        <div class="container">
         <div className={styles.PopularDishesItemWrapper}>
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
-              <div className={styles.heartIcon}>
-                <IconHeart color="#ddd" fill="#ddd" size={30}></IconHeart>
+          <div className={styles.PopularDishesItem}>
+            <div className={styles.heartIcon}>
+              <IconHeart color="#ddd" fill="#ddd" size={30}></IconHeart>
+            </div>
+            <div className={styles.imageWrapper}>
+              <div className={styles.image}>
+                <img src={Pizza2} />
               </div>
-              <div className={styles.imageWrapper}>
-                <div className={styles.image}>
-                  <img src={Pizza2} />
-                </div>
+            </div>
+            <div className={styles.info}>
+              <h3>{trans("Italiano")}</h3>
+              <p>
+                Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
+                with lightly
+              </p>
+              <span className={styles.itemPrice}>£12.63</span>
+              <div className={styles.shopCard}>
+                <IconShoppingBag color="#000"></IconShoppingBag>
               </div>
-              <div className={styles.info}>
-                <h3>{trans("Italiano")}</h3>
-                <p>
-                  Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
-                  with lightly
-                </p>
-                <span className={styles.itemPrice}>£12.63</span>
-                <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
-                </div>
-              </div>
-            </Container>
-          </Card>
+            </div>
+          </div>
           {/*  */}
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
-              <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+          <div className={styles.PopularDishesItem}>
+            <div className={styles.heartIcon}>
+              <IconHeart color="red" fill="red" size={30}></IconHeart>
+            </div>
+            <div className={styles.imageWrapper}>
+              <div className={styles.image}>
+                <img src={lemon} />
               </div>
-              <div className={styles.imageWrapper}>
-                <div className={styles.image}>
-                  <img src={lemon} />
-                </div>
+            </div>
+            <div className={styles.info}>
+              <h3>Italiano Original</h3>
+              <p>
+                Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
+                with lightly
+              </p>
+              <span className={styles.itemPrice}>£12.63</span>
+              <div className={styles.shopCard}>
+                <IconShoppingBag color="#000"></IconShoppingBag>
               </div>
-              <div className={styles.info}>
-                <h3>Italiano Original</h3>
-                <p>
-                  Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
-                  with lightly
-                </p>
-                <span className={styles.itemPrice}>£12.63</span>
-                <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
-                </div>
-              </div>
-            </Container>
-          </Card>
+            </div>
+          </div>
           {/*  */}
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
-              <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+          <div className={styles.PopularDishesItem}>
+            <div className={styles.heartIcon}>
+              <IconHeart color="red" fill="red" size={30}></IconHeart>
+            </div>
+            <div className={styles.imageWrapper}>
+              <div className={styles.image}>
+                <img src={Blueberry} />
               </div>
-              <div className={styles.imageWrapper}>
-                <div className={styles.image}>
-                  <img src={Blueberry} />
-                </div>
+            </div>
+            <div className={styles.info}>
+              <h3>{trans("Blueberry")}</h3>
+              <p>
+                Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
+                with lightly
+              </p>
+              <span className={styles.itemPrice}>£12.63</span>
+              <div className={styles.shopCard}>
+                <IconShoppingBag color="#000"></IconShoppingBag>
               </div>
-              <div className={styles.info}>
-                <h3>{trans("Blueberry")}</h3>
-                <p>
-                  Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
-                  with lightly
-                </p>
-                <span className={styles.itemPrice}>£12.63</span>
-                <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
-                </div>
-              </div>
-            </Container>
-          </Card>
+            </div>
+          </div>
           {/*  */}
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
-              <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+          <div className={styles.PopularDishesItem}>
+            <div className={styles.heartIcon}>
+              <IconHeart color="red" fill="red" size={30}></IconHeart>
+            </div>
+            <div className={styles.imageWrapper}>
+              <div className={styles.image}>
+                <img src={Pizza} />
               </div>
-              <div className={styles.imageWrapper}>
-                <div className={styles.image}>
-                  <img src={Pizza} />
-                </div>
+            </div>
+            <div className={styles.info}>
+              <h3>{trans("Italiano")} </h3>
+              <p>
+                Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
+                with lightly
+              </p>
+              <span className={styles.itemPrice}>£12.63</span>
+              <div className={styles.shopCard}>
+                <IconShoppingBag color="#000"></IconShoppingBag>
               </div>
-              <div className={styles.info}>
-                <h3>{trans("Italiano")} </h3>
-                <p>
-                  Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
-                  with lightly
-                </p>
-                <span className={styles.itemPrice}>£12.63</span>
-                <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
-                </div>
-              </div>
-            </Container>
-          </Card>
+            </div>
+          </div>
           {/*  */}
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
-              <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+          <div className={styles.PopularDishesItem}>
+            <div className={styles.heartIcon}>
+              <IconHeart color="red" fill="red" size={30}></IconHeart>
+            </div>
+            <div className={styles.imageWrapper}>
+              <div className={styles.image}>
+                <img src={Pizza2} />
               </div>
-              <div className={styles.imageWrapper}>
-                <div className={styles.image}>
-                  <img src={Pizza2} />
-                </div>
+            </div>
+            <div className={styles.info}>
+              <h3>Italiano Original</h3>
+              <p>
+                Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
+                with lightly
+              </p>
+              <span className={styles.itemPrice}>£12.63</span>
+              <div className={styles.shopCard}>
+                <IconShoppingBag color="#000"></IconShoppingBag>
               </div>
-              <div className={styles.info}>
-                <h3>Italiano Original</h3>
-                <p>
-                  Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
-                  with lightly
-                </p>
-                <span className={styles.itemPrice}>£12.63</span>
-                <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
-                </div>
-              </div>
-            </Container>
-          </Card>
+            </div>
+          </div>
         </div>
-      </Container>
+      </div>
+      </div>
     </>
   );
 }

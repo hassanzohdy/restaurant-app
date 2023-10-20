@@ -8,8 +8,9 @@
     position: relative;
     flex-basis: 21%;
     transition: all 0.5s ease-in-out;
-    padding: 10px 0;
-
+    padding: 15px;
+    width: 31%;
+    cursor: pointer;
     @media (max-width: 1300px) {
       flex-basis: 45%;
     }

@@ -28,8 +28,9 @@ export default function AboutUsPopularMeals() {
   return (
     <>
       <section className="about-popular-meals pt-[80px] pb-[100px] max-xl:pt-[40px] max-lg:pb-[80px] max-md:pt-[80px]  max-sm:py-[70px]">
-        {popularMeals.map(meal => (
+        {popularMeals.map((meal, index) => (
           <PopularMealItem
+            key={index}
             name={meal.name}
             details={meal.details}
             image={meal.image}

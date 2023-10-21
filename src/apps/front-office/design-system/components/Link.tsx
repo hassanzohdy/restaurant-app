@@ -13,7 +13,7 @@ export function BaseLink({ children, variant, className, ...rest }: LinkProps) {
           : variant === "secondary"
           ? "btn-secondary"
           : ""
-      } btn inline-flex font-semibold uppercase text-[14px] ${className}`}
+      } btn inline-flex font-semibold uppercase text-[14px] ${className} hover:bg-primary-hover duration-700 transition-all ease-in-out`}
       {...rest}>
       {children}
     </Link>

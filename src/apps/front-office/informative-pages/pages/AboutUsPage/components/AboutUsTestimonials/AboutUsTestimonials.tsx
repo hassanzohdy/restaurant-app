@@ -14,6 +14,7 @@ export default function AboutUsTestimonials() {
       feedback:
         "“Forget the trendy pizza shops, This hidden spot makes the best New York-style pizza slice in naples” ",
       image: client1,
+      ratings: 4
     },
     {
       name: "Nina Margaret",
@@ -21,6 +22,7 @@ export default function AboutUsTestimonials() {
       feedback:
         "I would be lost without restaurant. I would like to personally thank you for your outstanding product.",
       image: client2,
+      ratings: 4
     },
     {
       name: "Clara",
@@ -28,6 +30,7 @@ export default function AboutUsTestimonials() {
       feedback:
         "I am completely blown away. I would also like to say thank you to all your staff. It's really wonderful.",
       image: client3,
+      ratings: 5
     },
     {
       name: "John Doe",
@@ -35,6 +38,7 @@ export default function AboutUsTestimonials() {
       feedback:
         "Without food, we would have gone bankrupt by now. Thanks food! The service was excellent.",
       image: client1,
+      ratings: 3
     },
   ];
 

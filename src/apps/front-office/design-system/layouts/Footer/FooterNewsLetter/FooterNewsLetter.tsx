@@ -4,24 +4,23 @@ export default function FooterNewsLetter() {
   return (
     <>
       <div>
-        <h3 className="heading text-xl uppercase text-white">
+        <h3 className="heading text-xl text-[20px] font-bold uppercase text-white mb-[20px] mx-lg:text-[18px]">
           {trans("newsLetter")}
         </h3>
-        <p>Subscribe to the weekly newsletter for all the latest updates</p>
-        <div className="newsletter">
+        <p className="w-[85%] m-auto text-[15px] text-primary-text leading-7 max-lg:w-full">Subscribe to the weekly newsletter for all the latest updates</p>
+        <div className="newsletter mt-[20px]">
           <form>
-            <div className="form-group flex justify-between">
+            <div className="form-group flex justify-between h-[54px] p-[5px] border border-[#262626] rounded max-lg:max-w-[320px] max-lg:m-auto">
               <input
                 type="email"
                 name="email"
                 id="email"
-                autoComplete="useremail"
-                className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                className="block flex-1 border-0 bg-transparent px-[15px] text-white placeholder:text-primary-text capitalize focus:ring-0 sm:text-sm sm:leading-6 max-2xl:px-[8px] max-xl:text-[13px] max-lg:max-w-auto max-lg:px-[15px] max-lg:text-[14px] "
                 placeholder={trans("yourEmail")}
               />
               <button
                 type="submit"
-                className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                className="rounded uppercase font-semibold px-[15px] text-[#1e1d23] bg-primary-main hover:bg-primary-hover hover:text-white duration-700 transition-all ease-in-out max-2xl:px-[8px] max-xl:px-[5px] max-xl:text-[13px] max-lg:px-[15px] max-lg:text-[14px]">
                 {trans("subscribe")}
               </button>
             </div>

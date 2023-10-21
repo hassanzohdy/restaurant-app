@@ -303,6 +303,18 @@ groupedTranslations({
     en: "Contact Now",
     ar: "اتصل الآن",
   },
+  aboutUsVideoHeading: {
+    en: "Make the thing Anything is Possible",
+    ar: "نجعل الشيء كل شيء ممكن"
+  },
+  aboutUsVideoText: {
+    en: "Enjoy our luscious dishes wherever you want",
+    ar: "استمتع بأطباقنا اللذيذة أينما تريد"
+  },
+  orderNow: {
+    en: "Order Now",
+    ar: "اطلب الآن"
+  },
   ourQuality: {
     en: "Our Quality",
     ar: "الجودة",

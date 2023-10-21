@@ -7,6 +7,6 @@ export type CommonTitleProps = {
 
 export default function CommonTitle({ children, className }: CommonTitleProps) {
   return (
-    <span className={`${styles.commonText} ${className} `}> {children} </span>
+    <span className={`${styles.commonText} ${className} text-primary-main `}> {children} </span>
   );
 }

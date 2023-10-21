@@ -13,10 +13,10 @@ export default function AboutUsWelcomeText() {
         <h2 className="text-[60px] font-bold leading-none w-[92%] mb-5 max-[1399px]:text-[56px] max-[1399px]:w-[94%] max-xl:w-[86%] max-xl:text-[45px] max-lg:w-[98%] max-lg:text-[36px] max-sm:text-[34px]">
           {trans("Best burger ideas & traditions from the whole world")}
         </h2>
-        <p className="text-[16px] text-gray-500 w-[95%] leading-loose mb-5 max-xl:w-[100%] max-xl:text-[15px] max-xl:mb-3 max-lg:w-[98%] max-lg:leading-normal">
+        <p className="text-[16px] text-primary-text w-[95%] leading-loose mb-5 max-xl:w-[100%] max-xl:text-[15px] max-xl:mb-3 max-lg:w-[98%] max-lg:leading-normal">
           {trans("welcomeParagraph1")}
         </p>
-        <p className="text-[16px] text-gray-500 w-[95%] leading-loose mb-7 max-xl:w-[100%] max-xl:text-[15px] max-xl:mb-5 max-lg:leading-normal">
+        <p className="text-[16px] text-primary-text w-[95%] leading-loose mb-7 max-xl:w-[100%] max-xl:text-[15px] max-xl:mb-5 max-lg:leading-normal">
           {trans("welcomeParagraph2")}
         </p>
         <BaseLink

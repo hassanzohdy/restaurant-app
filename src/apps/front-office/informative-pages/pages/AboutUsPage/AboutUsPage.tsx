@@ -6,6 +6,7 @@ import AboutUsOrderNow from "./components/AboutUsOrderNow";
 import AboutUsPopularMeals from "./components/AboutUsPopularMeals";
 import AboutUsTestimonials from "./components/AboutUsTestimonials";
 import AboutUsWelcome from "./components/AboutUsWelcome";
+import AboutUsVideo from "./components/AboutUsVideo";
 
 export default function AboutUsPage() {
   return (
@@ -14,6 +15,7 @@ export default function AboutUsPage() {
       <div className={`${styles.aboutUsPage}`}>
         <BreadCrumb title="about" navItems={[{ name: "about" }]} />
         <AboutUsWelcome />
+        <AboutUsVideo/>
         <AboutUsPopularMeals />
         <AboutUsTestimonials />
         <AboutUsOurChefs />

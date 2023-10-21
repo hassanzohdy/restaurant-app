@@ -34,23 +34,23 @@ export default function AboutUsChefsItem({ chefInfo }: AboutUsChefsItemProps) {
           <h3 className="text-[18px] font-bold uppercase mb-4 max-lg:text-[16px] max-lg:mb-2">
             {chefInfo.name}
           </h3>
-          <p className="text-[15px] text-gray-500 mb-4 max-lg:text-[14px]">
+          <p className="text-[15px] text-primary-text mb-4 max-lg:text-[14px]">
             {chefInfo.details}
           </p>
           <ul className="flex items-center justify-center">
             <Link
               to={chefInfo.socialLinks.facebook}
-              className="mx-1 hover:text-[#ffc222] transition-all duration-1000">
+              className="mx-1 hover:text-primary-main transition-all duration-1000">
               <IconBrandFacebook size={18} />
             </Link>
             <Link
               to={chefInfo.socialLinks.facebook}
-              className="mx-1 hover:text-[#ffc222] transition-all duration-1000">
+              className="mx-1 hover:text-primary-main transition-all duration-1000">
               <IconBrandX size={18} />
             </Link>
             <Link
               to={chefInfo.socialLinks.facebook}
-              className="mx-1 hover:text-[#ffc222] transition-all duration-1000">
+              className="mx-1 hover:text-primary-main transition-all duration-1000">
               <IconBrandInstagram size={18} />
             </Link>
           </ul>

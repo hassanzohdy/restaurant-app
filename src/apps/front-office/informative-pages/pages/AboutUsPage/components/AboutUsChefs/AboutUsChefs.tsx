@@ -47,7 +47,7 @@ export default function AboutUsChefs() {
       <section className="about-us-chefs py-[100px] max-lg:py-[80px] max-sm:py-[70px]">
         <div className="container">
           <div className="text-center mb-10">
-            <CommonTitle className="text-[25px] text-[#ffc222] capitalize mb-1">
+            <CommonTitle className="text-[25px] text-primary-main capitalize mb-1">
               {trans("alwaysQuality")}
             </CommonTitle>
             <h2 className="text-[42px] font-bold capitalize leading-none max-lg:text-[36px] max-sm:text-[30px]">

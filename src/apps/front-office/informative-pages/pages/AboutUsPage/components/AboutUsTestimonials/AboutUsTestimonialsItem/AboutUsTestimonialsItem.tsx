@@ -1,4 +1,5 @@
 import { IconQuote, IconStar, IconStarFilled } from "@tabler/icons-react";
+import Stars from "apps/front-office/design-system/components/Stars";
 
 export type AboutUsTestimonialsItemProps = {
   itemDetails: {
@@ -6,6 +7,8 @@ export type AboutUsTestimonialsItemProps = {
     job: string;
     feedback: string;
     image: string;
+    ratings: number
+    
   };
 };
 export default function AboutUsTestimonialsItem({
@@ -19,12 +22,8 @@ export default function AboutUsTestimonialsItem({
           <IconQuote size="20" />
         </i>
       </div>
-      <div className="rating flex justify-center text-[#FFC222] mb-5 max-sm:mb-4">
-        <IconStarFilled className="mr-1" size="18" />
-        <IconStarFilled className="mr-1" size="18" />
-        <IconStarFilled className="mr-1" size="18" />
-        <IconStarFilled className="mr-1" size="18" />
-        <IconStar size="18" />
+      <div className="flex justify-center">
+        <Stars ratings={itemDetails.ratings} />
       </div>
       <p className="m-auto mb-5 text-[30px] leading-normal max-xl:text-[28px] max-sm:text-[22px] max-sm:mb-3">
         {itemDetails.feedback}

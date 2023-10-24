@@ -1,5 +1,3 @@
-import { Card } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
 import { trans } from "@mongez/localization";
 import { IconHeart, IconShoppingBag } from "@tabler/icons-react";
 import styles from "./styles.module.scss";
@@ -14,10 +12,10 @@ export type PopularDishesItemProps = {
 export default function PopularDishesItem() {
   return (
     <>
-      <Container className={styles.cardContainer}>
-        <div className={styles.PopularDishesItemWrapper}>
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
+      <div className={styles.cardContainer}>
+        <div className="container">
+          <div className={styles.PopularDishesItemWrapper}>
+            <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
                 <IconHeart color="#ddd" fill="#ddd" size={30}></IconHeart>
               </div>
@@ -37,11 +35,9 @@ export default function PopularDishesItem() {
                   <IconShoppingBag color="#000"></IconShoppingBag>
                 </div>
               </div>
-            </Container>
-          </Card>
-          {/*  */}
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
+            </div>
+            {/*  */}
+            <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
                 <IconHeart color="red" fill="red" size={30}></IconHeart>
               </div>
@@ -61,11 +57,9 @@ export default function PopularDishesItem() {
                   <IconShoppingBag color="#000"></IconShoppingBag>
                 </div>
               </div>
-            </Container>
-          </Card>
-          {/*  */}
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
+            </div>
+            {/*  */}
+            <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
                 <IconHeart color="red" fill="red" size={30}></IconHeart>
               </div>
@@ -85,11 +79,9 @@ export default function PopularDishesItem() {
                   <IconShoppingBag color="#000"></IconShoppingBag>
                 </div>
               </div>
-            </Container>
-          </Card>
-          {/*  */}
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
+            </div>
+            {/*  */}
+            <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
                 <IconHeart color="red" fill="red" size={30}></IconHeart>
               </div>
@@ -109,11 +101,9 @@ export default function PopularDishesItem() {
                   <IconShoppingBag color="#000"></IconShoppingBag>
                 </div>
               </div>
-            </Container>
-          </Card>
-          {/*  */}
-          <Card variant="outlined" className={styles.PopularDishesItem}>
-            <Container>
+            </div>
+            {/*  */}
+            <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
                 <IconHeart color="red" fill="red" size={30}></IconHeart>
               </div>
@@ -133,10 +123,10 @@ export default function PopularDishesItem() {
                   <IconShoppingBag color="#000"></IconShoppingBag>
                 </div>
               </div>
-            </Container>
-          </Card>
+            </div>
+          </div>
         </div>
-      </Container>
+      </div>
     </>
   );
 }

@@ -1,10 +1,11 @@
 import { trans } from "@mongez/localization";
-import { headerSearchAtom } from "apps/front-office/design-system/atoms/headerAtoms";
 import { AiOutlineSearch } from "react-icons/ai";
+import useToggleState from "../../../Hooks/HeaderStateHook";
 
 export default function ActiveBarMyAccount() {
+  const { toggleState } = useToggleState();
   return (
-    <div onClick={headerSearchAtom.toggle} className="activeIcons">
+    <div onClick={() => toggleState("headerSearch")} className="activeIcons">
       <AiOutlineSearch />
       <p>{trans("search")}</p>
     </div>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { scrollAtom } from "./atoms";
+import { scrollAtom } from "./atoms/HeaderAtoms";
 import HeaderContact from "./components/HeaderContact";
 import HeaderIcons from "./components/HeaderIcons";
 import BurgerIcon from "./components/HeaderIcons/BurgerIcon";
@@ -21,17 +21,17 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-white sticky w-full top-0 left-0 z-10">
+    <header className="bg-white sticky top-0 w-full z-10">
       <nav
-        className={`flex py flex-row items-center justify-between relative transition-all container ${
+        className={`flex flex-row items-center justify-between relative transition-all container ${
           scrollTop != 0 ? "h-[50px]" : "h-[80px]"
         }`}>
-        <BurgerIcon /> {/* for small screens */}
+        <BurgerIcon /> {/* for small screens*/}
         <HeaderLogo />
         <HeaderMenus />
         <HeaderContact />
         <HeaderIcons />
-        <HeaderPhone /> {/* for small screens */}
+        <HeaderPhone /> {/*for small screens */}
       </nav>
     </header>
   );

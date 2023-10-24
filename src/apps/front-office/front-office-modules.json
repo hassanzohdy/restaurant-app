@@ -31,6 +31,10 @@
     {
       "entry": ["/menu"],
       "name": "meals"
+    },
+    {
+      "entry": ["/cart"],
+      "name": "cart"
     }
   ]
 }

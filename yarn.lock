@@ -792,10 +792,10 @@
   resolved "https://registry.yarnpkg.com/@mongez/react-localization/-/react-localization-1.0.5.tgz#9460c9d1e57292d32afba3900555d8809dfdfe28"
   integrity sha512-rcI2VWuUMbwHh8CWeLhiik4+6PxDCTDLlxDL75deHWM7jbo/jVt6Xhk1x6kLj4E3ivdmPvm9UReikIsnXvp8+Q==
 
-"@mongez/react-router@^2.1.25":
-  version "2.1.25"
-  resolved "https://registry.yarnpkg.com/@mongez/react-router/-/react-router-2.1.25.tgz#6312e339fa6dda27603f55e3814228d69d183a45"
-  integrity sha512-rVqVLSu8r88pZwntvHrIIYAz9++0yU45UQN7sal8cjAE/H4h4Ki8rLOdHI7ni5GASLwp9ALsIRyu9yVcNlf98g==
+"@mongez/react-router@^2.1.26":
+  version "2.1.26"
+  resolved "https://registry.yarnpkg.com/@mongez/react-router/-/react-router-2.1.26.tgz#15bbd3f77a13c7ba70e619213e401e8f964c356a"
+  integrity sha512-/OJiDBErtuUtMPFWtQNE7SaRA3uRQO9bOjDbHrvonDgRoyIpzj7r+4twY7CDMMaqDfrbvRWN9TsF1SqkVp8NnQ==
   dependencies:
     "@mongez/concat-route" "^1.0.0"
     "@mongez/events" "^2.1.0"
@@ -5703,6 +5703,7 @@ widest-line@^4.0.1:
     string-width "^5.0.1"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==

@@ -13,7 +13,7 @@ export default function ShopDropDown() {
     duration-500 ${isRTL() ? "top-[60px] -right-32" : "top-[60px] -left-32"}`}>
       <div className="flex flex-row items-center justify-center">
         <div className={isRTL() ? "ml-5" : "mr-5"}>
-          <button className="bg-primary text-black font-bold rounded-md py-2 px-7">
+          <button className="bg-primary-main text-black font-bold rounded-md py-2 px-7">
             <Link to={URLS.meals}>{trans("shop")}</Link>
           </button>
         </div>

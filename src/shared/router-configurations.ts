@@ -14,9 +14,6 @@ export const routerConfigurations: RouterConfigurations = {
     localeCodes: Object.keys(localeCodesList),
   },
   lazyLoading: {
-    loadingComponent: React.lazy(
-      () => import("apps/front-office/design-system/Indicators/ProgressBar"),
-    ),
     loaders: {
       app: (app: string) => {
         return import(`./../apps/${app}/${app}-provider.ts`);

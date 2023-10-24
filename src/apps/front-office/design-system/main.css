@@ -170,6 +170,7 @@
   margin-left: 5px;
 }
 .site-header .navbar-menu .menu-item:hover .menu-link,
+.site-header .navbar-menu .menu-item:hover .menu-link,
 .site-header .navbar-menu .menu-item.current-menu-item .menu-link {
   color: #ffc222;
 }
@@ -403,12 +404,6 @@
 .site-footer .footer-bottom .copy-rights a {
   color: #ffc222;
 }
-.site-footer
-  .footer-bottom
-  .footer-payment-methods
-  .payment-method:not(:last-of-type) {
-  margin-right: 12px;
-}
 
 body {
   font-family: "Roboto", sans-serif;
@@ -437,5 +432,3 @@ input:focus {
   outline: 0 !important;
   box-shadow: none !important;
 }
-
-/* Endinf Global Style */ /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,4 @@
-@mixin borderRaduis($val) {
+@mixin borderRadius($val) {
   -webkit-border-radius: $val;
   -moz-border-radius: $val;
   -ms-border-radius: $val;
@@ -9,7 +9,7 @@
 @mixin roundedElement($dimension) {
   width: $dimension;
   height: $dimension;
-  @include borderRaduis($dimension);
+  @include borderRadius($dimension);
 }
 
 @mixin transition($property, $duration, $timingFunction) {

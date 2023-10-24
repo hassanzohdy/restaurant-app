@@ -1,6 +1,8 @@
 @use "./layouts/Header/Header";
 @use "./layouts/Footer/Footer";
 @use "./layouts/Overlay/Overlay";
+@use "./layouts/Breadcrumb/Breadcrumb.module";
+@use "../informative-pages/pages/AboutUsPage/AboutUsPage.module";
 @use "./colors" as *;
 
 @tailwind base;
@@ -9,6 +11,14 @@
 
 html {
   scroll-behavior: smooth;
+
+  /*
+    choose one font
+  */
+  // font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  //   "Helvetica", "Arial", "Lucida Grande", sans-serif;
+
+  // font-family: "Roboto", sans-serif;
 }
 
 @layer components {

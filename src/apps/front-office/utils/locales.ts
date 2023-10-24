@@ -11,7 +11,7 @@ groupedTranslations({
     ar: "القائمة",
   },
   about: {
-    en: "About",
+    en: "About Us",
     ar: "من نحن",
   },
   blog: {
@@ -124,7 +124,7 @@ groupedTranslations({
   },
   About: {
     en: "About",
-    ar: "عننا",
+    ar: "من نحن",
   },
   shop: {
     en: "Shop",
@@ -281,5 +281,66 @@ groupedTranslations({
   allRightsReserved: {
     en: "All Rights Reserved",
     ar: "جميع الحقوق محفوظة",
+  },
+  // About Us Page
+  welcome: {
+    en: "welcome",
+    ar: "مرحبًا",
+  },
+  welcomeHeading: {
+    en: "Best burger ideas & traditions from the whole world",
+    ar: "أفضل أفكار وتقاليد البرجر من العالم كله",
+  },
+  welcomeParagraph1: {
+    en: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    ar: "لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر.",
+  },
+  welcomeParagraph2: {
+    en: "Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum. Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat.",
+    ar: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.",
+  },
+  contactNow: {
+    en: "Contact Now",
+    ar: "اتصل الآن",
+  },
+  aboutUsVideoHeading: {
+    en: "Make the thing Anything is Possible",
+    ar: "نجعل الشيء كل شيء ممكن",
+  },
+  aboutUsVideoText: {
+    en: "Enjoy our luscious dishes wherever you want",
+    ar: "استمتع بأطباقنا اللذيذة أينما تريد",
+  },
+  orderNow: {
+    en: "Order Now",
+    ar: "اطلب الآن",
+  },
+  ourQuality: {
+    en: "Our Quality",
+    ar: "الجودة",
+  },
+  alwaysQuality: {
+    en: "Always Quality",
+    ar: "الجودة دائما",
+  },
+  ourTalentedChefs: {
+    en: "Our Talented Chefs",
+    ar: "طهاتنا الموهوبين",
+  },
+  WeGuarantee: {
+    en: "We Guarantee",
+    ar: "",
+  },
+  minutesDelivery: {
+    en: "Minutes Delivary",
+    ar: "دقيقة للتوصيل",
+  },
+  orderNowText: {
+    en: "If you’re having a meeting, working late at night and need an extra push. Let us know and we will be there",
+    ar: "إذا كان لديك اجتماع، وتعمل في وقت متأخر من الليل وتحتاج إلى دفعة إضافية. أخبرنا وسنكون هناك",
+  },
+  makeAnOrder: {
+    en: "Make An order",
+    ar: "اطلب الآن",
   },
 });

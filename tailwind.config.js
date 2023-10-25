@@ -31,6 +31,7 @@ export default {
       },
       boxShadow: {
         list: "0 0 30px 0 rgba(0,0,0,.08)",
+        headerOnScroll: "rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;",
       },
       extend: {
         // that is animation class

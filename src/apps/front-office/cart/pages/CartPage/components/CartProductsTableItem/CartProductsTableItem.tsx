@@ -17,7 +17,7 @@ export default function CartProductsTableItem({
   return (
     <tr className="border-b max-sm:block max-sm:pl-[100px] max-sm:relative">
       <td className="product-remove w-[5%] px-3 py-5 pl-0 max-sm:absolute max-sm:w-auto max-sm:right-1 max-sm:top-6 max-sm:p-0">
-        <IconX className="w-[15px] h-[15px] p-[2px] border rounded-full text-[#b3b3b3] border-[#b3b3b3]" />
+        <IconX className="w-[15px] h-[15px] p-[2px] border rounded-full text-[#b3b3b3] border-[#b3b3b3] cursor-pointer hover:text-[#f00] hover:border-[#f00] duration-700 transition-all ease-in-out" />
       </td>
       <td className="product-thumbnail w-[17%] py-3 px-6 h-[140px] max-sm:absolute max-sm:w-auto max-sm:left-1 max-sm:top-6 max-sm:p-0">
         <Link to="#">
@@ -25,7 +25,7 @@ export default function CartProductsTableItem({
         </Link>
       </td>
       <td className="product-name w-[30%] px-3 py-5 max-sm:block max-sm:w-full max-sm:pl-0 max-sm:px-2 max-sm:pr-5 max-sm:border-b">
-        <Link to="#" className="hover:text-primary-hover">
+        <Link to="#" className="hover:text-primary-hover duration-700 transition-all ease-in-out">
           {productDetails.name}
         </Link>
       </td>

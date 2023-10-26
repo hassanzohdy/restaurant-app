@@ -21,14 +21,10 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={
-        "bg-white sticky top-0 w-full z-10" +
-        (scrollTop && " shadow-headerOnScroll")
-      }>
+    <header className="bg-white sticky top-0 w-full z-10">
       <nav
         className={`flex flex-row items-center justify-between relative transition-all container ${
-          scrollTop != 0 ? "h-[70px]" : "h-[80px]"
+          scrollTop != 0 ? "h-[50px]" : "h-[80px]"
         }`}>
         <BurgerIcon /> {/* for small screens*/}
         <HeaderLogo />

@@ -42,8 +42,8 @@ export default function Modal({ title, variant, children }: ModalProps) {
           </div>
           <div className="modal-body p-[15px]">{children}</div>
         </div>
-        <OverLay atom={modalAtom} opened={opened} />
       </div>
+      <OverLay atom={modalAtom} opened={opened} />
     </>
   );
 }

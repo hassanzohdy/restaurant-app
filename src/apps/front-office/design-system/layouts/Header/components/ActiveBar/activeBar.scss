@@ -1,0 +1,10 @@
+.activeIcons {
+  @apply flex flex-col justify-center z-40 border-r-border border-r hover:bg-backgroundHover bg-white w-full items-center;
+
+  p {
+    @apply text-[2vmin] text-[1.3vmax] font-bold;
+  }
+  svg {
+    @apply text-2xl;
+  }
+}

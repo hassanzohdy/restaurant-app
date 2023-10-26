@@ -1,0 +1,99 @@
+.PopularDishesItemWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.PopularDishesItemWrapper .PopularDishesItem {
+  border-radius: 30px;
+  position: relative;
+  flex-basis: 21%;
+  transition: all 0.5s ease-in-out;
+  padding: 10px 0;
+}
+@media (max-width: 1300px) {
+  .PopularDishesItemWrapper .PopularDishesItem {
+    flex-basis: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .PopularDishesItemWrapper .PopularDishesItem {
+    flex-basis: 45%;
+  }
+}
+@media (max-width: 425px) {
+  .PopularDishesItemWrapper .PopularDishesItem {
+    flex-basis: 100%;
+  }
+}
+.PopularDishesItemWrapper .PopularDishesItem:hover {
+  background-color: rgba(255, 194, 34, 0.5215686275);
+  transition: all 0.5s ease-in-out;
+}
+.PopularDishesItemWrapper .PopularDishesItem .heartIcon {
+  position: absolute;
+  inset-inline-end: 15px;
+  cursor: pointer;
+}
+.PopularDishesItemWrapper .PopularDishesItem .imageWrapper {
+  margin-top: 20px;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PopularDishesItemWrapper .PopularDishesItem .imageWrapper:hover .image img {
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+}
+.PopularDishesItemWrapper .PopularDishesItem .imageWrapper .image {
+  width: 250px;
+  height: 200px;
+  margin: auto;
+}
+.PopularDishesItemWrapper .PopularDishesItem .imageWrapper .image img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+.PopularDishesItemWrapper .PopularDishesItem .info {
+  padding-bottom: 10px;
+  position: relative;
+}
+.PopularDishesItemWrapper .PopularDishesItem .info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+.PopularDishesItemWrapper .PopularDishesItem .info p {
+  font-size: 14px;
+  line-height: 1.5;
+  min-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+.PopularDishesItemWrapper .PopularDishesItem .info .itemPrice {
+  color: #ffc222;
+  font-weight: 700;
+  font-size: 20px;
+}
+.PopularDishesItemWrapper .PopularDishesItem .info .shopCard {
+  position: absolute;
+  background-color: #ffc222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  inset-inline-end: -5px;
+  bottom: 0px;
+}
+.PopularDishesItemWrapper .PopularDishesItem .info .shopCard:hover {
+  background-color: #fff;
+} /*# sourceMappingURL=styles.module.css.map */

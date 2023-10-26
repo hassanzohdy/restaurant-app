@@ -1,0 +1,42 @@
+@use "./layouts/Footer/Footer";
+@use "./layouts/Overlay/Overlay";
+@use "./layouts/Breadcrumb/Breadcrumb.module";
+@use "../informative-pages/pages/AboutUsPage/AboutUsPage.module";
+@use "./colors" as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+
+  /*
+    choose one font
+  */
+  // font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  //   "Helvetica", "Arial", "Lucida Grande", sans-serif;
+
+  // font-family: "Roboto", sans-serif;
+}
+
+@layer components {
+  .btn {
+    @apply rounded-lg p-4 transition-colors flex items-center justify-center font-bold;
+  }
+  .btn-primary {
+    @apply bg-primary-main hover:text-white;
+  }
+  .btn-secondary {
+    @apply bg-white hover:bg-primary-main;
+  }
+}
+
+// some one depends on this!
+
+input:focus {
+  border-color: $primary-color !important;
+  outline: 0 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}

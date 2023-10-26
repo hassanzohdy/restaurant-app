@@ -1,0 +1,9 @@
+.activeIcons {
+  @apply flex flex-col justify-center z-40 border-r-border border-r hover:bg-backgroundHover bg-white w-full items-center;
+}
+.activeIcons p {
+  @apply text-[2vmin] text-[1.3vmax] font-bold;
+}
+.activeIcons svg {
+  @apply text-2xl;
+} /*# sourceMappingURL=activeBar.css.map */

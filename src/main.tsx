@@ -1,3 +1,4 @@
+import "@mantine/carousel/styles.css";
 import "@mantine/core/styles.css";
 import startApplication from "@mongez/react";
 import "slick-carousel/slick/slick-theme.css";

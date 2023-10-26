@@ -3,6 +3,7 @@ import popularMealImage2 from "assets/images/about-us/popular-meal-image-2.png";
 import popularMealImage3 from "assets/images/about-us/popular-meal-image-3.png";
 import PopularMealItem from "./PopularMealItem";
 
+<<<<<<< HEAD
 const popularMeals = [
   {
     name: "chicken",
@@ -25,6 +26,30 @@ const popularMeals = [
 ];
 
 export default function AboutUsPopularMeals() {
+=======
+export default function AboutUsPopularMeals() {
+  const popularMeals = [
+    {
+      name: "chicken",
+      details:
+        "Quality is our #1 ingredient. That’s why our Chicken Wings, Chicken Bites and Grilled Chicken Topping are made from chickens raised without antibiotics and fed an all vegetable-grain diet, with no animal by-products. Plus, our Bites are made with 100% chicken breast meat.",
+      image: popularMealImage1,
+    },
+    {
+      name: "Burger",
+      details:
+        "Quality is our #1 ingredient. That’s why our Chicken Wings, Chicken Bites and Grilled Chicken Topping are made from chickens raised without antibiotics and fed an all vegetable-grain diet, with no animal by-products. Plus, our Bites are made with 100% chicken breast meat.",
+      image: popularMealImage2,
+    },
+    {
+      name: "Pizza Douce",
+      details:
+        "Quality is our #1 ingredient. That’s why our Chicken Wings, Chicken Bites and Grilled Chicken Topping are made from chickens raised without antibiotics and fed an all vegetable-grain diet, with no animal by-products. Plus, our Bites are made with 100% chicken breast meat.",
+      image: popularMealImage3,
+    },
+  ];
+
+>>>>>>> 0852db769435336f1ecd0dfdb1375cd6bd50d6a2
   return (
     <>
       <section className="about-popular-meals pt-[80px] pb-[100px] max-xl:pt-[40px] max-lg:pb-[80px] max-md:pt-[80px]  max-sm:py-[70px]">

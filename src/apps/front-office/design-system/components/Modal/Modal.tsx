@@ -8,7 +8,6 @@ export type ModalProps = {
   variant: "video" | "textContent";
   children: React.ReactNode;
 };
-
 export default function Modal({ title, variant, children }: ModalProps) {
   const opened = modalAtom.use("opened");
   return (

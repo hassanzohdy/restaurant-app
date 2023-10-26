@@ -44,7 +44,6 @@ export default function CartProductsTableItem({
             type="number"
             name="product-quantity"
             id={`quantity${productDetails.id}`}
-            value="1"
             className="w-[55px] h-[40px] p-3 border rounded-md"
           />
         </div>

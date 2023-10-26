@@ -1,6 +1,5 @@
 import { groupedTranslations } from "@mongez/localization";
 
-// Add only common localization
 groupedTranslations({
   home: {
     en: "Home",

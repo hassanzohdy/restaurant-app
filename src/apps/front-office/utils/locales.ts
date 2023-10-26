@@ -177,6 +177,14 @@ groupedTranslations({
     en: "Our Teams",
     ar: "فريقنا",
   },
+  ourBlog: {
+    en: "Our Blog",
+    ar: "مدوناتنا",
+  },
+  readMore: {
+    en: "Read More",
+    ar: "اقرأ المزيد",
+  },
   callAndOrderIn: {
     en: "Call and Order in",
     ar: "اتصل واطلب من",

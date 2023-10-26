@@ -15,18 +15,20 @@ export const socialLinks = [
 
 export default function FooterSocialIcons() {
   return (
-    <ul className="footer-social-icons flex justify-center">
-      {socialLinks.map(item => (
-        <li key={item.name}>
-          <Link
-            key={item.name}
-            to={item.href}
-            className="flex items-center justify-center">
-            {item.icon}
-            <span className="sr-only">item.name</span>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="footer-social-icons flex justify-center">
+        {socialLinks.map(item => (
+          <li key={item.name}>
+            <Link
+              key={item.name}
+              to={item.href}
+              className="flex items-center justify-center">
+              {item.icon}
+              <span className="sr-only">item.name</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }

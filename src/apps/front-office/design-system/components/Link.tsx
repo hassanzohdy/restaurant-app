@@ -1,12 +1,14 @@
 import { Link } from "@mongez/react-router";
 import { AnchorHTMLAttributes, ReactNode } from "react";
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  href: string,
   children: ReactNode;
   variant?: "secondary" | "primary";
 };
-export function BaseLink({ children, variant, className, ...rest }: LinkProps) {
+export function BaseLink({ href, children, variant, className, ...rest }: LinkProps) {
   return (
     <Link
+      to={href}
       className={`${
         variant === "primary"
           ? "btn-primary"

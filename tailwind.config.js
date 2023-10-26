@@ -34,6 +34,7 @@ export default {
       },
       boxShadow: {
         list: "0 0 30px 0 rgba(0,0,0,.08)",
+        header: " 0 0 30px 0 rgba(0, 0, 0, 0.1)",
       },
       extend: {
         // that is animation class

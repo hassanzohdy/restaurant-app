@@ -32,7 +32,10 @@ export default function CartTotals() {
           </span>
         </li>
       </ul>
-      <BaseLink href={URLS.checkout.page} className="w-full h-[54px]" variant="primary">
+      <BaseLink
+        href={URLS.checkout.page}
+        className="w-full h-[54px]"
+        variant="primary">
         {trans("proceedToCheckout")}
       </BaseLink>
     </div>

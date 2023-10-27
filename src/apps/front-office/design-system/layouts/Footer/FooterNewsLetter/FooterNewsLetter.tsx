@@ -7,7 +7,9 @@ export default function FooterNewsLetter() {
         <h3 className="heading text-xl text-[20px] font-bold uppercase text-white mb-[20px] mx-lg:text-[18px]">
           {trans("newsLetter")}
         </h3>
-        <p className="w-[85%] m-auto text-[15px] text-primary-text leading-7 max-lg:w-full">Subscribe to the weekly newsletter for all the latest updates</p>
+        <p className="w-[85%] m-auto text-[15px] text-primary-text leading-7 max-lg:w-full">
+          Subscribe to the weekly newsletter for all the latest updates
+        </p>
         <div className="newsletter mt-[20px]">
           <form>
             <div className="form-group flex justify-between h-[54px] m-auto p-[5px] border border-[#262626] rounded max-lg:max-w-[320px] max-sm:max-w-[290px]">

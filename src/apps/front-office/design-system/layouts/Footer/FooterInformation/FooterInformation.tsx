@@ -19,7 +19,9 @@ export default function FooterInformation() {
         <h3 className="heading text-xl text-[20px] font-bold uppercase text-white mb-[20px] mx-lg:text-[18px]">
           {trans("bookTable")}
         </h3>
-        <p className="w-[85%] m-auto text-[15px] text-[#808080] leading-7 max-lg:w-full">Dogfood och Sliders foodtruck. Under Om oss kan ni läsa</p>
+        <p className="w-[85%] m-auto text-[15px] text-[#808080] leading-7 max-lg:w-full">
+          Dogfood och Sliders foodtruck. Under Om oss kan ni läsa
+        </p>
         <Link tel="(850) 435-4155" className="block mt-4 text-[#ffc222]">
           (850) 435-4155
         </Link>

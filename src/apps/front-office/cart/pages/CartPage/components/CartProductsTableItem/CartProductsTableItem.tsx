@@ -25,7 +25,9 @@ export default function CartProductsTableItem({
         </Link>
       </td>
       <td className="product-name w-[30%] px-3 py-5 max-sm:block max-sm:w-full max-sm:pl-0 max-sm:px-2 max-sm:pr-5 max-sm:border-b">
-        <Link to="#" className="hover:text-primary-hover duration-700 transition-all ease-in-out">
+        <Link
+          to="#"
+          className="hover:text-primary-hover duration-700 transition-all ease-in-out">
           {productDetails.name}
         </Link>
       </td>

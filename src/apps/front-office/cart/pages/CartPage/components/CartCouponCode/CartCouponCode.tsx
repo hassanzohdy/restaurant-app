@@ -15,7 +15,7 @@ export default function CartCouponCode(props: CartCouponCodeProps) {
       <Button
         type="submit"
         variant="primary"
-        className="uppercase px-11 font-semibold max-xl:px-5">
+        className="h-[54px] uppercase px-11 font-semibold max-xl:px-5">
         {trans("Apply coupon")}
       </Button>
     </form>

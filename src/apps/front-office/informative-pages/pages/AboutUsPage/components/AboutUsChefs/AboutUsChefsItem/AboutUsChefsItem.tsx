@@ -28,7 +28,7 @@ export default function AboutUsChefsItem({ chefInfo }: AboutUsChefsItemProps) {
         <div
           className={`${styles.details} p-8 pt-0 max-lg:px-4 max-md:px-3 max-md:pb-5 `}>
           <span
-            className={`${styles.chefPosition} inline-block text-[14px] uppercase rounded-[4px] px-[15px] py-[6px] mb-1 relative top-[-17px] max-lg:mb-0`}>
+            className="inline-block text-[14px] uppercase bg-primary-main rounded-[4px] px-[15px] py-[6px] mb-1 relative top-[-17px] max-lg:mb-0">
             {chefInfo.position}
           </span>
           <h3 className="text-[18px] font-bold uppercase mb-4 max-lg:text-[16px] max-lg:mb-2">

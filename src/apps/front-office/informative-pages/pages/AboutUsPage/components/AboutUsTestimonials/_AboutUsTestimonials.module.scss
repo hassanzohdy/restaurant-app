@@ -1,5 +1,3 @@
-@use "apps/front-office/design-system/colors" as *;
-
 .aboutUsTestimonials {
   background: url(assets/images/about-us/testimonials.jpg) no-repeat center;
   background-size: cover;
@@ -63,7 +61,7 @@
         padding: 0;
         width: 8px;
         height: 6px;
-        background: $primary-color;
+        background: #ffc222;
         -webkit-border-radius: 3px;
         border-radius: 3px;
         opacity: 0.4;

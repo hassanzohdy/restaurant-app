@@ -10,11 +10,11 @@ export const Button = ({ children, variant, className, ...rest }: Props) => {
     <button
       className={`${
         variant === "primary"
-          ? "btn-primary"
+          ? "btn-primary bg-primary-main hover:bg-primary-hover"
           : variant === "secondary"
-          ? "btn-secondary"
+          ? "btn-secondary bg-primary-hover"
           : ""
-      } btn ${className}`}
+      } btn inline-flex items-center justify-center font-semibold uppercase text-[14px] ${className} rounded-md duration-700 transition-all ease-in-out`}
       {...rest}>
       {children}
     </button>

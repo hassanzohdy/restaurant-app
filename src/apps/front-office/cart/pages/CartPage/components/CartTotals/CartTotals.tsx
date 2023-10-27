@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { BaseLink } from "apps/front-office/design-system/components/Link";
+import URLS from "apps/front-office/utils/urls";
 
 export default function CartTotals() {
   return (
@@ -31,7 +32,10 @@ export default function CartTotals() {
           </span>
         </li>
       </ul>
-      <BaseLink className="w-full h-[54px]" variant="primary">
+      <BaseLink
+        href={URLS.checkout.page}
+        className="w-full h-[54px]"
+        variant="primary">
         {trans("proceedToCheckout")}
       </BaseLink>
     </div>

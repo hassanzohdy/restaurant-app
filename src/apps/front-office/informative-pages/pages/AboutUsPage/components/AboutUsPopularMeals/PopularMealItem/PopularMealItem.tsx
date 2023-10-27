@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import CommonTitle from "apps/front-office/design-system/components/CommonTitle";
 import { BaseLink } from "apps/front-office/design-system/components/Link";
 import URLS from "apps/front-office/utils/urls";
-import styles from "./_PopularMealItems.module.scss";
+import styles from "./PopularMealItems.module.scss";
 
 export type PopularMealItemProps = {
   name: string;

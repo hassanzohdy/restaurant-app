@@ -1,10 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Button } from "apps/front-office/design-system/components/Button";
 
-export type CartCouponCodeProps = {
-  // props go here
-};
-export default function CartCouponCode(props: CartCouponCodeProps) {
+export default function CartCouponCode() {
   return (
     <form className="coupon flex float-left max-sm:flex max-sm:flex-col max-sm:p-8 max-sm:border-2 max-sm:border-dashed max-sm:border-[#e5e5e5]">
       <input

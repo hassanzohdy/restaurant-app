@@ -1,6 +1,6 @@
 import { Link } from "@mongez/react-router";
 import { useState } from "react";
-
+import {} from "../../../../utils/locales";
 interface dataStateTypes {
   email: string;
   password: string;
@@ -65,10 +65,10 @@ const LoginForm = () => {
       <div>
         <form
           onSubmit={formSubmitHandler}
-          className="form flex justify-center items-center p-[50px] text-left w-[350px] transition-all bg-[#f6f6f6] sm:w-[400px]">
+          className="form flex justify-center items-center  text-left  p-[50px] h-[280px] transition-all bg-[#f6f6f6] sm:w-[400px] w-[350px] ">
           <div className="form-container">
             <div className="form-head flex items-center space-x-1">
-              <h2 className="form-head-title  text-[#333] text-[20px] mb-[10px]">
+              <h2 className="form-head-title  text-[#333] text-[20px] mb-[10px] font-bold">
                 Login
               </h2>
             </div>
@@ -80,9 +80,9 @@ const LoginForm = () => {
               <input
                 type="text"
                 value={email}
-                name="email"
+                name="email" //padding: 0.68em 1em;
                 onChange={changeHandler}
-                className={`rounded-[10px] mt-[7px] p-[10px]  bg-white text-[#808080] h-[40px] w-[100%] border-solid border-[#e5e5e5] border-[1px] outline-none hover:border-[#ffc222]
+                className={`rounded-[8px] mt-[7px]  bg-white text-[#808080] h-[30px] w-[350px] border-solid border-[#e5e5e5] border-[1px] outline-none hover:border-[#ffc222]
           focus:border-[#ffc222] ${!emailIsValid ? "border-[red]" : ""}`}
               />
               {!emailIsValid && (
@@ -99,7 +99,7 @@ const LoginForm = () => {
                 value={password}
                 name="password"
                 onChange={changeHandler}
-                className={`rounded-[10px] mt-[7px] p-[10px] bg-white text-[#808080] h-[40px] w-[100%] border-solid border-[#e5e5e5] border-[1px] outline-none hover:border-[#ffc222]
+                className={`rounded-[8px] mt-[7px] bg-white text-[#808080] h-[30px] w-[350px] border-solid border-[#e5e5e5] border-[1px] outline-none hover:border-[#ffc222]
           focus:border-[#ffc222] ${!passwordIsValid ? "border-[red]" : ""}`}
               />
               {!passwordIsValid && (
@@ -107,15 +107,15 @@ const LoginForm = () => {
               )}
             </p>
 
-            <button className=" transition rounded-lg hover:bg-[#eeac00] hover:text-white w-[106%] h-[14px] text-center justify-center items-center flex py-[25px] px-[45px] border-none mt-[19px] bg-[#ffc222] text-[#1e1d23] font-[700] text-[20px]">
-              Log in
+            <button className=" transition rounded-lg hover:bg-[#eeac00] hover:text-white w-[100%] h-[5px] text-center justify-center items-center flex py-[25px]  border-none mt-[19px] bg-[#ffc222] text-[#1e1d23] font-[700] text-[15px]">
+              LOG IN
             </button>
           </div>
         </form>
         <div className="forget-password mt-[20px] flex justify-between items-center">
-          <div className="checkbox flex space-x-1">
+          <div className="checkbox flex h-[25px] space-x-1">
             <input type="checkbox" />
-            <p className="text-[#808080]">Remember me</p>
+            <p className="text-[#808080">Remember me</p>
           </div>
           <div className="lost-password">
             <Link to="/" className="text-[#808080] decoration-dotted">

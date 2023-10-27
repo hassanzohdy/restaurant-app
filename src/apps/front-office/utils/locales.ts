@@ -1,6 +1,5 @@
 import { groupedTranslations } from "@mongez/localization";
 
-// Add only common localization
 groupedTranslations({
   home: {
     en: "Home",
@@ -177,6 +176,14 @@ groupedTranslations({
   ourTeams: {
     en: "Our Teams",
     ar: "فريقنا",
+  },
+  ourBlog: {
+    en: "Our Blog",
+    ar: "مدوناتنا",
+  },
+  readMore: {
+    en: "Read More",
+    ar: "اقرأ المزيد",
   },
   callAndOrderIn: {
     en: "Call and Order in",

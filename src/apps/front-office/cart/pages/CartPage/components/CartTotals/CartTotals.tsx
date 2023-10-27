@@ -2,10 +2,7 @@ import { trans } from "@mongez/localization";
 import { BaseLink } from "apps/front-office/design-system/components/Link";
 import URLS from "apps/front-office/utils/urls";
 
-export type CartTotalsProps = {
-  // props go here
-};
-export default function CartTotals(props: CartTotalsProps) {
+export default function CartTotals() {
   return (
     <div className="cart-totals pt-4 pb-7 px-10 bg-white border-[6px] border-[#e5e5e5] max-xl:px-5">
       <h3 className="text-[18px] uppercase font-bold pb-3 border-b ">

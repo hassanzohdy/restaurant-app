@@ -35,6 +35,11 @@
     {
       "entry": ["/cart"],
       "name": "cart"
+    },
+    {
+      "entry": ["/shop"],
+      "name": "shop"
     }
+
   ]
 }

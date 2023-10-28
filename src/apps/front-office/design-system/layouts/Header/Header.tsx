@@ -20,6 +20,8 @@ export default function Header() {
     };
   }, []);
 
+  // console.log('rerender from header')
+
   return (
     <header
       className={

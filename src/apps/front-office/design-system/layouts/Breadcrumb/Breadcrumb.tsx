@@ -20,7 +20,9 @@ export default function Breadcrumb({ title, navItems }: BreadcrumbProps) {
           <nav className="flex justify-center">
             <ol className="inline-flex items-center justify-center text-[15px]">
               <li className="flex items-center mr-1">
-                <Link to="/" className="mr-1 text-gray-400">
+                <Link
+                  to="/"
+                  className="mr-1 text-gray-400 hover:text-primary-hover">
                   {trans("home")}
                 </Link>
                 <IconChevronRight strokeWidth="4" />

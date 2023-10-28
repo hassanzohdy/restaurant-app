@@ -26,7 +26,7 @@ export default function UserDropDown() {
         </label>
         <input
           type="email"
-          className="rounded-md text-body p-[10px] w-full border-border border border-solid outline-none"
+          className="rounded-md focus:outline-none focus:border-primary-main text-body p-[10px] w-full border-border border border-solid outline-none"
           id="email"
           placeholder={trans("username")}
         />
@@ -39,7 +39,7 @@ export default function UserDropDown() {
           type="password"
           id="password"
           placeholder={trans("passwordLabel")}
-          className="rounded-md text-body p-[10px] w-full border-border border border-solid outline-none"
+          className="rounded-md focus:outline-none focus:border-primary-main text-body p-[10px] w-full border-border border border-solid outline-none"
         />
         <div>
           <button className="bg-primary-main text-black font-bold w-full py-2 rounded-lg text-sm mt-5">

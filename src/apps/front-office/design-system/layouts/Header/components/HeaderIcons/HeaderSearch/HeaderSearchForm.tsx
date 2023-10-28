@@ -17,7 +17,7 @@ export default function HeaderSearchForm() {
 
   return (
     <form
-      className={`w-full h-full absolute top-0 left-0 transition-all z-50 duration-200 ${
+      className={`w-full h-full flex items-center absolute top-0 left-0 transition-all z-50 duration-200 ${
         state.headerSearch ? "opacity-100 visible" : "opacity-0 invisible"
       }`}>
       <input
@@ -28,7 +28,7 @@ export default function HeaderSearchForm() {
       />
       <AiOutlineClose
         onClick={() => toggleState("headerSearch")}
-        className="absolute ltr:right-[20px] rtl:left-[20px] top-[40%] text-3xl hover:text-primary_hover cursor-pointer"
+        className="text-3xl hover:text-primary-hover cursor-pointer"
       />
     </form>
   );

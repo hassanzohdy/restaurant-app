@@ -20,8 +20,6 @@ export default function Header() {
     };
   }, []);
 
-  // console.log('rerender from header')
-
   return (
     <header
       className={
@@ -33,6 +31,7 @@ export default function Header() {
         }`}>
         <BurgerIcon /> {/* for small screens*/}
         <HeaderLogo />
+
         <HeaderMenus />
         <HeaderContact />
         <HeaderIcons />

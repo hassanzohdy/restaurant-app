@@ -39,6 +39,10 @@
     {
       "entry": ["/checkout"],
       "name": "checkout"
+    },
+    {
+      "entry": ["/shop"],
+      "name": "shop"
     }
   ]
 }

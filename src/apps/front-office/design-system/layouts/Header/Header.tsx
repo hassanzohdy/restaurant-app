@@ -31,7 +31,6 @@ export default function Header() {
         }`}>
         <BurgerIcon /> {/* for small screens*/}
         <HeaderLogo />
-
         <HeaderMenus />
         <HeaderContact />
         <HeaderIcons />

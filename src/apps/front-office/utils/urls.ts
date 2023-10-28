@@ -17,6 +17,7 @@ const URLS = {
   gallery: "/gallery",
   offers: "/offers",
   wishlist: "wishlist",
+  shop: "/shop",
   menu: {
     list: "/menu",
     viewMealRoute: "/menu/:id/:slug",

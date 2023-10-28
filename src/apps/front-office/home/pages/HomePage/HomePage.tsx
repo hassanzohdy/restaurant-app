@@ -4,7 +4,6 @@ import PopularDishes from "apps/front-office/home/pages/HomePage/PopularDishes";
 import Banners from "../../components/Banners";
 import Hero from "../../components/Hero";
 import Menus from "../../components/Menus";
-import "./HomePage.scss";
 
 export default function HomePage() {
   return (

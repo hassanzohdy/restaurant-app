@@ -1,7 +1,7 @@
 {
   "name": "restaurant-web",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "rm -rf ./node_modules/.vite && unlink yarn.lock && yarn update && yarn install && yarn start",
@@ -38,7 +38,6 @@
     "@mongez/reinforcements": "^2.3.8",
     "@mongez/supportive-is": "^2.0.2",
     "@mongez/user": "^1.0.12",
-    "@mongez/validator": "^1.0.18",
     "@tabler/icons-react": "^2.32.0",
     "embla-carousel-autoplay": "^8.0.0-rc14",
     "embla-carousel-react": "^8.0.0-rc14",

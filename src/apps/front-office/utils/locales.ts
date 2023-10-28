@@ -1,6 +1,10 @@
 import { groupedTranslations } from "@mongez/localization";
 
 groupedTranslations({
+  appName: {
+    en: "Restaurant App",
+    ar: "تطبيق المطعم",
+  },
   home: {
     en: "Home",
     ar: "الرئيسية",
@@ -34,28 +38,28 @@ groupedTranslations({
     ar: "أو قم بذلك عبر البريد الإلكتروني",
   },
   firstName: {
-    en: "First Name *",
-    ar: "الاسم الأول *",
+    en: "First Name",
+    ar: "الاسم الأول",
   },
   lastName: {
-    en: "Last Name *",
-    ar: "الاسم الأخير *",
+    en: "Last Name",
+    ar: "الاسم الأخير",
   },
   phoneNumber: {
-    en: "Phone Number *",
-    ar: "رقم الهاتف *",
+    en: "Phone Number",
+    ar: "رقم الهاتف",
   },
   emailAddress: {
-    en: "Email Address *",
-    ar: "عنوان البريد الإلكتروني *",
+    en: "Email Address",
+    ar: "عنوان البريد الإلكتروني",
   },
   password: {
     en: "Password ",
     ar: "كلمة المرور ",
   },
   confirmPassword: {
-    en: "Confirm Password *",
-    ar: "تأكيد كلمة المرور *",
+    en: "Confirm Password",
+    ar: "تأكيد كلمة المرور",
   },
   signInAlready: {
     en: `Already have an account?`,

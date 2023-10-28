@@ -3,7 +3,7 @@ import LoginForm from "apps/front-office/account/pages/LoginPage/components/Logi
 import "./LoginPage.scss";
 const LoginPage = () => {
   return (
-    <div>
+    <div className="loginPage">
       <HeadForm />
       <LoginForm />
     </div>

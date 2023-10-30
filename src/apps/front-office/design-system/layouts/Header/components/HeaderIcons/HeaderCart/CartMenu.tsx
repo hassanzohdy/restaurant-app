@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import OverLay from "apps/front-office/design-system/layouts/OverLay";
 import { useEffect } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import useToggleState from "../../../Hooks/HeaderStateHook";
+import { useToggleState } from "../../../Hooks/HeaderStateHook";
 
 const ChartMenu = () => {
   const { groupState, toggleState } = useToggleState();

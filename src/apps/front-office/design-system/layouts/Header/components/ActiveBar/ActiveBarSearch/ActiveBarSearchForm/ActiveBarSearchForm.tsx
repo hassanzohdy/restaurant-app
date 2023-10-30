@@ -4,20 +4,24 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { useToggleStateActiveBar } from "../../../../Hooks/HeaderStateHook";
 
 export default function ActiveBarSearchForm() {
-  const { groupStateActiveBar } = useToggleStateActiveBar();
+  const { groupState
+ } = useToggleStateActiveBar();
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    if (groupStateActiveBar.headerSearch && inputRef.current) {
+    if (groupState
+.headerSearch && inputRef.current) {
       setTimeout(() => {
         inputRef.current?.focus();
       }, 100);
     }
-  }, [groupStateActiveBar.headerSearch]);
+  }, [groupState
+.headerSearch]);
   return (
     <div
       className={`absolute px-5 z-30 w-full h-full bg-white transition-all ${
-        !groupStateActiveBar.headerSearch
+        !groupState
+.headerSearch
           ? "translate-y-0"
           : "-translate-y-full"
       }`}>

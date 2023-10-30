@@ -1,6 +1,6 @@
 import { changeLocaleCode } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
-import useToggleState from "../../../Hooks/HeaderStateHook";
+import { useToggleState } from "../../../Hooks/HeaderStateHook";
 export default function LanguageSwitchList() {
   const { groupState } = useToggleState();
 

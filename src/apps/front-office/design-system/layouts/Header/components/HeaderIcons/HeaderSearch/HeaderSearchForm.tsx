@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { useEffect, useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import useToggleState from "../../../Hooks/HeaderStateHook";
+import { useToggleState } from "../../../Hooks/HeaderStateHook";
 
 export default function HeaderSearchForm() {
   const { groupState, toggleState } = useToggleState();

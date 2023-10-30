@@ -2,11 +2,13 @@ import { changeLocaleCode } from "@mongez/react-router";
 import { useToggleStateActiveBar } from "../../../../Hooks/HeaderStateHook";
 
 export default function LanguageActiveList() {
-  const { groupStateActiveBar } = useToggleStateActiveBar();
+  const { groupState
+ } = useToggleStateActiveBar();
   return (
     <ul
       className={`absolute z-30 w-full bg-white transition-all ${
-        !groupStateActiveBar.langSwitch ? "translate-y-0" : "-translate-y-full"
+        !groupState
+.langSwitch ? "translate-y-0" : "-translate-y-full"
       }`}>
       <li
         className="rtl:bg-backgroundHover text-center w-full"

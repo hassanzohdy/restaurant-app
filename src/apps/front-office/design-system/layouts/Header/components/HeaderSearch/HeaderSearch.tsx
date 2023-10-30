@@ -1,6 +1,6 @@
 import { IconSearch } from "@tabler/icons-react";
 import OverLay from "app/design-system/layouts/OverLay";
-import useToggleState from "../../Hooks/HeaderStateHook";
+import { useToggleState } from "../../Hooks/HeaderStateHook";
 import HeaderSearchForm from "../HeaderIcons/HeaderSearch/HeaderSearchForm";
 export default function HeaderSearch() {
   const { groupState, toggleState } = useToggleState();

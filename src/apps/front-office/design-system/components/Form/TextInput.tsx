@@ -23,7 +23,8 @@ export default function TextInput(props: FormControlProps) {
         {...otherProps}
         id={id}
         value={value}
-        className="block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+        className="mt-1 block w-full px-3 py-2 bg-white border border-slate-400 rounded-md text-base shadow-sm placeholder-slate-400
+        focus:outline-none focus:border-primary-main"
         onChange={e => {
           changeValue(e.target.value);
         }}

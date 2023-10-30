@@ -4,7 +4,7 @@ export default function HeaderCart() {
   const { toggleState } = useToggleState();
   return (
     <button
-      className="border border-border cursor-pointer rounded-full p-3 text-xl hover:bg-primary-hover"
+      className="border border-border cursor-pointer rounded-full  w-12 h-12 flex items-center justify-center text-xl hover:bg-primary-hover"
       onClick={() => toggleState("cartIcon")}>
       <TiShoppingCart />
     </button>

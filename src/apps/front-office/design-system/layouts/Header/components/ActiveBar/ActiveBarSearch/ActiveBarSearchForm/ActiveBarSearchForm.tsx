@@ -1,23 +1,25 @@
 import { trans } from "@mongez/localization";
 import { useEffect, useRef } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import useToggleState from "../../../../Hooks/HeaderStateHook";
+import { useToggleStateActiveBar } from "../../../../Hooks/HeaderStateHook";
 
 export default function ActiveBarSearchForm() {
-  const { state } = useToggleState();
+  const { groupStateActiveBar } = useToggleStateActiveBar();
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    if (state.headerSearch && inputRef.current) {
+    if (groupStateActiveBar.headerSearch && inputRef.current) {
       setTimeout(() => {
         inputRef.current?.focus();
       }, 100);
     }
-  }, [state.headerSearch]);
+  }, [groupStateActiveBar.headerSearch]);
   return (
     <div
       className={`absolute px-5 z-30 w-full h-full bg-white transition-all ${
-        !state.headerSearch ? "translate-y-0" : "-translate-y-full"
+        !groupStateActiveBar.headerSearch
+          ? "translate-y-0"
+          : "-translate-y-full"
       }`}>
       <div className="relative h-full">
         <input

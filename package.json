@@ -17,7 +17,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "11.11.0",
-    "@hookform/resolvers": "^3.3.1",
     "@mantine/carousel": "^7.1.6",
     "@mantine/core": "^7.1.6",
     "@mantine/hooks": "^7.1.6",
@@ -43,11 +42,9 @@
     "embla-carousel-react": "^8.0.0-rc14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.46.2",
     "react-icons": "^4.11.0",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1",
-    "yup": "^1.2.0"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@mongez/vite": "^1.0.26",

@@ -11,6 +11,10 @@
     padding: 15px;
     width: 30%;
     cursor: pointer;
+    background: linear-gradient(#fff, #fff 50%, #ffc22285 50%, #ffc22285);
+    background-size: 100% 200%;
+    /*trasition effect for background*/
+    transition: background 1s;
     @media (max-width: 1300px) {
       flex-basis: 45%;
     }
@@ -21,7 +25,7 @@
       flex-basis: 100%;
     }
     &:hover {
-      background-color: #ffc22285;
+      background-position: 100% 100%;
       transition: all 0.5s ease-in-out;
     }
     .heartIcon {

@@ -2,6 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    flex: {
+      custom: "0 0 auto",
+    },
     container: {
       center: true,
       padding: {
@@ -31,6 +34,21 @@ export default {
       },
       boxShadow: {
         list: "0 0 30px 0 rgba(0,0,0,.08)",
+        header: " 0 0 30px 0 rgba(0, 0, 0, 0.1)",
+      },
+      extend: {
+        // that is animation class
+        animation: {
+          fade: "fadeOut 5s ease-in-out",
+        },
+
+        // that is actual animation
+        keyframes: theme => ({
+          fadeOut: {
+            "0%": { backgroundColor: theme("colors.red.300") },
+            "100%": { backgroundColor: theme("colors.transparent") },
+          },
+        }),
       },
     },
   },

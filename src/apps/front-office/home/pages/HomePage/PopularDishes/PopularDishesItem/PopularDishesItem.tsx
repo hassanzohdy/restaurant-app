@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
 import { IconHeart, IconShoppingBag } from "@tabler/icons-react";
+import Blueberry from "assets/images/menuItems/blueberry.png";
+import lemon from "assets/images/menuItems/lemon.png";
+import Pizza from "assets/images/menuItems/pizza.png";
+import Pizza2 from "assets/images/menuItems/pizza2.png";
 import styles from "./styles.module.scss";
-import Blueberry from "/public/images/menuItems/blueberry.png";
-import lemon from "/public/images/menuItems/lemon.png";
-import Pizza from "/public/images/menuItems/pizza.png";
-import Pizza2 from "/public/images/menuItems/pizza2.png";
 
 export type PopularDishesItemProps = {
   children: React.ReactNode;

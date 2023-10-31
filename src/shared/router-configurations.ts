@@ -1,7 +1,7 @@
 import { RouterConfigurations } from "@mongez/react-router";
+import App from "apps/front-office/App";
 import { localeCodesList } from "apps/front-office/utils/localization";
 import URLS from "apps/front-office/utils/urls";
-import React from "react";
 import { productionBasePath } from "./flags";
 
 export const routerConfigurations: RouterConfigurations = {
@@ -14,9 +14,6 @@ export const routerConfigurations: RouterConfigurations = {
     localeCodes: Object.keys(localeCodesList),
   },
   lazyLoading: {
-    loadingComponent: React.lazy(
-      () => import("apps/front-office/design-system/Indicators/ProgressBar"),
-    ),
     loaders: {
       app: (app: string) => {
         return import(`./../apps/${app}/${app}-provider.ts`);
@@ -30,5 +27,5 @@ export const routerConfigurations: RouterConfigurations = {
     mode: "redirect",
     path: URLS.notFound,
   },
-  rootComponent: React.lazy(() => import("apps/front-office/App")),
+  rootComponent: App,
 };

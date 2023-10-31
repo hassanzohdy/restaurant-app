@@ -47,7 +47,7 @@
       height: 50px;
       padding: 10px 15px;
       border-color: #e5e5e5;
-      @include borderRaduis(8px);
+      @include borderRadius(8px);
     }
 
     button {
@@ -57,7 +57,7 @@
       text-transform: uppercase;
       background: $primary-color;
       color: $main-font-color;
-      @include borderRaduis(8px);
+      @include borderRadius(8px);
       &:hover {
         background: $sub-color;
         color: #fff;

@@ -9,7 +9,7 @@ import "./activeBar.scss";
 
 export default function ActiveBar() {
   return (
-    <div className="bottom-0 lg:hidden left-0 h-[50px] z-40 fixed w-full bg-background">
+    <div className="sticky bottom-0  lg:hidden h-[50px] z-10 w-full bg-backgroundHover popups">
       <div className="flex flex-row h-full justify-between">
         <ActiveBarLang />
         <LanguageActiveList />

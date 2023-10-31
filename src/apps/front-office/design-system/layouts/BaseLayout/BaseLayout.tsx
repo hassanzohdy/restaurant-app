@@ -1,8 +1,9 @@
+import React from "react";
 import Footer from "../Footer";
 import Header from "../Header";
 import ActiveBar from "../Header/components/ActiveBar";
 import BurgerMenu from "../Header/components/HeaderIcons/BurgerIcon/BurgerMenu";
-import ChartMenu from "../Header/components/HeaderIcons/HeaderCart/ChartMenu";
+import ChartMenu from "../Header/components/HeaderIcons/HeaderCart/CartMenu";
 
 export type BaseLayoutProps = {
   children: React.ReactNode;
@@ -13,13 +14,13 @@ export type BaseLayoutProps = {
  */
 export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative">
       <Header />
       <ChartMenu />
       <BurgerMenu />
-      <ActiveBar /> {/* for small screens */}
       <main>{children}</main>
       <Footer />
+      <ActiveBar />
     </div>
   );
 }

@@ -3,13 +3,13 @@ import { useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useToggleState } from "../../../Hooks/HeaderStateHook";
 import useEscapeToClose from "../../../Hooks/useEscapeToClose";
-import FocusOnToggle from "../../../functions/FocusOnToggle";
+import useFocusOnToggle from "../../../Hooks/useFocusOnToggle";
 
 export default function HeaderSearchForm() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { groupState, toggleState } = useToggleState();
 
-  FocusOnToggle(inputRef, groupState.headerSearch);
+  useFocusOnToggle(inputRef, groupState.headerSearch);
 
   useEscapeToClose(groupState.headerSearch, () =>
     toggleState("searchProducts"),

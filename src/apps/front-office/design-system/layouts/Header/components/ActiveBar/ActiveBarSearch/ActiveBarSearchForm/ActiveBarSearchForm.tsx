@@ -2,13 +2,13 @@ import { trans } from "@mongez/localization";
 import { useRef } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useToggleStateActiveBar } from "../../../../Hooks/HeaderStateHook";
-import FocusOnToggle from "../../../../functions/FocusOnToggle";
+import useFocusOnToggle from "../../../../Hooks/useFocusOnToggle";
 
 export default function ActiveBarSearchForm() {
   const { groupState } = useToggleStateActiveBar();
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  FocusOnToggle(inputRef, groupState.headerSearch);
+  useFocusOnToggle(inputRef, groupState.headerSearch);
 
   return (
     <div

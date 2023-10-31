@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from "react";
 
-export default function FocusOnToggle(
+export default function useFocusOnToggle(
   inputRef: RefObject<HTMLInputElement> | null,
   watchState: boolean,
 ) {

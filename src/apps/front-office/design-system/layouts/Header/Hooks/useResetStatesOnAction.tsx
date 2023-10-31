@@ -1,17 +1,18 @@
+import { Atom } from "@mongez/react-atom";
 import { useEffect, useRef } from "react";
 import { useClickOutside } from "./useClickOutside"; // Import your click outside logic
 import { useRouteChange } from "./useRouteChange"; // Import your route change logic
 
-function useResetStatesOnAction(atom) {
+function useResetStatesOnAction(atom: Atom) {
   const resetStates = () => {
     atom.reset();
   };
 
   const handleClickOutsideRef = useRef(null);
-  const handleClickOutside = useClickOutside(
-    resetStates,
-    handleClickOutsideRef,
-  );
+  const handleClickOutside = useClickOutside({
+    callback: resetStates,
+    ref: handleClickOutsideRef,
+  });
 
   useRouteChange(resetStates);
 

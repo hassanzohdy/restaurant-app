@@ -1,37 +1,19 @@
 import { trans } from "@mongez/localization";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useToggleState } from "../../../Hooks/HeaderStateHook";
+import useEscapeToClose from "../../../Hooks/useEscapeToClose";
+import FocusOnToggle from "../../../functions/FocusOnToggle";
 
 export default function HeaderSearchForm() {
-  const { groupState, toggleState } = useToggleState();
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const { groupState, toggleState } = useToggleState();
 
-  useEffect(() => {
-    if (groupState.headerSearch) {
-      const keyDownHandler = event => {
-        if (event.key === "Escape") {
-          event.preventDefault();
+  FocusOnToggle(inputRef, groupState.headerSearch);
 
-          toggleState("headerSearch");
-        }
-      };
-
-      document.addEventListener("keydown", keyDownHandler);
-
-      return () => {
-        document.removeEventListener("keydown", keyDownHandler);
-      };
-    }
-  }, [groupState.headerSearch, toggleState]);
-
-  useEffect(() => {
-    if (groupState.headerSearch && inputRef.current) {
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 100);
-    }
-  }, [groupState.headerSearch]);
+  useEscapeToClose(groupState.headerSearch, () =>
+    toggleState("searchProducts"),
+  );
 
   return (
     <form

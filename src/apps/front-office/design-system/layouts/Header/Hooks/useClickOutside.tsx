@@ -1,9 +1,13 @@
-import { useCallback } from "react";
+import { RefObject, useCallback } from "react";
 
-export function useClickOutside(callback, ref) {
+interface UseClickOutsideProps {
+  callback: () => void;
+  ref: RefObject<HTMLElement>;
+}
+export function useClickOutside({ callback, ref }: UseClickOutsideProps) {
   const handleClickOutside = useCallback(
-    event => {
-      if (ref.current && !ref.current.contains(event.target)) {
+    (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
         callback();
       }
     },

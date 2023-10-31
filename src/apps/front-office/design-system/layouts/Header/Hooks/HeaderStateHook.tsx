@@ -1,9 +1,10 @@
+import { Atom } from "@mongez/react-atom";
 import {
   ToggleGroupActiveBarAtom,
   ToggleGroupAtom,
 } from "../atoms/HeaderAtoms";
 
-function createToggleStateHook(atom) {
+function createToggleGroupStateHook(atom: Atom) {
   return function useToggleState() {
     const [groupState, setState] = atom.useState();
 
@@ -21,7 +22,7 @@ function createToggleStateHook(atom) {
   };
 }
 
-export const useToggleState = createToggleStateHook(ToggleGroupAtom);
-export const useToggleStateActiveBar = createToggleStateHook(
+export const useToggleState = createToggleGroupStateHook(ToggleGroupAtom);
+export const useToggleStateActiveBar = createToggleGroupStateHook(
   ToggleGroupActiveBarAtom,
 );

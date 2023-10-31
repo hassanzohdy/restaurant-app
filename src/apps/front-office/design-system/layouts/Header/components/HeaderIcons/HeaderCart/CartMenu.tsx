@@ -1,29 +1,13 @@
 import { trans } from "@mongez/localization";
 import OverLay from "apps/front-office/design-system/layouts/OverLay";
-import { useEffect } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { useToggleState } from "../../../Hooks/HeaderStateHook";
+import useEscapeToClose from "../../../Hooks/useEscapeToClose";
 
 const ChartMenu = () => {
   const { groupState, toggleState } = useToggleState();
 
-  useEffect(() => {
-    if (groupState.cartIcon) {
-      const keyDownHandler = event => {
-        if (event.key === "Escape") {
-          event.preventDefault();
-
-          toggleState("cartIcon");
-        }
-      };
-
-      document.addEventListener("keydown", keyDownHandler);
-
-      return () => {
-        document.removeEventListener("keydown", keyDownHandler);
-      };
-    }
-  }, [groupState.cartIcon, toggleState]);
+  useEscapeToClose(groupState.cartIcon, () => toggleState("cartIcon"));
 
   return (
     <>

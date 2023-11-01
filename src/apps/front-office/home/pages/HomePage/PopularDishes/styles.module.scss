@@ -1,7 +1,9 @@
 .popularDishes {
   padding: 100px 0;
   background-repeat: no-repeat;
-  background: url(/src/shared/assets/images/menuItems/foodBG.png) no-repeat 2% 15%, url(/src/shared/assets/images/menuItems/peper.png) no-repeat 96% 80%;
+  background: url(/src/shared/assets/images/menuItems/foodBG.png) no-repeat 2%
+      15%,
+    url(/src/shared/assets/images/menuItems/peper.png) no-repeat 96% 80%;
   background-attachment: fixed;
 
   // background-position: 60%;

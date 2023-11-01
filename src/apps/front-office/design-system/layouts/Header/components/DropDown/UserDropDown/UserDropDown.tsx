@@ -6,7 +6,8 @@ import { SubmitButton } from "apps/front-office/design-system/components/Button"
 import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
 import URLS from "apps/front-office/utils/urls";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
 import { useToggleState } from "../../../Hooks/HeaderStateHook";
 import "./_userDropDown.scss";
 
@@ -15,18 +16,10 @@ export default function UserDropDown() {
   const { submit } = useRegister();
 
   const inputParentRef = useRef<HTMLDivElement | null>(null);
+  const childNodes = inputParentRef.current?.childNodes[0]
+    .childNodes[1] as HTMLInputElement;
 
-  useEffect(() => {
-    if (groupState.userIcon && inputParentRef.current) {
-      const childNodes = inputParentRef.current.childNodes[0]
-        .childNodes[1] as HTMLInputElement;
-
-      setTimeout(() => {
-        childNodes.focus();
-      }, 100);
-    }
-  }, [groupState.userIcon]);
-
+  useFocusOnToggle(childNodes, groupState.userIcon);
   return (
     <div
       className={`absolute top-[50px] border-primary-main border-t overflow-hidden duration-200 shadow-list transition-all bg-white flex flex-col ${

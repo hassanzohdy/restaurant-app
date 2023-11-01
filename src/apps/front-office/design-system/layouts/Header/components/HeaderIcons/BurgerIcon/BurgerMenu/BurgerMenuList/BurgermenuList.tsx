@@ -98,7 +98,7 @@ export default function BurgerMenuList() {
       </li>
       <li>
         <Link
-          to={URLS.aboutUs}
+          to={URLS.contactUs}
           onClick={handelLinkClick}
           className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
           {trans("contact")}

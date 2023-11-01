@@ -1,15 +1,15 @@
 import { trans } from "@mongez/localization";
 import { useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import useFocusOnToggle from "../../../../../../../../shared/hooks/useFocusOnToggle";
 import { useToggleState } from "../../../Hooks/HeaderStateHook";
 import useEscapeToClose from "../../../Hooks/useEscapeToClose";
-import useFocusOnToggle from "../../../Hooks/useFocusOnToggle";
 
 export default function HeaderSearchForm() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { groupState, toggleState } = useToggleState();
 
-  useFocusOnToggle(inputRef, groupState.headerSearch);
+  useFocusOnToggle(inputRef.current, groupState.headerSearch);
 
   useEscapeToClose(groupState.headerSearch, () =>
     toggleState("searchProducts"),

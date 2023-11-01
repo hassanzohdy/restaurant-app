@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import { useRef } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useToggleStateActiveBar } from "../../../../Hooks/HeaderStateHook";
-import useFocusOnToggle from "../../../../Hooks/useFocusOnToggle";
+import useFocusOnToggle from "../../../../../../../../../shared/hooks/useFocusOnToggle";
 
 export default function ActiveBarSearchForm() {
   const { groupState } = useToggleStateActiveBar();

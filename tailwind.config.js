@@ -2,9 +2,6 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    flex: {
-      custom: "0 0 auto",
-    },
     container: {
       center: true,
       padding: {
@@ -13,6 +10,9 @@ export default {
       },
     },
     extend: {
+      flex: {
+        custom: "0 0 auto",
+      },
       screens: {
         "2xl": "1400px",
       },

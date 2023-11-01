@@ -3,7 +3,10 @@ type Props = {
   ingredients: string[];
 };
 
-const DescriptionPart = ({ description, ingredients }: Props) => {
+export default function DescriptionSection({
+  description,
+  ingredients,
+}: Props) {
   return (
     <section className=" text-primary-text max-w-[970px] mx-auto leading-7 space-y-4">
       <p>{description}</p>
@@ -13,6 +16,4 @@ const DescriptionPart = ({ description, ingredients }: Props) => {
       </div>
     </section>
   );
-};
-
-export default DescriptionPart;
+}

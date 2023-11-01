@@ -8,8 +8,8 @@ import EmailInput from "apps/front-office/design-system/components/Form/EmailInp
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import URLS from "apps/front-office/utils/urls";
-import { Toaster, toast } from "react-hot-toast";
 import { googleIcon } from "shared/assets";
+import ToastMessage from "./ToastMessage";
 import styles from "./register.module.scss";
 
 export default function Register() {
@@ -20,10 +20,7 @@ export default function Register() {
     return (
       <>
         <Helmet title={trans("createAccount")} />
-        <div>
-          <Toaster />
-          {toast.success("Account created successfully!")}
-        </div>
+        <ToastMessage />
       </>
     );
   }

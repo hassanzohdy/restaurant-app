@@ -1,4 +1,3 @@
-import { MantineProvider } from "@mantine/core";
 import { useOnce } from "@mongez/react-hooks";
 import { getGuestToken } from "apps/front-office/account/service/auth";
 import user from "apps/front-office/account/user";
@@ -21,9 +20,5 @@ export default function App({ children }: AppProps) {
 
   if (isLoading) return null;
 
-  return (
-    <>
-      <MantineProvider>{children}</MantineProvider>
-    </>
-  );
+  return <>{children}</>;
 }

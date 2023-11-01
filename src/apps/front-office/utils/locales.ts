@@ -29,6 +29,10 @@ groupedTranslations({
     en: "Description",
     ar: "الوصف",
   },
+  reviews: {
+    en: "Reviews",
+    ar: "المراجعات",
+  },
   createAccount: {
     en: "Create Account",
     ar: "إنشاء حساب",
@@ -249,6 +253,10 @@ groupedTranslations({
     en: "Cart",
     ar: "العربة",
   },
+  addToCart: {
+    en: "Add to Cart",
+    ar: "أضف الى السلة",
+  },
   call: {
     en: "Call and Order in",
     ar: "اتصل واطلب على",
@@ -353,5 +361,33 @@ groupedTranslations({
   makeAnOrder: {
     en: "Make An order",
     ar: "اطلب الآن",
+  },
+  category: {
+    en: "Category",
+    ar: "فئة",
+  },
+  share: {
+    en: "Share",
+    ar: "شارك",
+  },
+  guaranteedSafeCheckout: {
+    en: "Guaranteed safe checkout",
+    ar: "دفع امن مضمون",
+  },
+  freeShipping: {
+    en: "Free global shipping on all orders",
+    ar: "شحن عالمي مجاني لجميع الطلبات",
+  },
+  easyReturns: {
+    en: "30 days easy returns if you change your mind",
+    ar: "إرجاع سهل لمدة 30 يومًا إذا غيرت رأيك",
+  },
+  orderBeforeNoon: {
+    en: "Order before noon for same day dispatch",
+    ar: "اطلب قبل الظهر للإرسال في نفس اليوم",
+  },
+  relatedProducts: {
+    en: "Related Products",
+    ar: "منتجات ذات صله",
   },
 });

@@ -1,5 +1,6 @@
 import { useSubmitButton } from "@mongez/react-form";
 import { ButtonHTMLAttributes, ReactNode } from "react";
+import { cn } from "../utils/cn";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
@@ -15,7 +16,11 @@ export const Button = ({ children, variant, className, ...rest }: Props) => {
   const classes = variant ? variants[variant] : "";
   return (
     <button
-      className={`${classes} btn inline-flex items-center justify-center font-semibold uppercase text-[14px] ${className} rounded-md duration-700 transition-all ease-in-out`}
+      className={cn(
+        "inline-flex items-center justify-center font-semibold uppercase text-[14px] rounded-md duration-400 transition-colors",
+        className,
+        classes,
+      )}
       {...rest}>
       {children}
     </button>

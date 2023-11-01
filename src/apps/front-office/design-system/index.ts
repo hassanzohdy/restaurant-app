@@ -1,10 +1,9 @@
-import "@mantine/carousel/styles.css";
-import "@mantine/core/styles.css";
+// import "@mantine/carousel/styles.css";
+// import "@mantine/core/styles.css";
 import { googleFont } from "@mongez/dom";
 import { current } from "@mongez/react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import "./../../../index.css";
 
 if (current("localeCode") === "ar") {
   // load Cairo font from google for Arabic language

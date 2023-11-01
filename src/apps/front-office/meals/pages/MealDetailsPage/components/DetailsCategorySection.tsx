@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { ReactNode } from "react";
 import { AiFillFacebook, AiFillTwitterCircle } from "react-icons/ai";
@@ -22,14 +23,14 @@ export const DetailsCategorySection = ({ category }: Props) => {
 
   return (
     <div className="space-y-4 text-sm border-b pb-6">
-      <p className="first-letter:uppercase text-primary-text">
-        category:{" "}
+      <p className="text-primary-text">
+        {trans("category")}:
         <span className="inline-block font-semibold capitalize">
           {category}
         </span>
       </p>
       <div className="first-letter:uppercase flex items-center gap-2 text-primary-text">
-        Share:{" "}
+        {trans("share")}:
         {socialLinks.map((link, idx) => (
           <Link key={idx} className="hover:text-primary-main" to={link.href}>
             {link.icon}

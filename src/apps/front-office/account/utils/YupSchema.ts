@@ -2,12 +2,12 @@ import { trans } from "@mongez/localization";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-  firstName: yup.string().required(trans("firstNameRequired")),
-  lastName: yup.string().required(trans("lastNameRequired")),
+  firstName: yup.string().required(trans("firstNameRequired")).min(3),
+  lastName: yup.string().required(trans("lastNameRequired")).min(3),
   phoneNumber: yup
     .string()
-    .required(trans("phoneRequired"))
-    .matches(/^\d{11}$/, trans("phoneValidate")),
+    .matches(/^\d{11}$/, "Phone number must be exactly 11 digits")
+    .required(trans("phoneRequired")),
   email: yup
     .string()
     .email(trans("invalidEmail"))

@@ -1,3 +1,6 @@
+import "@mantine/carousel/styles.css";
+import { MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
 import React from "react";
 
 export type AppProps = {
@@ -5,5 +8,9 @@ export type AppProps = {
 };
 
 export default function App({ children }: AppProps) {
-  return <>{children}</>;
+  return (
+    <>
+      <MantineProvider>{children}</MantineProvider>
+    </>
+  );
 }

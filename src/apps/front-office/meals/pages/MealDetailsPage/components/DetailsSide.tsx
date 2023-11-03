@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import { Button } from "apps/front-office/design-system/components/Button";
 import Stars from "apps/front-office/design-system/components/Stars";
+=======
+import { trans } from "@mongez/localization";
+import { Button } from "apps/front-office/design-system/components/Button";
+import Stars from "apps/front-office/design-system/components/Stars";
+import { cn } from "apps/front-office/design-system/utils/cn";
+>>>>>>> 0b183458ece57a90c4bed59c1afdb79e3383860f
 import { formatPrice } from "apps/front-office/design-system/utils/format-price";
 import { useState } from "react";
 import { AiTwotoneHeart } from "react-icons/ai";
@@ -21,6 +28,7 @@ const ShippingFeatures = () => {
     <ul className="text-primary-text font-light pb-6 border-b">
       <li className="flex items-center gap-2">
         <PiDotOutlineFill />
+<<<<<<< HEAD
         Free global shipping on all orders
       </li>
       <li className="flex items-center gap-2">
@@ -30,6 +38,17 @@ const ShippingFeatures = () => {
       <li className="flex items-center gap-2">
         <PiDotOutlineFill />
         Order before noon for same day dispatch
+=======
+        {trans("freeShipping")}
+      </li>
+      <li className="flex items-center gap-2">
+        <PiDotOutlineFill />
+        {trans("easyReturns")}
+      </li>
+      <li className="flex items-center gap-2">
+        <PiDotOutlineFill />
+        {trans("orderBeforeNoon")}
+>>>>>>> 0b183458ece57a90c4bed59c1afdb79e3383860f
       </li>
     </ul>
   );
@@ -59,7 +78,11 @@ export const DetailsSide = ({
   const handleFavoriteChange = () => {};
 
   return (
+<<<<<<< HEAD
     <div className="flex-1 ">
+=======
+    <div className="flex-1">
+>>>>>>> 0b183458ece57a90c4bed59c1afdb79e3383860f
       <div className="sticky top-10 space-y-6">
         <div className="space-y-6 border-b pb-6">
           <h1 className="text-5xl font-bold">{title}</h1>
@@ -72,6 +95,7 @@ export const DetailsSide = ({
 
         <div className="flex items-center gap-10 text-sm font-semibold pb-6 border-b flex-wrap">
           <div className="flex gap-3 items-center font-bold">
+<<<<<<< HEAD
             <Button
               className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-2 rounded-full"
               onClick={decrementAmount}>
@@ -99,6 +123,36 @@ export const DetailsSide = ({
               onClick={handleFavoriteChange}>
               <AiTwotoneHeart />
             </Button>
+=======
+            <button
+              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
+              onClick={decrementAmount}>
+              -
+            </button>
+            <span>{amount}</span>
+            <button
+              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
+              onClick={incrementAmount}>
+              +
+            </button>
+          </div>
+          <div className="flex gap-2 min-w-fit flex-1 shrink-0">
+            <Button
+              variant="primary"
+              className="uppercase rounded-lg flex-1 py-4 px-6 gap-2 text-xs"
+              onClick={() => {}}>
+              <BsFillBasket2Fill className="shrink-0" />
+              {trans("addToCart")}
+            </Button>
+            <button
+              className={cn(
+                " px-5 rounded-xl text-gray-500 btn bg-primary-light",
+                isFavorite ? "text-rose-600" : "hover:text-primary-main",
+              )}
+              onClick={handleFavoriteChange}>
+              <AiTwotoneHeart />
+            </button>
+>>>>>>> 0b183458ece57a90c4bed59c1afdb79e3383860f
           </div>
         </div>
 
@@ -106,7 +160,11 @@ export const DetailsSide = ({
 
         <ShippingFeatures />
         <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+<<<<<<< HEAD
           <p className="font-bold">Guaranteed Safe Checkout</p>
+=======
+          <p className="font-bold">{trans("guaranteedSafeCheckout")}</p>
+>>>>>>> 0b183458ece57a90c4bed59c1afdb79e3383860f
           <img
             src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/08/trust-symbols.png"
             alt="payment methods image"

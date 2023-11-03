@@ -1,8 +1,16 @@
 import { atom } from "@mongez/react-atom";
 import Helmet from "@mongez/react-helmet";
+<<<<<<< HEAD
 import DescriptionAndReviews from "./components/DescriptionAndReiews";
 import MealDetailsSection from "./components/MealDetailsSection";
 import MealTopSection from "./components/MealTopSection";
+=======
+import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
+import DescriptionAndReviews from "./components/DescriptionAndReviews";
+import MealDetailsSection from "./components/MealDetailsSection";
+import MealsNavigateBtns from "./components/MealsNavigateBtns";
+import { MealType } from "./utils/types";
+>>>>>>> 0b183458ece57a90c4bed59c1afdb79e3383860f
 
 // export type MealDetailsPageProps = {
 //   params: {
@@ -11,6 +19,7 @@ import MealTopSection from "./components/MealTopSection";
 //   };
 // };
 
+<<<<<<< HEAD
 export type ReviewType = {
   name: string;
   image: string;
@@ -44,6 +53,8 @@ export type MealType = {
   prevMeal: PopupMealType;
 };
 
+=======
+>>>>>>> 0b183458ece57a90c4bed59c1afdb79e3383860f
 export const mealAtom = atom<MealType>({
   key: "meal",
   default: {},
@@ -100,7 +111,14 @@ export default function MealDetailsPage() {
         description={meal.shortDescription}
         image={meal.image}
       />
+<<<<<<< HEAD
       <MealTopSection nexMeal={meal.nextMeal} prevMeal={meal.prevMeal} />
+=======
+      <div className="relative">
+        <Breadcrumb navItems={[{ name: meal.title }]} title={meal.title} />
+        <MealsNavigateBtns nextMeal={meal.nextMeal} prevMeal={meal.prevMeal} />
+      </div>
+>>>>>>> 0b183458ece57a90c4bed59c1afdb79e3383860f
       <MealDetailsSection meal={meal} />
       <DescriptionAndReviews
         description={meal.description}

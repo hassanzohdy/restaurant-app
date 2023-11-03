@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { IconChevronRight } from "@tabler/icons-react";
 import URLS from "apps/front-office/utils/urls";
-import styles from "./Breadcrumb.module.scss";
+import styles from "./_Breadcrumb.module.scss";
 
 export type BreadcrumbProps = {
   title: string;

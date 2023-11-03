@@ -1,0 +1,52 @@
+{
+  "path": "/",
+  "name": "front-office",
+  "modules": [
+    {
+      "entry": [
+        "/account",
+        "/login",
+        "/register",
+        "/forget-password",
+        "/rest-password"
+      ],
+      "name": "account"
+    },
+    {
+      "entry": ["/", "/404"],
+      "name": "home"
+    },
+    {
+      "entry": ["/about-us", "/privacy-policy", "/terms-conditions"],
+      "name": "informative-pages"
+    },
+    {
+      "entry": ["/blog"],
+      "name": "blog"
+    },
+    {
+      "entry": ["/posts"],
+      "name": "posts"
+    },
+    {
+      "entry": ["/menu"],
+      "name": "meals"
+    },
+    {
+      "entry": ["/cart"],
+      "name": "cart"
+    },
+    {
+      "entry": ["/checkout"],
+      "name": "checkout"
+    },
+    {
+      "entry": ["/shop"],
+      "name": "shop"
+    },
+    {
+      "entry": ["/orders"],
+      "name": "orders"
+    }
+  ]
+}

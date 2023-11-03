@@ -5,7 +5,7 @@ import PopularMealItem from "./PopularMealItem";
 
 const popularMeals = [
   {
-    name: "chicken",
+    name: "Chicken",
     details:
       "Quality is our #1 ingredient. That’s why our Chicken Wings, Chicken Bites and Grilled Chicken Topping are made from chickens raised without antibiotics and fed an all vegetable-grain diet, with no animal by-products. Plus, our Bites are made with 100% chicken breast meat.",
     image: popularMealImage1,

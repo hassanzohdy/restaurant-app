@@ -362,6 +362,50 @@ groupedTranslations({
     en: "Make An order",
     ar: "اطلب الآن",
   },
+  // Orders Page
+  myOrders: {
+    en: "My Orders",
+    ar: "طلباتى",
+  },
+  pastOrders: {
+    en: "Past Orders",
+    ar: "طلبات سابقة",
+  },
+  reorder: {
+    en: "Reorder",
+    ar: "اعادة الطلب",
+  },
+  total: {
+    en: "Total",
+    ar: "الإجمالي",
+  },
+  // Order Details Page
+  orderDetails: {
+    en: "Order Details",
+    ar: "تفاصيل الطلب",
+  },
+  orderMenu: {
+    en: "Order Menu",
+    ar: "قائمة الطلب",
+  },
+  deliveryAddress: {
+    en: "Delivery Address",
+    ar: "عنوان الشحن",
+  },
+  cashOnDelivery: {
+    en: "cash on delivery",
+    ar: "الدفع عند  الاستلام",
+  },
+  // Privacy Policy
+  privacyPolicy: {
+    en: "Privacy Policy",
+    ar: "سياسة الخصوصية",
+  },
+  // Terms and Conditions
+  termsAndConditions: {
+    en: "Terms and Conditions",
+    ar: "الأحكام والشروط",
+  },
   category: {
     en: "Category",
     ar: "فئة",

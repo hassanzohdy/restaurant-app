@@ -43,6 +43,10 @@
     {
       "entry": ["/shop"],
       "name": "shop"
+    },
+    {
+      "entry": ["/orders"],
+      "name": "orders"
     }
   ]
 }

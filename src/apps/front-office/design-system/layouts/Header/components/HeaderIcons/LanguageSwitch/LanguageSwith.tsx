@@ -1,16 +1,14 @@
-import { IoLanguageSharp } from "react-icons/io5";
-import useToggleState from "../../../Hooks/HeaderStateHook";
+import { langIcon } from "shared/assets";
+import { useToggleState } from "../../../Hooks/headerStateHook";
 import LanguageSwitchList from "../../DropDown/LanguageSwitchList";
 
 export default function LanguageSwitch() {
   const { toggleState } = useToggleState();
 
   return (
-    <div className="relative">
-      <button
-        onClick={() => toggleState("langSwitch")}
-        className="border border-border cursor-pointer rounded-full p-3 text-xl hover:bg-primary-hover">
-        <IoLanguageSharp />
+    <div className="relative" onClick={() => toggleState("langSwitch")}>
+      <button className="border border-border cursor-pointer rounded-full w-12 h-12 flex items-center justify-center text-xl hover:bg-primary-hover">
+        <img src={langIcon} className="w-[31px]" />
       </button>
       <LanguageSwitchList />
     </div>

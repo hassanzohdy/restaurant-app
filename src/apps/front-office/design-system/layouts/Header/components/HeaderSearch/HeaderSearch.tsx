@@ -1,18 +1,21 @@
 import { IconSearch } from "@tabler/icons-react";
-import useToggleState from "../../Hooks/HeaderStateHook";
+import OverLay from "app/design-system/layouts/OverLay";
+import { useToggleState } from "../../Hooks/headerStateHook";
 import HeaderSearchForm from "../HeaderIcons/HeaderSearch/HeaderSearchForm";
-
 export default function HeaderSearch() {
-  const { toggleState } = useToggleState();
+  const { groupState, toggleState } = useToggleState();
 
   return (
-    <div>
-      <button
-        className="border border-border cursor-pointer rounded-full p-3 hover:bg-primary-hover"
-        onClick={() => toggleState("headerSearch")}>
-        <IconSearch className="w-5 h-5" />
-      </button>
-      <HeaderSearchForm />
-    </div>
+    <>
+      <OverLay atom={null} opened={groupState.headerSearch} />
+      <div>
+        <button
+          className="border border-border cursor-pointer rounded-full w-12 h-12 flex items-center justify-center hover:bg-primary-hover"
+          onClick={() => toggleState("headerSearch")}>
+          <IconSearch className="w-5 h-5" />
+        </button>
+        <HeaderSearchForm />
+      </div>
+    </>
   );
 }

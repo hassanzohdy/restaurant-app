@@ -1,10 +1,10 @@
+import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import {
   FormControlProps,
   matchRule,
   minLengthRule,
   requiredRule,
-} from "@mongez/react-form";
-import TextInput from "apps/front-office/design-system/components/Form/TextInput";
+} from "src/form";
 
 export type PasswordInputProps = FormControlProps & {
   // props go here

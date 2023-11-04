@@ -1,5 +1,4 @@
 import { trans } from "@mongez/localization";
-import { Form } from "@mongez/react-form";
 import Helmet from "@mongez/react-helmet";
 import { Link } from "@mongez/react-router";
 import { useRegister } from "apps/front-office/account/hooks/use-auth";
@@ -9,6 +8,7 @@ import PasswordInput from "apps/front-office/design-system/components/Form/Passw
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import URLS from "apps/front-office/utils/urls";
 import { googleIcon } from "shared/assets";
+import { Form } from "src/form";
 import styles from "./register.module.scss";
 
 export default function Register() {
@@ -33,7 +33,7 @@ export default function Register() {
           {trans("createAccount")}
         </h2>
         <button className="bg-slate-200 w-16 h-12 grid place-items-center rounded-md">
-          <Link to={`${URLS.home}`} target="_blank">
+          <Link to={URLS.home} target="_blank">
             <img src={googleIcon} alt="google signup icon" />
           </Link>
         </button>

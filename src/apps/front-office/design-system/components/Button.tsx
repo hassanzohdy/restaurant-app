@@ -1,5 +1,5 @@
-import { useSubmitButton } from "@mongez/react-form";
 import { ButtonHTMLAttributes, ReactNode } from "react";
+import { useSubmitButton } from "src/form";
 import { cn } from "../utils/cn";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -37,11 +37,13 @@ export function SubmitButton({
   // TODO: Form is not triggering proper events for invalid controls
   const { isSubmitting, disabled } = useSubmitButton();
 
+  // add background to have lower opacity on disabled button selector
+  const disabledClasses = disabled ? "disabled:opacity-50" : "";
   return (
     <button
       type="submit"
       disabled={disabled || isSubmitting}
-      className={`w-full cursor-pointer ${classes} text-white font-bold mt-1 mb-4 py-2 px-4 rounded sm:col-span-2`}
+      className={`${disabledClasses} w-full cursor-pointer ${classes} text-white font-bold mt-1 mb-4 py-2 px-4 rounded sm:col-span-2`}
       {...props}
     />
   );

@@ -3,7 +3,7 @@ import {
   minLengthRule,
   requiredRule,
   useFormControl,
-} from "@mongez/react-form";
+} from "src/form";
 
 export default function TextInput(props: FormControlProps) {
   const { id, error, value, changeValue, otherProps } = useFormControl(props);

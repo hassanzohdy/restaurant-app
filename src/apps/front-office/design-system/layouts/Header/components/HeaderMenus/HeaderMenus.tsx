@@ -28,14 +28,6 @@ export default function HeaderMenus() {
             {trans("About")}
           </Link>
         </li>
-        <li className="relative group flex flex-row items-center gap-1 cursor-pointer">
-          <Link
-            to={URLS.shop}
-            className="font-bold text-[16px] py-3 text-heading">
-            {trans("shop")}
-          </Link>
-          <IoIosArrowUp className="group-hover:rotate-180 transition-transform duration-500" />
-        </li>
         <li>
           <Link
             to={URLS.blog.list}

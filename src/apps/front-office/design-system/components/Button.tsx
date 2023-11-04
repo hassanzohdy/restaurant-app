@@ -43,7 +43,11 @@ export function SubmitButton({
     <button
       type="submit"
       disabled={disabled || isSubmitting}
-      className={`${disabledClasses} w-full cursor-pointer ${classes} text-white font-bold mt-1 mb-4 py-2 px-4 rounded sm:col-span-2`}
+      className={cn(
+        "w-full cursor-pointer text-white font-bold mt-1 mb-4 py-2 px-4 rounded sm:col-span-2",
+        disabledClasses,
+        classes,
+      )}
       {...props}
     />
   );

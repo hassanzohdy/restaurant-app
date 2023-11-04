@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { burgerAtom } from "apps/front-office/design-system/layouts/Header/atoms/HeaderAtoms";
+import { burgerAtom } from "apps/front-office/design-system/layouts/Header/atoms/header-atoms";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
@@ -87,7 +87,7 @@ export default function BurgerMenuList() {
       </li>
       <li>
         <Link
-          to={URLS.aboutUs}
+          to={URLS.contactUs}
           onClick={handelLinkClick}
           className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
           {trans("contact")}

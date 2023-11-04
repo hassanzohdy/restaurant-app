@@ -1,3 +1,4 @@
+import avatar from "assets/images/avatar.webp";
 import googleIcon from "assets/images/google.svg";
 import shopDropDownImg from "assets/images/header/banner_menu.jpg";
 import langIcon from "assets/images/header/langIcon.png";
@@ -12,6 +13,7 @@ import poco from "assets/images/poco.ico";
 
 export {
   americanExpress,
+  avatar,
   cod,
   discover,
   googleIcon,

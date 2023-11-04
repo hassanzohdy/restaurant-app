@@ -29,6 +29,7 @@ export default function HeaderMenus() {
             {trans("About")}
           </Link>
         </li>
+<<<<<<< HEAD
         <li className="relative group flex flex-row items-center gap-1 cursor-pointer">
           <Link
             to={URLS.shop}
@@ -38,6 +39,8 @@ export default function HeaderMenus() {
           <IoIosArrowUp className="group-hover:rotate-0 group-focus-within:rotate-0 rotate-180 transition-transform duration-500" />
           <ShopDropDown />
         </li>
+=======
+>>>>>>> 42c12c71bbd26c5dd7f7452505731eb83b550ea3
         <li>
           <Link
             to={URLS.blog.list}

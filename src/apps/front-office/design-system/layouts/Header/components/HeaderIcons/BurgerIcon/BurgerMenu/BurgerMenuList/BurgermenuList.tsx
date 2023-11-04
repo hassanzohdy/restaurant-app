@@ -37,17 +37,6 @@ export default function BurgerMenuList() {
           {trans("About")}
         </Link>
       </li>
-      <li className="border-b border-headingTextColor">
-        <div className="flex flex-row items-center justify-between">
-          <Link
-            to={URLS.menu.list}
-            onClick={handelLinkClick}
-            className=" block hover:text-primary-hover p-[7.5px]">
-            {trans("shop")}
-          </Link>
-          <div className="hover:bg-primary-hover py-2 px-3 text-white rounded-md cursor-pointer"></div>
-        </div>
-      </li>
       <li className="flex flex-row justify-between items-center border-b border-headingTextColor ">
         <Link
           to={URLS.blog.list}

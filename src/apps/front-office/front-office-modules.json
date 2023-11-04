@@ -30,7 +30,7 @@
     },
     {
       "entry": ["/menu"],
-      "name": "meals"
+      "name": "menu"
     },
     {
       "entry": ["/cart"],
@@ -41,8 +41,8 @@
       "name": "checkout"
     },
     {
-      "entry": ["/shop"],
-      "name": "shop"
+      "entry": ["/orders"],
+      "name": "orders"
     }
   ]
 }

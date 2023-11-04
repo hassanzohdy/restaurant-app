@@ -1,18 +1,11 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { useOnce } from "@mongez/react-hooks";
-import Breadcrumb from "apps/front-office/design-system/components/Breadcrumb";
-import {
-  breadcrumb,
-  withHomeBreadcrumb,
-} from "apps/front-office/design-system/components/Breadcrumb/breadcrumb";
-import URLS from "apps/front-office/utils/urls";
+import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import { useState } from "react";
 import BlogCard from "./BlogCard";
 import { getBlogData } from "./data/blogData";
-const breadcrumbs = withHomeBreadcrumb([
-  breadcrumb(trans("blog"), URLS.blog.list),
-]);
+
 export default function BlogPage() {
   const [blogData, setBlogData] = useState<any>([]);
   useOnce(() => {
@@ -21,7 +14,7 @@ export default function BlogPage() {
   return (
     <>
       <Helmet title={trans("blog")} />
-      <Breadcrumb title="ourBlog" breadcrumbs={breadcrumbs} />
+      <Breadcrumb title="blog" navItems={[{ name: "blog" }]} />
       {!blogData ||
         (blogData.length === 0 && (
           <h3 className="mt-5 text-center text-orange-500 font-bold">

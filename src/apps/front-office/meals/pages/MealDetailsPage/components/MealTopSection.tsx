@@ -1,5 +1,5 @@
 import { BreadCrumbs } from "apps/front-office/meals/components/BreadCrumbs";
-import { PopupMealType } from "../MealDetailsPage";
+import { PopupMealType } from "../utils/types";
 import MealsNavigateBtns from "./MealsNavigateBtns";
 
 type Props = {

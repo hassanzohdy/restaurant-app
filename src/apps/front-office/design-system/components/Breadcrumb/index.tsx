@@ -7,13 +7,16 @@ import "./style.css";
 export default function Breadcrumb({
   breadcrumbs,
   title,
+  height = 60,
 }: {
   breadcrumbs: Breadcrumb[];
   title: string;
+  height?: number;
 }) {
   return (
     <>
-      <div className="flex justify-center items-center w-full h-60 breadcrumb">
+      <div
+        className={`flex justify-center items-center w-full h-${height} breadcrumb`}>
         <div>
           <h2 className="font-bold text-center text-[2rem] ">{trans(title)}</h2>
           <div className="flex items-center gap-0 text-center">

@@ -246,6 +246,47 @@ groupedTranslations({
     en: "Cart",
     ar: "العربة",
   },
+  categories: {
+    en: "Categories",
+    ar: "التصنيفات",
+  },
+  burger: {
+    en: "Burger",
+    ar: "برجر",
+  },
+  coldDrinks: {
+    en: "Cold Drinks",
+    ar: "مشروبات باردة",
+  },
+  hotDrinks: {
+    en: "Hot Drinks",
+    ar: "مشروبات ساخنة",
+  },
+  pizza: {
+    en: "Pizza",
+    ar: "بيتزا",
+  },
+  food: {
+    en: "Food",
+    ar: "طعام",
+  },
+  recentPosts: {
+    en: "Recent Posts",
+    ar: "احدث المدونات",
+  },
+  popularTags: {
+    en: "Popular Tags",
+    ar: "احدث التاجات",
+  },
+  nextPost: {
+    en: "Next Post",
+    ar: "المقال التالي",
+  },
+  prevPost: {
+    en: "Prev Post",
+    ar: "المقال السابق",
+  },
+
   call: {
     en: "Call and Order in",
     ar: "اتصل واطلب على",

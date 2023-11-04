@@ -1,7 +1,5 @@
 // append urls here, DO NOT remove this line
 
-import { Post } from "apps/front-office/blog/utils";
-
 const URLS = {
   meals: "/meals",
   posts: "/posts",
@@ -32,7 +30,7 @@ const URLS = {
   blog: {
     list: "/blog",
     viewPostRoute: "/blog/:id/:slug",
-    viewPost: (post: Post) => `/blog/${post.id}/${post.slug}`,
+    viewPost: (post: any) => `/blog/${post.id}/${post.slug}`,
   },
   cart: "/cart",
   orders: {

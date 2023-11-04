@@ -1,5 +1,5 @@
 import { langIcon } from "shared/assets";
-import { useToggleState } from "../../../Hooks/HeaderStateHook";
+import { useToggleState } from "../../../Hooks/headerStateHook";
 import LanguageSwitchList from "../../DropDown/LanguageSwitchList";
 
 export default function LanguageSwitch() {

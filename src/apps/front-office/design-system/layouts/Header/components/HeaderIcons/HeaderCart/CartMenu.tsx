@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
 import OverLay from "apps/front-office/design-system/layouts/OverLay";
 import { IoCloseSharp } from "react-icons/io5";
-import { useToggleState } from "../../../Hooks/HeaderStateHook";
+import { useToggleState } from "../../../Hooks/headerStateHook";
 import useEscapeToClose from "../../../Hooks/useEscapeToClose";
 
-const ChartMenu = () => {
+const CartMenu = () => {
   const { groupState, toggleState } = useToggleState();
 
   useEscapeToClose(groupState.cartIcon, () => toggleState("cartIcon"));
@@ -37,4 +37,4 @@ const ChartMenu = () => {
   );
 };
 
-export default ChartMenu;
+export default CartMenu;

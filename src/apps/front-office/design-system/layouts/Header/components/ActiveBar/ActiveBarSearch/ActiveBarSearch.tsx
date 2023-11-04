@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useToggleStateActiveBar } from "../../../Hooks/HeaderStateHook";
+import { useToggleStateActiveBar } from "../../../Hooks/headerStateHook";
 
 export default function ActiveBarMyAccount() {
   const { toggleState } = useToggleStateActiveBar();

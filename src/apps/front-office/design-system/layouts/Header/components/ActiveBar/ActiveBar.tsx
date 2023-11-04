@@ -1,5 +1,5 @@
 import useResetStatesOnAction from "../../Hooks/useResetStatesOnAction";
-import { ToggleGroupActiveBarAtom } from "../../atoms/HeaderAtoms";
+import { toggleGroupActiveBarAtom } from "../../atoms/header-atoms";
 import ActiveBarCart from "./ActiveBarCart/ActiveBarCart";
 import ActiveBarLang from "./ActiveBarLang";
 import LanguageActiveList from "./ActiveBarLang/LanguageActiveList";
@@ -11,7 +11,7 @@ import "./activeBar.scss";
 
 export default function ActiveBar() {
   const { handleClickOutsideRef } = useResetStatesOnAction(
-    ToggleGroupActiveBarAtom,
+    toggleGroupActiveBarAtom,
   );
 
   return (

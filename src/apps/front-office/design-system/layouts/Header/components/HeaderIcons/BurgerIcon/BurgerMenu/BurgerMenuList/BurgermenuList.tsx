@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { burgerAtom } from "apps/front-office/design-system/layouts/Header/atoms/HeaderAtoms";
+import { burgerAtom } from "apps/front-office/design-system/layouts/Header/atoms/header-atoms";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";

@@ -1,12 +1,11 @@
 import { trans } from "@mongez/localization";
+import { Link } from "@mongez/react-router";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
-import CheckoutInputRadio from "../../Form/CheckoutInputRadio";
+import URLS from "apps/front-office/utils/urls";
 import UserOrderDetailsTable from "../UserOrderDetailsTable";
+import UserPaymentMethod from "../UserPaymentMethod";
 
-export type UserOrderDetailsProps = {
-  clearErrors: () => void;
-};
-export default function UserOrder({ clearErrors }: UserOrderDetailsProps) {
+export default function UserOrder() {
   return (
     <div className="xl:w-[40%] w-full border-[6px] border-border h-fit py-5 px-9">
       <h3 className="font-bold text-[1.6em] clear-both">
@@ -14,12 +13,22 @@ export default function UserOrder({ clearErrors }: UserOrderDetailsProps) {
       </h3>
       <UserOrderDetailsTable />
 
-      <CheckoutInputRadio name="payment" label="Direct bank transfer" />
-      <CheckoutInputRadio name="payment" label="Check payments" />
-      <CheckoutInputRadio name="payment" label="Cash on delivery" />
-      <CheckoutInputRadio name="payment" label="paypal" />
+      <UserPaymentMethod />
 
-      <SubmitButton onClick={clearErrors}>submit</SubmitButton>
+      <p className="font-thin text-sm">
+        {trans("personalDataNotice")}{" "}
+        <Link
+          className="text-primary-main font-normal hover:text-primary-hover focus:text-primary-hover"
+          to={URLS.privacyPolicy}>
+          {trans("privacyPolicy")}
+        </Link>
+        .
+      </p>
+      <SubmitButton variant="primary">
+        <div className="text-base font-bold py-2 text-black uppercase">
+          {trans("placeOrder")}
+        </div>
+      </SubmitButton>
     </div>
   );
 }

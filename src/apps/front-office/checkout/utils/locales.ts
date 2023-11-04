@@ -94,4 +94,68 @@ groupedTranslations({
     en: "Total",
     ar: "الإجمالي",
   },
+  personalDataNotice: {
+    en: "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our",
+    ar: "سيتم استخدام بياناتك الشخصية لمعالجة طلبك، ودعم تجربتك على هذا الموقع، ولأغراض أخرى موضحة في سياسة الخصوصية الخاصة بنا.",
+  },
+  houseNumberStreetName: {
+    en: "House number and street name",
+    ar: "رقم المنزل واسم الشارع",
+  },
+  placeOrder: {
+    en: "Place Order",
+    ar: "قدّم الطلب",
+  },
+  privacyPolicy: {
+    en: "Privacy Policy",
+    ar: "سياسة الخصوصية",
+  },
+  egypt: {
+    en: "Egypt",
+    ar: "مصر",
+  },
+  saudiArabia: {
+    en: "Saudi Arabia",
+    ar: "المملكة العربية السعودية",
+  },
+  iraq: {
+    en: "Iraq",
+    ar: "العراق",
+  },
+  unitedArabEmirates: {
+    en: "United Arab Emirates",
+    ar: "الإمارات العربية المتحدة",
+  },
+  jordan: {
+    en: "Jordan",
+    ar: "الأردن",
+  },
+  lebanon: {
+    en: "Lebanon",
+    ar: "لبنان",
+  },
+  morocco: {
+    en: "Morocco",
+    ar: "المغرب",
+  },
+  tunisia: {
+    en: "Tunisia",
+    ar: "تونس",
+  },
+  algeria: {
+    en: "Algeria",
+    ar: "الجزائر",
+  },
+  kuwait: {
+    en: "Kuwait",
+    ar: "الكويت",
+  },
+  notesAboutOrder: {
+    en: "Notes about your order, e.g. special notes for delivery",
+    ar: "ملاحظات حول طلبك، مثل ملاحظات خاصة للتوصيل",
+  },
+  orderNotes: {
+    en: "Order notes (optional)",
+    ar: "ملاحظات الطلب (اختياري)",
+  },
 });

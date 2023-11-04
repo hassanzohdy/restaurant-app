@@ -5,9 +5,11 @@ import {
   requiredRule,
   useFormControl,
 } from "@mongez/react-form";
+import { cn } from "apps/front-office/design-system/utils/cn";
 
 export default function CheckoutInputText(props: FormControlProps) {
-  const { value, id, error, changeValue, otherProps } = useFormControl(props);
+  const { value, id, error, name, changeValue, otherProps } =
+    useFormControl(props);
   return (
     <div>
       {otherProps.label && (
@@ -20,23 +22,31 @@ export default function CheckoutInputText(props: FormControlProps) {
       )}
 
       <input
-        type={props.type || "text"}
+        type={otherProps.type || "text"}
         value={value}
         id={id}
+        name={name}
         {...otherProps}
         onChange={e => {
           changeValue(e.target.value);
         }}
-        className={`mt-1 block w-full px-3 py-3 bg-white border border-border rounded-md text-base placeholder-slate-400
-        focus:outline-none focus:border-primary-main 
-        ${error && "border-l-[2px] border-l-red-500 focus:border-l-red-500"}
-        ${
+        className={cn(
+          "mt-1 block w-full px-3 py-3 bg-white border border-border rounded-md text-base placeholder-slate-400 focus:outline-none focus:border-primary-main ",
+          error && "border-l-[2px] border-l-red-500 focus:border-l-red-500",
           value &&
-          !error &&
-          "border-l-[2px] border-l-green-500 focus:border-l-green-500"
-        }
-      `}
+            !error &&
+            "border-l-[2px] border-l-green-500 focus:border-l-green-500",
+          otherProps.className,
+        )}
       />
+
+      <div
+        className={cn(
+          "text-red-500 text-sm mt-1 transition-all duration-200 overflow-hidden h-0 ",
+          error && "h-[20px]",
+        )}>
+        <span>{error}</span>
+      </div>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import { useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import useFocusOnToggle from "../../../../../../../../shared/hooks/useFocusOnToggle";
-import { useToggleState } from "../../../Hooks/HeaderStateHook";
+import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
+import { useToggleState } from "../../../Hooks/headerStateHook";
 import useEscapeToClose from "../../../Hooks/useEscapeToClose";
 
 export default function HeaderSearchForm() {

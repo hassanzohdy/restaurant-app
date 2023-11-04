@@ -8,7 +8,7 @@ import PasswordInput from "apps/front-office/design-system/components/Form/Passw
 import URLS from "apps/front-office/utils/urls";
 import { useRef } from "react";
 import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
-import { useToggleState } from "../../../Hooks/HeaderStateHook";
+import { useToggleState } from "../../../Hooks/headerStateHook";
 import "./_userDropDown.scss";
 
 export default function UserDropDown() {

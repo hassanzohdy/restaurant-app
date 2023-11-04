@@ -1,6 +1,6 @@
 import { Link, routerEvents } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { ToggleGroupAtom } from "../../atoms/HeaderAtoms";
 import HeaderSearch from "../HeaderSearch/HeaderSearch";
@@ -9,32 +9,56 @@ import UserIcon from "./HeaderUser/UserIcon";
 import LanguageSwitch from "./LanguageSwitch";
 
 export default function HeaderIcons() {
-  const [, setStates] = ToggleGroupAtom.useState();
+  // Memoize the resetStates function to prevent unnecessary re-renders
+  const resetStates = useCallback(() => {
+    ToggleGroupAtom.reset();
+  }, []);
+
+  // Memoize the handleClickOutside function
+  const handleClickOutside = useCallback(
+    event => {
+      const popups = document.getElementsByClassName("popups");
+      const clickedInsidePopup = Array.from(popups).some(popup =>
+        popup.contains(event.target),
+      );
+
+      if (!clickedInsidePopup) {
+        resetStates();
+      }
+    },
+    [resetStates],
+  );
+
   useEffect(() => {
     // Listen for route changes and reset the states
-    const subscription = routerEvents.onNavigating(() => {
-      // Check if the navigation mode is 'navigation'
-      // Reset the states when navigating to a new route
-      setStates({
-        headerSearch: false,
-        langSwitch: false,
-        userIcon: false,
-        cartIcon: false,
-      });
-    });
+    const handleRouteChange = () => {
+      resetStates();
+    };
+    const routeChangeSubscription =
+      routerEvents.onNavigating(handleRouteChange);
 
     // Clean up the subscription when the component unmounts
     return () => {
-      subscription.unsubscribe();
+      routeChangeSubscription.unsubscribe();
     };
-  }, [setStates]);
+  }, [resetStates]);
+
+  useEffect(() => {
+    // Add a click event listener to reset the states when clicking outside the header
+    document.addEventListener("click", handleClickOutside);
+
+    // Clean up the click event listener when the component unmounts
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [handleClickOutside]);
 
   return (
-    <div className="hidden lg:flex gap-4">
+    <div className="hidden lg:flex gap-4 popups">
       <LanguageSwitch />
       <HeaderSearch />
       <UserIcon />
-      <div className="border border-border cursor-pointer rounded-full p-3 text-xl hover:bg-primary-hover">
+      <div className="border border-border cursor-pointer rounded-full p-3 text-xl hover-bg-primary-hover">
         <Link to={URLS.wishlist}>
           <AiOutlineHeart />
         </Link>

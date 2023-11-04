@@ -1,7 +1,10 @@
 import { groupedTranslations } from "@mongez/localization";
 
-// Add only common localization
 groupedTranslations({
+  appName: {
+    en: "Restaurant App",
+    ar: "تطبيق المطعم",
+  },
   home: {
     en: "Home",
     ar: "الرئيسية",
@@ -26,6 +29,10 @@ groupedTranslations({
     en: "Description",
     ar: "الوصف",
   },
+  reviews: {
+    en: "Reviews",
+    ar: "المراجعات",
+  },
   createAccount: {
     en: "Create Account",
     ar: "إنشاء حساب",
@@ -35,28 +42,28 @@ groupedTranslations({
     ar: "أو قم بذلك عبر البريد الإلكتروني",
   },
   firstName: {
-    en: "First Name *",
-    ar: "الاسم الأول *",
+    en: "First Name",
+    ar: "الاسم الأول",
   },
   lastName: {
-    en: "Last Name *",
-    ar: "الاسم الأخير *",
+    en: "Last Name",
+    ar: "الاسم الأخير",
   },
   phoneNumber: {
-    en: "Phone Number *",
-    ar: "رقم الهاتف *",
+    en: "Phone Number",
+    ar: "رقم الهاتف",
   },
   emailAddress: {
-    en: "Email Address *",
-    ar: "عنوان البريد الإلكتروني *",
+    en: "Email Address",
+    ar: "عنوان البريد الإلكتروني",
   },
   password: {
     en: "Password ",
     ar: "كلمة المرور ",
   },
   confirmPassword: {
-    en: "Confirm Password *",
-    ar: "تأكيد كلمة المرور *",
+    en: "Confirm Password",
+    ar: "تأكيد كلمة المرور",
   },
   signInAlready: {
     en: `Already have an account?`,
@@ -287,6 +294,10 @@ groupedTranslations({
     ar: "المقال السابق",
   },
 
+  addToCart: {
+    en: "Add to Cart",
+    ar: "أضف الى السلة",
+  },
   call: {
     en: "Call and Order in",
     ar: "اتصل واطلب على",
@@ -391,5 +402,77 @@ groupedTranslations({
   makeAnOrder: {
     en: "Make An order",
     ar: "اطلب الآن",
+  },
+  // Orders Page
+  myOrders: {
+    en: "My Orders",
+    ar: "طلباتى",
+  },
+  pastOrders: {
+    en: "Past Orders",
+    ar: "طلبات سابقة",
+  },
+  reorder: {
+    en: "Reorder",
+    ar: "اعادة الطلب",
+  },
+  total: {
+    en: "Total",
+    ar: "الإجمالي",
+  },
+  // Order Details Page
+  orderDetails: {
+    en: "Order Details",
+    ar: "تفاصيل الطلب",
+  },
+  orderMenu: {
+    en: "Order Menu",
+    ar: "قائمة الطلب",
+  },
+  deliveryAddress: {
+    en: "Delivery Address",
+    ar: "عنوان الشحن",
+  },
+  cashOnDelivery: {
+    en: "cash on delivery",
+    ar: "الدفع عند  الاستلام",
+  },
+  // Privacy Policy
+  privacyPolicy: {
+    en: "Privacy Policy",
+    ar: "سياسة الخصوصية",
+  },
+  // Terms and Conditions
+  termsAndConditions: {
+    en: "Terms and Conditions",
+    ar: "الأحكام والشروط",
+  },
+  category: {
+    en: "Category",
+    ar: "فئة",
+  },
+  share: {
+    en: "Share",
+    ar: "شارك",
+  },
+  guaranteedSafeCheckout: {
+    en: "Guaranteed safe checkout",
+    ar: "دفع امن مضمون",
+  },
+  freeShipping: {
+    en: "Free global shipping on all orders",
+    ar: "شحن عالمي مجاني لجميع الطلبات",
+  },
+  easyReturns: {
+    en: "30 days easy returns if you change your mind",
+    ar: "إرجاع سهل لمدة 30 يومًا إذا غيرت رأيك",
+  },
+  orderBeforeNoon: {
+    en: "Order before noon for same day dispatch",
+    ar: "اطلب قبل الظهر للإرسال في نفس اليوم",
+  },
+  relatedProducts: {
+    en: "Related Products",
+    ar: "منتجات ذات صله",
   },
 });

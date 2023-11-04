@@ -20,9 +20,11 @@ export default function FooterPaymentMethods() {
   return (
     <>
       <ul className="footer-payment-methods flex items-center">
-        {paymentMethods.map((item, index) => (
-          <span className="payment-method" key={index}>
-            <img src={item.icon} alt={item.name} />
+        {paymentMethods.map(item => (
+          <span
+            className="payment-method mr-[12px] last-of-type:mr-0"
+            key={item.name}>
+            <img src={item.icon} className="logo" alt={item.name} />
           </span>
         ))}
       </ul>

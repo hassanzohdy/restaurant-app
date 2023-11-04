@@ -2,13 +2,17 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 
 export default function FooterCopyRights() {
-  const year = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
   return (
     <>
-      <p className="copy-rights">
-        {trans("copyRights")} &copy; {year}{" "}
-        <Link to="https://demo2.pavothemes.com/poco/">pocofood</Link>.{" "}
-        {trans("allRightsReserved")}.
+      <p className="copy-rights text-[14px] font-normal max-md:mb-[15px]">
+        {trans("copyRights")} &copy; {currentYear}{" "}
+        <Link
+          to="https://demo2.pavothemes.com/poco/"
+          className="text-[#ffc222]">
+          pocofood
+        </Link>
+        . {trans("allRightsReserved")}.
       </p>
     </>
   );

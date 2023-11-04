@@ -4,7 +4,7 @@ import { navigateTo } from "@mongez/react-router";
 import user from "apps/front-office/account/user";
 import URLS from "apps/front-office/utils/urls";
 import { AxiosResponse } from "axios";
-import { apiBaseUrl, apiKey, apiOS } from "./flags";
+import { apiBaseUrl } from "./flags";
 
 const endpoint = new Endpoint({
   baseURL: apiBaseUrl,
@@ -13,15 +13,6 @@ const endpoint = new Endpoint({
     driver: new RunTimeDriver(),
     expiresAfter: 60 * 60 * 24 * 7, // 1 week, but because it is a runtime driver, it will be cleared when the page is refreshed
   },
-  setAuthorizationHeader: () => {
-    if (user.isLoggedIn()) {
-      return `Bearer ${user.getAccessToken()}`;
-    }
-
-    if (!apiKey) return;
-
-    return `key ${apiKey}`;
-  },
 });
 
 const endpointEvents = endpoint.events;
@@ -29,7 +20,10 @@ const endpointEvents = endpoint.events;
 // interceptors requests
 endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
-  headers["os"] = apiOS;
+
+  if (user.isLoggedIn()) {
+    headers.Authorization = `Bearer ${user.getAccessToken()}`;
+  }
 });
 
 endpointEvents.onSuccess((response: AxiosResponse) => {
@@ -38,7 +32,7 @@ endpointEvents.onSuccess((response: AxiosResponse) => {
   }
 
   if (response.data.user) {
-    user.login(response.data.user);
+    user.update(response.data.user);
   }
 });
 

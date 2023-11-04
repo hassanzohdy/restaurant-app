@@ -1,3 +1,4 @@
+import { GenericObject } from "@mongez/reinforcements";
 import endpoint from "shared/endpoint";
 
 /**
@@ -10,14 +11,14 @@ export function getGuestToken() {
 /**
  * Perform login
  */
-export function login(data: any) {
+export function login(data: GenericObject) {
   return endpoint.post("/login", data);
 }
 
 /**
  * Create new account
  */
-export function register(data: any) {
+export function register(data: GenericObject) {
   return endpoint.post("/register", data);
 }
 

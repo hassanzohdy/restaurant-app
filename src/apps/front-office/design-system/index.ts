@@ -1,6 +1,9 @@
+// import "@mantine/carousel/styles.css";
+// import "@mantine/core/styles.css";
 import { googleFont } from "@mongez/dom";
 import { current } from "@mongez/react";
-import "./main.scss";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 if (current("localeCode") === "ar") {
   // load Cairo font from google for Arabic language
@@ -13,3 +16,5 @@ if (current("localeCode") === "ar") {
     "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap",
   );
 }
+
+googleFont("https://fonts.googleapis.com/css2?family=Norican&display=swap");

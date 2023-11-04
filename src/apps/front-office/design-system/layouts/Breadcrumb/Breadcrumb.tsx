@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { IconChevronRight } from "@tabler/icons-react";
+import URLS from "apps/front-office/utils/urls";
 import styles from "./_Breadcrumb.module.scss";
 
 export type BreadcrumbProps = {
@@ -20,7 +21,9 @@ export default function Breadcrumb({ title, navItems }: BreadcrumbProps) {
           <nav className="flex justify-center">
             <ol className="inline-flex items-center justify-center text-[15px]">
               <li className="flex items-center mr-1">
-                <Link to="/" className="mr-1 text-gray-400">
+                <Link
+                  to={URLS.home}
+                  className="mr-1 text-gray-400 hover:text-primary-hover">
                   {trans("home")}
                 </Link>
                 <IconChevronRight strokeWidth="4" />

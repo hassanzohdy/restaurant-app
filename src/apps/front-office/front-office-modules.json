@@ -30,11 +30,19 @@
     },
     {
       "entry": ["/menu"],
-      "name": "meals"
+      "name": "menu"
     },
     {
       "entry": ["/cart"],
       "name": "cart"
+    },
+    {
+      "entry": ["/checkout"],
+      "name": "checkout"
+    },
+    {
+      "entry": ["/orders"],
+      "name": "orders"
     }
   ]
 }

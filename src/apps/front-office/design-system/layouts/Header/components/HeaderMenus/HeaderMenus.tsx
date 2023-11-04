@@ -2,7 +2,6 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import { IoIosArrowUp } from "react-icons/io";
-import ShopDropDown from "../DropDown/ShopDropDown";
 
 export default function HeaderMenus() {
   return (
@@ -28,17 +27,6 @@ export default function HeaderMenus() {
             className="font-bold text-[16px] py-3 text-heading">
             {trans("About")}
           </Link>
-        </li>
-        <li className="relative group flex flex-row items-center gap-1 cursor-pointer">
-          <Link
-            to={URLS.meals}
-            className="font-bold text-[16px] py-3 text-heading">
-            {trans("shop")}
-          </Link>
-          <IoIosArrowUp className="group-hover:rotate-180 transition-transform duration-500" />
-
-          {/* Link drop down list */}
-          <ShopDropDown />
         </li>
         <li>
           <Link

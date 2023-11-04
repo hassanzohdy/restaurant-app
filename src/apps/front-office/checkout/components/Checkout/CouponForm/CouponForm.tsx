@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
+import { Form } from "@mongez/react-form";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import { useRef } from "react";
 import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
-import { Form } from "@mongez/react-form";
 import "./_CouponForm.scss";
 
 export type CouponFormProps = {

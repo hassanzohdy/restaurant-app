@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { Form } from "@mongez/react-form";
 import Helmet from "@mongez/react-helmet";
 import { Link } from "@mongez/react-router";
 import { useRegister } from "apps/front-office/account/hooks/use-auth";
@@ -8,7 +9,6 @@ import PasswordInput from "apps/front-office/design-system/components/Form/Passw
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import URLS from "apps/front-office/utils/urls";
 import { googleIcon } from "shared/assets";
-import { Form } from "@mongez/react-form";
 import styles from "./register.module.scss";
 
 export default function Register() {

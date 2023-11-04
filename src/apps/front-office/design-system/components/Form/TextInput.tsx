@@ -1,10 +1,10 @@
-import React from "react";
 import {
   FormControlProps,
   minLengthRule,
   requiredRule,
   useFormControl,
 } from "@mongez/react-form";
+import React from "react";
 
 function _TextInput(props: FormControlProps, ref: any) {
   const { id, error, value, inputRef, changeValue, otherProps } =

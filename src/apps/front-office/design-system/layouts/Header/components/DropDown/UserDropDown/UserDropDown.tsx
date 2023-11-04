@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { Form } from "@mongez/react-form";
 import { Link } from "@mongez/react-router";
 import { useRegister } from "apps/front-office/account/hooks/use-auth";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
@@ -7,7 +8,6 @@ import PasswordInput from "apps/front-office/design-system/components/Form/Passw
 import URLS from "apps/front-office/utils/urls";
 import { useRef } from "react";
 import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
-import { Form } from "@mongez/react-form";
 import { useToggleState } from "../../../Hooks/headerStateHook";
 import "./_userDropDown.scss";
 

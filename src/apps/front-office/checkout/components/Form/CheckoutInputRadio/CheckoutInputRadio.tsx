@@ -1,8 +1,4 @@
-import {
-  FormControlProps,
-  requiredRule,
-  useFormControl,
-} from "src/form";
+import { FormControlProps, requiredRule, useFormControl } from "src/form";
 
 export default function CheckoutInputRadio(props: FormControlProps) {
   const { id, name, value, otherProps } = useFormControl(props, {

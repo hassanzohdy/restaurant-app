@@ -1,9 +1,5 @@
-import {
-  FormControlProps,
-  requiredRule,
-  useFormControl,
-} from "src/form";
 import { cn } from "apps/front-office/design-system/utils/cn";
+import { FormControlProps, requiredRule, useFormControl } from "src/form";
 
 export default function CheckOutSelect(
   props: FormControlProps,

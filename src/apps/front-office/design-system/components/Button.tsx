@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
-import { useSubmitButton } from "src/form";
+import { useSubmitButton } from "@mongez/react-form";
 import { cn } from "../utils/cn";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {

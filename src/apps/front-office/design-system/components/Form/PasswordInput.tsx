@@ -4,7 +4,7 @@ import {
   matchRule,
   minLengthRule,
   requiredRule,
-} from "src/form";
+} from "@mongez/react-form";
 
 export type PasswordInputProps = FormControlProps & {
   // props go here

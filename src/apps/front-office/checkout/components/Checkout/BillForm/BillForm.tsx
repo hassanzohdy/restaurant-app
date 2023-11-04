@@ -1,5 +1,5 @@
 import { trans } from "@mongez/localization";
-import { Form } from "src/form";
+import { Form } from "@mongez/react-form";
 import UserDetailsForm from "../UserDetailsForm";
 import UserOrderDetails from "../UserOrder";
 

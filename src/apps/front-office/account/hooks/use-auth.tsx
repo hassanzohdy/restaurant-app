@@ -1,6 +1,6 @@
 import { register } from "apps/front-office/account/service/auth";
 import { useState } from "react";
-import { FormSubmitOptions } from "src/form";
+import { FormSubmitOptions } from "@mongez/react-form";
 
 export type State = "initial" | "loading" | "done" | "error";
 

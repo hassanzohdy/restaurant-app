@@ -5,7 +5,7 @@ import {
   minLengthRule,
   requiredRule,
   useFormControl,
-} from "src/form";
+} from "@mongez/react-form";
 
 export default function CheckoutInputText(props: FormControlProps) {
   const { value, id, error, name, changeValue, otherProps } =

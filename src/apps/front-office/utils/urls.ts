@@ -1,7 +1,6 @@
 // append urls here, DO NOT remove this line
 
 const URLS = {
-  meals: "/meals",
   posts: "/posts",
   home: "/",
   notFound: "/404",
@@ -17,8 +16,8 @@ const URLS = {
   wishlist: "wishlist",
   shop: "/shop",
   menu: {
-    list: "/menu",
-    viewMealRoute: "/menu/:id/:slug",
+    list: "/menu", // API + Pagination + Filter Activation
+    viewMealRoute: "/menu/:id/:slug", // API + Next/Prev API => Reviews UI/API // /meals/:id/similar
     viewMeal: (meal: any) => `/menu/${meal.id}/${meal.slug}`,
     search: "/menu/search",
   },
@@ -33,8 +32,9 @@ const URLS = {
     viewPostRoute: "/blog/:id/:slug",
     viewPost: (post: any) => `/blog/${post.id}/${post.slug}`,
   },
-  cart: "/cart",
+  cart: "/cart", // API + Empty Cart UI
   orders: {
+    // API
     list: "/orders",
     viewOrderRoute: "/orders/:id",
     viewOrder: (order: any) => `/orders/${order.id}`,
@@ -46,11 +46,10 @@ const URLS = {
     failed: "/checkout/failed",
   },
   auth: {
-    login: "/login",
-    register: "/register",
-    forgotPassword: "/forgot-password",
-    resetPassword: "/reset-password",
-    verifyForgetPassword: "/verifyForgetPassword",
+    login: "/login", // UI Rebuild
+    register: "/register", // UI Enhancement
+    forgotPassword: "/forgot-password", // New
+    resetPassword: "/reset-password", // New
   },
 };
 

@@ -5,7 +5,7 @@ import router, {
 } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import React from "react";
-import { FormInterface } from "src/form";
+import { FormInterface } from "@mongez/react-form";
 import { resetPasswordAtom } from "../pages/Register/atoms";
 import {
   forgetPassword,

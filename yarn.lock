@@ -605,10 +605,10 @@
     "@mongez/events" "^2.0.0"
     "@mongez/reinforcements" "^2.3.8"
 
-"@mongez/react-form@^2.0.19":
-  version "2.0.20"
-  resolved "https://registry.npmjs.org/@mongez/react-form/-/react-form-2.0.20.tgz"
-  integrity sha512-6vMjj5gt22Ef5XPxOcNi5/MqtsHlZNrLjlc7BotoaIeK4yckr8wcDYHcb5X8bk08Wyr09e3S24zXMHNfu0zneQ==
+"@mongez/react-form@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@mongez/react-form/-/react-form-2.1.0.tgz#39eded981c5e33fe253d144d911b7f133b47938d"
+  integrity sha512-VoNfBq9uOdtu/9xdJTaYbnA26dAvwCAOvU67UIcpPcCelKaZwvnVj8Y2pEVGAdwwyZF4v/Bn/vE3rV4okCvmiw==
   dependencies:
     "@mongez/events" "^2.0.0"
     "@mongez/localization" "^2.2.1"
@@ -5203,6 +5203,7 @@ widest-line@^4.0.1:
     string-width "^5.0.1"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==

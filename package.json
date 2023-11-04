@@ -12,7 +12,8 @@
     "start": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "tsc": "npx tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -25,7 +26,7 @@
     "@mongez/localization": "^2.2.4",
     "@mongez/react": "^3.0.6",
     "@mongez/react-atom": "^3.2.2",
-    "@mongez/react-form": "^2.0.19",
+    "@mongez/react-form": "^2.1.0",
     "@mongez/react-helmet": "^1.0.9",
     "@mongez/react-hooks": "^1.3.3",
     "@mongez/react-localization": "^1.0.5",

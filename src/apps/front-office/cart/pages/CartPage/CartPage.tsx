@@ -1,14 +1,11 @@
+import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
+import { IconShoppingCartQuestion } from "@tabler/icons-react";
+import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
-import popularMealImage1 from "assets/images/about-us/popular-meal-image-1.png";
-import popularMealImage2 from "assets/images/about-us/popular-meal-image-2.png";
-import popularMealImage3 from "assets/images/about-us/popular-meal-image-3.png";
 import React from "react";
 import CartProductsTable from "./components/CartProductsTable";
 import CartTotals from "./components/CartTotals";
-import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
-import { trans } from "@mongez/localization";
-import { IconShoppingCartQuestion } from "@tabler/icons-react";
 
 const cartProductsList = [
   // {
@@ -37,31 +34,30 @@ const cartProductsList = [
 const emptyCartInfo = {
   title: trans("emptyCart"),
   description: trans("cartEmptyDescription"),
-  icon: <IconShoppingCartQuestion size="150" />
-}
+  icon: <IconShoppingCartQuestion size="150" />,
+};
 
 function _CartPage() {
-
   return (
     <>
       <Helmet title="Cart" />
       <Breadcrumb title="Cart" navItems={[{ name: "cart" }]} />
-      {
-        cartProductsList.length > 0 ?
+      {cartProductsList.length > 0 ? (
         <div className="cart-details py-[100px] max-lg:py-[80px] max-sm:py-[70px]">
-        <div className="container">
-          <div className="flex justify-between flex-wrap">
-            <div className="w-[calc(70%-40px)] max-xl:w-[calc(65%-30px)] max-lg:w-[100%]">
-              <CartProductsTable cartProducts={cartProductsList} />
-            </div>
-            <div className="w-[30%] max-xl:w-[35%] max-lg:w-[100%]">
-              <CartTotals />
+          <div className="container">
+            <div className="flex justify-between flex-wrap">
+              <div className="w-[calc(70%-40px)] max-xl:w-[calc(65%-30px)] max-lg:w-[100%]">
+                <CartProductsTable cartProducts={cartProductsList} />
+              </div>
+              <div className="w-[30%] max-xl:w-[35%] max-lg:w-[100%]">
+                <CartTotals />
+              </div>
             </div>
           </div>
         </div>
-      </div> :
-      <EmptyComponent {...emptyCartInfo} />
-      }
+      ) : (
+        <EmptyComponent {...emptyCartInfo} />
+      )}
     </>
   );
 }

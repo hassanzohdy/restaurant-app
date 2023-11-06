@@ -483,8 +483,8 @@ groupedTranslations({
     en: "Order before noon for same day dispatch",
     ar: "اطلب قبل الظهر للإرسال في نفس اليوم",
   },
-  relatedProducts: {
-    en: "Related Products",
-    ar: "منتجات ذات صله",
+  youMayAlsoWant: {
+    en: "You may also want to try",
+    ar: "قد ترغب أيضًا في تجربة",
   },
 });

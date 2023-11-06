@@ -62,7 +62,7 @@ export const DetailsSide = ({
 
   return (
     <div className="flex-1">
-      <div className="sticky top-10 space-y-6">
+      <div className="sticky top-20 space-y-6">
         <div className="space-y-6 border-b pb-6">
           <h1 className="text-5xl font-bold">{title}</h1>
           <Stars ratings={ratings} />

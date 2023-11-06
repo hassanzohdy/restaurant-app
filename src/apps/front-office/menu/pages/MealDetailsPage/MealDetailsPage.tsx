@@ -1,5 +1,7 @@
+import { trans } from "@mongez/localization";
 import { atom } from "@mongez/react-atom";
 import Helmet from "@mongez/react-helmet";
+import SectionHeading from "apps/front-office/design-system/components/SectionHeading";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import DescriptionAndReviews from "./components/DescriptionAndReviews";
 import MealDetailsSection from "./components/MealDetailsSection";
@@ -43,7 +45,6 @@ const meal: MealType = {
     "Tomato",
     "Swiss Cheese",
   ],
-  reviews: [],
   nextMeal: {
     id: 3,
     image:
@@ -59,6 +60,32 @@ const meal: MealType = {
     price: 15.5,
     title: "Hawaii Vegetarian Pizza",
   },
+  reviews: [
+    {
+      name: "Ahmed",
+      image:
+        "https://secure.gravatar.com/avatar/8eb1b522f60d11fa897de1dc6351b7e8?s=60&d=mm&r=g",
+      ratings: 4,
+      body: "The shirt was not the fabric I believed it to be. It says Classic Fit but was made like the older versions, not the soft cotton like my others. I don’t understand how the labels are the same but a completely different shirt. Oh well, stuck with it now.",
+      date: "September 4, 2020",
+    },
+    {
+      name: "Ahmed",
+      image:
+        "https://secure.gravatar.com/avatar/8eb1b522f60d11fa897de1dc6351b7e8?s=60&d=mm&r=g",
+      ratings: 4,
+      body: "The shirt was not the fabric I believed it to be. It says Classic Fit but was made like the older versions, not the soft cotton like my others. I don’t understand how the labels are the same but a completely different shirt. Oh well, stuck with it now.",
+      date: "September 4, 2020",
+    },
+    {
+      name: "Ahmed",
+      image:
+        "https://secure.gravatar.com/avatar/8eb1b522f60d11fa897de1dc6351b7e8?s=60&d=mm&r=g",
+      ratings: 4,
+      body: "The shirt was not the fabric I believed it to be. It says Classic Fit but was made like the older versions, not the soft cotton like my others. I don’t understand how the labels are the same but a completely different shirt. Oh well, stuck with it now.",
+      date: "September 4, 2020",
+    },
+  ],
 };
 
 export default function MealDetailsPage() {
@@ -77,7 +104,9 @@ export default function MealDetailsPage() {
       <DescriptionAndReviews
         description={meal.description}
         ingredients={meal.ingredients}
+        reviews={meal.reviews}
       />
+      <SectionHeading>{trans("relatedProducts")}</SectionHeading>
     </>
   );
 }

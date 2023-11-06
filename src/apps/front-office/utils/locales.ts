@@ -49,6 +49,10 @@ groupedTranslations({
     en: "Last Name",
     ar: "الاسم الأخير",
   },
+  name: {
+    en: "Name",
+    ar: "الاسم",
+  },
   phoneNumber: {
     en: "Phone Number",
     ar: "رقم الهاتف",
@@ -358,6 +362,14 @@ groupedTranslations({
   welcomeParagraph2: {
     en: "Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum. Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat.",
     ar: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.",
+  },
+  infoPublishMessage: {
+    en: "Your email address will not be published. Required fields are marked",
+    ar: "لن يتم نشر عنوان بريدك الإلكتروني. تم وضع علامة على الحقول المطلوبة",
+  },
+  yourRatings: {
+    en: "Your ratings",
+    ar: "تقييماتك",
   },
   contactNow: {
     en: "Contact Now",

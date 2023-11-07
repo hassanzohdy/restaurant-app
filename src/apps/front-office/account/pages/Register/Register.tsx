@@ -34,7 +34,7 @@ export default function Register() {
           {trans("createAccount")}
         </h2>
         <button className="bg-slate-200 w-16 h-12 grid place-items-center rounded-md">
-          <Link to={`${URLS.home}`} target="_blank">
+          <Link to={URLS.home} target="_blank">
             <img src={googleIcon} alt="google signup icon" />
           </Link>
         </button>

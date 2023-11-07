@@ -1,91 +1,85 @@
+import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
-import { postAtom } from "apps/front-office/blog/atoms";
-import PostContent from "apps/front-office/blog/pages/PostDetailsPage/PostContent/PostContent";
-import PostSidebar from "apps/front-office/blog/pages/PostDetailsPage/PostSidebar/PostSidebar";
-import PostTop from "apps/front-office/blog/pages/PostDetailsPage/PostTop/PostTop";
-import { getPost } from "apps/front-office/blog/services";
-import { Post, PostDetailsPageProps } from "apps/front-office/blog/utils";
-import { useEffect, useState } from "react";
+import { useOnce } from "@mongez/react-hooks";
+import { Link } from "@mongez/react-router";
+import { IconQuote } from "@tabler/icons-react";
+import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
+import URLS from "apps/front-office/utils/urls";
+import { useState } from "react";
+import { allBlogData, getBlogDetailsData } from "../BlogPage/data/blogData";
+import BlogSidebar from "./BlogSidebar";
 
-function parseError(_response: any) {
-  return "ERR";
-}
-
-type PostState = {
-  isLoading: boolean;
-  error: string | null;
-  post: null | Post;
-};
-
-const defaultState = {
-  isLoading: true,
-  error: null,
-  post: null,
-};
-
-export default function PostDetailsPage({ params }: PostDetailsPageProps) {
-  const [data, setData] = useState<PostState>(defaultState);
-
-  useEffect(() => {
-    setData(defaultState);
-    getPost(params.id)
-      .then(response => {
-        postAtom.update(response.data.post);
-        setData({
-          isLoading: false,
-          error: null,
-          post: response.data.post,
-        });
-
-        setTimeout(() => {
-          postAtom.change("title", "New Post Title");
-        }, 3000);
-      })
-      .catch(error => {
-        setData({
-          isLoading: false,
-          error: parseError(error),
-          post: null,
-        });
-      });
-  }, [params.id]);
-
-  if (data.isLoading) {
-    return <div>Loading</div>;
-  }
-
-  if (data.error) {
-    return <div>{data.error}</div>;
-  }
-
-  const post = data.post!;
+export default function PostDetailsPage({ params }: { params: any }) {
+  const [blogData, setBlogData] = useState<any>({});
+  useOnce(() => {
+    getBlogDetailsData(params.id).then(response => setBlogData(response));
+  });
+  const currentIndex = allBlogData.indexOf(blogData);
+  const prevBlog = allBlogData[currentIndex - 1];
+  const nextBlog = allBlogData[currentIndex + 1];
 
   return (
     <>
-      <Helmet
-        title={post.title}
-        description={post.content}
-        image={post.image}
+      <Helmet title={blogData.title} />
+      <Breadcrumb
+        title={blogData.title}
+        navItems={[
+          { name: "blog", url: URLS.blog.list },
+          { name: `${blogData.title}` },
+        ]}
       />
-
-      <div className="wrapper">
-        <PostTop />
-        <div className="post-wrapper">
-          <PostContent />
-          <PostSidebar />
+      <div className="w-[95%] mx-auto mt-8">
+        <div className="flex justify-between">
+          <div className=" w-[100%] lg:w-[75%]">
+            <div className="w-[100%]  rounded-lg flex flex-col gap-2  border border-gray-300  mb-10">
+              <div className="w-full h-[450px]">
+                <img
+                  src={blogData.img}
+                  alt={blogData.title}
+                  className="w-full h-full rounded-tr-lg rounded-tl-lg  "
+                />
+              </div>
+              <div className="p-5 pb-10 flex flex-col gap-2">
+                <h2 className="font-bold text-3xl w-fit hover:text-primary-hover transition duration-150 cursor-pointer">
+                  {blogData.title}
+                </h2>
+                <p className="text-gray-400">
+                  Post By{blogData.postBy} / {blogData.date}
+                </p>
+                <p className="text-gray-400 text-md">{blogData.description}</p>
+                <div className="flex gap-2 items-center">
+                  <IconQuote className="text-primary-main" size={"4rem"} />
+                  <h3 className="font-bold">{blogData.quote}</h3>
+                </div>
+                <p className="text-gray-400 text-md">{blogData.description}</p>
+              </div>
+            </div>
+            <div className="my-4 flex p-5 justify-between bg-[#F7F4EF] rounded-lg">
+              {prevBlog && (
+                <Link to={URLS.blog.viewPost(prevBlog)}>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-gray-500">{trans("prevPost")}</p>
+                    <h3 className=" hover:text-primary-hover transition duration-150 cursor-pointer">
+                      {prevBlog.title}
+                    </h3>
+                  </div>
+                </Link>
+              )}
+              {nextBlog && (
+                <Link to={URLS.blog.viewPost(nextBlog)}>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-gray-500">{trans("nextPost")}</p>
+                    <h3 className=" hover:text-primary-hover transition duration-150 cursor-pointer">
+                      {nextBlog.title}
+                    </h3>
+                  </div>
+                </Link>
+              )}
+            </div>
+          </div>
+          <BlogSidebar blogData={blogData} />
         </div>
       </div>
     </>
   );
 }
-
-// Scenario
-
-// DoD For ANY PAGE
-// 1. UI: Mandatory
-// 2. RTL Design: Depends
-// 3. Responsive: Mandatory
-// 4. Meta DATA -> SEO: Mandatory
-// 5. API: Depends
-// 6. Localization: Depends
-// 7. Logic | Behavior | Actions: Depends

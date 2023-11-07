@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import { AiOutlineSearch } from "react-icons/ai";
-import useToggleState from "../../../Hooks/HeaderStateHook";
+import { useToggleStateActiveBar } from "../../../Hooks/headerStateHook";
 
 export default function ActiveBarMyAccount() {
-  const { toggleState } = useToggleState();
+  const { toggleState } = useToggleStateActiveBar();
   return (
     <div onClick={() => toggleState("headerSearch")} className="activeIcons">
       <AiOutlineSearch />

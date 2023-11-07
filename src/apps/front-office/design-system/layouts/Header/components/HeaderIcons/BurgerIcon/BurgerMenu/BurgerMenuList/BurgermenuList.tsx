@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { burgerAtom } from "apps/front-office/design-system/layouts/Header/atoms/HeaderAtoms";
+import { burgerAtom } from "apps/front-office/design-system/layouts/Header/atoms/header-atoms";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
@@ -36,17 +36,6 @@ export default function BurgerMenuList() {
           className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
           {trans("About")}
         </Link>
-      </li>
-      <li className="border-b border-headingTextColor">
-        <div className="flex flex-row items-center justify-between">
-          <Link
-            to={URLS.menu.list}
-            onClick={handelLinkClick}
-            className=" block hover:text-primary-hover p-[7.5px]">
-            {trans("shop")}
-          </Link>
-          <div className="hover:bg-primary-hover py-2 px-3 text-white rounded-md cursor-pointer"></div>
-        </div>
       </li>
       <li className="flex flex-row justify-between items-center border-b border-headingTextColor ">
         <Link
@@ -98,7 +87,7 @@ export default function BurgerMenuList() {
       </li>
       <li>
         <Link
-          to={URLS.aboutUs}
+          to={URLS.contactUs}
           onClick={handelLinkClick}
           className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
           {trans("contact")}

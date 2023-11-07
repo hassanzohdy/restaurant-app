@@ -1,5 +1,5 @@
-import { MealType } from "apps/front-office/meals/pages/MealDetailsPage/utils/types";
 import { menuDisplayModeAtom } from "apps/front-office/menu/atoms/menu-display-mode-atom";
+import { MealType } from "../../pages/MealDetailsPage/utils/types";
 import MealsGrid from "./MealsGrid";
 import MealsList from "./MealsList";
 

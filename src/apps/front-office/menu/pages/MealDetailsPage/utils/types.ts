@@ -17,6 +17,7 @@ export type PopupMealType = {
 export type MealType = {
   id: number;
   title: string;
+  slug: string;
   shortDescription: string;
   description: string;
   image: string;

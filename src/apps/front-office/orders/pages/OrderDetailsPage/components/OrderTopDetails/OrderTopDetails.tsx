@@ -1,15 +1,37 @@
 import { trans } from "@mongez/localization";
-import { avatar } from "shared/assets";
+import {
+  IconCircleCheckFilled,
+  IconCircleXFilled,
+  IconMoped,
+} from "@tabler/icons-react";
 
 export type OrderTopDetailsProps = {
   orderNumber: string;
   orderDate: string;
+  orderStatus: string;
 };
 
 export default function OrderTopDetails({
   orderNumber,
   orderDate,
+  orderStatus,
 }: OrderTopDetailsProps) {
+  const statusClasses =
+    orderStatus === "delivered"
+      ? "bg-secondary"
+      : orderStatus === "delivering"
+      ? "bg-[#fc8019]"
+      : "bg-red-500";
+
+  const statusIcon =
+    orderStatus === "delivered" ? (
+      <IconCircleCheckFilled size="28" />
+    ) : orderStatus === "delivering" ? (
+      <IconMoped size="28" />
+    ) : (
+      <IconCircleXFilled size="28" />
+    );
+
   return (
     <>
       <div className="top-details flex items-center justify-between pb-4 mb-4 border-b-2 border-dashed border-[#eee]">
@@ -19,16 +41,9 @@ export default function OrderTopDetails({
           </h3>
           <span className="date">{orderDate}</span>
         </div>
-        <div className="customer flex max-sm:hidden items-center">
-          <span className="avatar flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[#eee] p-1 m-0 mr-2">
-            <img className="m-0" src={avatar} alt="" />
-          </span>
-          <div>
-            <h4 className="text-[14px] font-semibold leading-none">
-              Lorem Ipsum
-            </h4>
-            <span className="text-[12px]">User since 2020</span>
-          </div>
+        <div
+          className={`${statusClasses} order-status flex items-center px-3 py-2 capitalize text-[18px] text-white font-semibold rounded-md max-sm:px-2 max-sm:py-1 max-sm:text-[14px]`}>
+          <span className="mr-1">{statusIcon}</span> {orderStatus}
         </div>
       </div>
     </>

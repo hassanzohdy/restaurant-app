@@ -475,4 +475,17 @@ groupedTranslations({
     en: "Related Products",
     ar: "منتجات ذات صله",
   },
+  //Empty Componenet
+  continueShopping: {
+    en: "Continue Shopping",
+    ar: "س للمينتو",
+  },
+  emptyCart: {
+    en: "Empty Cart 😒",
+    ar: "السلة فارغة",
+  },
+  cartEmptyDescription: {
+    en: "Your cart is empty add someting to make me happy",
+    ar: "سلتك فارفة ... اضف شىء يجعلنى سعيد",
+  },
 });

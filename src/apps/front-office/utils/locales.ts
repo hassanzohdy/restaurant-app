@@ -487,4 +487,17 @@ groupedTranslations({
     en: "You may also want to try",
     ar: "قد ترغب أيضًا في تجربة",
   },
+  //Empty Componenet
+  continueShopping: {
+    en: "Continue Shopping",
+    ar: "س للمينتو",
+  },
+  emptyCart: {
+    en: "Empty Cart 😒",
+    ar: "السلة فارغة",
+  },
+  cartEmptyDescription: {
+    en: "Your cart is empty add someting to make me happy",
+    ar: "سلتك فارفة ... اضف شىء يجعلنى سعيد",
+  },
 });

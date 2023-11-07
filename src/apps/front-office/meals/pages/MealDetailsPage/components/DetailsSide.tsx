@@ -1,5 +1,7 @@
+import { trans } from "@mongez/localization";
 import { Button } from "apps/front-office/design-system/components/Button";
 import Stars from "apps/front-office/design-system/components/Stars";
+import { cn } from "apps/front-office/design-system/utils/cn";
 import { formatPrice } from "apps/front-office/design-system/utils/format-price";
 import { useState } from "react";
 import { AiTwotoneHeart } from "react-icons/ai";
@@ -21,15 +23,15 @@ const ShippingFeatures = () => {
     <ul className="text-primary-text font-light pb-6 border-b">
       <li className="flex items-center gap-2">
         <PiDotOutlineFill />
-        Free global shipping on all orders
+        {trans("freeShipping")}
       </li>
       <li className="flex items-center gap-2">
         <PiDotOutlineFill />
-        30 days easy returns if you change your mind
+        {trans("easyReturns")}
       </li>
       <li className="flex items-center gap-2">
         <PiDotOutlineFill />
-        Order before noon for same day dispatch
+        {trans("orderBeforeNoon")}
       </li>
     </ul>
   );
@@ -59,7 +61,7 @@ export const DetailsSide = ({
   const handleFavoriteChange = () => {};
 
   return (
-    <div className="flex-1 ">
+    <div className="flex-1">
       <div className="sticky top-10 space-y-6">
         <div className="space-y-6 border-b pb-6">
           <h1 className="text-5xl font-bold">{title}</h1>
@@ -72,33 +74,34 @@ export const DetailsSide = ({
 
         <div className="flex items-center gap-10 text-sm font-semibold pb-6 border-b flex-wrap">
           <div className="flex gap-3 items-center font-bold">
-            <Button
-              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-2 rounded-full"
+            <button
+              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
               onClick={decrementAmount}>
               -
-            </Button>
+            </button>
             <span>{amount}</span>
-            <Button
-              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-2 rounded-full"
+            <button
+              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
               onClick={incrementAmount}>
               +
-            </Button>
+            </button>
           </div>
-          <div className="flex gap-2 flex-1 min-w-fit shrink-0">
+          <div className="flex gap-2 min-w-fit flex-1 shrink-0">
             <Button
               variant="primary"
-              className="flex-1 uppercase gap-2 text-xs"
+              className="uppercase rounded-lg flex-1 py-4 px-6 gap-2 text-xs"
               onClick={() => {}}>
               <BsFillBasket2Fill className="shrink-0" />
-              add to cart
+              {trans("addToCart")}
             </Button>
-            <Button
-              className={`text-gray-500 btn bg-primary-light ${
-                isFavorite ? "text-rose-600" : "hover:text-primary-main"
-              } px-5 rounded-xl`}
+            <button
+              className={cn(
+                " px-5 rounded-xl text-gray-500 btn bg-primary-light",
+                isFavorite ? "text-rose-600" : "hover:text-primary-main",
+              )}
               onClick={handleFavoriteChange}>
               <AiTwotoneHeart />
-            </Button>
+            </button>
           </div>
         </div>
 
@@ -106,7 +109,7 @@ export const DetailsSide = ({
 
         <ShippingFeatures />
         <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
-          <p className="font-bold">Guaranteed Safe Checkout</p>
+          <p className="font-bold">{trans("guaranteedSafeCheckout")}</p>
           <img
             src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/08/trust-symbols.png"
             alt="payment methods image"

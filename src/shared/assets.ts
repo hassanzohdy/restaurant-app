@@ -1,3 +1,4 @@
+import avatar from "assets/images/avatar.webp";
 import googleIcon from "assets/images/google.svg";
 import logo from "assets/images/logo.svg";
 import americanExpress from "assets/images/payment-methods/american-express.png";
@@ -9,6 +10,7 @@ import visa from "assets/images/payment-methods/visa.png";
 
 export {
   americanExpress,
+  avatar,
   cod,
   discover,
   googleIcon,

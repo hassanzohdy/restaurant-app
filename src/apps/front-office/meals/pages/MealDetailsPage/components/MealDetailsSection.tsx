@@ -1,6 +1,7 @@
 import Overlay from "apps/front-office/design-system/components/Overlay";
-import { useState } from "react";
-import { MealType } from "../MealDetailsPage";
+import { useEffect, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import { MealType } from "../utils/types";
 import { DetailsSide } from "./DetailsSide";
 
 type Props = {
@@ -15,19 +16,37 @@ const ImagesSide = ({ images }: { images: string[] }) => {
     setIsOverlayOpen(oldState => !oldState);
   };
 
+  useEffect(() => {
+    if (isOverlayOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOverlayOpen]);
+
   return (
     <>
-      {isOverlayOpen ? (
+      {isOverlayOpen && (
         <Overlay onClose={overlayHandler}>
-          <img
-            onClick={e => e.stopPropagation()}
-            src={src}
-            alt="Meal image"
-            className="bg-black"
-          />
+          <div className="relative flex items-center justify-center w-full h-full">
+            <img
+              onClick={e => e.stopPropagation()}
+              src={src}
+              alt="Meal image"
+              className="bg-black"
+            />
+            <button
+              onClick={e => {
+                e.stopPropagation();
+                overlayHandler();
+              }}
+              className="absolute top-8 right-8">
+              <AiOutlineClose className="text-white" size="30" />
+            </button>
+          </div>
         </Overlay>
-      ) : null}
-      <div className="flex gap-y-4 flex-col flex-1">
+      )}
+      <div className="flex gap-y-4 flex-col">
         {images.map((image, idx) => (
           <div
             key={idx}
@@ -52,7 +71,7 @@ const ImagesSide = ({ images }: { images: string[] }) => {
 
 const MealDetailsSection = ({ meal }: Props) => {
   return (
-    <section className="py-20 flex gap-10 sm:flex-row flex-col container relative">
+    <section className="py-20 grid grid-cols-1 md:grid-cols-2 gap-10 container relative">
       <ImagesSide images={meal.images} />
       <DetailsSide {...meal} />
     </section>

@@ -11,7 +11,6 @@ class User extends BaseUser implements UserInterface {
    * Cache driver
    */
   protected cacheDriver: UserCacheDriverInterface = cache;
-
   /**
    * {@inheritDoc}
    */

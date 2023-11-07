@@ -10,6 +10,7 @@ export type YouMayAlsoWantToTrySectionProps = {
 export const meal: MealType = {
   id: 2,
   title: "Italiano Original",
+  slug: "Italiano Original",
   shortDescription:
     "Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped with lightly drizzled red sauce, pesto, and fresh basil",
   description:

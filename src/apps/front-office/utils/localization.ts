@@ -84,6 +84,10 @@ groupedTranslations({
     en: "Lemon Shake",
     ar: "ميلك شيك ليمون",
   },
+  AllProducts: {
+    en: "all products",
+    ar: "جميع المنتجات ",
+  },
 });
 export type LocaleCode = {
   localeCode: string;

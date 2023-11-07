@@ -4,6 +4,7 @@ import Blueberry from "assets/images/menuItems/blueberry.png";
 import lemon from "assets/images/menuItems/lemon.png";
 import Pizza from "assets/images/menuItems/pizza.png";
 import Pizza2 from "assets/images/menuItems/pizza2.png";
+import DetailsButton from "../DetailsButton";
 import styles from "./styles.module.scss";
 
 export type PopularDishesItemProps = {
@@ -30,6 +31,7 @@ export default function PopularDishesItem() {
                   Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
                   with lightly
                 </p>
+                <del className={styles.itemPriceDel}>£12.63 </del>
                 <span className={styles.itemPrice}>£12.63</span>
                 <div className={styles.shopCard}>
                   <IconShoppingBag color="#000"></IconShoppingBag>
@@ -74,6 +76,7 @@ export default function PopularDishesItem() {
                   Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
                   with lightly
                 </p>
+                <del className={styles.itemPriceDel}>£12.63 </del>
                 <span className={styles.itemPrice}>£12.63</span>
                 <div className={styles.shopCard}>
                   <IconShoppingBag color="#000"></IconShoppingBag>
@@ -125,6 +128,7 @@ export default function PopularDishesItem() {
               </div>
             </div>
           </div>
+          <DetailsButton />
         </div>
       </div>
     </>

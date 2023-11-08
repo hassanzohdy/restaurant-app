@@ -2,10 +2,10 @@ import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { useOnce } from "@mongez/react-hooks";
 import { Link } from "@mongez/react-router";
-import { IconQuote } from "@tabler/icons-react";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
+import { TbQuote } from "react-icons/tb";
 import { allBlogData, getBlogDetailsData } from "../BlogPage/data/blogData";
 import BlogSidebar from "./BlogSidebar";
 
@@ -48,7 +48,7 @@ export default function PostDetailsPage({ params }: { params: any }) {
                 </p>
                 <p className="text-gray-400 text-md">{blogData.description}</p>
                 <div className="flex gap-2 items-center">
-                  <IconQuote className="text-primary-main" size={"4rem"} />
+                  <TbQuote className="text-primary-main" size={"4rem"} />
                   <h3 className="font-bold">{blogData.quote}</h3>
                 </div>
                 <p className="text-gray-400 text-md">{blogData.description}</p>

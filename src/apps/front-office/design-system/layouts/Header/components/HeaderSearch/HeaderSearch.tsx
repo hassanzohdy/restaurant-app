@@ -1,5 +1,5 @@
-import { IconSearch } from "@tabler/icons-react";
 import OverLay from "app/design-system/layouts/OverLay";
+import { BsSearch } from "react-icons/bs";
 import { useToggleState } from "../../Hooks/headerStateHook";
 import HeaderSearchForm from "../HeaderIcons/HeaderSearch/HeaderSearchForm";
 export default function HeaderSearch() {
@@ -12,7 +12,7 @@ export default function HeaderSearch() {
         <button
           className="border border-border cursor-pointer rounded-full w-12 h-12 flex items-center justify-center hover:bg-primary-hover"
           onClick={() => toggleState("headerSearch")}>
-          <IconSearch className="w-5 h-5" />
+          <BsSearch className="w-5 h-5" />
         </button>
         <HeaderSearchForm />
       </div>

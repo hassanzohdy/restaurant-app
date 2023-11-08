@@ -1,16 +1,13 @@
 import { Link } from "@mongez/react-router";
-import {
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandX,
-  IconBrandYoutube,
-} from "@tabler/icons-react";
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FiFacebook, FiYoutube } from "react-icons/fi";
 
 const socialLinks = [
-  { name: "facebook", href: "#", icon: <IconBrandFacebook size="20" /> },
-  { name: "twitter", href: "#", icon: <IconBrandX size="20" /> },
-  { name: "youtube", href: "#", icon: <IconBrandYoutube size="20" /> },
-  { name: "instagram", href: "#", icon: <IconBrandInstagram size="20" /> },
+  { name: "facebook", href: "#", icon: <FiFacebook size="20" /> },
+  { name: "twitter", href: "#", icon: <FaXTwitter size="20" /> },
+  { name: "youtube", href: "#", icon: <FiYoutube size="20" /> },
+  { name: "instagram", href: "#", icon: <FaInstagram size="20" /> },
 ];
 
 export default function FooterSocialIcons() {

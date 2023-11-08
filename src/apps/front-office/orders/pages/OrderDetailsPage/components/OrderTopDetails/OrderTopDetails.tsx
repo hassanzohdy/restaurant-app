@@ -1,9 +1,7 @@
 import { trans } from "@mongez/localization";
-import {
-  IconCircleCheckFilled,
-  IconCircleXFilled,
-  IconMoped,
-} from "@tabler/icons-react";
+import { BsCheckCircleFill } from "react-icons/bs";
+import { IoIosCloseCircle } from "react-icons/io";
+import { MdOutlineDeliveryDining } from "react-icons/md";
 
 export type OrderTopDetailsProps = {
   orderNumber: string;
@@ -25,11 +23,11 @@ export default function OrderTopDetails({
 
   const statusIcon =
     orderStatus === "delivered" ? (
-      <IconCircleCheckFilled size="28" />
+      <BsCheckCircleFill size="22" />
     ) : orderStatus === "delivering" ? (
-      <IconMoped size="28" />
+      <MdOutlineDeliveryDining size="28" />
     ) : (
-      <IconCircleXFilled size="28" />
+      <IoIosCloseCircle size="28" />
     );
 
   return (

@@ -11,7 +11,6 @@ export const toggleGroupAtom: Atom = atom({
   key: "ToggleHeaderIcons",
   default: {
     headerSearch: false,
-    langSwitch: false,
     userIcon: false,
     cartIcon: false,
   },

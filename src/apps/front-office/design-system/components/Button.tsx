@@ -38,7 +38,7 @@ export function SubmitButton({
   const { isSubmitting, disabled } = useSubmitButton();
 
   // add background to have lower opacity on disabled button selector
-  const disabledClasses = disabled ? "disabled:opacity-50" : "";
+  const disabledClasses = disabled ? "opacity-50 cursor-no-drop" : "";
   return (
     <button
       type="submit"

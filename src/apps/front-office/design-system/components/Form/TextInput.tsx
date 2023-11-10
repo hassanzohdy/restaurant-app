@@ -5,23 +5,28 @@ import {
   useFormControl,
 } from "@mongez/react-form";
 import React from "react";
+import { cn } from "../../utils/cn";
 
-function _TextInput(props: FormControlProps, ref: any) {
+type TextInputProps = {
+  containerStyle?: string;
+} & FormControlProps;
+
+function _TextInput({ containerStyle, ...rest }: TextInputProps, ref: any) {
   const { id, error, value, inputRef, changeValue, otherProps } =
-    useFormControl(props);
+    useFormControl(rest);
 
   return (
-    <div>
+    <div className={containerStyle}>
       {otherProps.label && (
         <label
-          className="block text-black cursor-pointer font-medium text-base mb-2"
+          className="block text-primary-text cursor-pointer text-base mb-2"
           htmlFor={id}>
           {otherProps.label}
-          {props.required && <span className="ms-1 text-red-500">*</span>}
+          {rest.required && <span className="ms-1 text-red-500">*</span>}
         </label>
       )}
       <input
-        type={props.type || "text"}
+        type={rest.type || "text"}
         {...otherProps}
         id={id}
         ref={_ref => {
@@ -31,8 +36,10 @@ function _TextInput(props: FormControlProps, ref: any) {
           }
         }}
         value={value}
-        className="mt-1 block w-full px-3 py-2 bg-white border border-slate-400 rounded-md text-base shadow-sm placeholder-slate-400
-        focus:outline-none focus:border-primary-main"
+        className={cn(
+          "mt-1 block w-full px-3 py-2 bg-white text-bodyTextColor border border-slate-300 rounded-md text-base shadow-sm placeholder-slate-400 focus:outline-none focus:border-primary-main",
+          otherProps.className,
+        )}
         onChange={e => {
           changeValue(e.target.value);
         }}

@@ -18,7 +18,7 @@ export default function HeaderIcons() {
       <UserIcon />
       <Link
         className="border border-border cursor-pointer rounded-full w-12 h-12 flex items-center justify-center text-xl hover:bg-primary-hover"
-        to={URLS.wishList}>
+        to={URLS.wishlist}>
         <AiOutlineHeart />
       </Link>
       <HeaderCart />

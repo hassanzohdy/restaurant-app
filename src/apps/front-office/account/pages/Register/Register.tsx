@@ -9,6 +9,7 @@ import PasswordInput from "apps/front-office/design-system/components/Form/Passw
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import URLS from "apps/front-office/utils/urls";
 import { googleIcon } from "shared/assets";
+import ToastMessage from "./ToastMessage";
 import styles from "./register.module.scss";
 
 export default function Register() {
@@ -19,7 +20,7 @@ export default function Register() {
     return (
       <>
         <Helmet title={trans("createAccount")} />
-        <h1>Successfully Registered</h1>
+        <ToastMessage />
       </>
     );
   }

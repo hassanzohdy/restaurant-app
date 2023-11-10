@@ -1,6 +1,6 @@
-import { MealType } from "apps/front-office/meals/pages/MealDetailsPage/utils/types";
 import Pizza from "assets/images/menuItems/pizza.png";
 import { FaBasketShopping } from "react-icons/fa6";
+import { MealType } from "../pages/MealDetailsPage/utils/types";
 
 export type MenuItemProps = {
   meal: MealType;

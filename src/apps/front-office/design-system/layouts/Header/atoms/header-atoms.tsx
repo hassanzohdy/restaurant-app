@@ -15,11 +15,3 @@ export const toggleGroupAtom: Atom = atom({
     cartIcon: false,
   },
 });
-
-export const toggleGroupActiveBarAtom: Atom = atom({
-  key: "ToggleActiveBar",
-  default: {
-    headerSearch: false,
-    langSwitch: false,
-  },
-});

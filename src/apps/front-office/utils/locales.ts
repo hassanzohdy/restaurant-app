@@ -197,6 +197,10 @@ groupedTranslations({
     en: "Read More",
     ar: "اقرأ المزيد",
   },
+  language: {
+    en: "Language",
+    ar: "اللغة",
+  },
   callAndOrderIn: {
     en: "Call and Order in",
     ar: "اتصل واطلب من",
@@ -236,10 +240,6 @@ groupedTranslations({
   noProductsInCart: {
     en: "No products in the cart",
     ar: "لا توجد منتجات في العربة",
-  },
-  language: {
-    en: "Language",
-    ar: "اللغه",
   },
   search: {
     en: "Search",

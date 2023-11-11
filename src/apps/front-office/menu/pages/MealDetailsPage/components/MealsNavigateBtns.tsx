@@ -1,24 +1,27 @@
 import { Link } from "@mongez/react-router";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { formatPrice } from "apps/front-office/design-system/utils/format-price";
+import { getMealPosition } from "apps/front-office/menu/services/meals-service";
+import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
-import { PopupMealType } from "../utils/types";
+import { MealType } from "../utils/types";
 
 type MealsNavigateBtnsProps = {
-  nextMeal: PopupMealType;
-  prevMeal: PopupMealType;
+  meal: number;
 };
 
 type PopupMealProps = {
-  meal: PopupMealType;
+  meal: MealType | null;
   navigationMeal: { next: boolean; prev: boolean };
 };
 
 const PopupMeal = ({ meal, navigationMeal }: PopupMealProps) => {
+  if (!meal) return null;
+
   const displayedPrice = formatPrice(meal.price);
 
-  const displayedSale = formatPrice(meal.sale);
+  const displayedSale = formatPrice(meal.salePrice);
 
   return (
     <div
@@ -29,14 +32,14 @@ const PopupMeal = ({ meal, navigationMeal }: PopupMealProps) => {
           : "pointer-events-none ",
       )}>
       <img
-        src={meal.image}
-        alt="meal image"
+        src={meal.image.url}
+        alt={meal.name}
         className="w-20 h-20"
         width={80}
         height={80}
       />
       <div className="flex flex-col gap-2 items-start shrink">
-        <p className="">{meal.title}</p>
+        <p className="">{meal.name}</p>
         <div className="flex gap-2">
           <span className="inline-block text-rose-600">{displayedSale}</span>
           <span
@@ -51,14 +54,70 @@ const PopupMeal = ({ meal, navigationMeal }: PopupMealProps) => {
   );
 };
 
-const MealsNavigateBtns = ({ nextMeal, prevMeal }: MealsNavigateBtnsProps) => {
+type MealNavigation = {
+  meals: {
+    prev: MealType | null;
+    next: MealType | null;
+  };
+  state: {
+    next: "initial" | "loading" | "loaded";
+    prev: "initial" | "loading" | "loaded";
+  };
+};
+
+const MealsNavigateBtns = ({ meal }: MealsNavigateBtnsProps) => {
   const [navigationMeal, setNavigationMeal] = useState({
     next: false,
     prev: false,
   });
 
-  const mouseEnterHandler = (element: "next" | "prev") => {
-    setNavigationMeal(oldState => ({ ...oldState, [element]: true }));
+  const [data, setData] = useState<MealNavigation>({
+    meals: {
+      prev: null,
+      next: null,
+    },
+    state: {
+      next: "initial",
+      prev: "initial",
+    },
+  });
+
+  const loadMeal = (position: "next" | "prev") => {
+    setData({
+      ...data,
+      state: {
+        ...data.state,
+        [position]: "loading",
+      },
+    });
+
+    getMealPosition(meal, position).then(response => {
+      setData({
+        ...data,
+        meals: { ...data.meals, [position]: response.data.meal },
+        state: {
+          ...data.state,
+          [position]: "loaded",
+        },
+      });
+
+      setNavigationMeal(oldState => {
+        return { ...oldState, [position]: true };
+      });
+    });
+  };
+
+  const prevMeal = data.meals.prev;
+  const nextMeal = data.meals.next;
+
+  const mouseEnterHandler = (position: "next" | "prev") => {
+    if (data.state[position] === "initial") {
+      return loadMeal(position);
+    }
+
+    if (data.state[position] === "loading") return;
+
+    setNavigationMeal(oldState => ({ ...oldState, [position]: true }));
   };
 
   const mouseLeaveHandler = () => {
@@ -72,18 +131,28 @@ const MealsNavigateBtns = ({ nextMeal, prevMeal }: MealsNavigateBtnsProps) => {
     <div className="flex items-center absolute top-1/2  -translate-y-1/2 right-6 gap-4 text-2xl text-black">
       <Link
         className="btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
-        onMouseOver={() => mouseEnterHandler("next")}
+        onMouseOver={() => mouseEnterHandler("prev")}
+        href={prevMeal ? URLS.menu.viewMeal(prevMeal) : undefined}
         onMouseLeave={mouseLeaveHandler}>
         <RiArrowDropLeftLine className="shrink-0" />
-        {<PopupMeal meal={prevMeal} navigationMeal={navigationMeal} />}
+        {<PopupMeal navigationMeal={navigationMeal} meal={prevMeal} />}
       </Link>
-      <Link
-        className="btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
-        onMouseOver={() => mouseEnterHandler("prev")}
+      <button
+        disabled={data.state.next === "loaded" && !nextMeal}
+        onClick={() => {
+          if (nextMeal) {
+            return URLS.menu.viewMeal(nextMeal);
+          }
+        }}
+        className="
+        disabled:opacity-50
+        disabled:cursor-not-allowed
+        btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
+        onMouseOver={() => mouseEnterHandler("next")}
         onMouseLeave={mouseLeaveHandler}>
         <RiArrowDropRightLine className="shrink-0" />
         {<PopupMeal navigationMeal={navigationMeal} meal={nextMeal} />}
-      </Link>
+      </button>
     </div>
   );
 };

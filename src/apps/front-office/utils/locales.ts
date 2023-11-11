@@ -11,7 +11,7 @@ groupedTranslations({
   },
   menu: {
     en: "Menu",
-    ar: "القائمة",
+    ar: "قائمة الطعام",
   },
   about: {
     en: "About Us",

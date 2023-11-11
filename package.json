@@ -34,6 +34,7 @@
     "@mongez/reinforcements": "^2.3.8",
     "@mongez/supportive-is": "^2.0.2",
     "@mongez/user": "^1.0.12",
+    "@tabler/icons-react": "^2.40.0",
     "clsx": "^2.0.0",
     "embla-carousel-autoplay": "^8.0.0-rc14",
     "embla-carousel-react": "^8.0.0-rc14",

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { scrollAtom } from "../atoms/header-atoms";
 
-export default function useScrollNotTop() {
+export default function useIsScrollTop() {
   const scrollTopPosition = scrollAtom.useValue();
 
   useEffect(() => {

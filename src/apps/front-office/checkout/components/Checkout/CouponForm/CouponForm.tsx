@@ -30,7 +30,9 @@ export default function CouponForm({ toggleCoupon }: CouponFormProps) {
             placeholder={trans("couponPlaceholder")}
             ref={couponInput}
           />
-          <SubmitButton className="bg-primary-main text-black font-bold text-sm uppercase py-[11px] px-6 rounded-md">
+          <SubmitButton
+            variant="primary"
+            className=" text-black font-bold text-sm uppercase py-[11px] px-6 rounded-md">
             {trans("applyCoupon")}
           </SubmitButton>
         </div>

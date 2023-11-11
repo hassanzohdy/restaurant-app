@@ -1,4 +1,4 @@
-import useScrollNotTop from "./Hooks/useScrollNotTop";
+import useIsScrollTop from "./Hooks/useIsScrollTop";
 import HeaderContact from "./components/HeaderContact";
 import HeaderIcons from "./components/HeaderIcons";
 import BurgerIcon from "./components/HeaderIcons/BurgerIcon";
@@ -7,7 +7,7 @@ import HeaderMenus from "./components/HeaderMenus";
 import HeaderPhone from "./components/HeaderPhone";
 
 export default function Header() {
-  const scrollTopPosition = useScrollNotTop();
+  const scrollTopPosition = useIsScrollTop();
 
   return (
     <header

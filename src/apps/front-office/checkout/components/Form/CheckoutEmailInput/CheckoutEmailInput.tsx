@@ -1,8 +1,8 @@
 import { FormControlProps, emailRule, requiredRule } from "@mongez/react-form";
-import CheckoutInputText from "../CheckoutInputText";
+import TextInputV2 from "../../../../design-system/components/Form/TextInputV2";
 
 export default function CheckoutEmailInput(props: FormControlProps) {
-  return <CheckoutInputText {...props} type="email" />;
+  return <TextInputV2 {...props} type="email" />;
 }
 
 CheckoutEmailInput.defaultProps = {

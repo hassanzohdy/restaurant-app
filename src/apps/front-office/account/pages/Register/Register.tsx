@@ -3,10 +3,11 @@ import { Form } from "@mongez/react-form";
 import Helmet from "@mongez/react-helmet";
 import { Link } from "@mongez/react-router";
 import { useRegister } from "apps/front-office/account/hooks/use-auth";
+import CheckoutPhoneInput from "apps/front-office/checkout/components/Form/CheckoutPhoneInput";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
-import TextInput from "apps/front-office/design-system/components/Form/TextInput";
+import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
 import URLS from "apps/front-office/utils/urls";
 import { googleIcon } from "shared/assets";
 import ToastMessage from "./ToastMessage";
@@ -45,14 +46,14 @@ export default function Register() {
         <Form
           onSubmit={submit}
           className="form grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <TextInput
+          <TextInputV2
             name="firstName"
             autoFocus
             required
             label={trans("firstName")}
             placeholder={trans("firstName")}
           />
-          <TextInput
+          <TextInputV2
             name="lastName"
             required
             label={trans("lastName")}
@@ -64,7 +65,7 @@ export default function Register() {
             label={trans("emailAddress")}
             placeholder={trans("emailAddress")}
           />
-          <TextInput
+          <CheckoutPhoneInput
             name="phoneNumber"
             label={trans("phoneNumber")}
             placeholder={trans("phoneNumber")}

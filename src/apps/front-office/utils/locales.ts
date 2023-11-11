@@ -500,4 +500,29 @@ groupedTranslations({
     en: "Your cart is empty add someting to make me happy",
     ar: "سلتك فارفة ... اضف شىء يجعلنى سعيد",
   },
+  //WhishListPage
+  wishlist: {
+    en: "WishList",
+    ar: "قائمة الرغبات",
+  },
+  emptyWhishList: {
+    en: "Empty WhishList 😒",
+    ar: "قائمة الرغبات فارغة",
+  },
+  whishListEmptyDescription: {
+    en: "Your WhishList is empty add someting to make me happy",
+    ar: "قائمة رغباتك ... اضف شىء يجعلنى سعيد",
+  },
+  stockStatus: {
+    en: "Stock Status",
+    ar: "حالة التوفر",
+  },
+  inStock: {
+    en: "In Stock",
+    ar: "متوفر",
+  },
+  addedOn: {
+    en: "Added On",
+    ar: "أضيف فى",
+  },
 });

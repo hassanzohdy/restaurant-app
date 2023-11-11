@@ -1,6 +1,8 @@
 // append urls here, DO NOT remove this line
 
 const URLS = {
+  wishList: "/wish-list",
+  faq: "/faq",
   posts: "/posts",
   home: "/",
   notFound: "/404",
@@ -8,7 +10,6 @@ const URLS = {
   aboutUs: "/about-us",
   privacyPolicy: "/privacy-policy",
   termsAndConditions: "/terms-and-conditions",
-  faq: "/faq",
   reservation: "/reservation",
   ourChefs: "/our-chefs",
   gallery: "/gallery",

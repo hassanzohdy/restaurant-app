@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import BreadCrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import styles from "./_AboutUsPage.module.scss";
@@ -13,7 +14,7 @@ export default function AboutUsPage() {
     <>
       <Helmet title="About Us" />
       <div className={`${styles.aboutUsPage}`}>
-        <BreadCrumb title="about" navItems={[{ name: "about" }]} />
+        <BreadCrumb title={trans("about")} navItems={[{ name: "about" }]} />
         <AboutUsWelcome />
         <AboutUsVideo />
         <AboutUsPopularMeals />

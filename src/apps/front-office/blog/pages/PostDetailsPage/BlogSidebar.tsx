@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { IconSearch } from "@tabler/icons-react";
 import URLS from "apps/front-office/utils/urls";
+import { BsSearch } from "react-icons/bs";
 import banner from "shared/assets/images/Blog/widgets_blog2.png";
 import { categories } from "../BlogPage/data/blogData";
 
@@ -19,7 +19,7 @@ export default function BlogSidebar({ blogData }: BlogSidebarProps) {
               placeholder="Search..."
               className="border border-primary-main p-3 rounded-full w-full"
             />
-            <IconSearch className="-ml-10" />
+            <BsSearch className="-ml-10" />
           </div>
           <div className="border border-gray-200 p-2 rounded-2xl">
             <h4 className="font-bold text-gray-800">{trans("categories")}</h4>

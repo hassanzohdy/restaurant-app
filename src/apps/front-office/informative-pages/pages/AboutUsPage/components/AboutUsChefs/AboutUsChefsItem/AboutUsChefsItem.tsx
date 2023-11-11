@@ -1,10 +1,9 @@
 import { Link } from "@mongez/react-router";
-import {
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandX,
-} from "@tabler/icons-react";
 import styles from "./_AboutUsChefsItem.module.scss";
+
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FiFacebook } from "react-icons/fi";
 
 export type AboutUsChefsItemProps = {
   chefInfo: {
@@ -40,17 +39,17 @@ export default function AboutUsChefsItem({ chefInfo }: AboutUsChefsItemProps) {
             <Link
               to={chefInfo.socialLinks.facebook}
               className="mx-1 hover:text-primary-main transition-all duration-1000">
-              <IconBrandFacebook size={18} />
+              <FiFacebook size={18} />
             </Link>
             <Link
               to={chefInfo.socialLinks.facebook}
               className="mx-1 hover:text-primary-main transition-all duration-1000">
-              <IconBrandX size={18} />
+              <FaXTwitter size={18} />
             </Link>
             <Link
               to={chefInfo.socialLinks.facebook}
               className="mx-1 hover:text-primary-main transition-all duration-1000">
-              <IconBrandInstagram size={18} />
+              <FaInstagram size={18} />
             </Link>
           </ul>
         </div>

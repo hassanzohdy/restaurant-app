@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { IconCircleCheckFilled } from "@tabler/icons-react";
 import { BaseLink } from "apps/front-office/design-system/components/Link";
 import URLS from "apps/front-office/utils/urls";
+import { FaCircleCheck } from "react-icons/fa6";
 import { logo } from "shared/assets";
 
 export type OrdersListItemProps = {
@@ -18,9 +18,8 @@ export default function OrdersListItem({ order }: OrdersListItemProps) {
   return (
     <li className="orders-list-item p-6 mb-5 last:mb-0 rounded-lg bg-[#f8f5f0] border border-[#eee] max-sm:px-4 max-sm:py-5">
       <div className="top-details flex items-center justify-between pb-5 mb-6 text-[20px] text-primary-text font-semibold border-b-2 border-dashed border-[#ddd] max-sm:pb-3 max-sm:mb-4 max-sm:text-[16px] ">
-        <span className="flex items-center text-secondary capitalize">
-          <IconCircleCheckFilled className="mr-1" size="28" />{" "}
-          {order.delivered && trans("delivered")}{" "}
+        <span className="flex items-center text-secondary capitalize gap-2">
+          <FaCircleCheck size="25" /> {order.delivered && trans("delivered")}{" "}
         </span>
         <p className="">
           {trans("total")} :{" "}

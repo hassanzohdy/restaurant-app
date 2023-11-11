@@ -1,5 +1,5 @@
-import { IconQuote } from "@tabler/icons-react";
 import Stars from "apps/front-office/design-system/components/Stars";
+import { TbQuote } from "react-icons/tb";
 
 export type AboutUsTestimonialsItemProps = {
   itemDetails: {
@@ -18,7 +18,7 @@ export default function AboutUsTestimonialsItem({
       <div className="image  w-[115px] h-[115px] m-auto mb-8 relative max-sm:mb-7">
         <img className="rounded-full" src={itemDetails.image} alt="" />
         <i className=" flex items-center justify-center w-[35px] h-[35px] rounded-full rotate-180 absolute right-[-4px] bottom-[4px] bg-[#00a149]">
-          <IconQuote size="20" />
+          <TbQuote size="20" />
         </i>
       </div>
       <div className="flex justify-center">

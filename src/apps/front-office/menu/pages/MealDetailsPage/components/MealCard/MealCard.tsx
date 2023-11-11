@@ -1,8 +1,8 @@
 import { Link } from "@mongez/react-router";
-import { IconShoppingBag } from "@tabler/icons-react";
 import Stars from "apps/front-office/design-system/components/Stars";
 import URLS from "apps/front-office/utils/urls";
 import { AiFillHeart } from "react-icons/ai";
+import { TbShoppingBag } from "react-icons/tb";
 import { MealType } from "../../utils/types";
 
 export type MealCardProps = {
@@ -43,7 +43,7 @@ export default function MealCard({ meal }: MealCardProps) {
             £{meal.price}
           </span>
           <button className="bg-primary-main p-2 rounded-2xl hover:bg-primary-hover transition-colors">
-            <IconShoppingBag color="#000"></IconShoppingBag>
+            <TbShoppingBag color="#000"></TbShoppingBag>
           </button>
         </div>
       </div>

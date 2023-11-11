@@ -1,7 +1,7 @@
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import client1 from "assets/images/about-us/client-1.jpg";
 import client2 from "assets/images/about-us/client-2.jpg";
 import client3 from "assets/images/about-us/client-3.jpg";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Slider from "react-slick";
 import AboutUsTestimonialsItem from "./AboutUsTestimonialsItem";
 import styles from "./_AboutUsTestimonials.module.scss";
@@ -51,7 +51,7 @@ export default function AboutUsTestimonials() {
     nextArrow: (
       <span>
         <i className={`${styles.slickArrow}`}>
-          <IconChevronRight
+          <BiChevronRight
             className="text-[#ffffff42] hover:text-[#fff] duration-500 transition-all ease-in-out"
             stroke="2"
             size="30"
@@ -62,7 +62,7 @@ export default function AboutUsTestimonials() {
     prevArrow: (
       <span>
         <i className={`${styles.slickArrow}`}>
-          <IconChevronLeft
+          <BiChevronLeft
             className="text-[#ffffff42] hover:text-[#fff] duration-500 transition-all ease-in-out"
             stroke="2"
             size="30"

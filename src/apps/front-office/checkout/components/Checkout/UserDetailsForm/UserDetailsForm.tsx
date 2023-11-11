@@ -1,25 +1,25 @@
 import { trans } from "@mongez/localization";
 import { IoIosArrowDown } from "react-icons/io";
+import TextInputV2 from "../../../../design-system/components/Form/TextInputV2";
 import CheckOutSelect from "../../Form/CheckOutSelect";
 import CheckoutEmailInput from "../../Form/CheckoutEmailInput";
-import CheckoutInputText from "../../Form/CheckoutInputText";
 import CheckoutPhoneNumber from "../../Form/CheckoutPhoneInput/CheckoutPhoneInput";
 import { options } from "./country-options";
 
 export default function UserDetailsForm() {
   return (
-    <div className="xl:w-[60%] w-full">
+    <div className="xl:w-[60%] w-full flex flex-col gap-3">
       <div className="grid sm:grid-flow-col grid-flow-row gap-5">
-        <CheckoutInputText
+        <TextInputV2
           name="firstName"
           label={trans("firstName")}
           required
           autoFocus
         />
-        <CheckoutInputText name="lastName" label={trans("lastName")} required />
+        <TextInputV2 name="lastName" label={trans("lastName")} required />
       </div>
 
-      <CheckoutInputText name="companyName" label={trans("companyName")} />
+      <TextInputV2 name="companyName" label={trans("companyName")} />
 
       <div className="relative">
         <CheckOutSelect
@@ -33,7 +33,7 @@ export default function UserDetailsForm() {
         <IoIosArrowDown className="absolute rtl:left-3 ltr:right-3 top-[60%]" />
       </div>
 
-      <CheckoutInputText
+      <TextInputV2
         name="streetAddress"
         label={trans("streetAddress")}
         placeholder={trans("houseNumberStreetName")}
@@ -41,13 +41,9 @@ export default function UserDetailsForm() {
         required
       />
 
-      <CheckoutInputText
-        name="townOrCity"
-        label={trans("townOrCity")}
-        required
-      />
+      <TextInputV2 name="townOrCity" label={trans("townOrCity")} required />
 
-      <CheckoutInputText
+      <TextInputV2
         name="postcodeZIP"
         label={trans("postcodeZIP")}
         required

@@ -21,7 +21,7 @@ export default function OverLay({ atom, opened }: OverLayProps) {
       <div
         className={`overlay ${
           opened ? styles.show : styles.hide
-        } w-full h-full fixed inset-0 bg-[#00000099] duration-300 transition-all ease-in-out z-40`}
+        }  w-full h-full fixed inset-0 backdrop-blur-[5px] bg-[#00000099] duration-300 transition-all ease-in-out z-40`}
         onClick={atom && (() => atom.change("opened", false))}></div>
     </>,
     document.body,

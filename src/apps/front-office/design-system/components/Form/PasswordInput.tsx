@@ -4,7 +4,7 @@ import {
   minLengthRule,
   requiredRule,
 } from "@mongez/react-form";
-import TextInput from "apps/front-office/design-system/components/Form/TextInput";
+import TextInputV2 from "./TextInputV2";
 
 export type PasswordInputProps = FormControlProps & {
   // props go here
@@ -12,7 +12,7 @@ export type PasswordInputProps = FormControlProps & {
 };
 
 export default function PasswordInput(props: PasswordInputProps) {
-  return <TextInput {...props} type="password" />;
+  return <TextInputV2 {...props} type="password" />;
 }
 
 PasswordInput.defaultProps = {

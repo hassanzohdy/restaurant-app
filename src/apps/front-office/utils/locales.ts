@@ -74,8 +74,16 @@ groupedTranslations({
     ar: `هل لديك حساب؟`,
   },
   login: {
-    en: "Sign In",
+    en: "Login",
     ar: "تسجيل دخول",
+  },
+  lostPassword: {
+    en: "Lost your password?",
+    ar: "هل فقدت كلمة المرور؟",
+  },
+  rememberMe: {
+    en: "Remember me",
+    ar: "تذكرني",
   },
   firstNameRequired: {
     en: "First name is required",

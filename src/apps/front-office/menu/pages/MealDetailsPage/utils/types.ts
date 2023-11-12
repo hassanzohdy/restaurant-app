@@ -24,7 +24,6 @@ export type MealType = {
   shortDescription: string;
   description: string;
   image: Image;
-  images: string[];
   price: number;
   salePrice?: number;
   category: MealCategory;

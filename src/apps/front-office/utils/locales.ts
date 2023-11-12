@@ -33,6 +33,10 @@ groupedTranslations({
     en: "Reviews",
     ar: "المراجعات",
   },
+  noReviews: {
+    en: "No reviews yet",
+    ar: "لا توجد اي تقيمات",
+  },
   createAccount: {
     en: "Create Account",
     ar: "إنشاء حساب",

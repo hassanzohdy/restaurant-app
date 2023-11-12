@@ -22,23 +22,6 @@ export type MealDetailsPageProps = {
 };
 
 export default function MealDetailsPage({ params }: MealDetailsPageProps) {
-  // const { isLoading, error, data } = useFetchData("meals", params.id);
-  // const [meal, setMeal] = mealAtom.useState();
-
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
-
-  // if (error) {
-  //   return <Error error={error} />;
-  // }
-
-  // if (data) {
-  //   setMeal(data.meal);
-  // } else {
-  //   return null;
-  // }
-
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<any>(null);
   const meal = mealAtom.useValue();

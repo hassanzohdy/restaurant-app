@@ -8,13 +8,14 @@ function useResetStatesOnAction(atom: Atom) {
     atom.reset();
   };
 
+  useRouteChange(resetStates);
+
   const handleClickOutsideRef = useRef(null);
+
   const handleClickOutside = useClickOutside({
     callback: resetStates,
     ref: handleClickOutsideRef,
   });
-
-  useRouteChange(resetStates);
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);

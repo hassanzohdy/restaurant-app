@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { IconChevronRight } from "@tabler/icons-react";
 import URLS from "apps/front-office/utils/urls";
+import { BiChevronRight } from "react-icons/bi";
 import styles from "./_Breadcrumb.module.scss";
 
 export type BreadcrumbProps = {
@@ -26,7 +26,7 @@ export default function Breadcrumb({ title, navItems }: BreadcrumbProps) {
                   className="mr-1 text-gray-400 hover:text-primary-hover">
                   {trans("home")}
                 </Link>
-                <IconChevronRight strokeWidth="4" />
+                <BiChevronRight strokeWidth="2" />
               </li>
               {navItems.map((item, index) => {
                 if (item.url) {
@@ -35,7 +35,7 @@ export default function Breadcrumb({ title, navItems }: BreadcrumbProps) {
                       <Link to={item.url} className="mr-1 text-gray-400">
                         {trans(item.name)}
                       </Link>
-                      <IconChevronRight strokeWidth="4" />
+                      <BiChevronRight strokeWidth="2" />
                     </li>
                   );
                 } else {

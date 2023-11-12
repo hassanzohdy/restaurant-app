@@ -1,41 +1,27 @@
 import { trans } from "@mongez/localization";
 import { Button } from "apps/front-office/design-system/components/Button";
 import { cn } from "apps/front-office/design-system/utils/cn";
+import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
 import { useState } from "react";
-import { ReviewType } from "../utils/types";
 import DescriptionSection from "./DescriptionSection";
 import ReviewsSection from "./reviews/ReviewsSection";
 
-type DescriptionAndReviewsProps = {
-  description: string;
-  ingredients: string[];
-  reviews: ReviewType[];
-};
-
 type variant = "description" | "reviews";
 
-function getSection(section: string, data?: any) {
+function getSection(section: string) {
   switch (section) {
     case "description": {
-      return (
-        <DescriptionSection
-          description={data.description}
-          ingredients={data.ingredients}
-        />
-      );
+      return <DescriptionSection />;
     }
     case "reviews": {
-      return <ReviewsSection reviews={data.reviews} />;
+      return <ReviewsSection />;
     }
   }
 }
 
-const DescriptionAndReviews = ({
-  description,
-  ingredients,
-  reviews,
-}: DescriptionAndReviewsProps) => {
+const DescriptionAndReviews = () => {
   const [section, setSection] = useState<variant>("description");
+  const { reviews = 0 } = mealAtom.useValue();
 
   return (
     <section>
@@ -54,16 +40,10 @@ const DescriptionAndReviews = ({
             "text-2xl capitalize py-4 px-10 hover:bg-primary-main font-bold",
             section === "reviews" ? "bg-primary-main" : "bg-transparent",
           )}>
-          {`${trans("reviews")} (${reviews?.length})`}
+          {`${trans("reviews")} (${reviews})`}
         </Button>
       </div>
-      <div className="container py-10">
-        {getSection(section, {
-          description,
-          ingredients,
-          reviews,
-        })}
-      </div>
+      <div className="container py-10">{getSection(section)}</div>
     </section>
   );
 };

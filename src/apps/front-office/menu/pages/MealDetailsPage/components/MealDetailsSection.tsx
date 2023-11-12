@@ -1,16 +1,17 @@
 import Overlay from "apps/front-office/design-system/components/Overlay";
+import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { MealType } from "../utils/types";
 import { DetailsSide } from "./DetailsSide";
 
-type Props = {
-  meal: MealType;
-};
-
-const ImagesSide = ({ images }: { images: string[] }) => {
+const ImagesSide = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [src, setSrc] = useState("");
+
+  const {
+    image: { url: image },
+    name,
+  } = mealAtom.useValue();
 
   const overlayHandler = () => {
     setIsOverlayOpen(oldState => !oldState);
@@ -32,7 +33,7 @@ const ImagesSide = ({ images }: { images: string[] }) => {
             <img
               onClick={e => e.stopPropagation()}
               src={src}
-              alt="Meal image"
+              alt={name}
               className="bg-black"
             />
             <button
@@ -47,33 +48,29 @@ const ImagesSide = ({ images }: { images: string[] }) => {
         </Overlay>
       )}
       <div className="flex gap-y-4 flex-col">
-        {images.map((image, idx) => (
-          <div
-            key={idx}
-            className="rounded-xl overflow-hidden bg-primary-light w-fit">
-            <img
-              onClick={() => {
-                overlayHandler();
-                setSrc(image);
-              }}
-              loading="lazy"
-              src={image}
-              alt="Product image"
-              width={800}
-              height={800}
-            />
-          </div>
-        ))}
+        <div className="rounded-xl overflow-hidden bg-primary-light w-fit">
+          <img
+            onClick={() => {
+              overlayHandler();
+              setSrc(image);
+            }}
+            loading="lazy"
+            src={image + "?w=800&h=800"}
+            alt={name}
+            width={800}
+            height={800}
+          />
+        </div>
       </div>
     </>
   );
 };
 
-const MealDetailsSection = ({ meal }: Props) => {
+const MealDetailsSection = () => {
   return (
     <section className="py-20 grid grid-cols-1 md:grid-cols-2 gap-10 container relative">
-      <ImagesSide images={meal.images} />
-      <DetailsSide {...meal} />
+      <ImagesSide />
+      <DetailsSide />
     </section>
   );
 };

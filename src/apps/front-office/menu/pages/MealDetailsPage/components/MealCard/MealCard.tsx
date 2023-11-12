@@ -1,8 +1,9 @@
+import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { IconShoppingBag } from "@tabler/icons-react";
 import Stars from "apps/front-office/design-system/components/Stars";
 import URLS from "apps/front-office/utils/urls";
 import { AiFillHeart } from "react-icons/ai";
+import { TbShoppingBag } from "react-icons/tb";
 import { MealType } from "../../utils/types";
 
 export type MealCardProps = {
@@ -22,8 +23,8 @@ export default function MealCard({ meal }: MealCardProps) {
         to={URLS.menu.viewMeal(meal)}
         className="h-64 relative flex items-center justify-center cursor-pointer rounded-3xl">
         <img
-          src={meal.image}
-          alt="meal image"
+          src={meal.image.url + "?w=200&h=200"}
+          alt={meal.name}
           width={200}
           height={200}
           className="group-hover:scale-125 transition-transform duration-300 z-10"
@@ -35,15 +36,19 @@ export default function MealCard({ meal }: MealCardProps) {
         <Link
           to={URLS.menu.viewMeal(meal)}
           className="font-bold text-lg inline-block">
-          {meal.title}
+          {meal.name}
         </Link>
-        <p className="line-clamp-2 font-light">{meal.description}</p>
+        <p title={meal.description} className="line-clamp-2 font-light">
+          {meal.description}
+        </p>
         <div className="flex items-center justify-between gap-4">
           <span className="inline-block font-bold text-primary-main text-xl">
             £{meal.price}
           </span>
-          <button className="bg-primary-main p-2 rounded-2xl hover:bg-primary-hover transition-colors">
-            <IconShoppingBag color="#000"></IconShoppingBag>
+          <button
+            title={trans("addToCart")}
+            className="bg-primary-main p-2 rounded-2xl hover:bg-primary-hover transition-colors">
+            <TbShoppingBag color="#000"></TbShoppingBag>
           </button>
         </div>
       </div>

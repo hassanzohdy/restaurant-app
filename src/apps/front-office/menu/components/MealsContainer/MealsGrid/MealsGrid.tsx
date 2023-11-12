@@ -1,15 +1,15 @@
-import PopularDishes from "apps/front-office/home/pages/HomePage/PopularDishes";
+import MealCard from "apps/front-office/menu/pages/MealDetailsPage/components/MealCard";
 import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 
 export type MealsGridProps = {
   meals: MealType[];
 };
-export default function MealsGrid({
-  meals: _unused_meals_yet,
-}: MealsGridProps) {
+export default function MealsGrid({ meals }: MealsGridProps) {
   return (
-    <>
-      <PopularDishes />
-    </>
+    <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 pt-8 pb-20">
+      {meals.map(meal => (
+        <MealCard meal={meal} key={meal.id} />
+      ))}
+    </div>
   );
 }

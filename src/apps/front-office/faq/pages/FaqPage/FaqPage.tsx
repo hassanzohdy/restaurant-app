@@ -44,6 +44,7 @@ const data = [
 ];
 
 function _FaqPage() {
+  // /faq
   return (
     <>
       <Breadcrumb title={trans("faq")} navItems={[{ name: "faq" }]} />

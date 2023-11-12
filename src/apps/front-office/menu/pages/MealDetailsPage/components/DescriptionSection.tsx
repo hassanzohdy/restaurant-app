@@ -1,12 +1,8 @@
-type Props = {
-  description: string;
-  ingredients: string[];
-};
+import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
 
-export default function DescriptionSection({
-  description,
-  ingredients,
-}: Props) {
+export default function DescriptionSection() {
+  const { description, ingredients } = mealAtom.useValue();
+
   return (
     <section className=" text-primary-text max-w-[970px] mx-auto leading-7 space-y-4">
       <p>{description}</p>

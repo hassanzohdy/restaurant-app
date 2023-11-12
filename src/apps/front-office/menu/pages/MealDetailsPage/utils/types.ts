@@ -6,28 +6,30 @@ export type ReviewType = {
   date: string;
 };
 
-export type PopupMealType = {
+export type Image = {
+  hash: string;
+  url: string;
+  name: string;
+};
+
+export type MealCategory = {
   id: number;
-  title: string;
-  price: number;
-  sale?: number;
-  image: string;
+  name: string;
 };
 
 export type MealType = {
   id: number;
-  title: string;
+  name: string;
   slug: string;
   shortDescription: string;
   description: string;
-  image: string;
+  image: Image;
   images: string[];
   price: number;
-  category: string;
+  salePrice?: number;
+  category: MealCategory;
   isFavorite: boolean;
   ratings: number;
   ingredients: string[];
-  reviews: ReviewType[];
-  nextMeal: PopupMealType;
-  prevMeal: PopupMealType;
+  reviews: number;
 };

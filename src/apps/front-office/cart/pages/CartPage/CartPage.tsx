@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
-import { IconShoppingCartQuestion } from "@tabler/icons-react";
 import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import React from "react";
+import { TbShoppingCartQuestion } from "react-icons/tb";
 import CartProductsTable from "./components/CartProductsTable";
 import CartTotals from "./components/CartTotals";
 
@@ -34,7 +34,7 @@ const cartProductsList = [
 const emptyCartInfo = {
   title: trans("emptyCart"),
   description: trans("cartEmptyDescription"),
-  icon: <IconShoppingCartQuestion size="150" />,
+  icon: <TbShoppingCartQuestion size="150" />,
 };
 
 function _CartPage() {

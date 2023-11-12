@@ -1,4 +1,4 @@
-import { IconX } from "@tabler/icons-react";
+import { AiOutlineClose } from "react-icons/ai";
 import { modalAtom } from "../../atoms/modal-atom";
 import OverLay from "../../layouts/OverLay";
 import styles from "./_Modal.module.scss";
@@ -36,7 +36,7 @@ export default function Modal({ title, variant, children }: ModalProps) {
           <button
             onClick={() => modalAtom.change("opened", false)}
             className="close-modal text-white opacity-50 absolute top-3 right-3 hover:opacity-100 duration-700 transition-all ease-in-out">
-            <IconX size="30" />
+            <AiOutlineClose size="30" />
           </button>
         </div>
         <div className="modal-body p-[15px]">{children}</div>

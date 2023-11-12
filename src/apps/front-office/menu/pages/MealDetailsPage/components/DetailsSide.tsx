@@ -3,20 +3,12 @@ import { Button } from "apps/front-office/design-system/components/Button";
 import Stars from "apps/front-office/design-system/components/Stars";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { formatPrice } from "apps/front-office/design-system/utils/format-price";
+import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
 import { useState } from "react";
 import { AiTwotoneHeart } from "react-icons/ai";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import { PiDotOutlineFill } from "react-icons/pi";
 import { DetailsCategorySection } from "./DetailsCategorySection";
-
-type Props = {
-  title: string;
-  description: string;
-  price: number;
-  isFavorite: boolean;
-  category: string;
-  ratings: number;
-};
 
 const ShippingFeatures = () => {
   return (
@@ -37,17 +29,14 @@ const ShippingFeatures = () => {
   );
 };
 
-export const DetailsSide = ({
-  description,
-  isFavorite,
-  price,
-  title,
-  category,
-  ratings,
-}: Props) => {
+export const DetailsSide = () => {
   const [amount, setAmount] = useState<number>(1);
+  const meal = mealAtom.useValue();
+  const isFavorite = false;
 
-  const displayedPrice = formatPrice(price);
+  const ratings = meal.ratings || 0;
+
+  const displayedPrice = formatPrice(meal.price);
 
   const incrementAmount = () => {
     setAmount(amount + 1);
@@ -64,9 +53,9 @@ export const DetailsSide = ({
     <div className="flex-1">
       <div className="sticky top-20 space-y-6">
         <div className="space-y-6 border-b pb-6">
-          <h1 className="text-5xl font-bold">{title}</h1>
+          <h1 className="text-5xl font-bold">{meal.name}</h1>
           <Stars ratings={ratings} />
-          <p className="text-primary-text text-base">{description}</p>
+          <p className="text-primary-text text-base">{meal.description}</p>
           <span className="inline-block text-2xl font-bold text-primary-main">
             {displayedPrice}
           </span>
@@ -105,7 +94,7 @@ export const DetailsSide = ({
           </div>
         </div>
 
-        <DetailsCategorySection category={category} />
+        <DetailsCategorySection />
 
         <ShippingFeatures />
         <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">

@@ -22,12 +22,14 @@ export const DetailsCategorySection = () => {
 
   return (
     <div className="space-y-4 text-sm border-b pb-6">
-      <p className="text-primary-text">
-        {trans("category")}:
-        <span className="inline-block font-semibold capitalize">
-          {category.name}
-        </span>
-      </p>
+      {category && (
+        <div className="text-primary-text">
+          {trans("category")}:
+          <span className="inline-block font-semibold capitalize">
+            {category?.name}
+          </span>
+        </div>
+      )}
       <div className="first-letter:uppercase flex items-center gap-2 text-primary-text">
         {trans("share")}:
         {socialLinks.map((link, idx) => (

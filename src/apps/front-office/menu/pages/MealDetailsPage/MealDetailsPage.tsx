@@ -5,10 +5,10 @@ import Loader, {
   Error,
 } from "apps/front-office/design-system/components/Indicators/Indicators";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
-import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
-import { getMeal } from "apps/front-office/menu/services/meals-service";
 import { useState } from "react";
 import endpoint from "shared/endpoint";
+import { getMeal } from "../../services/meals-service";
+import { mealAtom } from "./atoms/meal-atom";
 import DescriptionAndReviews from "./components/DescriptionAndReviews";
 import MealDetailsSection from "./components/MealDetailsSection";
 import MealsNavigateBtns from "./components/MealsNavigateBtns";
@@ -22,6 +22,23 @@ export type MealDetailsPageProps = {
 };
 
 export default function MealDetailsPage({ params }: MealDetailsPageProps) {
+  // const { isLoading, error, data } = useFetchData("meals", params.id);
+  // const [meal, setMeal] = mealAtom.useState();
+
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
+
+  // if (error) {
+  //   return <Error error={error} />;
+  // }
+
+  // if (data) {
+  //   setMeal(data.meal);
+  // } else {
+  //   return null;
+  // }
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<any>(null);
   const meal = mealAtom.useValue();

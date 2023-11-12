@@ -16,11 +16,10 @@ type PopupMealProps = {
   navigationMeal: { next: boolean; prev: boolean };
 };
 
-const PopupMeal = ({ meal, navigationMeal }: PopupMealProps) => {
+function PopupMeal({ meal, navigationMeal }: PopupMealProps) {
   if (!meal) return null;
 
   const displayedPrice = formatPrice(meal.price);
-
   const displayedSale = formatPrice(meal.salePrice);
 
   return (
@@ -52,7 +51,7 @@ const PopupMeal = ({ meal, navigationMeal }: PopupMealProps) => {
       </div>
     </div>
   );
-};
+}
 
 type MealNavigation = {
   meals: {
@@ -128,7 +127,7 @@ const MealsNavigateBtns = ({ meal }: MealsNavigateBtnsProps) => {
   };
 
   return (
-    <div className="flex items-center absolute top-1/2  -translate-y-1/2 right-6 gap-4 text-2xl text-black">
+    <div className="flex items-center absolute top-1/2 -translate-y-1/2 right-6 gap-4 text-2xl text-black">
       <Link
         className="btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("prev")}
@@ -144,10 +143,7 @@ const MealsNavigateBtns = ({ meal }: MealsNavigateBtnsProps) => {
             return URLS.menu.viewMeal(nextMeal);
           }
         }}
-        className="
-        disabled:opacity-50
-        disabled:cursor-not-allowed
-        btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
+        className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary-main btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("next")}
         onMouseLeave={mouseLeaveHandler}>
         <RiArrowDropRightLine className="shrink-0" />

@@ -1,7 +1,8 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { IconShoppingBag, IconX } from "@tabler/icons-react";
 import { Button } from "apps/front-office/design-system/components/Button";
+import { IoClose } from "react-icons/io5";
+import { TbShoppingBag } from "react-icons/tb";
 
 export type WishListProductsTableItemProps = {
   productDetails: {
@@ -18,7 +19,7 @@ export default function WishListProductsTableItem({
   return (
     <tr className="border-b max-lg:block max-lg:pl-[100px] max-lg:relative">
       <td className="product-remove w-[3%] px-3 py-5 pl-0 max-lg:absolute max-lg:w-auto max-lg:right-1 max-lg:top-6 max-lg:p-0">
-        <IconX className="w-[15px] h-[15px] p-[2px] border rounded-full text-[#b3b3b3] border-[#b3b3b3] cursor-pointer hover:text-[#f00] hover:border-[#f00] duration-700 transition-all ease-in-out" />
+        <IoClose className="w-[15px] h-[15px] p-[2px] border rounded-full text-[#b3b3b3] border-[#b3b3b3] cursor-pointer hover:text-[#f00] hover:border-[#f00] duration-700 transition-all ease-in-out" />
       </td>
       <td className="product-thumbnail w-[10%] py-3 px-6 h-[140px] max-lg:absolute max-lg:w-auto max-lg:left-1 max-lg:top-6 max-lg:p-0">
         <Link to="#">
@@ -55,7 +56,7 @@ export default function WishListProductsTableItem({
           className="px-3 py-2 max-sm:px-2 max-sm:py-1 max-sm:text-[0]">
           {trans("addToCart")}
           <span className="hidden max-sm:block">
-            <IconShoppingBag size="20" />
+            <TbShoppingBag size="20" />
           </span>
         </Button>
       </td>

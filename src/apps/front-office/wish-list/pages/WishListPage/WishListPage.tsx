@@ -1,11 +1,11 @@
 import { trans } from "@mongez/localization";
-import { IconHeartSearch } from "@tabler/icons-react";
 import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import popularMealImage1 from "assets/images/about-us/popular-meal-image-1.png";
 import popularMealImage2 from "assets/images/about-us/popular-meal-image-2.png";
 import popularMealImage3 from "assets/images/about-us/popular-meal-image-3.png";
 import React from "react";
+import { TbHeartSearch } from "react-icons/tb";
 import WishListProductsTable from "./components/WishListProductsTable";
 
 const wishListProductsList = [
@@ -35,7 +35,7 @@ const wishListProductsList = [
 const emptyWishListInfo = {
   title: trans("emptyWishList"),
   description: trans("wishListEmptyDescription"),
-  icon: <IconHeartSearch size="150" />,
+  icon: <TbHeartSearch size="150" />,
 };
 function _WishListPage() {
   return (

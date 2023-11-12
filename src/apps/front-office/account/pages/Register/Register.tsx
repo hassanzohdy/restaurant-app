@@ -36,7 +36,7 @@ export default function Register() {
         </h2>
         <button className="bg-slate-200 w-16 h-12 grid place-items-center rounded-md">
           <Link to={URLS.home} target="_blank">
-            <img src={googleIcon} alt="google signup icon" />
+            <img src={googleIcon} alt="google sign up icon" />
           </Link>
         </button>
         <div
@@ -85,10 +85,13 @@ export default function Register() {
           />
           <SubmitButton>{trans("createAccount")}</SubmitButton>
         </Form>
-        {trans("signInAlready")}{" "}
-        <Link to={URLS.auth.login} className="text-secondary font-bold">
-          {trans("login")}
-        </Link>
+        <div className="w-full">
+          <Link
+            to={URLS.auth.login}
+            className="text-primary-main hover:text-primary-hover focus:text-primary-hover font-bold ml-1">
+            {trans("signInAlready")}
+          </Link>
+        </div>
       </div>
     </>
   );

@@ -18,6 +18,7 @@ const LoginForm = () => {
         <TextInputV2
           name="user name"
           label={trans("usernameOrEmail")}
+          autoFocus
           required
         />
         <PasswordInput
@@ -29,15 +30,14 @@ const LoginForm = () => {
         <SubmitButton>{trans("login")}</SubmitButton>
       </Form>
       <div className="mt-[20px] w-full flex justify-between items-center">
-        <div className="flex h-[25px] gap-2 ">
-          <input type="checkbox" id="rememberMe" className="cursor-pointer" />
-          <label
-            htmlFor="rememberMe"
-            className="text-[#808080] hover:text-[#41414b] cursor-pointer">
-            {trans("rememberMe")}
-          </label>
-        </div>
-        <Link to={URLS.home} className="text-[#808080] decoration-dotted">
+        <Link
+          to={URLS.auth.register}
+          className="text-[#808080] hover:text-[#535353] focus:text-[#535353] decoration-dotted">
+          {trans("createAnAccount")}
+        </Link>
+        <Link
+          to={URLS.home}
+          className="text-[#808080] hover:text-[#535353] focus:text-[#535353] decoration-dotted">
           {trans("lostPassword")}
         </Link>
       </div>

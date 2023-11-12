@@ -30,6 +30,7 @@ export default function MealDetailsPage({ params }: MealDetailsPageProps) {
     getMeal(params.id)
       .then(response => {
         mealAtom.update(response.data.meal);
+        setError("Error updating");
       })
       .catch(error => {
         setError(

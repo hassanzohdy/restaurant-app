@@ -8,10 +8,3 @@ export function getFaqsList(params: any = {}) {
     params,
   });
 }
-
-/**
- * Get faq details
- */
-export function getFaq(id: string | number) {
-  return endpoint.get("/faq/" + id);
-}

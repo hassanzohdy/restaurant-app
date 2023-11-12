@@ -24,7 +24,7 @@ export default function PopularMealItem({
             className={`${styles.itemWrapper} flex justify-between max-md:flex-col-reverse`}>
             <div className="w-[45%] max-xl:w-[48%] max-md:w-full">
               <div className="details pt-[100px] max-lg:pt-[50px] max-sm:pt-[30px]">
-                <CommonTitle className="text-[25px] capitalize max-md:text-[20px]">
+                <CommonTitle className="text-[25px] text-primary-main capitalize max-md:text-[20px]">
                   {trans("ourQuality")}
                 </CommonTitle>
                 <h2 className="text-[42px] font-bold mb-5 max-xl:mb-3 max-lg:text-[36px] max-md:text-[30px]">

@@ -533,4 +533,8 @@ groupedTranslations({
     en: "Added On",
     ar: "أضيف فى",
   },
+  noResults: {
+    en: "No results",
+    ar: "لا توجد نتائج",
+  },
 });

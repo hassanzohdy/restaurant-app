@@ -16,18 +16,9 @@ import styles from "./register.module.scss";
 export default function Register() {
   const { state, submit } = useRegister();
 
-  if (state === "done") {
-    // TODO: DIsplay a message to activate the account from the email.
-    return (
-      <>
-        <Helmet title={trans("createAccount")} />
-        <ToastMessage />
-      </>
-    );
-  }
-
   return (
     <>
+      {state === "done" && <ToastMessage />}
       <Helmet title={trans("createAccount")} />
       <div
         className={`${styles.register} container box-border w-10/12 sm:w-3/5 md:max-w-md h-auto my-12 shadow flex gap-5 place-items-center flex-col p-4 rounded-md`}>

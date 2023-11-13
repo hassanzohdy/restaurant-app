@@ -32,11 +32,11 @@ export default function UserDropDown() {
       </div>
 
       <div
-        className={`absolute top-[64px]  border-primary-main overflow-hidden border-t duration-200 shadow-list transition-all bg-white flex flex-col ${
+        className={`absolute top-[64px] border-primary-main overflow-hidden border-t duration-200 shadow-list transition-all bg-white flex flex-col ${
           groupState.userIcon
             ? "w-[300px] h-[380px] p-5 delay-75"
             : "h-0 w-0 p-0"
-        } rtl:left-[0px] ltr:-right-[-23px] focus-within:w-[300px] focus-within:h-[380px] focus-within:p-5 pt-5`}>
+        } rtl:left-[23px] ltr:-right-[-23px] focus-within:w-[300px] focus-within:h-[380px] focus-within:p-5 pt-5`}>
         <div className="h-[48px]">
           <span className="text-[18px] text-[#333]">{trans("signIn")}</span>
           <Link

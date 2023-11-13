@@ -1,5 +1,5 @@
 import { trans } from "@mongez/localization";
-import { IconX } from "@tabler/icons-react";
+import { IoClose } from "react-icons/io5";
 import WishListProductsTableItem from "../WishListProductsTableItem";
 
 export type WishListProductsTableProps = {
@@ -21,7 +21,7 @@ export default function WishListProductsTable({
         <thead className="max-lg:hidden">
           <tr className="bg-white border-b uppercase text-[12px]">
             <th className="product-remove px-3 pb-5">
-              <IconX size="0" />
+              <IoClose size="0" />
             </th>
             <th className="product-thumbnail px-3 pb-5 text-[0px]">
               {trans("productThumbnail")}

@@ -10,7 +10,7 @@ export default function AboutUsOrderNow() {
       <div
         className={`${styles.aboutUsOrderNow} py-[128px] max-lg:py-[80px] max-sm:py-[70px]`}>
         <div className="container text-center">
-          <CommonTitle className="text-[32px] capitalize mb-1 max-sm:text-[25px]">
+          <CommonTitle className="text-[32px] text-primary-main capitalize mb-1 max-sm:text-[25px]">
             {trans("WeGuarantee")}
           </CommonTitle>
           <h2 className="text-[60px] font-bold leading-none mb-4 max-xl:text-[54px]  max-lg:text-[40px] max-sm:text-[28px] max-sm:mb-3">

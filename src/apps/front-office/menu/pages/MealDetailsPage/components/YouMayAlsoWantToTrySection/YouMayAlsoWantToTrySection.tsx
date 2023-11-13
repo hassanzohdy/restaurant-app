@@ -3,21 +3,21 @@ import SectionHeading from "apps/front-office/design-system/components/SectionHe
 import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
 import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { getMeals } from "apps/front-office/menu/services/meals-service";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import MealCard from "../MealCard";
 
 export default function YouMayAlsoWantToTrySection() {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   const [meals, setMeals] = useState<MealType[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const meal = mealAtom.useValue();
 
-  if (isLoaded && meals.length === 0) return null;
-
-  const _loadMeals = () => {
+  const loadMeals = useCallback(() => {
     getMeals({
-      category: meal.category.id,
-      except: meal.id,
-      limit: 6,
+      category: meal.category?.id,
+      limit: 4,
     })
       .then(response => {
         setMeals(response.data.meals);
@@ -25,22 +25,29 @@ export default function YouMayAlsoWantToTrySection() {
       .finally(() => {
         setIsLoaded(true);
       });
-  };
+  }, [meal]);
 
-  // useOnce(() => {
-  //   _loadMeals();
-  // });
+  useEffect(() => {
+    if (inView) {
+      loadMeals();
+    }
+  }, [inView, loadMeals]);
 
-  // TODO: when element is visible, load meals
+  if (isLoaded && meals.length === 0) return null;
 
   return (
     <div className="container">
-      <SectionHeading>{trans("youMayAlsoWant")}</SectionHeading>
-      <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 pt-8 pb-20">
-        {meals.map((meal, index) => (
-          <MealCard key={index} meal={meal} />
-        ))}
-      </div>
+      <div ref={ref} className=""></div>
+      {inView && (
+        <>
+          <SectionHeading>{trans("youMayAlsoWant")}</SectionHeading>
+          <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 pt-8 pb-20">
+            {meals.map((meal, index) => (
+              <MealCard key={index} meal={meal} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

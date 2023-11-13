@@ -33,6 +33,10 @@ groupedTranslations({
     en: "Reviews",
     ar: "المراجعات",
   },
+  noReviews: {
+    en: "No reviews yet",
+    ar: "لا توجد اي تقيمات",
+  },
   createAccount: {
     en: "Create Account",
     ar: "إنشاء حساب",
@@ -533,4 +537,9 @@ groupedTranslations({
     en: "Added On",
     ar: "أضيف فى",
   },
+  //
+  frequentlyAskedQuestions: {
+    en: "Frequently Asked Questions",
+    ar: "الأسئلة الشائعة",
+  }
 });

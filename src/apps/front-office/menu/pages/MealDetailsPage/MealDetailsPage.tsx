@@ -5,10 +5,10 @@ import Loader, {
   Error,
 } from "apps/front-office/design-system/components/Indicators/Indicators";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
-import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
-import { getMeal } from "apps/front-office/menu/services/meals-service";
 import { useState } from "react";
 import endpoint from "shared/endpoint";
+import { getMeal } from "../../services/meals-service";
+import { mealAtom } from "./atoms/meal-atom";
 import DescriptionAndReviews from "./components/DescriptionAndReviews";
 import MealDetailsSection from "./components/MealDetailsSection";
 import MealsNavigateBtns from "./components/MealsNavigateBtns";
@@ -30,6 +30,7 @@ export default function MealDetailsPage({ params }: MealDetailsPageProps) {
     getMeal(params.id)
       .then(response => {
         mealAtom.update(response.data.meal);
+        setError("Error updating");
       })
       .catch(error => {
         setError(

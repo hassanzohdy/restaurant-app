@@ -1,5 +1,3 @@
-import styles from "./_CommonTile.module.scss";
-
 export type CommonTitleProps = {
   children: React.ReactNode;
   className: string;
@@ -7,7 +5,7 @@ export type CommonTitleProps = {
 
 export default function CommonTitle({ children, className }: CommonTitleProps) {
   return (
-    <span className={`${styles.commonText} ${className} text-primary-main `}>
+    <span className={`${className} font-norican`}>
       {" "}
       {children}{" "}
     </span>

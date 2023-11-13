@@ -19,7 +19,7 @@ export default function AboutUsVideo() {
             {trans("aboutUsVideoText")}
           </p>
           <BaseLink
-            className="py-4 px-10 max-lg:py-3 max-lg:px-8 uppercase text-dark]"
+            className="py-4 px-10 max-lg:py-3 max-lg:px-8 uppercase text-black"
             variant="primary"
             href={URLS.contactUs}>
             {trans("orderNow")}

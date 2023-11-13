@@ -7,7 +7,7 @@ export default function AboutUsWelcomeText() {
   return (
     <>
       <div className="about-us-welcome-text animate-fade w-[40%] max-xl:w-[45%] max-md:w-[100%] max-md:mb-10">
-        <CommonTitle className="block text-[42px] capitalize mb-2 max-lg:text-[36px] max-sm:text-[30px]">
+        <CommonTitle className="block text-[42px] text-primary-main capitalize mb-2 max-lg:text-[36px] max-sm:text-[30px]">
           {trans("welcome")}
         </CommonTitle>
         <h2 className="text-[60px] font-bold leading-none w-[92%] mb-5 max-[1399px]:text-[56px] max-[1399px]:w-[94%] max-xl:w-[86%] max-xl:text-[45px] max-lg:w-[98%] max-lg:text-[36px] max-sm:text-[34px]">

@@ -1,23 +1,17 @@
 import { trans } from "@mongez/localization";
 import { Form, FormSubmitOptions } from "@mongez/react-form";
-import { isEmpty } from "@mongez/supportive-is";
 import { Button } from "apps/front-office/design-system/components/Button";
 import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import TextareaInput from "apps/front-office/design-system/components/Form/TextareaInput";
+
+import { isEmpty } from "@mongez/supportive-is";
 import { ratingAtom } from "../../atoms/rating-atom";
-import { ReviewType } from "../../utils/types";
 import AddRatings from "../AddRatings";
 import { ReviewCard } from "./ReviewCard";
 
-type ReviewsSectionProps = {
-  reviews?: ReviewType[];
-};
-
-export default function ReviewsSection({ reviews }: ReviewsSectionProps) {
-  if (!reviews || isEmpty(reviews)) {
-    return null;
-  }
+export default function ReviewsSection() {
+  const reviews = [];
 
   function handSubmit({ values }: FormSubmitOptions) {
     const body = { ...values, ratings: ratingAtom.value };
@@ -27,11 +21,17 @@ export default function ReviewsSection({ reviews }: ReviewsSectionProps) {
 
   return (
     <section className="flex gap-8 flex-wrap flex-col lg:flex-row mt-8">
-      <div className="space-y-6 flex-1">
-        {reviews.map((review, index) => {
-          return <ReviewCard key={index} review={review} />;
-        })}
-      </div>
+      {reviews && !isEmpty(reviews) ? (
+        <div className="space-y-6 flex-1">
+          {reviews.map((review, index) => {
+            return <ReviewCard key={index} review={review} />;
+          })}
+        </div>
+      ) : (
+        <div className="flex-1 flex items-center justify-center font-bold text-bodyTextColor text-xl capitalize">
+          {trans("noReviews")}
+        </div>
+      )}
       <div className="flex-1 text-primary-text space-y-6">
         <div>
           {trans("infoPublishMessage")} <span className="text-red-500">*</span>

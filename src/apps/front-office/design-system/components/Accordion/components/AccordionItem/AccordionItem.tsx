@@ -1,6 +1,6 @@
-import { IconMinus, IconPlus } from "@tabler/icons-react";
 import { FaqType } from "apps/front-office/faq/utils/types";
 import { useState } from "react";
+import { BiMinus, BiPlus } from "react-icons/bi";
 
 export type AccordionItemProps = {
   item: FaqType;
@@ -19,9 +19,9 @@ export default function AccordionItem({ item }: AccordionItemProps) {
         {item.question}
         <span className="ml-2 mt-2 mb-auto max-md:mt-1">
           {opened ? (
-            <IconMinus size="18" stroke="3" />
+            <BiMinus size="18" stroke="3" />
           ) : (
-            <IconPlus size="18" stroke="3" />
+            <BiPlus size="18" stroke="3" />
           )}
         </span>
       </h2>

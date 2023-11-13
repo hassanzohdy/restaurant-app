@@ -537,4 +537,9 @@ groupedTranslations({
     en: "Added On",
     ar: "أضيف فى",
   },
+  //
+  frequentlyAskedQuestions: {
+    en: "Frequently Asked Questions",
+    ar: "الأسئلة الشائعة",
+  }
 });

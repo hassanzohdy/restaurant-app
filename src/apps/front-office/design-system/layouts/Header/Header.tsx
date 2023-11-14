@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { scrollAtom } from "./atoms/HeaderAtoms";
+import useIsScrollTop from "./Hooks/useIsScrollTop";
 import HeaderContact from "./components/HeaderContact";
 import HeaderIcons from "./components/HeaderIcons";
 import BurgerIcon from "./components/HeaderIcons/BurgerIcon";
@@ -8,26 +7,17 @@ import HeaderMenus from "./components/HeaderMenus";
 import HeaderPhone from "./components/HeaderPhone";
 
 export default function Header() {
-  const scrollTop = scrollAtom.useValue();
-
-  useEffect(() => {
-    const handleScroll = () => scrollAtom.update(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("DOMContentLoaded", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("DOMContentLoaded", handleScroll);
-    };
-  }, []);
+  const scrollTopPosition = useIsScrollTop();
 
   return (
     <header
       className={
-        "bg-white sticky top-0 w-full z-50 " + (scrollTop && "shadow-header")
+        "bg-white sticky top-0 w-full z-50 " +
+        (scrollTopPosition && "shadow-header")
       }>
       <nav
         className={`flex flex-row items-center justify-between relative transition-all container ${
-          scrollTop != 0 ? "h-[70px]" : "h-[90px]"
+          scrollTopPosition != 0 ? "h-[70px]" : "h-[90px]"
         }`}>
         <BurgerIcon /> {/* for small screens*/}
         <HeaderLogo />

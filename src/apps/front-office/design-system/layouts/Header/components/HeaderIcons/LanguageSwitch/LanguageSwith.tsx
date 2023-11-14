@@ -1,18 +1,18 @@
-import { IoLanguageSharp } from "react-icons/io5";
-import useToggleState from "../../../Hooks/HeaderStateHook";
-import LanguageSwitchList from "../../DropDown/LanguageSwitchList";
+import { changeLocaleCode } from "@mongez/react-router";
+import { isRTL } from "apps/front-office/utils/helpers";
 
 export default function LanguageSwitch() {
-  const { toggleState } = useToggleState();
+  const langSwitchHandel = isRTL() ? "en" : "ar";
 
   return (
-    <div className="relative">
-      <button
-        onClick={() => toggleState("langSwitch")}
-        className="border border-border cursor-pointer rounded-full p-3 text-xl hover:bg-primary-hover">
-        <IoLanguageSharp />
-      </button>
-      <LanguageSwitchList />
+    <div
+      className="relative border border-border cursor-pointer rounded-full w-12 h-12 flex items-center justify-center text-xl hover:bg-primary-hover"
+      onClick={() => changeLocaleCode(langSwitchHandel)}>
+      {isRTL() ? (
+        <span className="font-serif">En</span>
+      ) : (
+        <span className="font-extrabold mb-[6px]">ع</span>
+      )}
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import { trans } from "@mongez/localization";
-import { IconHeart, IconShoppingBag } from "@tabler/icons-react";
 import Blueberry from "assets/images/menuItems/blueberry.png";
 import lemon from "assets/images/menuItems/lemon.png";
 import Pizza from "assets/images/menuItems/pizza.png";
 import Pizza2 from "assets/images/menuItems/pizza2.png";
+import { AiFillHeart } from "react-icons/ai";
+import { TbShoppingBag } from "react-icons/tb";
+import DetailsButton from "../DetailsButton";
 import styles from "./styles.module.scss";
 
 export type PopularDishesItemProps = {
@@ -17,7 +19,7 @@ export default function PopularDishesItem() {
           <div className={styles.PopularDishesItemWrapper}>
             <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
-                <IconHeart color="#ddd" fill="#ddd" size={30}></IconHeart>
+                <AiFillHeart color="#ddd" fill="#ddd" size={30}></AiFillHeart>
               </div>
               <div className={styles.imageWrapper}>
                 <div className={styles.image}>
@@ -30,16 +32,17 @@ export default function PopularDishesItem() {
                   Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
                   with lightly
                 </p>
+                <del className={styles.itemPriceDel}>£12.63 </del>
                 <span className={styles.itemPrice}>£12.63</span>
                 <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
+                  <TbShoppingBag color="#000"></TbShoppingBag>
                 </div>
               </div>
             </div>
             {/*  */}
             <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+                <AiFillHeart color="red" fill="red" size={30}></AiFillHeart>
               </div>
               <div className={styles.imageWrapper}>
                 <div className={styles.image}>
@@ -54,14 +57,14 @@ export default function PopularDishesItem() {
                 </p>
                 <span className={styles.itemPrice}>£12.63</span>
                 <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
+                  <TbShoppingBag color="#000"></TbShoppingBag>
                 </div>
               </div>
             </div>
             {/*  */}
             <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+                <AiFillHeart color="red" fill="red" size={30}></AiFillHeart>
               </div>
               <div className={styles.imageWrapper}>
                 <div className={styles.image}>
@@ -74,16 +77,17 @@ export default function PopularDishesItem() {
                   Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped
                   with lightly
                 </p>
+                <del className={styles.itemPriceDel}>£12.63 </del>
                 <span className={styles.itemPrice}>£12.63</span>
                 <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
+                  <TbShoppingBag color="#000"></TbShoppingBag>
                 </div>
               </div>
             </div>
             {/*  */}
             <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+                <AiFillHeart color="red" fill="red" size={30}></AiFillHeart>
               </div>
               <div className={styles.imageWrapper}>
                 <div className={styles.image}>
@@ -98,14 +102,14 @@ export default function PopularDishesItem() {
                 </p>
                 <span className={styles.itemPrice}>£12.63</span>
                 <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
+                  <TbShoppingBag color="#000"></TbShoppingBag>
                 </div>
               </div>
             </div>
             {/*  */}
             <div className={styles.PopularDishesItem}>
               <div className={styles.heartIcon}>
-                <IconHeart color="red" fill="red" size={30}></IconHeart>
+                <AiFillHeart color="red" fill="red" size={30}></AiFillHeart>
               </div>
               <div className={styles.imageWrapper}>
                 <div className={styles.image}>
@@ -120,11 +124,12 @@ export default function PopularDishesItem() {
                 </p>
                 <span className={styles.itemPrice}>£12.63</span>
                 <div className={styles.shopCard}>
-                  <IconShoppingBag color="#000"></IconShoppingBag>
+                  <TbShoppingBag color="#000"></TbShoppingBag>
                 </div>
               </div>
             </div>
           </div>
+          <DetailsButton />
         </div>
       </div>
     </>

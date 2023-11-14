@@ -11,7 +11,7 @@ groupedTranslations({
   },
   menu: {
     en: "Menu",
-    ar: "القائمة",
+    ar: "قائمة الطعام",
   },
   about: {
     en: "About Us",
@@ -33,6 +33,10 @@ groupedTranslations({
     en: "Reviews",
     ar: "المراجعات",
   },
+  noReviews: {
+    en: "No reviews yet",
+    ar: "لا توجد اي تقيمات",
+  },
   createAccount: {
     en: "Create Account",
     ar: "إنشاء حساب",
@@ -48,6 +52,10 @@ groupedTranslations({
   lastName: {
     en: "Last Name",
     ar: "الاسم الأخير",
+  },
+  name: {
+    en: "Name",
+    ar: "الاسم",
   },
   phoneNumber: {
     en: "Phone Number",
@@ -70,8 +78,16 @@ groupedTranslations({
     ar: `هل لديك حساب؟`,
   },
   login: {
-    en: "Sign In",
+    en: "Login",
     ar: "تسجيل دخول",
+  },
+  lostPassword: {
+    en: "Lost your password?",
+    ar: "هل فقدت كلمة المرور؟",
+  },
+  rememberMe: {
+    en: "Remember me",
+    ar: "تذكرني",
   },
   firstNameRequired: {
     en: "First name is required",
@@ -193,6 +209,10 @@ groupedTranslations({
     en: "Read More",
     ar: "اقرأ المزيد",
   },
+  language: {
+    en: "Language",
+    ar: "اللغة",
+  },
   callAndOrderIn: {
     en: "Call and Order in",
     ar: "اتصل واطلب من",
@@ -232,10 +252,6 @@ groupedTranslations({
   noProductsInCart: {
     en: "No products in the cart",
     ar: "لا توجد منتجات في العربة",
-  },
-  language: {
-    en: "Language",
-    ar: "اللغه",
   },
   search: {
     en: "Search",
@@ -359,6 +375,14 @@ groupedTranslations({
     en: "Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum. Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat.",
     ar: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.",
   },
+  infoPublishMessage: {
+    en: "Your email address will not be published. Required fields are marked",
+    ar: "لن يتم نشر عنوان بريدك الإلكتروني. تم وضع علامة على الحقول المطلوبة",
+  },
+  yourRatings: {
+    en: "Your ratings",
+    ar: "تقييماتك",
+  },
   contactNow: {
     en: "Contact Now",
     ar: "اتصل الآن",
@@ -471,8 +495,51 @@ groupedTranslations({
     en: "Order before noon for same day dispatch",
     ar: "اطلب قبل الظهر للإرسال في نفس اليوم",
   },
-  relatedProducts: {
-    en: "Related Products",
-    ar: "منتجات ذات صله",
+  youMayAlsoWant: {
+    en: "You may also want to try",
+    ar: "قد ترغب أيضًا في تجربة",
+  },
+  //Empty Componenet
+  continueShopping: {
+    en: "Continue Shopping",
+    ar: "س للمينتو",
+  },
+  emptyCart: {
+    en: "Empty Cart 😒",
+    ar: "السلة فارغة",
+  },
+  cartEmptyDescription: {
+    en: "Your cart is empty add someting to make me happy",
+    ar: "سلتك فارفة ... اضف شىء يجعلنى سعيد",
+  },
+  //WhishListPage
+  wishlist: {
+    en: "WishList",
+    ar: "قائمة الرغبات",
+  },
+  emptyWhishList: {
+    en: "Empty WhishList 😒",
+    ar: "قائمة الرغبات فارغة",
+  },
+  whishListEmptyDescription: {
+    en: "Your WhishList is empty add someting to make me happy",
+    ar: "قائمة رغباتك ... اضف شىء يجعلنى سعيد",
+  },
+  stockStatus: {
+    en: "Stock Status",
+    ar: "حالة التوفر",
+  },
+  inStock: {
+    en: "In Stock",
+    ar: "متوفر",
+  },
+  addedOn: {
+    en: "Added On",
+    ar: "أضيف فى",
+  },
+  //
+  frequentlyAskedQuestions: {
+    en: "Frequently Asked Questions",
+    ar: "الأسئلة الشائعة",
   },
 });

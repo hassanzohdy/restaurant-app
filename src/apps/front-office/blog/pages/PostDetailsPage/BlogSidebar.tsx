@@ -1,5 +1,5 @@
 import { trans } from "@mongez/localization";
-import { IconSearch } from "@tabler/icons-react";
+import { BsSearch } from "react-icons/bs";
 import banner from "shared/assets/images/Blog/widgets_blog2.png";
 
 export type BlogSidebarProps = {
@@ -16,7 +16,7 @@ export default function BlogSidebar({ blogData }: BlogSidebarProps) {
               placeholder="Search..."
               className="border border-primary-main p-3 rounded-full w-full"
             />
-            <IconSearch className="-ml-10" />
+            <BsSearch className="-ml-10" />
           </div>
           {/* <div className="border border-gray-200 p-2 rounded-2xl">
             <h4 className="font-bold text-gray-800">{trans("categories")}</h4>

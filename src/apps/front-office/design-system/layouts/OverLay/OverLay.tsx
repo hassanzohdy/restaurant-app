@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import styles from "./Overlay.module.scss";
 
 export type OverLayProps = {
@@ -15,13 +16,14 @@ export default function OverLay({ atom, opened }: OverLayProps) {
     };
   }, [opened]);
 
-  return (
+  return createPortal(
     <>
       <div
         className={`overlay ${
           opened ? styles.show : styles.hide
-        } w-full h-full absolute top-0 bottom-0 left-0 right-0 bg-[#00000099] duration-300 transition-all ease-in-out z-40`}
+        }  w-full h-full fixed inset-0 backdrop-blur-[5px] bg-[#00000099] duration-300 transition-all ease-in-out z-40`}
         onClick={atom && (() => atom.change("opened", false))}></div>
-    </>
+    </>,
+    document.body,
   );
 }

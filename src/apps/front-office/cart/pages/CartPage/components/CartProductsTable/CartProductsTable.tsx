@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
-import { IconX } from "@tabler/icons-react";
 import { Button } from "apps/front-office/design-system/components/Button";
+import { AiOutlineClose } from "react-icons/ai";
 import CartCouponCode from "../CartCouponCode";
 import CartProductsTableItem from "../CartProductsTableItem";
 
@@ -22,7 +22,7 @@ export default function CartProductsTable({
         <thead className="max-sm:hidden">
           <tr className="bg-white border-b uppercase text-[12px]">
             <th className="product-remove px-3 pb-5">
-              <IconX size="0" />
+              <AiOutlineClose size="0" />
             </th>
             <th className="product-thumbnail px-3 pb-5 text-[0px]">
               {trans("productThumbnail")}

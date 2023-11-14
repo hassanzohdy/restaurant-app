@@ -43,6 +43,18 @@
     {
       "entry": ["/orders"],
       "name": "orders"
+    },
+    {
+      "entry": ["/faq"],
+      "name": "faq"
+    },
+    {
+      "entry": ["/faq"],
+      "name": "faq"
+    },
+    {
+      "entry": ["/wish-list"],
+      "name": "wish-list"
     }
   ]
 }

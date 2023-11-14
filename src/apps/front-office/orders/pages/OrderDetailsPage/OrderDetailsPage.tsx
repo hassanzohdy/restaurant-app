@@ -37,7 +37,7 @@ const orderDetails = {
   totalPrice: 300,
   address: "Elm Street, 23",
   paymentMethod: "cash on delivery",
-  delivered: true,
+  orderStatus: "delivering",
 };
 
 export default function OrderDetailsPage() {
@@ -55,6 +55,7 @@ export default function OrderDetailsPage() {
             <OrderTopDetails
               orderNumber={orderDetails.orderNumber}
               orderDate={orderDetails.orderDate}
+              orderStatus={orderDetails.orderStatus}
             />
             {/* Order Menu */}
             <OrderMenu orderMenu={orderDetails.orderMenu} />

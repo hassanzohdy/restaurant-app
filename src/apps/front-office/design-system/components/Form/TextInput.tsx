@@ -4,26 +4,42 @@ import {
   requiredRule,
   useFormControl,
 } from "@mongez/react-form";
+import React from "react";
+import { cn } from "../../utils/cn";
 
-export default function TextInput(props: FormControlProps) {
-  const { id, error, value, changeValue, otherProps } = useFormControl(props);
+type TextInputProps = {
+  containerStyle?: string;
+} & FormControlProps;
+
+function _TextInput({ containerStyle, ...rest }: TextInputProps, ref: any) {
+  const { id, error, value, inputRef, changeValue, otherProps } =
+    useFormControl(rest);
 
   return (
-    <div>
+    <div className={containerStyle}>
       {otherProps.label && (
         <label
-          className="block text-black cursor-pointer font-medium text-base mb-2"
+          className="block text-primary-text cursor-pointer text-base mb-2"
           htmlFor={id}>
           {otherProps.label}
-          {props.required && <span className="ms-1 text-red-500">*</span>}
+          {rest.required && <span className="ms-1 text-red-500">*</span>}
         </label>
       )}
       <input
-        type={props.type || "text"}
+        type={rest.type || "text"}
         {...otherProps}
         id={id}
+        ref={_ref => {
+          inputRef.current = _ref;
+          if (ref) {
+            ref.current = _ref;
+          }
+        }}
         value={value}
-        className="block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+        className={cn(
+          "mt-1 block w-full px-3 py-2 bg-white text-bodyTextColor border border-slate-300 rounded-md text-base shadow-sm placeholder-slate-400 focus:outline-none focus:border-primary-main",
+          otherProps.className,
+        )}
         onChange={e => {
           changeValue(e.target.value);
         }}
@@ -34,6 +50,10 @@ export default function TextInput(props: FormControlProps) {
   );
 }
 
+const TextInput = React.forwardRef(_TextInput);
+
 TextInput.defaultProps = {
   rules: [requiredRule, minLengthRule],
 };
+
+export default TextInput;

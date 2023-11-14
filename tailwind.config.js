@@ -2,6 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      norican: ["Norican", "cursive"],
+    },
     container: {
       center: true,
       padding: {

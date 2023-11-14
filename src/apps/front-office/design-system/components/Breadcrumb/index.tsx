@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { IconChevronRight } from "@tabler/icons-react";
+import { FaChevronRight } from "react-icons/fa";
 import { Breadcrumb } from "./breadcrumb";
 import "./style.css";
 
@@ -38,7 +38,7 @@ export default function Breadcrumb({
                     </Link>
                     {breadcrumbs.indexOf(breadcrumb) !==
                       breadcrumbs.length - 1 && (
-                      <IconChevronRight color="rgb(156 163 175)" size="1rem" />
+                      <FaChevronRight color="rgb(156 163 175)" size="1rem" />
                     )}
                   </div>
                 </>

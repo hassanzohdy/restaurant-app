@@ -55,8 +55,11 @@ function MenuSidebar() {
           </li>
         </ul>
       </div>
-      <div className="h-12 border-2 rounded-2xl border-amber-400 mt-6 py-2 px-3">
-        <input placeholder="Search products..." />
+      <div>
+        <input
+          className="w-full h-12 border-2 rounded-2xl border-amber-400 mt-6 py-2 px-3"
+          placeholder="Search products..."
+        />
       </div>
       <div className="mt-6">
         <BestDealItemList />

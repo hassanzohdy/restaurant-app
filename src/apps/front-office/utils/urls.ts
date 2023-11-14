@@ -30,8 +30,8 @@ const URLS = {
   },
   blog: {
     list: "/blog",
-    viewPostRoute: "/blog/:id/:slug",
-    viewPost: (post: any) => `/blog/${post.id}/${post.slug}`,
+    viewPostRoute: "/blog/:id",
+    viewPost: (post: any) => `/blog/${post.id}`,
   },
   cart: "/cart",
   orders: {

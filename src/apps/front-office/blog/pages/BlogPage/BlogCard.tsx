@@ -8,7 +8,7 @@ export default function BlogCard({ blog }: { blog: any }) {
       <Link to={URLS.blog.viewPost(blog)}>
         <div className="w-full h-[250px] overflow-hidden rounded-tr-lg rounded-tl-lg ">
           <img
-            src={blog.img}
+            src={blog.image.url}
             alt={blog.title}
             className="w-full h-full rounded-tr-lg rounded-tl-lg hover:scale-110 transition duration-300 "
           />
@@ -17,10 +17,12 @@ export default function BlogCard({ blog }: { blog: any }) {
       <div className="p-5 flex flex-col gap-2">
         <Link to={URLS.blog.viewPost(blog)}>
           <h3 className="font-bold  hover:text-primary-hover transition duration-150 cursor-pointer">
-            {blog.title}
+            {blog.title[0].value}
           </h3>
         </Link>
-        <p className="text-gray-500 text-md">{blog.description}</p>
+        <p className="text-gray-500 text-md">
+          {blog.shortDescription[0].value.substring(0, 100)}
+        </p>
         <Link to={URLS.blog.viewPost(blog)}>
           <button
             type="button"

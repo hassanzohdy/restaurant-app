@@ -5,7 +5,7 @@ export default function LanguageSwitch() {
   const langSwitchHandel = isRTL() ? "en" : "ar";
 
   return (
-    <div
+    <button
       className="relative border border-border cursor-pointer rounded-full w-12 h-12 flex items-center justify-center text-xl hover:bg-primary-hover"
       onClick={() => changeLocaleCode(langSwitchHandel)}>
       {isRTL() ? (
@@ -13,6 +13,6 @@ export default function LanguageSwitch() {
       ) : (
         <span className="font-extrabold mb-[6px]">ع</span>
       )}
-    </div>
+    </button>
   );
 }

@@ -4,6 +4,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
 import { useToggleState } from "../../../Hooks/headerStateHook";
 import useEscapeToClose from "../../../Hooks/useEscapeToClose";
+import { searchInputAtom } from "../../../atoms/header-atoms";
+import HeaderSearchFilter from "./HeaderSearchFilter";
 
 export default function HeaderSearchForm() {
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -15,6 +17,10 @@ export default function HeaderSearchForm() {
     toggleState("searchProducts"),
   );
 
+  const handelSearchInput = e => {
+    searchInputAtom.update(e.target.value);
+  };
+
   return (
     <form
       className={`container bg-white w-full h-full flex items-center absolute top-0 left-0 transition-all z-50 duration-200 ${
@@ -25,11 +31,13 @@ export default function HeaderSearchForm() {
         placeholder={trans("searchProducts")}
         className="w-full h-full outline-none border-none text-2xl"
         ref={inputRef}
+        onChange={e => handelSearchInput(e)}
       />
       <AiOutlineClose
         onClick={() => toggleState("headerSearch")}
         className="text-3xl hover:text-primary-hover cursor-pointer"
       />
+      <HeaderSearchFilter />
     </form>
   );
 }

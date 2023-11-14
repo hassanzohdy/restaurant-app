@@ -15,3 +15,8 @@ export const toggleGroupAtom: Atom = atom({
     cartIcon: false,
   },
 });
+
+export const searchInputAtom: Atom = atom({
+  key: "searchInput",
+  default: "",
+});

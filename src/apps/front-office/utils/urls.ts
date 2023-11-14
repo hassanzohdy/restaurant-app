@@ -11,11 +11,7 @@ const URLS = {
   privacyPolicy: "/privacy-policy",
   termsAndConditions: "/terms-and-conditions",
   reservation: "/reservation",
-  ourChefs: "/our-chefs",
-  gallery: "/gallery",
-  offers: "/offers",
   wishlist: "wishlist",
-  shop: "/shop",
   menu: {
     list: "/menu", // API + Pagination + Filter Activation
     viewMealRoute: "/menu/:id/:slug", // API + Next/Prev API => Reviews UI/API // /meals/:id/similar

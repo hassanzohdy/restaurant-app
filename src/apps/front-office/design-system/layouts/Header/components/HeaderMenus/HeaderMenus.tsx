@@ -52,11 +52,6 @@ export default function HeaderMenus() {
               className="block hover:text-primary-hover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover   ">
               {trans("faq")}
             </Link>
-            <Link
-              to={URLS.ourChefs}
-              className="block hover:text-primary-hover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover">
-              {trans("ourTeams")}
-            </Link>
           </div>
         </li>
         <li>

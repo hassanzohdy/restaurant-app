@@ -14,9 +14,9 @@ export default function ShopDropDown() {
       <div className="flex flex-row items-center justify-center">
         <div className={isRTL() ? "ml-5" : "mr-5"}>
           <Link
-            to={URLS.shop}
+            to={URLS.menu.list}
             className="bg-primary-main text-black font-bold rounded-md py-2 px-7">
-            {trans("shop")}
+            {trans("menu")}
           </Link>
         </div>
         <div className="flex flex-col justify-between ">

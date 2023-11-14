@@ -74,14 +74,6 @@ export default function BurgerMenuList() {
                 {trans("faq")}
               </Link>
             </li>
-            <li>
-              <Link
-                to={URLS.ourChefs}
-                onClick={handelLinkClick}
-                className=" block hover:text-primary-hover p-[7.5px]">
-                {trans("ourTeams")}
-              </Link>
-            </li>
           </ul>
         </div>
       </li>

@@ -76,7 +76,7 @@ export default function PostDetailsPage({ params }: { params: any }) {
                     />
 
                     <div className="flex gap-2 items-center">
-                      <TbQuote className="text-primary-main" size={"4rem"} />
+                      <TbQuote className="text-primary-main" size={"3.5rem"} />
 
                       <h3
                         className="font-bold"

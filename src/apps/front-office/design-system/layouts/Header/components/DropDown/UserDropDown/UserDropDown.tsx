@@ -3,7 +3,7 @@ import { Form } from "@mongez/react-form";
 import { Link } from "@mongez/react-router";
 import { useRegister } from "apps/front-office/account/hooks/use-auth";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
-import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
+import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import URLS from "apps/front-office/utils/urls";
@@ -47,7 +47,7 @@ export default function UserDropDown() {
         </div>
         <Form className="flex flex-col justify-between gap-4" onSubmit={submit}>
           <div ref={inputParentRef}>
-            <EmailInput
+            <EmailInputV2
               name="HeaderEmailForm"
               required
               label={trans("usernameOrEmail")}

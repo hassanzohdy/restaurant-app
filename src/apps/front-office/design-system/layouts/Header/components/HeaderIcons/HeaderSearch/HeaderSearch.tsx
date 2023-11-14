@@ -1,6 +1,7 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { useToggleState } from "../../../Hooks/headerStateHook";
 import HeaderSearchForm from "./HeaderSearchForm";
+
 export default function HeaderSearch() {
   const { toggleState } = useToggleState();
   return (

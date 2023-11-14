@@ -8,10 +8,15 @@ export default function useSearchMeals(searchInput, isSearchOpened) {
   const [error, setError] = useState<any>(null);
 
   useEffect(() => {
+    if (!searchInput) {
+      setMeals([]);
+      return;
+    }
+
     if (isSearchOpened) {
       getSearchMeals(searchInput)
         .then(response => {
-          setMeals(response);
+          setMeals(response.data.meals);
         })
         .catch(error => {
           setError(

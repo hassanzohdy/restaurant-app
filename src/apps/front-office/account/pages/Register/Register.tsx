@@ -5,7 +5,7 @@ import { Link } from "@mongez/react-router";
 import { useRegister } from "apps/front-office/account/hooks/use-auth";
 import CheckoutPhoneInput from "apps/front-office/checkout/components/Form/CheckoutPhoneInput";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
-import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
+import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
 import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
 import URLS from "apps/front-office/utils/urls";
@@ -50,7 +50,7 @@ export default function Register() {
             label={trans("lastName")}
             placeholder={trans("lastName")}
           />
-          <EmailInput
+          <EmailInputV2
             name="email"
             required
             label={trans("emailAddress")}

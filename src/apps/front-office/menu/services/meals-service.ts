@@ -15,12 +15,7 @@ export function getMealPosition(id: number, position: "next" | "prev") {
 }
 
 export function getSearchMeals(searchInput) {
-  return endpoint.get("/meals").then(response => {
-    if (searchInput.trim() !== "") {
-      const filteredMeals = response.data.meals.filter(meal =>
-        meal.name.toLowerCase().includes(searchInput.toLowerCase()),
-      );
-      return filteredMeals;
-    }
+  return getMeals({
+    name: searchInput,
   });
 }

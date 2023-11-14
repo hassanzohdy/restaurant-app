@@ -1,14 +1,15 @@
 import { trans } from "@mongez/localization";
 import { Button } from "apps/front-office/design-system/components/Button";
 import Stars from "apps/front-office/design-system/components/Stars";
-import { cn } from "apps/front-office/design-system/utils/cn";
-import { formatPrice } from "apps/front-office/design-system/utils/format-price";
+import MealWishlist from "apps/front-office/menu/components/MealWishlist";
 import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
+import { price } from "apps/front-office/utils/price";
 import { useState } from "react";
-import { AiTwotoneHeart } from "react-icons/ai";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import { PiDotOutlineFill } from "react-icons/pi";
 import { DetailsCategorySection } from "./DetailsCategorySection";
+
+// TODO: Add sale price if found
 
 const ShippingFeatures = () => {
   return (
@@ -32,11 +33,10 @@ const ShippingFeatures = () => {
 export const DetailsSide = () => {
   const [amount, setAmount] = useState<number>(1);
   const meal = mealAtom.useValue();
-  const isFavorite = false;
 
   const ratings = meal.ratings || 0;
 
-  const displayedPrice = formatPrice(meal.price);
+  const displayedPrice = price(meal.price);
 
   const incrementAmount = () => {
     setAmount(amount + 1);
@@ -46,8 +46,6 @@ export const DetailsSide = () => {
     const newAmount = amount === 1 ? 1 : amount - 1;
     setAmount(newAmount);
   };
-
-  const handleFavoriteChange = () => {};
 
   return (
     <div className="flex-1">
@@ -83,14 +81,7 @@ export const DetailsSide = () => {
               <BsFillBasket2Fill className="shrink-0" />
               {trans("addToCart")}
             </Button>
-            <button
-              className={cn(
-                " px-5 rounded-xl text-gray-500 btn bg-primary-light",
-                isFavorite ? "text-rose-600" : "hover:text-primary-main",
-              )}
-              onClick={handleFavoriteChange}>
-              <AiTwotoneHeart />
-            </button>
+            <MealWishlist meal={meal} />
           </div>
         </div>
 

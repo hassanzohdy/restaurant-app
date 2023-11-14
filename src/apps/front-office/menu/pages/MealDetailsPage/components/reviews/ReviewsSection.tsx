@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Form, FormSubmitOptions } from "@mongez/react-form";
 import { Button } from "apps/front-office/design-system/components/Button";
-import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
+import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import TextareaInput from "apps/front-office/design-system/components/Form/TextareaInput";
 
@@ -47,7 +47,7 @@ export default function ReviewsSection() {
               placeholder={trans("name")}
               containerStyle="flex-1 min-w-[200px]"
             />
-            <EmailInput
+            <EmailInputV2
               name="email"
               required
               label={trans("emailAddress")}

@@ -4,10 +4,5 @@ export type CommonTitleProps = {
 };
 
 export default function CommonTitle({ children, className }: CommonTitleProps) {
-  return (
-    <span className={`${className} font-norican`}>
-      {" "}
-      {children}{" "}
-    </span>
-  );
+  return <span className={`${className} font-norican`}> {children} </span>;
 }

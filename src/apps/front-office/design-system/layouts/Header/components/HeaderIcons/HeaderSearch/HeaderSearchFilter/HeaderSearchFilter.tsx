@@ -1,29 +1,10 @@
-import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
-import {
-  searchInputAtom,
-  toggleGroupAtom,
-} from "../../../../atoms/header-atoms";
-import useSearchMeals from "./useSearchMeals/useSearchMeals";
+import { searchMealsAtom } from "../../../../atoms/header-atoms";
 
 export default function HeaderSearchFilter() {
-  const searchInput = searchInputAtom.useValue();
-  const isSearchOpened = toggleGroupAtom.useValue().headerSearch;
-
-  const { meals, error } = useSearchMeals(searchInput, isSearchOpened);
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  if (meals?.length === 0 && searchInput.trim() !== "") {
-    return (
-      <h1 className="bg-white w-full absolute left-0 top-[100px] p-5">
-        {trans("noResults")}
-      </h1>
-    );
-  }
+  const meals = searchMealsAtom.useValue();
 
   return (
     <div className="bg-white w-full absolute left-0 top-[100px] px-5 max-h-[67vh] overflow-auto rounded-md">
@@ -36,7 +17,7 @@ export default function HeaderSearchFilter() {
           <div className="flex flex-col">
             <span>{meal.name}</span>
             <span className="text-primary-main group-hover:text-primary-hover font-bold">
-              £{meal.price}
+              {price(meal.price)}
             </span>
           </div>
         </Link>

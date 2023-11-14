@@ -18,6 +18,7 @@ export default function YouMayAlsoWantToTrySection() {
     getMeals({
       category: meal.category?.id,
       limit: 4,
+      except: meal.id,
     })
       .then(response => {
         setMeals(response.data.meals);
@@ -35,9 +36,11 @@ export default function YouMayAlsoWantToTrySection() {
 
   if (isLoaded && meals.length === 0) return null;
 
+  if (inView && meals.length === 0) return null;
+
   return (
     <div className="container">
-      <div ref={ref} className=""></div>
+      <div ref={ref}></div>
       {inView && (
         <>
           <SectionHeading>{trans("youMayAlsoWant")}</SectionHeading>

@@ -8,8 +8,9 @@ import {
 import { cn } from "apps/front-office/design-system/utils/cn";
 
 export default function TextInputV2(props: FormControlProps) {
-  const { value, id, error, name, changeValue, otherProps } =
+  const { value, id, error, type, name, changeValue, otherProps } =
     useFormControl(props);
+
   return (
     <div>
       {otherProps.label && (
@@ -22,11 +23,11 @@ export default function TextInputV2(props: FormControlProps) {
       )}
 
       <input
-        type={otherProps.type || "text"}
+        {...otherProps}
+        type={type || "text"}
         value={value}
         id={id}
         name={name}
-        {...otherProps}
         onChange={e => {
           changeValue(e.target.value);
         }}

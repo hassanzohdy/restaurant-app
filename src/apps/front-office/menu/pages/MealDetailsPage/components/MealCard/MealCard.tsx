@@ -1,28 +1,23 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import Stars from "apps/front-office/design-system/components/Stars";
-import { formatPrice } from "apps/front-office/design-system/utils/format-price";
+import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
-import { AiFillHeart } from "react-icons/ai";
 import { TbShoppingBag } from "react-icons/tb";
 import { MealType } from "../../utils/types";
+import MealCardFavorite from "./MealCardFavorite";
 
 export type MealCardProps = {
   meal: MealType;
 };
 
 export default function MealCard({ meal }: MealCardProps) {
-  const displayedPrice = formatPrice(meal?.price);
-  const displayedSale = formatPrice(meal?.salePrice);
+  const displayedPrice = price(meal?.price);
+  const displayedSale = price(meal?.salePrice);
 
   return (
     <div className="p-3 group rounded-[2rem] border relative">
-      <button title="Add to favorite" className="absolute top-6 right-6 z-20">
-        <AiFillHeart
-          className="hover:text-red-500 transition-colors text-light/50 duration-300"
-          size={30}
-        />
-      </button>
+      <MealCardFavorite meal={meal} />
       <Link
         to={URLS.menu.viewMeal(meal)}
         className="h-64 relative overflow-hidden flex items-center justify-center cursor-pointer rounded-3xl">
@@ -47,7 +42,11 @@ export default function MealCard({ meal }: MealCardProps) {
         </p>
         <div className="flex items-center justify-between gap-4">
           <div className="flex gap-2">
-            <span className="inline-block text-rose-600">{displayedSale}</span>
+            {displayedSale && (
+              <span className="inline-block text-secondary">
+                {displayedSale}
+              </span>
+            )}
             <span
               className={`inline-block  ${
                 displayedSale ? "text-black line-through" : "text-primary-main"

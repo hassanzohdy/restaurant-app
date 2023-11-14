@@ -17,7 +17,7 @@ export default function HeaderSearchFilter() {
     return <div>{error}</div>;
   }
 
-  if (meals()?.length === 0) {
+  if (meals?.length === 0 && searchInput.trim() !== "") {
     return (
       <h1 className="bg-white w-full absolute left-0 top-[100px] p-5">
         {trans("noResults")}
@@ -27,7 +27,7 @@ export default function HeaderSearchFilter() {
 
   return (
     <div className="bg-white w-full absolute left-0 top-[100px] px-5 max-h-[67vh] overflow-auto rounded-md">
-      {meals()?.map(meal => (
+      {meals?.map(meal => (
         <Link
           to={`/${URLS.menu.list}/${meal.id}/${meal.slug}`}
           key={meal.name}

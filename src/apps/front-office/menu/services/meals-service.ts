@@ -13,3 +13,14 @@ export function getMeals(params: any = {}) {
 export function getMealPosition(id: number, position: "next" | "prev") {
   return endpoint.get("/meals/" + id + "/" + position);
 }
+
+export function getSearchMeals(searchInput) {
+  return endpoint.get("/meals").then(response => {
+    if (searchInput.trim() !== "") {
+      const filteredMeals = response.data.meals.filter(meal =>
+        meal.name.toLowerCase().includes(searchInput.toLowerCase()),
+      );
+      return filteredMeals;
+    }
+  });
+}

@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
-import { getMeals } from "apps/front-office/menu/services/meals-service";
+import { getSearchMeals } from "apps/front-office/menu/services/meals-service";
 import { useEffect, useState } from "react";
 
 export default function useSearchMeals(searchInput, isSearchOpened) {
@@ -9,9 +9,9 @@ export default function useSearchMeals(searchInput, isSearchOpened) {
 
   useEffect(() => {
     if (isSearchOpened) {
-      getMeals()
+      getSearchMeals(searchInput)
         .then(response => {
-          setMeals(response.data.meals);
+          setMeals(response);
         })
         .catch(error => {
           setError(
@@ -22,12 +22,6 @@ export default function useSearchMeals(searchInput, isSearchOpened) {
         });
     }
   }, [isSearchOpened, searchInput]);
-  const filteredMeals = () =>
-    searchInput.trim() !== ""
-      ? meals.filter(meal =>
-          meal.name.toLowerCase().includes(searchInput.toLowerCase()),
-        )
-      : null;
 
-  return { meals: filteredMeals, error };
+  return { meals, error };
 }

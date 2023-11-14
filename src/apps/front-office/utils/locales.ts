@@ -537,16 +537,12 @@ groupedTranslations({
     en: "Added On",
     ar: "أضيف فى",
   },
-<<<<<<< HEAD
   noResults: {
     en: "No results",
     ar: "لا توجد نتائج",
   },
-=======
-  //
   frequentlyAskedQuestions: {
     en: "Frequently Asked Questions",
     ar: "الأسئلة الشائعة",
-  }
->>>>>>> 80c3150da1d69c81f8fa1bcd00f621dc29fb9027
+  },
 });

@@ -7,3 +7,7 @@ export function getPosts(params: any = {}) {
 export function getPost(id: any) {
   return endpoint.get(`/posts/${id}`);
 }
+
+export function getPostSiblings(id: string | number) {
+  return endpoint.get(`/posts/${id}/siblings`);
+}

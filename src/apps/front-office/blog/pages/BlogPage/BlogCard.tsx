@@ -1,8 +1,9 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import { Post } from "apps/front-office/blog/utils";
 import URLS from "apps/front-office/utils/urls";
 
-export default function BlogCard({ blog }: { blog: any }) {
+export default function BlogCard({ blog }: { blog: Post }) {
   return (
     <div className="w-[100%] mb-4 rounded-lg flex flex-col gap-2 h-[450px] border border-gray-300 lg:w-[32%]">
       <Link to={URLS.blog.viewPost(blog)}>
@@ -17,11 +18,11 @@ export default function BlogCard({ blog }: { blog: any }) {
       <div className="p-5 flex flex-col gap-2">
         <Link to={URLS.blog.viewPost(blog)}>
           <h3 className="font-bold  hover:text-primary-hover transition duration-150 cursor-pointer">
-            {blog.title[0].value}
+            {blog.title}
           </h3>
         </Link>
         <p className="text-gray-500 text-md">
-          {blog.shortDescription[0].value.substring(0, 100)}
+          {blog.shortDescription.substring(0, 100)}
         </p>
         <Link to={URLS.blog.viewPost(blog)}>
           <button

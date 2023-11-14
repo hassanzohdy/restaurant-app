@@ -1,4 +1,4 @@
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Slider from "react-slick";
 import heroImg2 from "shared/assets/images/Hero/pexels-engin-akyurt-2347311.jpg";
 import heroImg3 from "shared/assets/images/Hero/pexels-fauxels-3184192.jpg";
@@ -15,7 +15,7 @@ export default function Hero() {
     nextArrow: (
       <span>
         <i className={`${styles.slickArrow}`}>
-          <IconChevronRight
+          <BiChevronRight
             className="text-white hover:text-[#fff] duration-500 transition-all ease-in-out"
             stroke="2"
             size="30"
@@ -26,7 +26,7 @@ export default function Hero() {
     prevArrow: (
       <span>
         <i className={`${styles.slickArrow}`}>
-          <IconChevronLeft
+          <BiChevronLeft
             className="text-[#ffffff42] hover:text-[#fff] duration-500 transition-all ease-in-out"
             stroke="2"
             size="30"

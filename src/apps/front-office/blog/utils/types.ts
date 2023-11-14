@@ -1,3 +1,5 @@
+import { Image } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+
 export type PostsListQueryParams = {
   /**
    * Search query
@@ -26,9 +28,14 @@ export type Post = {
   id: number;
   title: string;
   slug: string;
-  content: string;
-  image: string;
+  description: string;
+  image: Image;
+  shortDescription: string;
   createdAt: Date;
+  keywords?: {
+    id: number;
+    name: string;
+  }[];
   createdBy: {
     id: number;
     name: string;

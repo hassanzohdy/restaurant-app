@@ -13,3 +13,7 @@ export function EmailInputV2(props: FormControlProps) {
 EmailInput.defaultProps = {
   rules: [requiredRule, emailRule],
 };
+
+EmailInputV2.defaultProps = {
+  rules: [requiredRule, emailRule],
+};

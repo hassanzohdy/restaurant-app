@@ -1,11 +1,13 @@
 import { trans } from "@mongez/localization";
+import { Post } from "apps/front-office/blog/utils";
 import { BsSearch } from "react-icons/bs";
 import banner from "shared/assets/images/Blog/widgets_blog2.png";
 
 export type BlogSidebarProps = {
-  blogData: any;
+  post: Post;
 };
-export default function BlogSidebar({ blogData }: BlogSidebarProps) {
+
+export default function BlogSidebar({ post }: BlogSidebarProps) {
   return (
     <>
       <div className="hidden lg:flex lg:w-[22%]">
@@ -35,13 +37,13 @@ export default function BlogSidebar({ blogData }: BlogSidebarProps) {
             </div>
           </div> */}
 
-          {/* {blogData && blogData.recentPosts && (
+          {/* {post && post.recentPosts && (
             <div>
               <h3 className="pb-3 border-b border-dashed font-bold text-gray-800 border-gray-300">
                 {trans("recentPosts")}
               </h3>
               <div className="flex flex-col gap-6 mt-4">
-                {blogData?.recentPosts.map(post => {
+                {post?.recentPosts.map(post => {
                   return (
                     <div className="flex gap-3" key={post.id}>
                       <div className="w-[140px] h-[80px] ">
@@ -65,18 +67,18 @@ export default function BlogSidebar({ blogData }: BlogSidebarProps) {
               </div>
             </div>
           )} */}
-          {blogData && blogData.keywords && (
+          {post && post.keywords && (
             <div>
               <h3 className="pb-3 font-bold text-gray-800 border-b border-dashed border-gray-300">
                 {trans("popularTags")}
               </h3>
               <div className="flex flex-wrap gap-3 mt-4">
-                {blogData?.keywords.map((tag, index) => {
+                {post?.keywords.map((tag, index) => {
                   return (
                     <div
                       key={index}
                       className="border border-gray-300 px-2 py-1 text-gray-700 rounded-2xl hover:text-primary-main hover:border-primary-main cursor-pointer">
-                      {tag.name[0].value}
+                      {tag.name}
                     </div>
                   );
                 })}

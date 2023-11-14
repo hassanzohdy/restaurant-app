@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      'norican': ['Norican', 'cursive']
+      norican: ["Norican", "cursive"],
     },
     container: {
       center: true,
@@ -21,8 +21,8 @@ export default {
       },
       colors: {
         primary: {
-        text: "#808080",
-        main: "#ffc222",
+          text: "#808080",
+          main: "#ffc222",
           hover: "#eeac00",
           light: "#f7f2e2",
         },

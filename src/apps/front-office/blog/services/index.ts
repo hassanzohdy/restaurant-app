@@ -1,17 +1,9 @@
-import { Post, PostsListQueryParams } from "apps/front-office/blog/utils";
-import { responseMockup } from "apps/front-office/utils/mockup";
-import _post from "./post.json";
+import endpoint from "shared/endpoint";
 
-const post = _post as Post;
-
-export function getPosts(_params: PostsListQueryParams = {}) {
-  return responseMockup({
-    posts: [post],
-  });
+export function getPosts(params: any = {}) {
+  return endpoint.get("/posts", { params });
 }
 
-export function getPost(_id: string) {
-  return responseMockup({
-    post,
-  });
+export function getPost(id: any) {
+  return endpoint.get(`/posts/${id}`);
 }

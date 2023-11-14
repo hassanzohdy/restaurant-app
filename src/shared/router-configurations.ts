@@ -6,6 +6,7 @@ import { productionBasePath } from "./flags";
 
 export const routerConfigurations: RouterConfigurations = {
   strictMode: true,
+  forceRefresh: true,
   basePath: productionBasePath,
   scrollToTop: "smooth",
   localization: {

@@ -1,9 +1,6 @@
 import { trans } from "@mongez/localization";
-import { Link } from "@mongez/react-router";
-import URLS from "apps/front-office/utils/urls";
 import { BsSearch } from "react-icons/bs";
 import banner from "shared/assets/images/Blog/widgets_blog2.png";
-import { categories } from "../BlogPage/data/blogData";
 
 export type BlogSidebarProps = {
   blogData: any;
@@ -21,7 +18,7 @@ export default function BlogSidebar({ blogData }: BlogSidebarProps) {
             />
             <BsSearch className="-ml-10" />
           </div>
-          <div className="border border-gray-200 p-2 rounded-2xl">
+          {/* <div className="border border-gray-200 p-2 rounded-2xl">
             <h4 className="font-bold text-gray-800">{trans("categories")}</h4>
             <div className="bg-[#FBF7E8] rounded-2xl p-4 mt-3 flex flex-col gap-4 text-gray-500">
               {categories.map(category => {
@@ -36,9 +33,9 @@ export default function BlogSidebar({ blogData }: BlogSidebarProps) {
                 );
               })}
             </div>
-          </div>
+          </div> */}
 
-          {blogData && blogData.recentPosts && (
+          {/* {blogData && blogData.recentPosts && (
             <div>
               <h3 className="pb-3 border-b border-dashed font-bold text-gray-800 border-gray-300">
                 {trans("recentPosts")}
@@ -67,19 +64,19 @@ export default function BlogSidebar({ blogData }: BlogSidebarProps) {
                 })}
               </div>
             </div>
-          )}
-          {blogData && blogData.tags && (
+          )} */}
+          {blogData && blogData.keywords && (
             <div>
               <h3 className="pb-3 font-bold text-gray-800 border-b border-dashed border-gray-300">
                 {trans("popularTags")}
               </h3>
               <div className="flex flex-wrap gap-3 mt-4">
-                {blogData?.tags.map((tag, index) => {
+                {blogData?.keywords.map((tag, index) => {
                   return (
                     <div
                       key={index}
                       className="border border-gray-300 px-2 py-1 text-gray-700 rounded-2xl hover:text-primary-main hover:border-primary-main cursor-pointer">
-                      {tag}
+                      {tag.name[0].value}
                     </div>
                   );
                 })}

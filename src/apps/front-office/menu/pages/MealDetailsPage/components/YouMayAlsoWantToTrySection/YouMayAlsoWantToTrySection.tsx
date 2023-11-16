@@ -1,16 +1,18 @@
 import { trans } from "@mongez/localization";
 import SectionHeading from "apps/front-office/design-system/components/SectionHeading";
-import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
-import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { getMeals } from "apps/front-office/menu/services/meals-service";
 import { useCallback, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { mealAtom } from "../../atoms/meal-atom";
+import { Meal } from "../../utils/types";
 import MealCard from "../MealCard";
 
 export default function YouMayAlsoWantToTrySection() {
+  //TODO: Added GetDataInView function but does not work
+
   const { ref, inView } = useInView({ triggerOnce: true });
 
-  const [meals, setMeals] = useState<MealType[]>([]);
+  const [meals, setMeals] = useState<Meal[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const meal = mealAtom.useValue();
 

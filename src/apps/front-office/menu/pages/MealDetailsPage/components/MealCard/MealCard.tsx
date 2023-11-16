@@ -4,11 +4,11 @@ import Stars from "apps/front-office/design-system/components/Stars";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
 import { TbShoppingBag } from "react-icons/tb";
-import { MealType } from "../../utils/types";
+import { Meal } from "../../utils/types";
 import MealCardFavorite from "./MealCardFavorite";
 
 export type MealCardProps = {
-  meal: MealType;
+  meal: Meal;
 };
 
 export default function MealCard({ meal }: MealCardProps) {

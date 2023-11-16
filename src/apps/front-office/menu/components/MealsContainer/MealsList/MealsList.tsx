@@ -1,8 +1,8 @@
 import MenuItem from "apps/front-office/menu/components/MenuItem";
-import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 
 export type MealsListProps = {
-  meals: MealType[];
+  meals: Meal[];
 };
 
 export default function MealsList({ meals }: MealsListProps) {

@@ -379,8 +379,8 @@ groupedTranslations({
     en: "Your email address will not be published. Required fields are marked",
     ar: "لن يتم نشر عنوان بريدك الإلكتروني. تم وضع علامة على الحقول المطلوبة",
   },
-  yourRatings: {
-    en: "Your ratings",
+  yourRating: {
+    en: "Your rating",
     ar: "تقييماتك",
   },
   contactNow: {
@@ -484,12 +484,8 @@ groupedTranslations({
     ar: "دفع امن مضمون",
   },
   freeShipping: {
-    en: "Free global shipping on all orders",
-    ar: "شحن عالمي مجاني لجميع الطلبات",
-  },
-  easyReturns: {
-    en: "30 days easy returns if you change your mind",
-    ar: "إرجاع سهل لمدة 30 يومًا إذا غيرت رأيك",
+    en: "Free shipping on all orders",
+    ar: "شحن  مجاني لجميع الطلبات",
   },
   orderBeforeNoon: {
     en: "Order before noon for same day dispatch",

@@ -6,6 +6,7 @@ import TextInput from "apps/front-office/design-system/components/Form/TextInput
 import TextareaInput from "apps/front-office/design-system/components/Form/TextareaInput";
 
 import { isEmpty } from "@mongez/supportive-is";
+import user from "apps/front-office/account/user";
 import { ratingAtom } from "../../atoms/rating-atom";
 import AddRatings from "../AddRatings";
 import { ReviewCard } from "./ReviewCard";
@@ -28,38 +29,41 @@ export default function ReviewsSection() {
           })}
         </div>
       ) : (
-        <div className="flex-1 flex items-center justify-center font-bold text-bodyTextColor text-xl capitalize">
+        <div className="flex-1 flex items-center justify-center h-36  font-bold text-bodyTextColor text-xl capitalize">
           {trans("noReviews")}
         </div>
       )}
-      <div className="flex-1 text-primary-text space-y-6">
-        <div>
-          {trans("infoPublishMessage")} <span className="text-red-500">*</span>
-        </div>
-        <AddRatings />
-        <Form onSubmit={handSubmit} className="space-y-6">
-          <TextareaInput name="review" label="your review" required />
-          <div className="flex gap-4 flex-wrap">
-            <TextInput
-              name="name"
-              required
-              label={trans("name")}
-              placeholder={trans("name")}
-              containerStyle="flex-1 min-w-[200px]"
-            />
-            <EmailInput
-              name="email"
-              required
-              label={trans("emailAddress")}
-              placeholder={trans("emailAddress")}
-              containerStyle="flex-1 min-w-[200px]"
-            />
+      {!user.isGuest() && (
+        <div className="flex-1 text-primary-text space-y-6">
+          <div>
+            {trans("infoPublishMessage")}{" "}
+            <span className="text-red-500">*</span>
           </div>
-          <Button className="bg-primary-main hover:bg-primary-hover text-bodyTextColor uppercase py-4 px-10">
-            submit
-          </Button>
-        </Form>
-      </div>
+          <AddRatings />
+          <Form onSubmit={handSubmit} className="space-y-6">
+            <TextareaInput name="review" label="your review" required />
+            <div className="flex gap-4 flex-wrap">
+              <TextInput
+                name="name"
+                required
+                label={trans("name")}
+                placeholder={trans("name")}
+                containerStyle="flex-1 min-w-[200px]"
+              />
+              <EmailInput
+                name="email"
+                required
+                label={trans("emailAddress")}
+                placeholder={trans("emailAddress")}
+                containerStyle="flex-1 min-w-[200px]"
+              />
+            </div>
+            <Button className="bg-primary-main hover:bg-primary-hover text-bodyTextColor uppercase py-4 px-10">
+              submit
+            </Button>
+          </Form>
+        </div>
+      )}
     </section>
   );
 }

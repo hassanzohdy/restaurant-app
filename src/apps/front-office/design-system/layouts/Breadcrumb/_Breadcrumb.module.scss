@@ -1,0 +1,11 @@
+.breadcrumb {
+  background: url(assets/images/breadcrumb1.jpg);
+  background-size: cover;
+  li {
+    svg {
+      width: 13px;
+      margin-top: 1px;
+      color: rgb(156 163 175 / 400);
+    }
+  }
+}

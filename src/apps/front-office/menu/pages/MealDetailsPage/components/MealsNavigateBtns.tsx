@@ -5,14 +5,14 @@ import { getMealPosition } from "apps/front-office/menu/services/meals-service";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
-import { MealType } from "../utils/types";
+import { Meal } from "../utils/types";
 
 type MealsNavigateBtnsProps = {
   meal: number;
 };
 
 type PopupMealProps = {
-  meal: MealType | null;
+  meal: Meal | null;
   navigationMeal: { next: boolean; prev: boolean };
 };
 
@@ -55,8 +55,8 @@ function PopupMeal({ meal, navigationMeal }: PopupMealProps) {
 
 type MealNavigation = {
   meals: {
-    prev: MealType | null;
-    next: MealType | null;
+    prev: Meal | null;
+    next: Meal | null;
   };
   state: {
     next: "initial" | "loading" | "loaded";

@@ -9,18 +9,12 @@ import { BsFillBasket2Fill } from "react-icons/bs";
 import { PiDotOutlineFill } from "react-icons/pi";
 import { DetailsCategorySection } from "./DetailsCategorySection";
 
-// TODO: Add sale price if found
-
 const ShippingFeatures = () => {
   return (
     <ul className="text-primary-text font-light pb-6 border-b">
       <li className="flex items-center gap-2">
         <PiDotOutlineFill />
         {trans("freeShipping")}
-      </li>
-      <li className="flex items-center gap-2">
-        <PiDotOutlineFill />
-        {trans("easyReturns")}
       </li>
       <li className="flex items-center gap-2">
         <PiDotOutlineFill />
@@ -36,6 +30,7 @@ export const DetailsSide = () => {
 
   const ratings = meal.ratings || 0;
 
+  const displayedSale = price(meal?.salePrice);
   const displayedPrice = price(meal.price);
 
   const incrementAmount = () => {
@@ -54,9 +49,19 @@ export const DetailsSide = () => {
           <h1 className="text-5xl font-bold">{meal.name}</h1>
           <Stars ratings={ratings} />
           <p className="text-primary-text text-base">{meal.description}</p>
-          <span className="inline-block text-2xl font-bold text-primary-main">
-            {displayedPrice}
-          </span>
+          <div className="flex gap-4 text-2xl font-bold">
+            {displayedSale && (
+              <span className="inline-block text-secondary">
+                {displayedSale}
+              </span>
+            )}
+            <span
+              className={`inline-block  ${
+                displayedSale ? "text-black line-through" : "text-primary-main"
+              }`}>
+              {displayedPrice}
+            </span>
+          </div>
         </div>
 
         <div className="flex items-center gap-10 text-sm font-semibold pb-6 border-b flex-wrap">

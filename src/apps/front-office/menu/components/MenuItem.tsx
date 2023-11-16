@@ -1,9 +1,9 @@
 import Pizza from "assets/images/menuItems/pizza.png";
 import { FaBasketShopping } from "react-icons/fa6";
-import { MealType } from "../pages/MealDetailsPage/utils/types";
+import { Meal } from "../pages/MealDetailsPage/utils/types";
 
 export type MenuItemProps = {
-  meal: MealType;
+  meal: Meal;
 };
 
 export default function MenuItem({ meal: _unused_meal_yet }: MenuItemProps) {

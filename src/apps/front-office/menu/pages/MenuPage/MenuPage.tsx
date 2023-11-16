@@ -6,7 +6,7 @@ import Loader, {
 } from "apps/front-office/design-system/components/Indicators/Indicators";
 import MealsContainer from "apps/front-office/menu/components/MealsContainer";
 import ViewDisplayMode from "apps/front-office/menu/components/ViewDisplayMode";
-import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { getMeals } from "apps/front-office/menu/services/meals-service";
 import Breadcrumb from "design-system/layouts/Breadcrumb";
 import { useState } from "react";
@@ -15,7 +15,7 @@ import "./MenuPage.scss";
 
 export default function MenuPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const [meals, setMeals] = useState<MealType[]>([]);
+  const [meals, setMeals] = useState<Meal[]>([]);
   const [error, setError] = useState<any>(null);
 
   useOnce(() => {

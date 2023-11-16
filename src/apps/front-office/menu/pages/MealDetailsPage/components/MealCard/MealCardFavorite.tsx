@@ -1,10 +1,10 @@
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { useWishlist } from "apps/front-office/menu/hooks/use-wishlist";
-import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { AiFillHeart } from "react-icons/ai";
 
 export type MealArdFavoriteProps = {
-  meal: MealType;
+  meal: Meal;
 };
 
 export default function MealCardFavorite({ meal }: MealArdFavoriteProps) {

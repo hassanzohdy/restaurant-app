@@ -13,7 +13,7 @@ export type PaginationInfo = {
   results: number;
 };
 
-export default function BlogPage() {
+export default function BlogPageTags({ params }: { params: any }) {
   const [blogData, setBlogData] = useState<any>([]);
   const [pagination, setPagination] = useState<any>({});
   const [loading, setIsLoading] = useState(true);
@@ -21,6 +21,7 @@ export default function BlogPage() {
   useOnce(() => {
     getPosts({
       ...queryString.all(),
+      keyword: params.keywordId,
       limit: 6,
     }).then(response => {
       setBlogData(response.data.posts);
@@ -28,6 +29,7 @@ export default function BlogPage() {
       setIsLoading(false);
     });
   });
+
   return (
     <>
       {loading && (

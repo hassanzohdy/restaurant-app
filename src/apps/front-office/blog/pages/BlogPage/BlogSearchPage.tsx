@@ -13,7 +13,7 @@ export type PaginationInfo = {
   results: number;
 };
 
-export default function BlogPage() {
+export default function BlogSearchPage({ params }: { params: any }) {
   const [blogData, setBlogData] = useState<any>([]);
   const [pagination, setPagination] = useState<any>({});
   const [loading, setIsLoading] = useState(true);
@@ -21,6 +21,7 @@ export default function BlogPage() {
   useOnce(() => {
     getPosts({
       ...queryString.all(),
+      title: params.searchText,
       limit: 6,
     }).then(response => {
       setBlogData(response.data.posts);

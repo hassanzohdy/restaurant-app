@@ -257,6 +257,14 @@ groupedTranslations({
     en: "Search",
     ar: "بحث",
   },
+  tags: {
+    en: "Tags",
+    ar: "العلامات",
+  },
+  noBlogHere: {
+    en: "No Blog Here",
+    ar: "لا يوجد منتديات",
+  },
   myAccount: {
     en: "My Account",
     ar: "حسابى",

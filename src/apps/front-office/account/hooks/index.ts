@@ -73,6 +73,7 @@ export function useCreateAccountVerifyCode() {
   const verifyCodeSubmit = ({ values, form }) => {
     verifyCode(values)
       .then(() => {
+        console.log(values);
         onSuccessLogin();
       })
       .catch(() => {

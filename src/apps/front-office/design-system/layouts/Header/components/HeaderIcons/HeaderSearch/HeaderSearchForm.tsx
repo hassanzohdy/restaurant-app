@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import { GenericObject, debounce } from "@mongez/reinforcements";
 import { searchMealsAtom } from "apps/front-office/design-system/layouts/Header/atoms/header-atoms";
 import { getMeals } from "apps/front-office/menu/services/meals-service";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
 import { useToggleState } from "../../../Hooks/headerStateHook";
@@ -14,6 +14,7 @@ const searchResults: GenericObject = {}; // not with SSR
 export default function HeaderSearchForm() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { groupState, toggleState } = useToggleState();
+  const [error, setError] = useState();
 
   useFocusOnToggle(inputRef.current, groupState.headerSearch);
 
@@ -38,8 +39,12 @@ export default function HeaderSearchForm() {
           searchMealsAtom.update(meals);
           searchResults[value] = meals;
         })
-        .catch(() => {
-          // TODO: handle error
+        .catch(error => {
+          setError(
+            error?.response?.data?.error ||
+              error?.message ||
+              trans("somethingWentWrong"),
+          );
         });
     } else {
       searchMealsAtom.update(searchResults[value]);
@@ -63,6 +68,11 @@ export default function HeaderSearchForm() {
         className="text-3xl hover:text-primary-hover cursor-pointer"
       />
       <HeaderSearchFilter />
+      {error && (
+        <div className="bg-white w-full absolute left-0 top-[100px] px-5 max-h-[67vh] overflow-auto rounded-md text-red-600 py-5">
+          {error}
+        </div>
+      )}
     </form>
   );
 }

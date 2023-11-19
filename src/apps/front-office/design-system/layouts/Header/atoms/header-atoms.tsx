@@ -26,3 +26,13 @@ export const searchMealsAtom = atom<Meal[]>({
   key: "searchMeals",
   default: [],
 });
+
+export const cartLengthAtom = atom({
+  key: "cartLength",
+  default: 0,
+});
+
+export const wishListAtom = atom({
+  key: "wishListAtom",
+  default: 0,
+});

@@ -37,7 +37,6 @@ export function SubmitButton({
   // TODO: Form is not triggering proper events for invalid controls
   const { isSubmitting, disabled } = useSubmitButton();
 
-  // add background to have lower opacity on disabled button selector
   const disabledClasses = disabled ? "opacity-50 cursor-no-drop" : "";
   return (
     <button

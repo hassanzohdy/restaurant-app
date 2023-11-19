@@ -1,8 +1,9 @@
+import { trans } from "@mongez/localization";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function ToastMessage() {
   const showToastMessage = () => {
-    toast.success("Account Created successfully!", {
+    toast.success(trans("accountCreatedSuccessfully"), {
       toastId: "success1",
       position: toast.POSITION.TOP_RIGHT,
     });

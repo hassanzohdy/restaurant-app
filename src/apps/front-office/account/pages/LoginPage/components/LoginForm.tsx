@@ -30,12 +30,7 @@ const LoginForm = () => {
           {trans("login")}
         </h2>
 
-        <TextInputV2
-          name="email"
-          label={trans("usernameOrEmail")}
-          autoFocus
-          required
-        />
+        <TextInputV2 name="email" label={trans("email")} autoFocus required />
 
         <PasswordInputV2
           name="password"

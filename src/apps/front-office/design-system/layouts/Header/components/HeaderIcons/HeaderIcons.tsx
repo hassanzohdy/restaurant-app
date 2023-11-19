@@ -16,7 +16,6 @@ export default function HeaderIcons() {
       <UserIcon />
       <Wishlist />
       <HeaderCart />
-
     </div>
   );
 }

@@ -2,14 +2,14 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { Button } from "apps/front-office/design-system/components/Button";
 import { useWishlist } from "apps/front-office/menu/hooks/use-wishlist";
-import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
 import { IoClose } from "react-icons/io5";
 import { TbShoppingBag } from "react-icons/tb";
 
 export type WishlistTableItemProps = {
-  meal: MealType;
+  meal: Meal;
   removeMeal: (mealId:number|string) => void
 };
 

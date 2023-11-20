@@ -4,10 +4,11 @@ import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import React, { useState ,useEffect } from "react";
 import { TbHeartSearch } from "react-icons/tb";
 import WishlistTable from "./components/WishlistTable";
-import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { getWishlistsList } from "../../services/wishlist-service";
 import Loader, { Error } from "apps/front-office/design-system/components/Indicators/Indicators";
 import { useOnce } from "@mongez/react-hooks";
+import Helmet from "@mongez/react-helmet";
 
 
 const emptyWishListInfo = {
@@ -19,7 +20,7 @@ const emptyWishListInfo = {
 function _WishlistPage() {
 
   const [isLoading, setIsLoading] = useState(true);
-  const [meals, setMeals] = useState<MealType[]>([]);
+  const [meals, setMeals] = useState<Meal[]>([]);
   const [error, setError] = useState<any>(false);
 
   useOnce(() => {
@@ -42,6 +43,7 @@ function _WishlistPage() {
 
   return (
     <>
+      <Helmet title={trans("wishlist")} />
       <Breadcrumb title={trans("wishlist")} navItems={[{ name: "wishlist" }]} />
       {meals?.length > 0 ? (
         <div className="wish-list-details py-[100px] max-lg:py-[80px] max-sm:py-[70px]">

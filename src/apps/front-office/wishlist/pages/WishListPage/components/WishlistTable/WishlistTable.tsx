@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
 import { IoClose } from "react-icons/io5";
 import WishlistTableItem from "../WishlistTableItem";
-import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 
 export type WishlistTableProps = {
-  meals: MealType[],
+  meals: Meal[],
   removeMeal: (mealId:number|string) => void
 };
 

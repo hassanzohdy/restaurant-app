@@ -25,8 +25,13 @@ const URLS = {
   },
   blog: {
     list: "/blog",
-    viewPostRoute: "/blog/:id",
-    viewPost: (post: any) => `/blog/${post.id}`,
+    viewPostSearchRoute: "/blog/search/:searchText",
+    viewPostSearch: (searchText: any) => `/blog/search/${searchText}`,
+    viewPostRoute: "/blog/:id/:slug",
+    viewPost: (post: any) => `/blog/${post.id}/${post.slug}`,
+    viewPostTagRoute: "/blog/keywords/:keywordId/:keyword",
+    viewPostTag: (keyword: any) =>
+      `/blog/keywords/${keyword.id}/${keyword.name}`,
   },
   cart: "/cart", // API + Empty Cart UI
   orders: {

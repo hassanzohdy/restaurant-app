@@ -13,7 +13,7 @@ export default function AddRatings() {
 
   return (
     <div>
-      {trans("yourRatings")}
+      {trans("yourRating")}
       <span className="text-red-500">*</span>
       <div className="flex items-center mt-2">
         {[1, 2, 3, 4, 5].map(star => (

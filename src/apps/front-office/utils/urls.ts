@@ -1,7 +1,7 @@
 // append urls here, DO NOT remove this line
 
 const URLS = {
-  wishList: "/wish-list",
+  wishlist: "/wishlist",
   faq: "/faq",
   posts: "/posts",
   home: "/",
@@ -11,7 +11,6 @@ const URLS = {
   privacyPolicy: "/privacy-policy",
   termsAndConditions: "/terms-and-conditions",
   reservation: "/reservation",
-  wishlist: "wishlist",
   menu: {
     list: "/menu", // API + Pagination + Filter Activation
     viewMealRoute: "/menu/:id/:slug", // API + Next/Prev API => Reviews UI/API // /meals/:id/similar

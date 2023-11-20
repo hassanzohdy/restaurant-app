@@ -12,6 +12,7 @@ import HeaderSearchFilter from "./HeaderSearchFilter";
 const searchResults: GenericObject = {}; // not with SSR
 
 export default function HeaderSearchForm() {
+
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { groupState, toggleState } = useToggleState();
 

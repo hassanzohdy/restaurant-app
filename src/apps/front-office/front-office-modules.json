@@ -53,8 +53,8 @@
       "name": "faq"
     },
     {
-      "entry": ["/wish-list"],
-      "name": "wish-list"
+      "entry": ["/wishlist"],
+      "name": "wishlist"
     }
   ]
 }

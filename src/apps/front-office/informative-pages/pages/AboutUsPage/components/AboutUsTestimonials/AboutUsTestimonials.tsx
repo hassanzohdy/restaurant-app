@@ -48,28 +48,7 @@ export default function AboutUsTestimonials() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: (
-      <span>
-        <i className={`${styles.slickArrow}`}>
-          <BiChevronRight
-            className="text-[#ffffff42] hover:text-[#fff] duration-500 transition-all ease-in-out"
-            stroke="2"
-            size="30"
-          />
-        </i>
-      </span>
-    ),
-    prevArrow: (
-      <span>
-        <i className={`${styles.slickArrow}`}>
-          <BiChevronLeft
-            className="text-[#ffffff42] hover:text-[#fff] duration-500 transition-all ease-in-out"
-            stroke="2"
-            size="30"
-          />
-        </i>
-      </span>
-    ),
+
   };
 
   return (

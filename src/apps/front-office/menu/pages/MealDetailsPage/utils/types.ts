@@ -17,7 +17,7 @@ export type MealCategory = {
   name: string;
 };
 
-export type Meal = {
+export type MealType = {
   id: number;
   name: string;
   slug: string;

@@ -1,9 +1,9 @@
 import { wishListAtom } from "apps/front-office/design-system/layouts/Header/atoms/header-atoms";
-import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { toggleWishlist } from "apps/front-office/menu/services/wishlist-service";
 import { useState } from "react";
 
-export function useWishlist(meal: Meal) {
+export function useWishlist(meal: MealType) {
   const [inWishlist, setIsFavorite] = useState(meal.isFavorite || false);
 
   const toggleAddToFavorite = () => {

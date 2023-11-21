@@ -518,15 +518,15 @@ groupedTranslations({
   },
   //WhishListPage
   wishlist: {
-    en: "WishList",
+    en: "Wishlist",
     ar: "قائمة الرغبات",
   },
-  emptyWhishList: {
-    en: "Empty WhishList 😒",
+  emptyWishlist: {
+    en: "Empty Whishlist 😒",
     ar: "قائمة الرغبات فارغة",
   },
-  whishListEmptyDescription: {
-    en: "Your WhishList is empty add someting to make me happy",
+  wishlistEmptyDescription: {
+    en: "Your Whishlist is empty add someting to make me happy",
     ar: "قائمة رغباتك ... اضف شىء يجعلنى سعيد",
   },
   stockStatus: {

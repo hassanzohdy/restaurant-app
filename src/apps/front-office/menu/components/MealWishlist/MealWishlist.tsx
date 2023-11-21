@@ -9,7 +9,6 @@ export type MealWishlistProps = {
 };
 export default function MealWishlist({ meal }: MealWishlistProps) {
   const { inWishlist, toggleWishlist } = useWishlist(meal);
-
   return (
     <>
       <button

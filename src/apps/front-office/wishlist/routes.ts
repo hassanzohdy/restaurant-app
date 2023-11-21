@@ -4,7 +4,7 @@ import WishListPage from "./pages/WishListPage";
 
 publicRoutes([
   {
-    path: URLS.wishList,
+    path: URLS.wishlist,
     component: WishListPage,
   },
 ]);

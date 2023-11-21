@@ -4,7 +4,7 @@ import { Link } from "@mongez/react-router";
 import Loader, {
   Error,
 } from "apps/front-office/design-system/components/Indicators/Indicators";
-import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { getMeals } from "apps/front-office/menu/services/meals-service";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
@@ -17,7 +17,7 @@ import { cartLengthAtom } from "../../../../atoms/header-atoms";
 export default function CartProducts() {
   const { groupState, toggleState } = useToggleState();
   const [isLoading, setIsLoading] = useState(true);
-  const [meals, setMeals] = useState<MealType[]>([]);
+  const [meals, setMeals] = useState<Meal[]>([]);
   const [error, setError] = useState<any>(null);
 
   useEscapeToClose(groupState.cartIcon, () => toggleState("cartIcon"));

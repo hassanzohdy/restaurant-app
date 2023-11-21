@@ -13,13 +13,17 @@ export function useRegister() {
     register(values)
       .then(() => {
         setState("done");
-        showToastMessage("you account is created");
+        showToastMessage({ message: "you account is created" });
       })
       .catch(error => {
         setState("error");
         const errors = error.response?.data?.messages;
 
-        showToastMessage(errors, "error", "TOP_LEFT");
+        showToastMessage({
+          message: errors,
+          type: "error",
+          position: "TOP_LEFT",
+        });
         if (errors) {
           for (const error of errors) {
             form.control(error.key)?.setError(error.error);

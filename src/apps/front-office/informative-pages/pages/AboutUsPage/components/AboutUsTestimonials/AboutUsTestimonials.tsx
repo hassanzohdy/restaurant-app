@@ -1,7 +1,6 @@
 import client1 from "assets/images/about-us/client-1.jpg";
 import client2 from "assets/images/about-us/client-2.jpg";
 import client3 from "assets/images/about-us/client-3.jpg";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Slider from "react-slick";
 import AboutUsTestimonialsItem from "./AboutUsTestimonialsItem";
 import styles from "./_AboutUsTestimonials.module.scss";
@@ -48,7 +47,6 @@ export default function AboutUsTestimonials() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-
   };
 
   return (

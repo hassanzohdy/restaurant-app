@@ -1,11 +1,22 @@
 import { toast } from "react-toastify";
 
-export const showToastMessage = (
-  massage,
+type showToastMassageTypes = {
+  message: string;
+  type?: "info" | "success" | "warning" | "error" | "default";
+  position?:
+    | "TOP_LEFT"
+    | "TOP_RIGHT"
+    | "TOP_CENTER"
+    | "BOTTOM_LEFT"
+    | "BOTTOM_RIGHT"
+    | "BOTTOM_CENTER";
+};
+export const showToastMessage = ({
+  message,
   type = "success",
   position = "TOP_RIGHT",
-) => {
-  toast?.[type](massage, {
+}: showToastMassageTypes) => {
+  toast?.[type](message, {
     toastId: `${[type]}`,
     position: toast.POSITION?.[position],
   });

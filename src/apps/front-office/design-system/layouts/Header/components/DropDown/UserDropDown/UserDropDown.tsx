@@ -1,28 +1,22 @@
 import { trans } from "@mongez/localization";
 import { Form, FormSubmitOptions } from "@mongez/react-form";
-import { Link, navigateBack } from "@mongez/react-router";
+import { Link } from "@mongez/react-router";
 import { useLogout } from "apps/front-office/account/hooks";
+import { showToastMessage } from "apps/front-office/account/hooks/useToastMessage";
 import { login } from "apps/front-office/account/service/auth";
 import user from "apps/front-office/account/user";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";
+import { getWishlistsList } from "apps/front-office/menu/services/wishlist-service";
 import URLS from "apps/front-office/utils/urls";
 import { IoMdLogOut } from "react-icons/io";
 import { useToggleState } from "../../../Hooks/headerStateHook";
+import { toggleGroupAtom, wishListAtom } from "../../../atoms/header-atoms";
 import "./_userDropDown.scss";
 
 export default function UserDropDown() {
   const { groupState } = useToggleState();
-  const submitLogin = ({ values }: FormSubmitOptions) => {
-    login(values)
-      .then(response => {
-        user.login(response.data.user);
-        navigateBack();
-        // TODO: Display toast success
-      })
-      .catch(() => {});
-  };
 
   const logout = useLogout();
 
@@ -46,6 +40,28 @@ export default function UserDropDown() {
     );
   }
 
+  const submitLogin = ({ values }: FormSubmitOptions) => {
+    login(values)
+      .then(response => {
+        user.login(response.data.user);
+        showToastMessage({
+          message: trans("successfullyLogin"),
+        });
+
+        getWishlistsList().then(response => {
+          wishListAtom.update(response.data.wishlist.meals.length);
+        });
+        toggleGroupAtom.reset();
+      })
+      .catch(error => {
+        showToastMessage({
+          message: error.message,
+          type: "error",
+          position: "TOP_LEFT",
+        });
+      });
+  };
+
   return (
     <div>
       <div
@@ -64,7 +80,8 @@ export default function UserDropDown() {
           className="flex flex-col justify-between gap-4"
           onSubmit={submitLogin}>
           <EmailInputV2
-            name="HeaderEmailForm"
+            name="email"
+            id="HeaderEmailForm"
             required
             label={trans("email")}
             placeholder={trans("email")}
@@ -72,7 +89,8 @@ export default function UserDropDown() {
           />
 
           <PasswordInputV2
-            name="HeaderPasswordForm"
+            name="password"
+            id="HeaderPasswordForm"
             required
             label={trans("password")}
             placeholder={trans("passwordLabel")}

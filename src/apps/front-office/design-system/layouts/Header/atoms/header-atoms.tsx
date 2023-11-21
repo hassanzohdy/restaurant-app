@@ -1,5 +1,5 @@
 import { Atom, atom, openAtom } from "@mongez/react-atom";
-import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { MealType } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 
 export const scrollAtom: Atom = atom({
   key: "scroll",
@@ -22,7 +22,7 @@ export const searchInputAtom: Atom = atom({
   default: "",
 });
 
-export const searchMealsAtom = atom<Meal[]>({
+export const searchMealsAtom = atom<MealType[]>({
   key: "searchMeals",
   default: [],
 });

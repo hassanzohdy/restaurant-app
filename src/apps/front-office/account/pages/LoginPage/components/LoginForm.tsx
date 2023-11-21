@@ -18,13 +18,17 @@ const LoginForm = () => {
       .then(response => {
         user.login(response.data.user);
         navigateBack();
-        showToastMessage(trans("successfullyLogin"));
+        showToastMessage({ message: trans("successfullyLogin") });
         getWishlistsList().then(response => {
           wishListAtom.update(response.data.wishlist.meals.length);
         });
       })
       .catch(error => {
-        showToastMessage(error.message, "error", "TOP_LEFT");
+        showToastMessage({
+          message: error.message,
+          type: "error",
+          position: "TOP_LEFT",
+        });
       });
   };
 

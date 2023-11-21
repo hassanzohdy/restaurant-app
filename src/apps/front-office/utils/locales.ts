@@ -565,4 +565,12 @@ groupedTranslations({
     en: "View Cart",
     ar: "عرض السلة",
   },
+  logout: {
+    en: "logout",
+    ar: "تسجيل الخروج",
+  },
+  successfullyLogin: {
+    en: "Successfully Login",
+    ar: "تم تسجيل الدخول بنجاح",
+  },
 });

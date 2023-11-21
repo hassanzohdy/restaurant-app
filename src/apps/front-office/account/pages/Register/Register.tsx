@@ -41,7 +41,8 @@ export default function Register() {
           className="form grid grid-cols-1 sm:grid-cols-2 gap-4">
           {state === "done" && (
             <Form
-              onSubmit={e => otpSubmit({ values: e.values, form: e.form })}
+              // still working on it but don't know if that is correct
+              onSubmit={otpSubmit}
               className="fixed top-50 right-5 animate-popupFade bg-white shadow-header py-5 px-5 rounded-xl z-20">
               <TextInput
                 placeholder="Enter you OTP"

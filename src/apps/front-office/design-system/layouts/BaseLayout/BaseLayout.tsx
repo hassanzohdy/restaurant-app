@@ -1,4 +1,5 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
 import Footer from "../Footer";
 import Header from "../Header";
 import ActiveBar from "../Header/components/ActiveBar";
@@ -19,6 +20,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
       <main>{children}</main>
       <Footer />
       <ActiveBar />
+      <ToastContainer />
     </div>
   );
 }

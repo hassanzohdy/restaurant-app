@@ -1,15 +1,16 @@
 import { trans } from "@mongez/localization";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { IoClose } from "react-icons/io5";
 import WishlistTableItem from "../WishlistTableItem";
-import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 
 export type WishlistTableProps = {
-  meals: Meal[],
-  removeMeal: (mealId:number|string) => void
+  meals: Meal[];
+  removeMeal: (mealId: number | string) => void;
 };
 
 export default function WishlistTable({
-  meals, removeMeal
+  meals,
+  removeMeal,
 }: WishlistTableProps) {
   return (
     <div className="wishList-products-table">

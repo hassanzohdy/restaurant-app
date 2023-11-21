@@ -1,7 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { IoIosArrowUp } from "react-icons/io";
 
 export default function HeaderMenus() {
   return (
@@ -35,30 +34,19 @@ export default function HeaderMenus() {
             {trans("blog")}
           </Link>
         </li>
-        <li className="relative group flex flex-row items-center gap-1 cursor-pointer">
-          <Link to="#" className="font-bold text-[16px] py-3 text-heading">
-            {trans("page")}
-          </Link>
-          <IoIosArrowUp className="group-hover:rotate-0 group-focus-within:rotate-0 rotate-180 transition-transform duration-500" />
-
-          {/* page drop down list */}
-          <div
-            className="absolute h-0 w-0 overflow-hidden py-0 top-[60px] text-[1em] rounded-md
-            font-normal leading-[1.5] bg-white shadow-list z-50 group-hover:w-[200px] 
-            group-hover:py-[.5em] group-hover:h-[86px] group-focus-within:w-[200px] 
-            group-focus-within:py-[.5em] group-focus-within:h-[86px] transition-all duration-500">
-            <Link
-              to={URLS.faq}
-              className="block hover:text-primary-hover text-[13px] py-[.6em] px-[30px] hover:bg-backgroundHover   ">
-              {trans("faq")}
-            </Link>
-          </div>
-        </li>
         <li>
           <Link
             to={URLS.contactUs}
             className="font-bold text-[16px] py-3 text-heading">
             {trans("contact")}
+          </Link>
+        </li>
+        <li className="relative group flex flex-row items-center gap-1 cursor-pointer">
+          {" "}
+          <Link
+            to={URLS.faq}
+            className="font-bold text-[16px] py-3 text-heading">
+            {trans("faq")}
           </Link>
         </li>
       </ul>

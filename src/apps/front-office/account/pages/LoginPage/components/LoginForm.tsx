@@ -1,13 +1,16 @@
 import { trans } from "@mongez/localization";
 import { Form, FormSubmitOptions } from "@mongez/react-form";
 import { Link, navigateBack } from "@mongez/react-router";
+import { showToastMessage } from "apps/front-office/account/hooks/useToastMessage";
 import { login } from "apps/front-office/account/service/auth";
 import user from "apps/front-office/account/user";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
+import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";
-import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
+import { wishListAtom } from "apps/front-office/design-system/layouts/Header/atoms/header-atoms";
+import { getWishlistsList } from "apps/front-office/menu/services/wishlist-service";
 import URLS from "apps/front-office/utils/urls";
-import {} from "../../../../utils/locales";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginForm = () => {
   const submitLogin = ({ values }: FormSubmitOptions) => {
@@ -15,12 +18,20 @@ const LoginForm = () => {
       .then(response => {
         user.login(response.data.user);
         navigateBack();
-        // TODO: Display toast success
+        showToastMessage({ message: trans("successfullyLogin") });
+        getWishlistsList().then(response => {
+          wishListAtom.update(response.data.wishlist.meals.length);
+        });
       })
-      .catch(() => {
-        // TODO: Handle error
+      .catch(error => {
+        showToastMessage({
+          message: error.message,
+          type: "error",
+          position: "TOP_LEFT",
+        });
       });
   };
+
   return (
     <div className="flex flex-col container w-fit justify-center items-center my-[90px]">
       <Form
@@ -30,9 +41,9 @@ const LoginForm = () => {
           {trans("login")}
         </h2>
 
-        <TextInputV2
+        <EmailInputV2
           name="email"
-          label={trans("usernameOrEmail")}
+          label={trans("emailAddress")}
           autoFocus
           required
         />

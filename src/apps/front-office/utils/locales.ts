@@ -233,9 +233,9 @@ groupedTranslations({
     en: "Create an Account",
     ar: "إنشاء حساب",
   },
-  usernameOrEmail: {
-    en: "Username or email",
-    ar: "اسم المستخدم أو البريد الإلكتروني",
+  email: {
+    en: "email",
+    ar: "البريد الإلكتروني",
   },
   username: {
     en: "Username",
@@ -548,5 +548,29 @@ groupedTranslations({
   frequentlyAskedQuestions: {
     en: "Frequently Asked Questions",
     ar: "الأسئلة الشائعة",
+  },
+  accountCreatedSuccessfully: {
+    en: "Account Created successfully!",
+    ar: "تم إنشاء الحساب بنجاح!",
+  },
+  loading: {
+    en: "loading",
+    ar: "تحميل",
+  },
+  somethingWentWrong: {
+    en: "Some Thing Wend Wrong",
+    ar: "حدث خطاء",
+  },
+  viewCart: {
+    en: "View Cart",
+    ar: "عرض السلة",
+  },
+  logout: {
+    en: "logout",
+    ar: "تسجيل الخروج",
+  },
+  successfullyLogin: {
+    en: "Successfully Login",
+    ar: "تم تسجيل الدخول بنجاح",
   },
 });

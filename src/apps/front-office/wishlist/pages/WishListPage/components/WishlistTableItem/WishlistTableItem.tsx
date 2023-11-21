@@ -10,11 +10,12 @@ import { TbShoppingBag } from "react-icons/tb";
 
 export type WishlistTableItemProps = {
   meal: Meal;
-  removeMeal: (mealId:number|string) => void
+  removeMeal: (mealId: number | string) => void;
 };
 
 export default function WishlistTableItem({
-  meal,removeMeal
+  meal,
+  removeMeal,
 }: WishlistTableItemProps) {
   const { toggleWishlist } = useWishlist(meal);
   const displayedPrice = price(meal?.price);
@@ -28,8 +29,8 @@ export default function WishlistTableItem({
   return (
     <tr className="border-b max-lg:block max-lg:pl-[100px] max-lg:relative">
       <td className="product-remove w-[3%] px-3 py-5 pl-0 max-lg:absolute max-lg:w-auto max-lg:right-1 max-lg:top-6 max-lg:p-0">
-        <button onClick={deleteMealHandler} >
-        <IoClose className="w-[15px] h-[15px] p-[2px] border rounded-full text-[#b3b3b3] border-[#b3b3b3] cursor-pointer hover:text-[#f00] hover:border-[#f00] duration-700 transition-all ease-in-out" />
+        <button onClick={deleteMealHandler}>
+          <IoClose className="w-[15px] h-[15px] p-[2px] border rounded-full text-[#b3b3b3] border-[#b3b3b3] cursor-pointer hover:text-[#f00] hover:border-[#f00] duration-700 transition-all ease-in-out" />
         </button>
       </td>
       <td className="product-thumbnail w-[10%] py-3 px-6 h-[140px] max-lg:absolute max-lg:w-auto max-lg:left-1 max-lg:top-6 max-lg:p-0">
@@ -38,7 +39,8 @@ export default function WishlistTableItem({
         </Link>
       </td>
       <td className="product-name w-[27%] px-3 py-5 max-lg:block max-lg:w-full max-lg:pl-0 max-lg:px-2 max-lg:pr-5 max-lg:border-b">
-        <Link to={URLS.menu.viewMeal(meal)}
+        <Link
+          to={URLS.menu.viewMeal(meal)}
           className="hover:text-primary-hover duration-700 transition-all ease-in-out">
           {meal.name}
         </Link>

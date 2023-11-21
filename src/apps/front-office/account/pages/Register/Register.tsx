@@ -6,19 +6,21 @@ import { useRegister } from "apps/front-office/account/hooks/use-auth";
 import CheckoutPhoneInput from "apps/front-office/checkout/components/Form/CheckoutPhoneInput";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
-import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
+import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";
+import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
 import URLS from "apps/front-office/utils/urls";
 import { googleIcon } from "shared/assets";
-import ToastMessage from "./ToastMessage";
+import { useCreateAccountVerifyCode } from "../../hooks";
 import styles from "./register.module.scss";
 
 export default function Register() {
   const { state, submit } = useRegister();
 
+  const otpSubmit = useCreateAccountVerifyCode();
+
   return (
     <>
-      {state === "done" && <ToastMessage />}
       <Helmet title={trans("createAccount")} />
       <div
         className={`${styles.register} container box-border w-10/12 sm:w-3/5 md:max-w-md h-auto my-12 shadow flex gap-5 place-items-center flex-col p-4 rounded-md`}>
@@ -37,6 +39,20 @@ export default function Register() {
         <Form
           onSubmit={submit}
           className="form grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {state === "done" && (
+            <Form
+              // still working on it but don't know if that is correct
+              onSubmit={otpSubmit}
+              className="fixed top-50 right-5 animate-popupFade bg-white shadow-header py-5 px-5 rounded-xl z-20">
+              <TextInput
+                placeholder="Enter you OTP"
+                name="otp"
+                label="Enter you OTP code that sent to your Email"
+                className="border-border border mb-3"
+              />
+              <SubmitButton>submit otp</SubmitButton>
+            </Form>
+          )}
           <TextInputV2
             name="firstName"
             autoFocus
@@ -61,13 +77,13 @@ export default function Register() {
             label={trans("phoneNumber")}
             placeholder={trans("phoneNumber")}
           />
-          <PasswordInput
+          <PasswordInputV2
             name="password"
             required
             placeholder={trans("password")}
             label={trans("password")}
           />
-          <PasswordInput
+          <PasswordInputV2
             name="confirmPassword"
             match="password"
             required

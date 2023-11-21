@@ -3,7 +3,6 @@ import {
   Guardian,
   ReverseGuardian,
 } from "apps/front-office/account/middleware";
-import AccountLayout from "apps/front-office/design-system/layouts/AccountLayout";
 import BaseLayout from "../design-system/layouts/BaseLayout";
 // import AccountLayout from "../design-system/layouts/AccountLayout";
 
@@ -49,7 +48,7 @@ export function guardedRoutes(routes: Route[]) {
 export function accountRoutes(routes: Route[]) {
   return router.group({
     middleware: [Guardian],
-    layout: AccountLayout,
+    layout: BaseLayout,
     routes,
   });
 }

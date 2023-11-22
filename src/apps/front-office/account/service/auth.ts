@@ -68,7 +68,7 @@ export function resetPassword(data: any) {
  * Register verification code
  */
 export function verifyCode(data: any) {
-  return endpoint.post("/register/verify-code", data);
+  return endpoint.post("/register", data);
 }
 
 /**

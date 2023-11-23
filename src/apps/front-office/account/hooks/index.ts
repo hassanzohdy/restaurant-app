@@ -71,6 +71,7 @@ export function useCreateAccount() {
  */
 export function useCreateAccountVerifyCode(otpEmail: string) {
   const verifyCodeSubmit = ({ values, form }) => {
+
     const codeAsNumber = parseInt(values.code, 10);
 
     verifyCode({ email: otpEmail, code: codeAsNumber })

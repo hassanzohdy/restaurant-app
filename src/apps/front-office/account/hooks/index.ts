@@ -69,12 +69,14 @@ export function useCreateAccount() {
  * Verify register code hook
  * Use this hook to verify user account after registration
  */
-export function useCreateAccountVerifyCode() {
+export function useCreateAccountVerifyCode(otpEmail: string) {
   const verifyCodeSubmit = ({ values, form }) => {
-    console.log(values);
 
-    verifyCode(values)
-      .then(() => {
+    const codeAsNumber = parseInt(values.code, 10);
+
+    verifyCode({ email: otpEmail, code: codeAsNumber })
+      .then(response => {
+        console.log("response", response);
         onSuccessLogin();
       })
       .catch(() => {

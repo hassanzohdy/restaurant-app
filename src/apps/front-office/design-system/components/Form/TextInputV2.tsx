@@ -16,7 +16,7 @@ export default function TextInputV2(props: FormControlProps) {
       {otherProps.label && (
         <label
           htmlFor={id}
-          className="block text-black cursor-pointer font-medium text-base mb-2">
+          className="block text-gray-700 cursor-pointer font-medium text-base mb-2">
           {...otherProps.label}{" "}
           {props.required && <span className="ms-1 text-red-500">*</span>}
         </label>

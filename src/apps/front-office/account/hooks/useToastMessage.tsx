@@ -17,7 +17,7 @@ export const showToastMessage = ({
   position = "TOP_RIGHT",
 }: showToastMassageTypes) => {
   toast?.[type](message, {
-    toastId: `${[type]}`,
+    toastId: `${[type]}1`,
     position: toast.POSITION?.[position],
   });
 };

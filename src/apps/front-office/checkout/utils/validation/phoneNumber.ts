@@ -11,10 +11,8 @@ export const phoneNumberRule = ({ value, type }) => {
   }
 };
 
-// don't forget to add the rule name
 phoneNumberRule.rule = "phoneNumber";
 
-// now add the translation
 groupedTranslations("validation", {
   phoneNumber: {
     en: "Phone number is invalid",

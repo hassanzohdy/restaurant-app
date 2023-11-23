@@ -15,6 +15,8 @@ function _TextInput({ containerStyle, ...rest }: TextInputProps, ref: any) {
   const { id, error, value, inputRef, changeValue, otherProps } =
     useFormControl(rest);
 
+  console.log(rest.type);
+
   return (
     <div className={containerStyle}>
       {otherProps.label && (

@@ -7,12 +7,14 @@ export type State = "initial" | "loading" | "done" | "error";
 
 export function useRegister() {
   const [state, setState] = useState<State>("initial");
+  const [otpEmail, setOtpEmail] = useState("");
 
   const createAccount = ({ values, form }: FormSubmitOptions) => {
     setState("loading");
     register(values)
       .then(() => {
         setState("done");
+        setOtpEmail(values.email);
         showToastMessage({ message: "you account is created" });
       })
       .catch(error => {
@@ -24,6 +26,7 @@ export function useRegister() {
           type: "error",
           position: "TOP_LEFT",
         });
+        form.submitting(false);
         if (errors) {
           for (const error of errors) {
             form.control(error.key)?.setError(error.error);
@@ -35,5 +38,6 @@ export function useRegister() {
   return {
     state,
     submit: createAccount,
+    otpEmail,
   };
 }

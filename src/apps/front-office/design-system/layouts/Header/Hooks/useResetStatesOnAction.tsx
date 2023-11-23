@@ -1,7 +1,7 @@
 import { Atom } from "@mongez/react-atom";
 import { useEffect, useRef } from "react";
-import { useClickOutside } from "./useClickOutside"; // Import your click outside logic
-import { useRouteChange } from "./useRouteChange"; // Import your route change logic
+import { useClickOutside } from "./useClickOutside";
+import { useRouteChange } from "./useRouteChange";
 
 function useResetStatesOnAction(atom: Atom) {
   const resetStates = () => {

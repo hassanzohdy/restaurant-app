@@ -71,7 +71,6 @@ export function useCreateAccount() {
  */
 export function useCreateAccountVerifyCode() {
   const verifyCodeSubmit = ({ values, form }) => {
-    console.log(verifyCode(values));
     verifyCode(values)
       .then(response => {
         console.log("response", response);

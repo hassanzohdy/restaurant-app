@@ -17,7 +17,7 @@ import styles from "./register.module.scss";
 export default function Register() {
   const { state, submit } = useRegister();
 
-  const otpSubmit = useCreateAccountVerifyCode();
+  const verifyCodeSubmit = useCreateAccountVerifyCode();
 
   return (
     <>
@@ -35,7 +35,6 @@ export default function Register() {
         <div
           className={`${styles.hr} opacity-40 text-sm flex items-center mt-1`}>
           {trans("doViaEmail")}
-        </div>
         {state === "done" && (
           <Form
             // still working on it but don't know if that is correct

@@ -13,7 +13,7 @@ import URLS from "apps/front-office/utils/urls";
 import "react-toastify/dist/ReactToastify.css";
 
 const LoginForm = () => {
-  const submitLogin = ({ values }: FormSubmitOptions) => {
+  const submitLogin = ({ values, form }: FormSubmitOptions) => {
     login(values)
       .then(response => {
         user.login(response.data.user);
@@ -24,6 +24,7 @@ const LoginForm = () => {
         });
       })
       .catch(error => {
+        form.submitting(false);
         showToastMessage({
           message: error.message,
           type: "error",

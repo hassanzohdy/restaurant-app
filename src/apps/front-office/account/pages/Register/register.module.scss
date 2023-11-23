@@ -6,17 +6,6 @@
   border: 1px solid rgb(233, 236, 239);
 }
 
-.hr::after,
-.hr::before {
-  content: "";
-  flex: 1 1 0%;
-  width: 100px;
-  border-top: 0.0625rem solid #000;
-  margin-left: 8px;
-  margin-right: 8px;
-  opacity: 0.4;
-}
-
 @media (max-width: 330px) {
   .hr::before,
   .hr::after {

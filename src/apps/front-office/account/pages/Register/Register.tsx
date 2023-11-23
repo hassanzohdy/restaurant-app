@@ -17,7 +17,7 @@ import styles from "./register.module.scss";
 export default function Register() {
   const { state, submit } = useRegister();
 
-  const otpSubmit = useCreateAccountVerifyCode();
+  const verifyCodeSubmit = useCreateAccountVerifyCode();
 
   return (
     <>
@@ -35,24 +35,24 @@ export default function Register() {
         <div
           className={`${styles.hr} opacity-40 text-sm flex items-center mt-1`}>
           {trans("doViaEmail")}
-        </div>
+        </div>{" "}
+        {state === "done" && (
+          <Form
+            // still working on it but don't know if that is correct
+            onSubmit={verifyCodeSubmit}
+            className="fixed top-50 right-5 animate-popupFade bg-white shadow-header py-5 px-5 rounded-xl z-20">
+            <TextInput
+              placeholder="Enter you OTP code"
+              name="code"
+              label="Enter you OTP code that sent to your Email"
+              className="border-border border mb-3"
+            />
+            <SubmitButton>submit otp</SubmitButton>
+          </Form>
+        )}
         <Form
           onSubmit={submit}
           className="form grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {state === "done" && (
-            <Form
-              // still working on it but don't know if that is correct
-              onSubmit={otpSubmit}
-              className="fixed top-50 right-5 animate-popupFade bg-white shadow-header py-5 px-5 rounded-xl z-20">
-              <TextInput
-                placeholder="Enter you OTP"
-                name="otp"
-                label="Enter you OTP code that sent to your Email"
-                className="border-border border mb-3"
-              />
-              <SubmitButton>submit otp</SubmitButton>
-            </Form>
-          )}
           <TextInputV2
             name="firstName"
             autoFocus

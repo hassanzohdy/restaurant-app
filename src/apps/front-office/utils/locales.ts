@@ -573,4 +573,36 @@ groupedTranslations({
     en: "Successfully Login",
     ar: "تم تسجيل الدخول بنجاح",
   },
+  register: {
+    en: "Register",
+    ar: "تسجيل",
+  },
+  verifyYourEmail: {
+    en: "Verify your email!",
+    ar: "تحقق من بريدك الإلكتروني!",
+  },
+  enterVerificationCode: {
+    en: "Please enter the 6-digit verification code that has been sent to that email",
+    ar: "الرجاء إدخال رمز التحقق المكون من 6 أرقام الذي تم إرساله إلى ذلك البريد الإلكتروني",
+  },
+  codeValidFor30Minutes: {
+    en: "The code is valid for 30 minutes",
+    ar: "الرمز صالح لمدة 30 دقيقة",
+  },
+  continue: {
+    en: "Continue",
+    ar: "متابعة",
+  },
+  updateProfile: {
+    en: "Update Profile",
+    ar: "تحديث الملف الشخصي",
+  },
+  myAddress: {
+    en: "My Address",
+    ar: "عنواني",
+  },
+  changePassword: {
+    en: "Change Password",
+    ar: "تغيير كلمة المرور",
+  },
 });

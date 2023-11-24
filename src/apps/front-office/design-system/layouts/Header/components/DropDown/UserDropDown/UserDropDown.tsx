@@ -82,7 +82,7 @@ export default function UserDropDown() {
         </Form>
         <div>
           <Link
-            to={URLS.auth.resetPassword}
+            to={URLS.auth.forgotPassword}
             className="text-primary-main text-[14px] hover:underline ">
             {trans("lostYourPassword")}
           </Link>

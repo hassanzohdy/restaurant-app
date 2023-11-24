@@ -71,7 +71,6 @@ export function useCreateAccount() {
  */
 export function useCreateAccountVerifyCode(otpEmail: string) {
   const verifyCodeSubmit = ({ values, form }) => {
-
     const codeAsNumber = parseInt(values.code, 10);
 
     verifyCode({ email: otpEmail, code: codeAsNumber })
@@ -113,10 +112,9 @@ export function useForgetPassword() {
       .then(() => {
         resetPasswordAtom.update({
           ...resetPasswordAtom.value,
-          // use only the email or phone number
           email: form.value("email"),
-          phoneNumber: form.value("phoneNumber"),
         });
+        navigateTo(URLS.auth.resetPassword);
       })
       .catch(() => {
         form.submitting(false);
@@ -136,7 +134,6 @@ export function useVerifyForgetPasswordOTP() {
   ) => {
     verifyForgetPassword({
       email: resetPasswordAtom.get("email"),
-      phoneNumber: resetPasswordAtom.get("phoneNumber"),
       code: resetPasswordAtom.get("tempOTP"),
     })
       .then(() => {
@@ -157,7 +154,10 @@ export function useVerifyForgetPasswordOTP() {
  */
 export function useResetPassword() {
   const resetPasswordSubmit = ({ values, form }) => {
-    resetPassword(values)
+    resetPassword({
+      ...values,
+      email: resetPasswordAtom.get("email"),
+    })
       .then(() => {
         navigateTo(URLS.auth.login);
         resetPasswordAtom.reset();

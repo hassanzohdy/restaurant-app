@@ -64,7 +64,7 @@ const LoginForm = () => {
           {trans("createAnAccount")}
         </Link>
         <Link
-          to={URLS.home}
+          to={URLS.auth.forgotPassword}
           className="text-[#808080] hover:text-[#535353] focus:text-[#535353] decoration-dotted">
           {trans("lostPassword")}
         </Link>

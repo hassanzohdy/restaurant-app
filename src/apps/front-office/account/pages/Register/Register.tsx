@@ -3,6 +3,7 @@ import Helmet from "@mongez/react-helmet";
 import { useRegister } from "apps/front-office/account/hooks/useRegister";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import { cn } from "apps/front-office/design-system/utils/cn";
+import endpoint from "shared/endpoint";
 import OtpForm from "./components/OtpForm";
 import RegisterForm from "./components/RegisterForm";
 import styles from "./register.module.scss";

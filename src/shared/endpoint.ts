@@ -1,7 +1,7 @@
 import { RunTimeDriver } from "@mongez/cache";
 import Endpoint, { setCurrentEndpoint } from "@mongez/http";
 import { navigateTo } from "@mongez/react-router";
-import user from "apps/front-office/account/user";
+import user from "apps/front-office/auth/user";
 import { currentLocaleCode } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { AxiosResponse } from "axios";

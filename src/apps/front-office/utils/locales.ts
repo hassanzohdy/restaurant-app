@@ -633,4 +633,8 @@ groupedTranslations({
     en: "Verification code",
     ar: "رمز التحقق",
   },
+  incorrectEmailOrPassword: {
+    en: "Email or password is incorrect",
+    ar: "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+  },
 });

@@ -18,7 +18,7 @@ export default function ResetPassword() {
       />
       <div className="flex flex-col container w-fit justify-center items-center my-[90px]">
         <Form
-          className="form flex justify-center p-[40px] flex-col text-left transition-all bg-[#f6f6f6] sm:w-[500px] w-[350px] gap-2"
+          className="form flex justify-center p-[40px] flex-col text-left transition-all bg-[#f6f6f6] sm:w-[600px] w-[350px] gap-2"
           onSubmit={submitOTP}>
           <h1 className="text-4xl font-bold text-center mb-5">
             {trans("resetPassword")}!

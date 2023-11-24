@@ -1,6 +1,6 @@
 import { navigateTo } from "@mongez/react-router";
-import { resetPasswordAtom } from "apps/front-office/account/pages/Register/atoms";
-import user from "apps/front-office/account/user";
+import { resetPasswordAtom } from "apps/front-office/auth/pages/Register/atoms";
+import user from "apps/front-office/auth/user";
 import URLS from "apps/front-office/utils/urls";
 
 /**

@@ -2,7 +2,8 @@ import router, { Route } from "@mongez/react-router";
 import {
   Guardian,
   ReverseGuardian,
-} from "apps/front-office/account/middleware";
+  hasOTP,
+} from "apps/front-office/auth/middleware";
 import BaseLayout from "../design-system/layouts/BaseLayout";
 // import AccountLayout from "../design-system/layouts/AccountLayout";
 
@@ -48,6 +49,14 @@ export function guardedRoutes(routes: Route[]) {
 export function accountRoutes(routes: Route[]) {
   return router.group({
     middleware: [Guardian],
+    layout: BaseLayout,
+    routes,
+  });
+}
+
+export function hasOTPRoutes(routes: Route[]) {
+  return router.group({
+    middleware: [hasOTP],
     layout: BaseLayout,
     routes,
   });

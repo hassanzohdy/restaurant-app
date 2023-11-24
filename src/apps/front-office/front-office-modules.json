@@ -4,13 +4,13 @@
   "modules": [
     {
       "entry": [
-        "/account",
+        "/auth",
         "/login",
         "/register",
         "/forgot-password",
         "/rest-password"
       ],
-      "name": "account"
+      "name": "auth"
     },
     {
       "entry": ["/", "/404"],

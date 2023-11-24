@@ -6,7 +6,7 @@ import TextInput from "apps/front-office/design-system/components/Form/TextInput
 import TextareaInput from "apps/front-office/design-system/components/Form/TextareaInput";
 
 import { isEmpty } from "@mongez/supportive-is";
-import user from "apps/front-office/account/user";
+import user from "apps/front-office/auth/user";
 import { ratingAtom } from "../../atoms/rating-atom";
 import AddRatings from "../AddRatings";
 import { ReviewCard } from "./ReviewCard";

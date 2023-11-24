@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
-import { useRegister } from "apps/front-office/account/hooks/useRegister";
+import { useRegister } from "apps/front-office/auth/hooks/useRegister";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import OtpForm from "./components/OtpForm";

@@ -1,5 +1,5 @@
 import { FormSubmitOptions } from "@mongez/react-form";
-import { register } from "apps/front-office/account/service/auth";
+import { register } from "apps/front-office/auth/service/auth";
 import { useState } from "react";
 import { showToastMessage } from "./useToastMessage";
 

@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
-import { OptInput } from "apps/front-office/account/components/OptInput";
-import { useCreateAccountVerifyCode } from "apps/front-office/account/hooks";
+import { OptInput } from "apps/front-office/auth/components/OptInput";
+import { useCreateAccountVerifyCode } from "apps/front-office/auth/hooks";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { BsEnvelopeCheck } from "react-icons/bs";
 
@@ -13,7 +13,7 @@ export default function OtpForm({ otpEmail }: OtpFormProps) {
 
   return (
     <>
-      <div className="flex flex-col items-center mb-5 ">
+      <div className="flex flex-col items-center mb-5">
         <BsEnvelopeCheck className="text-green-500 text-6xl mb-5" />
         <h1 className="text-4xl font-bold mb-10">{trans("verifyYourEmail")}</h1>
         <p className="px-6 text-center text-gray-600">

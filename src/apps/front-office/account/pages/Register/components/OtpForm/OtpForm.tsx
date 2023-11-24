@@ -28,7 +28,8 @@ export default function OtpForm({ otpEmail }: OtpFormProps) {
       <Form onSubmit={verifyCodeSubmit} className="px-10">
         <OptInput
           name="code"
-          label="Verification code"
+          label={trans("verificationCode")}
+          placeholder={trans("enterOtp")}
           required
           className="border-border border mb-3"
         />

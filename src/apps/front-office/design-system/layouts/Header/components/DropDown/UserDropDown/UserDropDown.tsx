@@ -84,7 +84,7 @@ export default function UserDropDown() {
           <Link
             to={URLS.auth.forgotPassword}
             className="text-primary-main text-[14px] hover:underline ">
-            {trans("lostYourPassword")}
+            {trans("lostYourPassword")} ?
           </Link>
         </div>
       </div>

@@ -7,7 +7,7 @@
         "/account",
         "/login",
         "/register",
-        "/forget-password",
+        "/forgot-password",
         "/rest-password"
       ],
       "name": "account"

@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
+import Helmet from "@mongez/react-helmet";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
@@ -10,14 +11,27 @@ export default function ForgotPassword() {
 
   return (
     <div>
+      <Helmet title={trans("lostYourPassword")} />
       <Breadcrumb
-        title={trans("createAccount")}
-        navItems={[{ name: trans("createAccount") }]}
+        title={trans("lostYourPassword")}
+        navItems={[{ name: trans("lostYourPassword") }]}
       />
-      <Form onSubmit={submit}>
-        <EmailInputV2 label={trans("email")} name="email" required />
-        <SubmitButton>Reset Password</SubmitButton>
-      </Form>
+      <div className="flex flex-col container w-fit justify-center items-center my-[90px]">
+        <Form
+          className="form flex justify-center p-[40px] flex-col text-left transition-all bg-[#f6f6f6] sm:w-[600px] w-[350px] gap-5"
+          onSubmit={submit}>
+          <h1 className="text-4xl text-center font-bold">
+            {trans("lostYourPassword")} ?
+          </h1>
+          <EmailInputV2
+            label={trans("email")}
+            placeholder={trans("enterEmail")}
+            name="email"
+            required
+          />
+          <SubmitButton>{trans("resetPassword")}</SubmitButton>
+        </Form>
+      </div>
     </div>
   );
 }

@@ -23,11 +23,12 @@ function _ContactUsPage() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div className="mt-10 flex justify-between items-start gap-10">
+
+        <div className="mt-10 flex flex-col md:flex-row items-center text-center md:text-start justify-between md:items-start gap-10">
           <div className="space-y-5 flex-1">
             <HiOutlineDevicePhoneMobile
               size={50}
-              className="text-primary-main"
+              className="text-primary-main mx-auto md:mx-0"
             />
             <span className="inline-block font-semibold text-lg capitalize">
               {trans("phone")}:
@@ -38,7 +39,10 @@ function _ContactUsPage() {
           </div>
 
           <div className="space-y-5 flex-1">
-            <MdLocationOn size={50} className="text-primary-main" />
+            <MdLocationOn
+              size={50}
+              className="text-primary-main mx-auto md:mx-0"
+            />
             <span className="inline-block font-semibold text-lg capitalize">
               {trans("address")}:
             </span>
@@ -51,7 +55,7 @@ function _ContactUsPage() {
           <div className="space-y-5 flex-1">
             <HiOutlineDevicePhoneMobile
               size={50}
-              className="text-primary-main"
+              className="text-primary-main mx-auto md:mx-0"
             />
             <span className="inline-block font-semibold text-lg capitalize">
               {trans("email")}:

@@ -1,7 +1,9 @@
+import { trans } from "@mongez/localization";
 import { wishListAtom } from "apps/front-office/design-system/layouts/Header/atoms/header-atoms";
 import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { toggleWishlist } from "apps/front-office/menu/services/wishlist-service";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export function useWishlist(meal: Meal) {
   const [inWishlist, setIsFavorite] = useState(meal.isFavorite || false);
@@ -18,7 +20,7 @@ export function useWishlist(meal: Meal) {
         }
       })
       .catch(() => {
-        // TODO: Handle error
+        toast.error(trans("addToWishlistError"));
       });
   };
 

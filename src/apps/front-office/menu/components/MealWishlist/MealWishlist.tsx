@@ -4,7 +4,6 @@ import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { AiTwotoneHeart } from "react-icons/ai";
 
 export type MealWishlistProps = {
-  // props go here
   meal: Meal;
 };
 export default function MealWishlist({ meal }: MealWishlistProps) {

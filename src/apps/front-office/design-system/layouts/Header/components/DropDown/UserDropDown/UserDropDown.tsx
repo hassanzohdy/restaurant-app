@@ -1,6 +1,10 @@
 import { trans } from "@mongez/localization";
 import { Form, FormSubmitOptions } from "@mongez/react-form";
-import { Link } from "@mongez/react-router";
+import { Link, navigateTo } from "@mongez/react-router";
+import {
+  OTPEmailAtom,
+  loginNeedVerifyAtom,
+} from "apps/front-office/auth/atoms/auth-atoms";
 import { showToastMessage } from "apps/front-office/auth/hooks/useToastMessage";
 import { login } from "apps/front-office/auth/service/auth";
 import user from "apps/front-office/auth/user";
@@ -33,7 +37,12 @@ export default function UserDropDown() {
 
         toggleGroupAtom.reset();
       })
-      .catch(() => {
+      .catch(error => {
+        if (error.response.data.activateAccount) {
+          loginNeedVerifyAtom.update(error.response.data.activateAccount);
+          OTPEmailAtom.update(values.email);
+          navigateTo(URLS.auth.login);
+        }
         showToastMessage({
           message: trans("incorrectEmailOrPassword"),
           type: "error",

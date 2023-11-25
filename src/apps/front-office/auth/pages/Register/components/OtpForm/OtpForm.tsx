@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
+import { OTPEmailAtom } from "apps/front-office/auth/atoms/auth-atoms";
 import { OptInput } from "apps/front-office/auth/components/OptInput";
 import { useCreateAccountVerifyCode } from "apps/front-office/auth/hooks";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
@@ -8,7 +9,8 @@ import { BsEnvelopeCheck } from "react-icons/bs";
 export type OtpFormProps = {
   otpEmail: string;
 };
-export default function OtpForm({ otpEmail }: OtpFormProps) {
+export default function OtpForm() {
+  const otpEmail = OTPEmailAtom.useValue();
   const verifyCodeSubmit = useCreateAccountVerifyCode(otpEmail);
 
   return (

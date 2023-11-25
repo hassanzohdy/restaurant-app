@@ -55,6 +55,10 @@
     {
       "entry": ["/wishlist"],
       "name": "wishlist"
+    },
+    {
+      "entry": ["/contact-us"],
+      "name": "contact-us"
     }
   ]
 }

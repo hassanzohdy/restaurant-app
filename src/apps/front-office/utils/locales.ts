@@ -25,6 +25,7 @@ groupedTranslations({
     en: "Contact Us",
     ar: "اتصل بنا",
   },
+
   description: {
     en: "Description",
     ar: "الوصف",
@@ -60,6 +61,10 @@ groupedTranslations({
   phoneNumber: {
     en: "Phone Number",
     ar: "رقم الهاتف",
+  },
+  phone: {
+    en: "Phone",
+    ar: "تليفون",
   },
   emailAddress: {
     en: "Email Address",
@@ -172,6 +177,10 @@ groupedTranslations({
   contact: {
     en: "Contact",
     ar: "تواصل معنا",
+  },
+  callUsOrVisit: {
+    en: "Call us or visit place.",
+    ar: "اتصل بنا او زر المكان",
   },
   shopList: {
     en: "SHOP LIST",
@@ -529,6 +538,10 @@ groupedTranslations({
     en: "Your Whishlist is empty add someting to make me happy",
     ar: "قائمة رغباتك ... اضف شىء يجعلنى سعيد",
   },
+  addToWishlistError: {
+    en: "Couldn't add to wishlist.",
+    ar: "لم يتم اضافته الى الرغبات",
+  },
   stockStatus: {
     en: "Stock Status",
     ar: "حالة التوفر",
@@ -636,5 +649,21 @@ groupedTranslations({
   incorrectEmailOrPassword: {
     en: "Email or password is incorrect",
     ar: "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+  },
+  sendUsMessage: {
+    en: "Send us a message",
+    ar: "ارسل لنا رسالة",
+  },
+  subject: {
+    en: "Subject",
+    ar: "االموضوع",
+  },
+  message: {
+    en: "Your message",
+    ar: "رسالتلك",
+  },
+  submit: {
+    en: "Submit",
+    ar: "ارسل",
   },
 });

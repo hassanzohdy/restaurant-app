@@ -9,7 +9,7 @@ export default function Wishlist() {
   // need this for the first time that the web site will load to trigger the wishlist array length
   useOnce(() => {
     getWishlistsList().then(response => {
-      wishListAtom.update(response.data.wishlist.meals.length);
+      wishListAtom.update(response.data.wishlist.meals?.length || 0);
     });
   });
 

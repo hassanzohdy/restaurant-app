@@ -6,7 +6,7 @@ export default function ViewDisplayMode() {
 
   return (
     <>
-      <p className="float-left text-gray-400 pl-12"> Showing 6 of 10 results</p>
+      <p className="float-left text-gray-400 pl-9"> Showing 6 of 10 results</p>
       <div className="flex flex-row justify-end">
         <button onClick={() => menuDisplayModeAtom.update("grid")}>
           {displayMode === "grid" ? (

@@ -1,20 +1,20 @@
 import { FormSubmitOptions } from "@mongez/react-form";
 import { register } from "apps/front-office/auth/service/auth";
 import { useState } from "react";
+import { OTPEmailAtom } from "../atoms/auth-atoms";
 import { showToastMessage } from "./useToastMessage";
 
 export type State = "initial" | "loading" | "done" | "error";
 
 export function useRegister() {
   const [state, setState] = useState<State>("initial");
-  const [otpEmail, setOtpEmail] = useState("");
 
   const createAccount = ({ values, form }: FormSubmitOptions) => {
     setState("loading");
     register(values)
       .then(() => {
         setState("done");
-        setOtpEmail(values.email);
+        OTPEmailAtom.update(values.email);
         showToastMessage({ message: "you account is created" });
       })
       .catch(error => {
@@ -38,6 +38,5 @@ export function useRegister() {
   return {
     state,
     submit: createAccount,
-    otpEmail,
   };
 }

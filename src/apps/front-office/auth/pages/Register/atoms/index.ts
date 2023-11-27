@@ -5,10 +5,6 @@ export const resetPasswordAtom = atom({
   default: {
     code: "",
     email: "",
-    phoneNumber: "",
-    // Used for sending the verify code to api
-    // if valid, then it will be cleared
-    // code must be used instead in the reset password
-    tempOTP: "",
+    hasOTP: false,
   },
 });

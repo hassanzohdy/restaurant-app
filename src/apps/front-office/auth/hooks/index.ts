@@ -16,6 +16,7 @@ import {
   verifyForgetPassword,
 } from "../service/auth";
 import user from "../user";
+import { showToastMessage } from "./useToastMessage";
 
 const goBack = () => {
   setTimeout(() => {
@@ -29,6 +30,7 @@ const goBack = () => {
 
 const onSuccessLogin = () => {
   goBack();
+  showToastMessage({ message: "you have login successfully" });
 };
 
 /**
@@ -74,12 +76,16 @@ export function useCreateAccountVerifyCode(otpEmail: string) {
     const codeAsNumber = parseInt(values.code, 10);
 
     verifyCode({ email: otpEmail, code: codeAsNumber })
-      .then(response => {
-        console.log("response", response);
+      .then(() => {
         onSuccessLogin();
       })
-      .catch(() => {
+      .catch(error => {
         form.submitting(false);
+        showToastMessage({
+          message: error.response.data.error,
+          type: "error",
+          position: "TOP_LEFT",
+        });
       });
   };
 
@@ -113,11 +119,17 @@ export function useForgetPassword() {
         resetPasswordAtom.update({
           ...resetPasswordAtom.value,
           email: form.value("email"),
+          hasOTP: true,
         });
         navigateTo(URLS.auth.resetPassword);
       })
-      .catch(() => {
+      .catch(error => {
         form.submitting(false);
+        showToastMessage({
+          message: error.response.data.error,
+          type: "error",
+          position: "TOP_LEFT",
+        });
       });
   };
 
@@ -134,11 +146,8 @@ export function useVerifyForgetPasswordOTP() {
   ) => {
     verifyForgetPassword({
       email: resetPasswordAtom.get("email"),
-      code: resetPasswordAtom.get("tempOTP"),
     })
       .then(() => {
-        resetPasswordAtom.change("code", resetPasswordAtom.get("tempOTP"));
-
         navigateTo(URLS.auth.resetPassword);
       })
       .catch(() => {
@@ -162,8 +171,13 @@ export function useResetPassword() {
         navigateTo(URLS.auth.login);
         resetPasswordAtom.reset();
       })
-      .catch(() => {
+      .catch(error => {
         form.submitting(false);
+        showToastMessage({
+          message: error.response.data.error,
+          type: "error",
+          position: "TOP_LEFT",
+        });
       });
   };
 

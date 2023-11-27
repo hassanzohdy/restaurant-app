@@ -135,7 +135,7 @@ groupedTranslations({
     ar: "كلمات المرور غير متطابقة",
   },
   shoppingCart: {
-    en: "SHOPPING CART",
+    en: "Shopping Cart",
     ar: "عربه التسوق",
   },
   close: {

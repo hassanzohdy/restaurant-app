@@ -44,7 +44,7 @@ export default function UserDropDown() {
           navigateTo(URLS.auth.login);
         }
         showToastMessage({
-          message: trans("incorrectEmailOrPassword"),
+          message: error.response.data.error,
           type: "error",
           position: "TOP_LEFT",
         });

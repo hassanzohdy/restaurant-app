@@ -12,6 +12,7 @@ import user from "../../user";
 import OtpForm from "../Register/components/OtpForm";
 import "./LoginPage.scss";
 import LoginForm from "./components/LoginForm";
+
 export default function LoginPage() {
   const submitLogin = ({ values, form }: FormSubmitOptions) => {
     OTPEmailAtom.update(values.email);
@@ -27,7 +28,7 @@ export default function LoginPage() {
         }
         form.submitting(false);
         showToastMessage({
-          message: error.message,
+          message: error.response.data.error,
           type: "error",
           position: "TOP_LEFT",
         });

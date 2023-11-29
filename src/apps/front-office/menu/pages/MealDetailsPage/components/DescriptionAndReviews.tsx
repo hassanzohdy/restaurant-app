@@ -3,17 +3,21 @@ import { Button } from "apps/front-office/design-system/components/Button";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { useState } from "react";
 import DescriptionSection from "./DescriptionSection";
+import IngredientsSection from "./IngredientsSection";
 import ReviewsSection from "./reviews/ReviewsSection";
 
-type variant = "description" | "reviews";
+type variant = "description" | "reviews" | "ingredients";
 
-function getSection(section: string) {
+function getSection(section: variant) {
   switch (section) {
     case "description": {
       return <DescriptionSection />;
     }
     case "reviews": {
       return <ReviewsSection />;
+    }
+    case "ingredients": {
+      return <IngredientsSection />;
     }
   }
 }
@@ -39,6 +43,14 @@ export default function DescriptionAndReviews() {
             section === "reviews" ? "bg-primary-main" : "bg-transparent",
           )}>
           {trans("reviews")}
+        </Button>
+        <Button
+          onClick={() => setSection("ingredients")}
+          className={cn(
+            "text-2xl capitalize py-4 px-10 hover:bg-primary-main font-bold",
+            section === "ingredients" ? "bg-primary-main" : "bg-transparent",
+          )}>
+          {trans("ingredients")}
         </Button>
       </div>
       <div className="container py-10">{getSection(section)}</div>

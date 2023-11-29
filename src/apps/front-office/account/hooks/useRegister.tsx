@@ -1,5 +1,5 @@
 import { FormSubmitOptions } from "@mongez/react-form";
-import { register } from "apps/front-office/auth/service/auth";
+import { register } from "apps/front-office/account/service/auth";
 import { useState } from "react";
 import { OTPEmailAtom } from "../atoms/auth-atoms";
 import { showToastMessage } from "./useToastMessage";

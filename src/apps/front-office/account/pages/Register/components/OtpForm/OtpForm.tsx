@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
-import { OTPEmailAtom } from "apps/front-office/auth/atoms/auth-atoms";
-import { OptInput } from "apps/front-office/auth/components/OptInput";
-import { useCreateAccountVerifyCode } from "apps/front-office/auth/hooks";
+import { OTPEmailAtom } from "apps/front-office/account/atoms/auth-atoms";
+import { OptInput } from "apps/front-office/account/components/OptInput";
+import { useCreateAccountVerifyCode } from "apps/front-office/account/hooks";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { BsEnvelopeCheck } from "react-icons/bs";
 

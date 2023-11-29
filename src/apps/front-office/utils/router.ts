@@ -3,7 +3,7 @@ import {
   Guardian,
   ReverseGuardian,
   hasOTP,
-} from "apps/front-office/auth/middleware";
+} from "apps/front-office/account/middleware";
 import BaseLayout from "../design-system/layouts/BaseLayout";
 // import AccountLayout from "../design-system/layouts/AccountLayout";
 

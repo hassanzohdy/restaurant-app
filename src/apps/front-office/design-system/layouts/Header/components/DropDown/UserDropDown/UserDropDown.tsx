@@ -4,10 +4,10 @@ import { Link, navigateTo } from "@mongez/react-router";
 import {
   OTPEmailAtom,
   loginNeedVerifyAtom,
-} from "apps/front-office/auth/atoms/auth-atoms";
-import { showToastMessage } from "apps/front-office/auth/hooks/useToastMessage";
-import { login } from "apps/front-office/auth/service/auth";
-import user from "apps/front-office/auth/user";
+} from "apps/front-office/account/atoms/auth-atoms";
+import { showToastMessage } from "apps/front-office/account/hooks/useToastMessage";
+import { login } from "apps/front-office/account/service/auth";
+import user from "apps/front-office/account/user";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";

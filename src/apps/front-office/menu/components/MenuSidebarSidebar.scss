@@ -1,7 +1,18 @@
 .categoryList {
   background-color: #fbf7e8;
 }
+.categoryList li button {
+  width: 100%;
+}
 
-.sidebar ul li:hover a {
+.categoryList li:last-child {
+  margin-bottom: 0;
+}
+
+.categoryList li {
+  cursor: pointer;
+}
+
+.sidebar ul li:hover p {
   color: #ffc222;
 }

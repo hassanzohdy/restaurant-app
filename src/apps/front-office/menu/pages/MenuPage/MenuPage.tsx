@@ -16,12 +16,16 @@ import "./MenuPage.scss";
 export default function MenuPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [meals, setMeals] = useState<Meal[]>([]);
+  const [filteredMeals, setFilteredMeals] = useState<Meal[]>([]);
+  const [MealsCategories, setMealsCategories] = useState<any>({});
   const [error, setError] = useState<any>(null);
 
   useOnce(() => {
     getMeals()
       .then(response => {
         setMeals(response.data.meals);
+        setFilteredMeals(response.data.meals);
+        getMealsCategoryCount(response.data.meals);
       })
       .catch(error => {
         setError(
@@ -43,6 +47,23 @@ export default function MenuPage() {
     return <Error error={error} />;
   }
 
+  function getMealsCategoryCount(meals: Meal[]) {
+    //This function is called directly after getting meals from Api
+    //It returns a dictionary with each category as a key and count of meals as value
+    const categoryDictionary = {};
+    meals.forEach(meal => {
+      categoryDictionary[meal.category.name]
+        ? (categoryDictionary[meal.category.name] += 1)
+        : (categoryDictionary[meal.category.name] = 1);
+    });
+    setMealsCategories(categoryDictionary);
+  }
+
+  function filterMealsByCategory(cat: string) {
+    const filteredMeals = meals.filter(meal => meal.category.name === cat);
+    setFilteredMeals(filteredMeals);
+  }
+
   return (
     <>
       <Helmet title={trans("menu")} />
@@ -50,11 +71,14 @@ export default function MenuPage() {
       <div className="container">
         <div className="flex flex-row mt-12 mb-12">
           <div className="basis-1/4">
-            <MenuSidebar />
+            <MenuSidebar
+              onCategorySelect={filterMealsByCategory}
+              categories={MealsCategories}
+            />
           </div>
           <div className="basis-3/4 shopItems">
             <ViewDisplayMode />
-            <MealsContainer meals={meals} />
+            <MealsContainer meals={filteredMeals} />
           </div>
         </div>
       </div>

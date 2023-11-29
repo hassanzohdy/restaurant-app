@@ -677,4 +677,8 @@ groupedTranslations({
   weWillContactYou: {
     en: "We will contact you as soon as possible",
   },
+  ingredients: {
+    en: "Ingredients",
+    ar: "المكونات",
+  },
 });

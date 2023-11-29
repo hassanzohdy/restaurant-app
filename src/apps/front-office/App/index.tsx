@@ -1,7 +1,7 @@
 import { useOnce } from "@mongez/react-hooks";
 import React, { useState } from "react";
-import { getGuestToken } from "../auth/service/auth";
-import user from "../auth/user";
+import { getGuestToken } from "../account/service/auth";
+import user from "../account/user";
 
 export type AppProps = {
   children: React.ReactNode;

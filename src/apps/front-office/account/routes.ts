@@ -1,4 +1,4 @@
-import LoginPage from "apps/front-office/auth/pages/LoginPage";
+import LoginPage from "apps/front-office/account/pages/LoginPage";
 import URLS from "apps/front-office/utils/urls";
 import { hasOTPRoutes, reverseGuardedRoutes } from "../utils/router";
 import ForgotPassword from "./pages/ForgotPassword";

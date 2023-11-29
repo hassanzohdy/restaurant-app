@@ -135,7 +135,7 @@ groupedTranslations({
     ar: "كلمات المرور غير متطابقة",
   },
   shoppingCart: {
-    en: "SHOPPING CART",
+    en: "Shopping Cart",
     ar: "عربه التسوق",
   },
   close: {
@@ -255,8 +255,8 @@ groupedTranslations({
     ar: "كلمة المرور",
   },
   lostYourPassword: {
-    en: "Lost your password?",
-    ar: "هل نسيت كلمة المرور؟",
+    en: "Lost your password",
+    ar: "هل نسيت كلمة المرور",
   },
   noProductsInCart: {
     en: "No products in the cart",
@@ -617,6 +617,38 @@ groupedTranslations({
   changePassword: {
     en: "Change Password",
     ar: "تغيير كلمة المرور",
+  },
+  resetYourPassword: {
+    en: "Reset Your Password",
+    ar: "إعادة تعيين كلمة المرور",
+  },
+  enterOtp: {
+    en: "Enter your OTP",
+    ar: "أدخل رمز التحقق الخاص بك",
+  },
+  newPassword: {
+    en: "New Password",
+    ar: "كلمة المرور الجديدة",
+  },
+  confirmNewPassword: {
+    en: "Confirm New Password",
+    ar: "تأكيد كلمة المرور الجديدة",
+  },
+  resetPassword: {
+    en: "Reset Password",
+    ar: "إعادة تعيين كلمة المرور",
+  },
+  enterEmail: {
+    en: "Enter your email address",
+    ar: "أدخل عنوان بريدك الإلكتروني",
+  },
+  verificationCode: {
+    en: "Verification code",
+    ar: "رمز التحقق",
+  },
+  incorrectEmailOrPassword: {
+    en: "Email or password is incorrect",
+    ar: "البريد الإلكتروني أو كلمة المرور غير صحيحة",
   },
   sendUsMessage: {
     en: "Send us a message",

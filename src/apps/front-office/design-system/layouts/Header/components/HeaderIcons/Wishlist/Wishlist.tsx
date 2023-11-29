@@ -1,17 +1,13 @@
-import { useOnce } from "@mongez/react-hooks";
 import { Link } from "@mongez/react-router";
-import { getWishlistsList } from "apps/front-office/menu/services/wishlist-service";
 import URLS from "apps/front-office/utils/urls";
 import { AiOutlineHeart } from "react-icons/ai";
+import useWishListUpdate from "../../../Hooks/useWishListUpdate";
 import { wishListAtom } from "../../../atoms/header-atoms";
 
 export default function Wishlist() {
   // need this for the first time that the web site will load to trigger the wishlist array length
-  useOnce(() => {
-    getWishlistsList().then(response => {
-      wishListAtom.update(response.data.wishlist.meals?.length || 0);
-    });
-  });
+
+  useWishListUpdate();
 
   return (
     <Link

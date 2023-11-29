@@ -3,7 +3,7 @@ import { Link } from "@mongez/react-router";
 import { useLogout } from "apps/front-office/account/hooks";
 import URLS from "apps/front-office/utils/urls";
 import { IoMdLogOut } from "react-icons/io";
-import { useToggleState } from "../../../Hooks/headerStateHook";
+import { useToggleState } from "../../../../Hooks/headerStateHook";
 
 export default function UserDropDownLogout() {
   const { groupState } = useToggleState();
@@ -41,7 +41,7 @@ export default function UserDropDownLogout() {
         onClick={() => logout()}
         className="text-red-500 hover:text-red-700 flex items-center gap-2 group transition-all">
         {trans("logout")}
-        <IoMdLogOut className="text-xl group-hover:ml-1 transition-all rotate-180 group-hover:mr-1" />
+        <IoMdLogOut className="text-xl group-hover:ml-1 transition-all rtl:rotate-180 group-hover:mr-1" />
       </button>
     </div>
   );

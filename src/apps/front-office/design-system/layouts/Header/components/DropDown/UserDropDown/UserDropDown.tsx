@@ -1,16 +1,19 @@
 import { trans } from "@mongez/localization";
 import { Form, FormSubmitOptions } from "@mongez/react-form";
-import { Link } from "@mongez/react-router";
+import { Link, navigateTo } from "@mongez/react-router";
+import {
+  OTPEmailAtom,
+  loginNeedVerifyAtom,
+} from "apps/front-office/account/atoms/auth-atoms";
 import { showToastMessage } from "apps/front-office/account/hooks/useToastMessage";
 import { login } from "apps/front-office/account/service/auth";
 import user from "apps/front-office/account/user";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";
-import { getWishlistsList } from "apps/front-office/menu/services/wishlist-service";
 import URLS from "apps/front-office/utils/urls";
 import { useToggleState } from "../../../Hooks/headerStateHook";
-import { toggleGroupAtom, wishListAtom } from "../../../atoms/header-atoms";
+import { toggleGroupAtom } from "../../../atoms/header-atoms";
 import UserDropDownLogout from "./UserDropDownLogout";
 import "./_userDropDown.scss";
 
@@ -21,28 +24,34 @@ export default function UserDropDown() {
     return <UserDropDownLogout />;
   }
 
-  const submitLogin = ({ values }: FormSubmitOptions) => {
+  const submitLogin = ({ values, form }: FormSubmitOptions) => {
     login(values)
       .then(response => {
         user.login(response.data.user);
+
         showToastMessage({
           message: trans("successfullyLogin"),
         });
 
-        getWishlistsList().then(response => {
-          wishListAtom.update(response.data.wishlist.meals.length);
-        });
+        location.reload();
+
         toggleGroupAtom.reset();
       })
       .catch(error => {
+        if (error.response.data.activateAccount) {
+          loginNeedVerifyAtom.update(error.response.data.activateAccount);
+          OTPEmailAtom.update(values.email);
+          navigateTo(URLS.auth.login);
+        }
         showToastMessage({
-          message: error.message,
+          message: error.response.data.error,
           type: "error",
           position: "TOP_LEFT",
         });
+
+        form.submitting(false);
       });
   };
-
   return (
     <div>
       <div
@@ -82,9 +91,9 @@ export default function UserDropDown() {
         </Form>
         <div>
           <Link
-            to={URLS.auth.resetPassword}
+            to={URLS.auth.forgotPassword}
             className="text-primary-main text-[14px] hover:underline ">
-            {trans("lostYourPassword")}
+            {trans("lostYourPassword")} ?
           </Link>
         </div>
       </div>

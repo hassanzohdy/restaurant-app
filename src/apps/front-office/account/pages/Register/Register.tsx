@@ -8,7 +8,7 @@ import RegisterForm from "./components/RegisterForm";
 import styles from "./register.module.scss";
 
 export default function Register() {
-  const { state, submit, otpEmail } = useRegister();
+  const { state, submit } = useRegister();
 
   return (
     <>
@@ -36,7 +36,7 @@ export default function Register() {
               <RegisterForm submit={submit} />
             </div>
             <div className="min-w-full p-4">
-              <OtpForm otpEmail={otpEmail} />
+              <OtpForm />
             </div>
           </div>
         </div>

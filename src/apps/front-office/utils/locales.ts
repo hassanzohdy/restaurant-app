@@ -571,7 +571,7 @@ groupedTranslations({
     ar: "تحميل",
   },
   somethingWentWrong: {
-    en: "Some Thing Wend Wrong",
+    en: "Something Went Wrong",
     ar: "حدث خطاء",
   },
   viewCart: {
@@ -665,5 +665,16 @@ groupedTranslations({
   submit: {
     en: "Submit",
     ar: "ارسل",
+  },
+  submitting: {
+    en: "Submitting..",
+    ar: "جار الإرسال...",
+  },
+  messageSent: {
+    en: "Message sent successfully",
+    ar: "تم ارسال رسالتك بنجاح",
+  },
+  weWillContactYou: {
+    en: "We will contact you as soon as possible",
   },
 });

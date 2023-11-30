@@ -41,51 +41,53 @@ export default function PostDetailsPage({ params }: { params: any }) {
           { name: `${post.title}` },
         ]}
       />
-      <div className="w-[95%] mx-auto mt-8">
-        <div className="flex justify-between flex-wrap">
-          <div className=" w-[100%] lg:w-[75%]">
-            <div className="w-[100%]  rounded-lg flex flex-col gap-2  border border-gray-300  mb-10">
-              <div className="w-full h-[450px]">
-                <img
-                  src={post.image.url}
-                  alt={post.title}
-                  className="w-full  h-full rounded-tr-lg rounded-tl-lg object-cover"
-                />
-              </div>
-              <div className="p-5 pb-10 flex flex-col gap-2">
-                <h2 className="font-bold text-3xl w-fit hover:text-primary-hover transition duration-150 cursor-pointer">
-                  {post.title}
-                </h2>
-
-                <p
-                  className="text-gray-600 text-md break-keep"
-                  dangerouslySetInnerHTML={{
-                    __html: post.description,
-                  }}
-                />
-
-                <div className="flex gap-2 items-center">
-                  <TbQuote className="text-primary-main" size={"3.5rem"} />
-                  <h3
-                    className="font-bold "
-                    dangerouslySetInnerHTML={{
-                      __html: post.shortDescription,
-                    }}
+      <div className="post-details py-[70px]">
+        <div className="container">
+          <div className="flex justify-between flex-wrap">
+            <div className=" w-[100%] lg:w-[74%]">
+              <div className="w-[100%]  rounded-lg flex flex-col gap-2  border border-gray-300  mb-10">
+                <div className="w-full h-[450px]">
+                  <img
+                    src={post.image.url}
+                    alt={post.title}
+                    className="w-full  h-full rounded-tr-lg rounded-tl-lg object-cover"
                   />
                 </div>
-                <div className="text-gray-600 text-md break-all">
+                <div className="p-5 pb-10 flex flex-col gap-2">
+                  <h2 className="font-bold text-3xl w-fit hover:text-primary-hover transition duration-150 cursor-pointer">
+                    {post.title}
+                  </h2>
+
                   <p
-                    className="text-gray-600 text-md break-all w-full code"
+                    className="text-gray-600 text-md break-keep"
                     dangerouslySetInnerHTML={{
                       __html: post.description,
                     }}
                   />
+
+                  <div className="flex gap-2 items-center">
+                    <TbQuote className="text-primary-main" size={"3.5rem"} />
+                    <h3
+                      className="font-bold "
+                      dangerouslySetInnerHTML={{
+                        __html: post.shortDescription,
+                      }}
+                    />
+                  </div>
+                  <div className="text-gray-600 text-md break-all">
+                    <p
+                      className="text-gray-600 text-md break-all w-full code"
+                      dangerouslySetInnerHTML={{
+                        __html: post.description,
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
+              <PostSiblings params={params} />
             </div>
-            <PostSiblings params={params} />
+            <BlogSidebar post={post} />
           </div>
-          <BlogSidebar post={post} />
         </div>
       </div>
     </>

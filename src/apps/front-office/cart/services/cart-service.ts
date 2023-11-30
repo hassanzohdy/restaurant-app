@@ -1,17 +1,15 @@
 import endpoint from "shared/endpoint";
 
 /**
- * Get Carts list
+ * Get cart details
  */
-export function getCartsList(params: any = {}) {
-  return endpoint.get("/cart", {
-    params,
-  });
+export function getCart() {
+  return endpoint.get("/cart");
 }
 
 /**
- * Get cart details
+ * Add meal to cart
  */
-export function getCart(id: string | number) {
-  return endpoint.get("/cart/" + id);
+export function addToCart(meal: number, amount = 1) {
+  return endpoint.post("/cart", { meal, amount });
 }

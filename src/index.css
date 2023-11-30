@@ -5,3 +5,7 @@
 input:focus-visible {
   outline: none;
 }
+
+html[dir="rtl"] {
+  font-family: Cairo;
+}

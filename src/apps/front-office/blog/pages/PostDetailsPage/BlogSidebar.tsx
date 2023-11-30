@@ -5,7 +5,7 @@ import { isLTR } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
-import blogBanner from "shared/assets/images/Blog/pexels-photo-7358062.jpg";
+import blogBanner from "shared/assets/images/Blog/blog-banner.png";
 export type BlogSidebarProps = {
   post: Post;
 };
@@ -21,7 +21,7 @@ export default function BlogSidebar({ post }: BlogSidebarProps) {
 
   return (
     <>
-      <div className=" lg:flex lg:w-[22%]  w-[100%] my-4 ">
+      <div className=" lg:flex lg:w-[24%]  w-[100%] my-4 ">
         <div className="flex flex-col gap-10">
           <div className="flex items-center ">
             <input

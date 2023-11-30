@@ -666,4 +666,13 @@ groupedTranslations({
     en: "Submit",
     ar: "ارسل",
   },
+  // Latest News
+  latestNews: {
+    en: "Latest News",
+    ar: "آخر الاخبار",
+  },
+  seeMore: {
+    en: "See More",
+    ar: "المزيد",
+  },
 });

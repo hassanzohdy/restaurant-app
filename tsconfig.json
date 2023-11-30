@@ -22,7 +22,7 @@
       "assets/*": ["./src/shared/assets/*"],
       "design-system": ["src/apps/front-office/design-system"],
       "design-system/*": ["src/apps/front-office/design-system/*"],
-      "user": ["src/apps/front-office/account/user"],
+      "user": ["src/apps/front-office/auth/user"],
       "app/*": ["src/apps/front-office/*"]
     },
     "jsx": "react-jsx",

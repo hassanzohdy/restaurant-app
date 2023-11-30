@@ -23,7 +23,6 @@ export default function TextInputV2(props: FormControlProps) {
       )}
 
       <input
-        {...otherProps}
         type={type || "text"}
         value={value}
         id={id}
@@ -31,6 +30,7 @@ export default function TextInputV2(props: FormControlProps) {
         onChange={e => {
           changeValue(e.target.value);
         }}
+        {...otherProps}
         className={cn(
           "mt-1 block w-full px-3 py-3 bg-white border border-border rounded-md text-base placeholder-slate-400 focus:outline-none focus:border-primary-main ",
           error && "border-l-[2px] border-l-red-500 focus:border-l-red-500",

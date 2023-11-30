@@ -54,7 +54,7 @@ export function forgetPassword(data: any) {
  * Verify forget password code
  */
 export function verifyForgetPassword(data: any) {
-  return endpoint.post("/verify-code", data);
+  return endpoint.post("/forget-password/verify", data);
 }
 
 /**

@@ -27,7 +27,7 @@ export function ReverseGuardian() {
  * If not then he/she should be redirected to the forget password page
  */
 export function hasOTP() {
-  if (!resetPasswordAtom.get("code")) {
+  if (!resetPasswordAtom.get("hasOTP")) {
     return navigateTo(URLS.auth.forgotPassword);
   }
 }

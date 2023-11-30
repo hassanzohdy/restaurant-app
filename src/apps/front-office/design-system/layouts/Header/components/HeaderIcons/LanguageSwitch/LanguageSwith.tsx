@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { changeLocaleCode } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
 
@@ -7,6 +8,7 @@ export default function LanguageSwitch() {
   return (
     <button
       className="relative border border-border cursor-pointer rounded-full w-12 h-12 flex items-center justify-center text-xl hover:bg-primary-hover"
+      title={trans("language")}
       onClick={() => changeLocaleCode(langSwitchHandel)}>
       {isRTL() ? (
         <span className="font-serif">En</span>

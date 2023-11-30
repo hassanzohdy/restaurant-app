@@ -41,3 +41,6 @@ input:focus-visible {
     bottom: 100px;
   }
 }
+html[dir="rtl"] {
+  font-family: Cairo;
+}

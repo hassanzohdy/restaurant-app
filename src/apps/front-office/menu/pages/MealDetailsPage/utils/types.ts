@@ -31,4 +31,5 @@ export type Meal = {
   ratings: number;
   ingredients: string[];
   reviews: number;
+  maxAmountPerOrder?: number;
 };

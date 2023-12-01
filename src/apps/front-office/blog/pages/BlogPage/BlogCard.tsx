@@ -5,17 +5,17 @@ import URLS from "apps/front-office/utils/urls";
 
 export default function BlogCard({ blog }: { blog: Post }) {
   return (
-    <div className="w-[100%] mb-4 rounded-lg flex flex-col gap-2 h-[450px] border border-gray-300 lg:w-[32%]">
+    <div className="rounded-lg flex flex-col h-[450px] border border-gray-300 ">
       <Link to={URLS.blog.viewPost(blog)}>
         <div className="w-full h-[260px] overflow-hidden rounded-tr-lg rounded-tl-lg ">
           <img
             src={blog.image.url}
             alt={blog.title}
-            className="w-full h-full rounded-tr-lg rounded-tl-lg hover:scale-110 transition duration-300 "
+            className="w-full h-full rounded-tr-lg rounded-tl-lg hover:scale-110 transition duration-300 object-cover"
           />
         </div>
       </Link>
-      <div className="p-4 flex flex-col gap-2">
+      <div className="p-6 flex flex-col">
         <Link to={URLS.blog.viewPost(blog)}>
           <h3 className="font-bold  hover:text-primary-hover transition duration-150 cursor-pointer">
             {blog.title.substring(0, 30)}...

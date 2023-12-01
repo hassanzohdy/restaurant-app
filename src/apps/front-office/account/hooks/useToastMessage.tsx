@@ -1,7 +1,8 @@
+import React from "react";
 import { toast } from "react-toastify";
 
-type showToastMassageTypes = {
-  message: string;
+type ShowToastMassageTypes = {
+  message: React.ReactNode;
   type?: "info" | "success" | "warning" | "error" | "default";
   position?:
     | "TOP_LEFT"
@@ -11,13 +12,18 @@ type showToastMassageTypes = {
     | "BOTTOM_RIGHT"
     | "BOTTOM_CENTER";
 };
+
 export const showToastMessage = ({
   message,
   type = "success",
   position = "TOP_RIGHT",
-}: showToastMassageTypes) => {
-  toast?.[type](message, {
-    toastId: `${[type]}1`,
+}: ShowToastMassageTypes) => {
+  const toastId = `${[type]}-toast`;
+
+  toast[type](message, {
+    toastId,
     position: toast.POSITION?.[position],
   });
+
+  return toastId;
 };

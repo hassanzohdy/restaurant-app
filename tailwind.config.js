@@ -44,7 +44,6 @@ export default {
         fade: "fadeOut 5s ease-in-out",
         popupFade: "popupFade .2s ease-in-out",
       },
-
       // that is actual animation
       keyframes: theme => ({
         fadeOut: {

@@ -5,3 +5,42 @@
 input:focus-visible {
   outline: none;
 }
+
+.slick-slider ul {
+  bottom: 100px;
+}
+
+.slick-slider ul li {
+  width: auto;
+  height: auto;
+}
+
+.slick-slider ul li button {
+  padding: 0;
+  width: 8px;
+  height: 6px;
+  background: #ffc222;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  opacity: 0.8;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.slick-slider ul li button::before {
+  display: none;
+}
+
+.slick-slider ul li:not([class=""]) button {
+  width: 14px;
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .slick-slider ul {
+    bottom: 100px;
+  }
+}
+html[dir="rtl"] {
+  font-family: Cairo;
+}

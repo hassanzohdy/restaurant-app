@@ -1,11 +1,8 @@
 import { trans } from "@mongez/localization";
-import { Button } from "apps/front-office/design-system/components/Button";
 import Stars from "apps/front-office/design-system/components/Stars";
-import MealWishlist from "apps/front-office/menu/components/MealWishlist";
 import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
+import AddMealToCart from "apps/front-office/menu/pages/MealDetailsPage/components/AddMealToCart";
 import { price } from "apps/front-office/utils/price";
-import { useState } from "react";
-import { BsFillBasket2Fill } from "react-icons/bs";
 import { PiDotOutlineFill } from "react-icons/pi";
 import { DetailsCategorySection } from "./DetailsCategorySection";
 
@@ -25,22 +22,12 @@ const ShippingFeatures = () => {
 };
 
 export const DetailsSide = () => {
-  const [amount, setAmount] = useState<number>(1);
   const meal = mealAtom.useValue();
 
   const ratings = meal.ratings || 0;
 
   const displayedSale = price(meal?.salePrice);
   const displayedPrice = price(meal.price);
-
-  const incrementAmount = () => {
-    setAmount(amount + 1);
-  };
-
-  const decrementAmount = () => {
-    const newAmount = amount === 1 ? 1 : amount - 1;
-    setAmount(newAmount);
-  };
 
   return (
     <div className="flex-1">
@@ -64,31 +51,7 @@ export const DetailsSide = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-10 text-sm font-semibold pb-6 border-b flex-wrap">
-          <div className="flex gap-3 items-center font-bold">
-            <button
-              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
-              onClick={decrementAmount}>
-              -
-            </button>
-            <span>{amount}</span>
-            <button
-              className="w-8 h-8 bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
-              onClick={incrementAmount}>
-              +
-            </button>
-          </div>
-          <div className="flex gap-2 min-w-fit flex-1 shrink-0">
-            <Button
-              variant="primary"
-              className="uppercase rounded-lg flex-1 py-4 px-6 gap-2 text-xs"
-              onClick={() => {}}>
-              <BsFillBasket2Fill className="shrink-0" />
-              {trans("addToCart")}
-            </Button>
-            <MealWishlist meal={meal} />
-          </div>
-        </div>
+        <AddMealToCart />
 
         <DetailsCategorySection />
 

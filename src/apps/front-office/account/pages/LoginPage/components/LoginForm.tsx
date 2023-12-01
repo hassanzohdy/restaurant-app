@@ -4,6 +4,7 @@ import { SubmitButton } from "apps/front-office/design-system/components/Button"
 import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";
 import "react-toastify/dist/ReactToastify.css";
+import GoogleLoginButton from "./GoogleLoginButton";
 
 interface LoginFormProps {
   submitLogin: ({ values, form }: FormSubmitOptions) => void;
@@ -32,6 +33,7 @@ export default function LoginForm({ submitLogin }: LoginFormProps) {
 
         <SubmitButton>{trans("login")}</SubmitButton>
       </Form>
+      <GoogleLoginButton />
     </>
   );
 }

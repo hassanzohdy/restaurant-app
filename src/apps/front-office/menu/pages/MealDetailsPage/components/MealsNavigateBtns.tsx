@@ -133,7 +133,7 @@ const MealsNavigateBtns = ({ meal }: MealsNavigateBtnsProps) => {
         onMouseOver={() => mouseEnterHandler("prev")}
         href={prevMeal ? URLS.menu.viewMeal(prevMeal) : undefined}
         onMouseLeave={mouseLeaveHandler}>
-        <RiArrowDropLeftLine className="shrink-0" />
+        <RiArrowDropLeftLine className="shrink-0 rtl:rotate-180" />
         {<PopupMeal navigationMeal={navigationMeal} meal={prevMeal} />}
       </Link>
       <button
@@ -146,7 +146,7 @@ const MealsNavigateBtns = ({ meal }: MealsNavigateBtnsProps) => {
         className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary-main btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("next")}
         onMouseLeave={mouseLeaveHandler}>
-        <RiArrowDropRightLine className="shrink-0" />
+        <RiArrowDropRightLine className="shrink-0 rtl:rotate-180" />
         {<PopupMeal navigationMeal={navigationMeal} meal={nextMeal} />}
       </button>
     </div>

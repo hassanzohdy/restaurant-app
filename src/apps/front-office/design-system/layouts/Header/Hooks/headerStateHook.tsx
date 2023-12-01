@@ -1,17 +1,38 @@
-import { toggleGroupAtom } from "../atoms/header-atoms";
+import { HeaderState, headerStateAtom } from "../atoms/header-atoms";
 
-export function useToggleState() {
-  const [groupState, setState] = toggleGroupAtom.useState();
+function updateStateToTrue(state: keyof HeaderState) {
+  const data: HeaderState = {} as HeaderState;
 
-  const toggleState = stateName => {
-    setState(prevState => {
-      const newState = Object.keys(prevState).reduce((acc, key) => {
-        acc[key] = key !== stateName ? false : !prevState[key];
-        return acc;
-      }, {});
-      return newState;
-    });
+  for (const key in headerStateAtom.value) {
+    data[key] = key === state;
+  }
+
+  headerStateAtom.update(data);
+}
+
+export function useHeaderStateOpen(state: keyof HeaderState) {
+  return () => {
+    updateStateToTrue(state);
   };
+}
+export function useHeaderStateClose(state: keyof HeaderState) {
+  return () => {
+    headerStateAtom.change(state, false);
+  };
+}
 
-  return { groupState, toggleState };
+export function useHeaderStateToggle(state: keyof HeaderState) {
+  return () => {
+    const stateValue = headerStateAtom.get(state);
+
+    if (stateValue) {
+      headerStateAtom.change(state, false);
+    } else {
+      updateStateToTrue(state);
+    }
+  };
+}
+
+export function useHeaderState(state: keyof HeaderState) {
+  return headerStateAtom.use(state);
 }

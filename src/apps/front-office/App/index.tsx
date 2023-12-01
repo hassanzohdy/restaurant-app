@@ -22,13 +22,8 @@ export default function App({ children }: AppProps) {
 
   if (isLoading) return null;
 
-  console.log(googleClientId);
-
   return (
-    <GoogleOAuthProvider
-      clientId={
-        "1070460388955-pbjmtnvvcren76ejmng4qm0ke42ccb74.apps.googleusercontent.com"
-      }>
+    <GoogleOAuthProvider clientId={googleClientId}>
       {children}
     </GoogleOAuthProvider>
   );

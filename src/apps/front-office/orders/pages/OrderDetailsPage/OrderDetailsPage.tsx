@@ -7,7 +7,6 @@ import popularMealImage1 from "assets/images/about-us/popular-meal-image-1.png";
 import popularMealImage2 from "assets/images/about-us/popular-meal-image-2.png";
 import popularMealImage3 from "assets/images/about-us/popular-meal-image-3.png";
 import OrderBottomDetails from "./components/OrderBottomDetails";
-import OrderMenu from "./components/OrderMenu";
 import OrderTopDetails from "./components/OrderTopDetails";
 
 const orderDetails = {
@@ -58,7 +57,7 @@ export default function OrderDetailsPage() {
               orderStatus={orderDetails.orderStatus}
             />
             {/* Order Menu */}
-            <OrderMenu orderMenu={orderDetails.orderMenu} />
+            {/* <OrderMenu orderMenu={orderDetails.orderMenu} /> */}
             {/* Bottom Details */}
             <OrderBottomDetails
               totalPrice={orderDetails.totalPrice}

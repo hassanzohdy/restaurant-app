@@ -2,6 +2,7 @@ import OverLay from "apps/front-office/design-system/layouts/OverLay";
 import { IoMdClose } from "react-icons/io";
 import { burgerAtom } from "../../../../atoms/header-atoms";
 import BurgerMenuList from "./BurgerMenuList";
+
 export default function BurgerMenu() {
   const Opened = burgerAtom.use("opened");
   return (

@@ -1,13 +1,9 @@
 import { trans } from "@mongez/localization";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import OrderMenuItem from "../OrderMenuItem";
 
 export type OrderMenuProps = {
-  orderMenu: {
-    name: string;
-    image: string;
-    price: number;
-    quantity: number;
-  }[];
+  orderMenu: Meal[];
 };
 
 export default function OrderMenu({ orderMenu }: OrderMenuProps) {

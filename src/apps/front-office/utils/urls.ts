@@ -1,5 +1,7 @@
 // append urls here, DO NOT remove this line
 
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+
 const URLS = {
   wishlist: "/wishlist",
   faq: "/faq",
@@ -14,7 +16,7 @@ const URLS = {
   menu: {
     list: "/menu", // API + Pagination + Filter Activation
     viewMealRoute: "/menu/:id/:slug", // API + Next/Prev API => Reviews UI/API // /meals/:id/similar
-    viewMeal: (meal: any) => `/menu/${meal.id}/${meal.slug}`,
+    viewMeal: (meal: Meal) => `/menu/${meal.id}/${meal.slug}`,
     search: "/menu/search",
   },
   account: {

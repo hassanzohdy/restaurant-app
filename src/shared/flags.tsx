@@ -9,5 +9,5 @@ export const apiBaseUrl = import.meta.env.APP_API_URL;
 export const googleMapApiKey = import.meta.env.GOOGLE_MAP_API_KEY;
 export const facebookAppId = import.meta.env.FACEBOOK_APP_ID;
 export const facebookAppVersion = import.meta.env.FACEBOOK_APP_VERSION;
-export const googleClientId = import.meta.env.GOOGLE_CLIENT_ID;
-export const googleClientSecret = import.meta.env.GOOGLE_CLIENT_SECRET;
+export const googleClientId = import.meta.env.APP_GOOGLE_CLIENT_ID;
+export const googleClientSecret = import.meta.env.APP_GOOGLE_CLIENT_SECRET;

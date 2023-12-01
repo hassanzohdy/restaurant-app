@@ -1,17 +1,12 @@
+import { useEvent } from "@mongez/react-hooks";
 import { routerEvents } from "@mongez/react-router";
-import { useEffect } from "react";
 
 export function useRouteChange(callback: () => void) {
-  useEffect(() => {
+  useEvent(() => {
     const handleRouteChange = () => {
       callback();
     };
 
-    const routeChangeSubscription =
-      routerEvents.onNavigating(handleRouteChange);
-
-    return () => {
-      routeChangeSubscription.unsubscribe();
-    };
-  }, [callback]);
+    return routerEvents.onNavigating(handleRouteChange);
+  });
 }

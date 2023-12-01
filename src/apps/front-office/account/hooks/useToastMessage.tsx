@@ -27,3 +27,10 @@ export const showToastMessage = ({
 
   return toastId;
 };
+
+export const toastError = (message: string) => {
+  return showToastMessage({
+    message,
+    type: "error",
+  });
+};

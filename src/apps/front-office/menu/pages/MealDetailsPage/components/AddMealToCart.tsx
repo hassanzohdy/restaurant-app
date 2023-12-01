@@ -30,13 +30,12 @@ export default function AddMealToCart() {
   const addMealToCart = () => {
     setIsLoading(true);
     addToCart(meal.id, amount)
-      .then(response => {
+      .then(() => {
         // TODO: show a toast message
         showToastMessage({
           message: trans("addedToCart"),
           type: "success",
         });
-        console.log(response.data.cart);
       })
       .catch(error => {
         // TODO: show a toast message

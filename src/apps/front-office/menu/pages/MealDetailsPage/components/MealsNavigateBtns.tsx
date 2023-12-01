@@ -1,4 +1,4 @@
-import { Link } from "@mongez/react-router";
+import { navigateTo } from "@mongez/react-router";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { formatPrice } from "apps/front-office/design-system/utils/format-price";
 import { getMealPosition } from "apps/front-office/menu/services/meals-service";
@@ -128,19 +128,24 @@ const MealsNavigateBtns = ({ meal }: MealsNavigateBtnsProps) => {
 
   return (
     <div className="flex items-center absolute top-1/2 -translate-y-1/2 right-6 gap-4 text-2xl text-black">
-      <Link
-        className="btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
+      <button
+        className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary-main btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("prev")}
-        href={prevMeal ? URLS.menu.viewMeal(prevMeal) : undefined}
+        onClick={() => {
+          if (prevMeal) {
+            navigateTo(URLS.menu.viewMeal(prevMeal));
+          }
+        }}
+        disabled={data.state.prev === "loaded" && !prevMeal}
         onMouseLeave={mouseLeaveHandler}>
         <RiArrowDropLeftLine className="shrink-0 rtl:rotate-180" />
         {<PopupMeal navigationMeal={navigationMeal} meal={prevMeal} />}
-      </Link>
+      </button>
       <button
         disabled={data.state.next === "loaded" && !nextMeal}
         onClick={() => {
           if (nextMeal) {
-            return URLS.menu.viewMeal(nextMeal);
+            navigateTo(URLS.menu.viewMeal(nextMeal));
           }
         }}
         className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary-main btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"

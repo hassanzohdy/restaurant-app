@@ -1,7 +1,9 @@
 import { RunTimeDriver } from "@mongez/cache";
 import Endpoint, { setCurrentEndpoint } from "@mongez/http";
 import { navigateTo } from "@mongez/react-router";
+import { userAtom } from "apps/front-office/account/atoms/user-atom";
 import user from "apps/front-office/account/user";
+import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
 import { currentLocaleCode } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { AxiosResponse } from "axios";
@@ -36,6 +38,11 @@ endpointEvents.onSuccess((response: AxiosResponse) => {
 
   if (response?.data.user) {
     user.update(response.data.user);
+    userAtom.update(response.data.user);
+  }
+
+  if (response?.data?.cart) {
+    cartAtom.update(response.data.cart);
   }
 });
 

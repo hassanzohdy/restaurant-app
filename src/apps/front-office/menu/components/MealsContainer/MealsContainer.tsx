@@ -1,13 +1,10 @@
 import { menuDisplayModeAtom } from "apps/front-office/menu/atoms/menu-display-mode-atom";
-import { Meal } from "../../pages/MealDetailsPage/utils/types";
+import { filteredMealsAtom } from "../../atoms/filtered-meals-atom";
 import MealsGrid from "./MealsGrid";
 import MealsList from "./MealsList";
 
-export type MealsContainerProps = {
-  meals: Meal[];
-};
-
-export default function MealsContainer({ meals }: MealsContainerProps) {
+export default function MealsContainer() {
+  const meals = filteredMealsAtom.use("filteredMealsList");
   const displayMode = menuDisplayModeAtom.useValue();
 
   const Container = displayMode === "grid" ? MealsGrid : MealsList;

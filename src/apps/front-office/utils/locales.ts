@@ -694,4 +694,8 @@ groupedTranslations({
     en: "See More",
     ar: "المزيد",
   },
+  showing: {
+    en: "Showing",
+    ar: "عرض",
+  },
 });

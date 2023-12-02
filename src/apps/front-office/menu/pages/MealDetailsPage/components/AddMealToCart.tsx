@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Button } from "apps/front-office/design-system/components/Button";
+import MealWishlist from "apps/front-office/menu/components/MealWishlist";
 import { useState } from "react";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import { FaSpinner } from "react-icons/fa6";
@@ -91,7 +92,7 @@ export default function AddMealToCart() {
               </>
             )}
           </Button>
-          {/* <MealWishlist meal={meal} /> */}
+          <MealWishlist meal={meal} />
         </div>
       </div>
     </>

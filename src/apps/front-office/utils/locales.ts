@@ -331,6 +331,10 @@ groupedTranslations({
     en: "Add to Cart",
     ar: "أضف الى السلة",
   },
+  addedToCart: {
+    en: "Added to Cart",
+    ar: "تمت اضافته",
+  },
   call: {
     en: "Call and Order in",
     ar: "اتصل واطلب على",

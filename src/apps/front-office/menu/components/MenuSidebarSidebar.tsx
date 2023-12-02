@@ -35,7 +35,7 @@ export default function MenuSidebar({
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
-    filterSearchMeals(value.toLowerCase());
+    filterSearchMeals(value);
     setSearch(value);
   };
 
@@ -78,6 +78,9 @@ export function CategoriesList({
   onCategorySelect,
 }: MenuSidebarProps) {
   const keysArr = Object.keys(categoriesDic);
+  const [activeCategory, setActiveCategory] = useState(
+    queryString.get("cat") || "",
+  );
 
   return (
     <ul role="list" className="categoryList rounded-2xl p-2">
@@ -87,10 +90,11 @@ export function CategoriesList({
             <button
               className={cn(
                 "flex justify-between",
-                queryString.get("cat") === category && "text-primary-main",
+                activeCategory === category && "text-primary-main",
               )}
               onClick={() => {
                 onCategorySelect(category);
+                setActiveCategory(category);
                 queryString.update({ cat: category });
               }}>
               <div className="flex flex-row">

@@ -1,17 +1,13 @@
 import { trans } from "@mongez/localization";
+import { useOnce } from "@mongez/react-hooks";
 import SectionHeading from "apps/front-office/design-system/components/SectionHeading";
 import { getMeals } from "apps/front-office/menu/services/meals-service";
-import { useCallback, useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { useCallback, useState } from "react";
 import { mealAtom } from "../../atoms/meal-atom";
 import { Meal } from "../../utils/types";
 import MealCard from "../MealCard";
 
 export default function YouMayAlsoWantToTrySection() {
-  //TODO: Added GetDataInView function but does not work
-
-  const { ref, inView } = useInView({ triggerOnce: true });
-
   const [meals, setMeals] = useState<Meal[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const meal = mealAtom.useValue();
@@ -30,29 +26,20 @@ export default function YouMayAlsoWantToTrySection() {
       });
   }, [meal]);
 
-  useEffect(() => {
-    if (inView) {
-      loadMeals();
-    }
-  }, [inView, loadMeals]);
+  useOnce(() => {
+    loadMeals();
+  });
 
   if (isLoaded && meals.length === 0) return null;
 
-  if (inView && meals.length === 0) return null;
-
   return (
     <div className="container">
-      <div ref={ref}></div>
-      {inView && (
-        <>
-          <SectionHeading>{trans("youMayAlsoWant")}</SectionHeading>
-          <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 pt-8 pb-20">
-            {meals.map((meal, index) => (
-              <MealCard key={index} meal={meal} />
-            ))}
-          </div>
-        </>
-      )}
+      <SectionHeading>{trans("youMayAlsoWant")}</SectionHeading>
+      <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 pt-8 pb-20">
+        {meals.map((meal, index) => (
+          <MealCard key={index} meal={meal} />
+        ))}
+      </div>
     </div>
   );
 }

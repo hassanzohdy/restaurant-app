@@ -1,23 +1,29 @@
 import { trans } from "@mongez/localization";
-import { showToastMessage } from "apps/front-office/account/hooks/useToastMessage";
-import { addToCart } from "apps/front-office/cart/services/cart-service";
 import { Button } from "apps/front-office/design-system/components/Button";
 import MealWishlist from "apps/front-office/menu/components/MealWishlist";
-import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
 import { useState } from "react";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import { FaSpinner } from "react-icons/fa6";
+import useCart from "shared/hooks/useCart";
+import { mealAtom } from "../atoms/meal-atom";
 
 export default function AddMealToCart() {
-  const [amount, setAmount] = useState(1);
   const meal = mealAtom.useValue();
-  const [isLoading, setIsLoading] = useState(false);
-  const [maxAmountPerOrder, setMaxAmountPerOrder] = useState(
-    meal.maxAmountPerOrder,
-  );
+
+  const [amount, setAmount] = useState(1);
+  const { maxAmountPerOrder, isAddingToCart, addMealToCart } = useCart();
+
+  // TODO: REVIEW MY CODE :)
+
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [maxAmountPerOrder, setMaxAmountPerOrder] = useState(
+  //   meal.maxAmountPerOrder,
+  // );
 
   const incrementAmount = () => {
-    if (maxAmountPerOrder && amount >= maxAmountPerOrder) return;
+    if (maxAmountPerOrder && amount >= maxAmountPerOrder) {
+      return;
+    }
 
     setAmount(amount + 1);
   };
@@ -27,32 +33,30 @@ export default function AddMealToCart() {
     setAmount(newAmount);
   };
 
-  const addMealToCart = () => {
-    setIsLoading(true);
-    addToCart(meal.id, amount)
-      .then(() => {
-        // TODO: show a toast message
-        showToastMessage({
-          message: trans("addedToCart"),
-          type: "success",
-        });
-      })
-      .catch(error => {
-        // TODO: show a toast message
-        showToastMessage({
-          message: trans("somethingWentWrong"),
-          type: "error",
-        });
+  // const addMealToCart = () => {
+  //   setIsLoading(true);
+  //   addToCart(meal.id, amount)
+  //     .then(() => {
+  //       showToastMessage({
+  //         message: trans("addedToCart"),
+  //         type: "success",
+  //       });
+  //     })
+  //     .catch(error => {
+  //       showToastMessage({
+  //         message: trans("somethingWentWrong"),
+  //         type: "error",
+  //       });
 
-        if (error.response?.data.maxAmountPerOrder) {
-          setAmount(error.response.data.maxAmountPerOrder);
-          setMaxAmountPerOrder(error.response.data.maxAmountPerOrder);
-        }
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+  //       if (error.response?.data.maxAmountPerOrder) {
+  //         setAmount(error.response.data.maxAmountPerOrder);
+  //         setMaxAmountPerOrder(error.response.data.maxAmountPerOrder);
+  //       }
+  //     })
+  //     .finally(() => {
+  //       setIsLoading(false);
+  //     });
+  // };
 
   return (
     <>
@@ -74,9 +78,9 @@ export default function AddMealToCart() {
           <Button
             variant="primary"
             className="uppercase rounded-lg flex-1 py-4 px-6 gap-2 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={isLoading}
-            onClick={addMealToCart}>
-            {isLoading ? (
+            disabled={isAddingToCart}
+            onClick={() => addMealToCart(meal.id, amount)}>
+            {isAddingToCart ? (
               <>
                 <FaSpinner className="animate-spin" />
                 {trans("loading")}

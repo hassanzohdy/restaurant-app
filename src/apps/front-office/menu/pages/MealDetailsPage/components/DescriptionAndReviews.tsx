@@ -37,20 +37,20 @@ export default function DescriptionAndReviews() {
           {trans("description")}
         </Button>
         <Button
-          onClick={() => setSection("reviews")}
-          className={cn(
-            "text-2xl capitalize py-4 px-10 hover:bg-primary-main font-bold",
-            section === "reviews" ? "bg-primary-main" : "bg-transparent",
-          )}>
-          {trans("reviews")}
-        </Button>
-        <Button
           onClick={() => setSection("ingredients")}
           className={cn(
             "text-2xl capitalize py-4 px-10 hover:bg-primary-main font-bold",
             section === "ingredients" ? "bg-primary-main" : "bg-transparent",
           )}>
           {trans("ingredients")}
+        </Button>
+        <Button
+          onClick={() => setSection("reviews")}
+          className={cn(
+            "text-2xl capitalize py-4 px-10 hover:bg-primary-main font-bold",
+            section === "reviews" ? "bg-primary-main" : "bg-transparent",
+          )}>
+          {trans("reviews")}
         </Button>
       </div>
       <div className="container py-10">{getSection(section)}</div>

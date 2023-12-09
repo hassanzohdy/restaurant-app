@@ -698,4 +698,9 @@ groupedTranslations({
     en: "Showing",
     ar: "عرض",
   },
+  // Menu Page
+  filterByPrice: {
+    en: "Filter By Price",
+    ar: "تصفية بالسعر",
+  },
 });

@@ -4,6 +4,7 @@ import { Meal } from "../pages/MealDetailsPage/utils/types";
 type FilteredMealsAtom = {
   meals: Meal[];
   filteredMealsList: Meal[];
+  activeCategory: string;
 };
 
 export const filteredMealsAtom = atom<FilteredMealsAtom>({
@@ -11,5 +12,6 @@ export const filteredMealsAtom = atom<FilteredMealsAtom>({
   default: {
     meals: [],
     filteredMealsList: [],
+    activeCategory: "",
   },
 });

@@ -1,12 +1,14 @@
-import { CiBowlNoodles, CiBurger, CiCoffeeCup, CiPizza } from "react-icons/ci";
-import { TbCake } from "react-icons/tb";
-
 import { trans } from "@mongez/localization";
 import { queryString } from "@mongez/react-router";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { useState } from "react";
+import { CiBowlNoodles, CiBurger, CiCoffeeCup, CiPizza } from "react-icons/ci";
 import { MdOutlineClose } from "react-icons/md";
+import { TbCake } from "react-icons/tb";
+import RangeSlider from "react-range-slider-input";
 import { filteredMealsAtom } from "../atoms/filtered-meals-atom";
+
+import "react-range-slider-input/dist/style.css";
 import "./MenuSidebarSidebar.scss";
 
 type MenuSidebarProps = {
@@ -20,6 +22,8 @@ export default function MenuSidebar({
 }: MenuSidebarProps) {
   const [search, setSearch] = useState("");
   const { meals } = filteredMealsAtom.value;
+  const activeCategory = filteredMealsAtom.use("activeCategory");
+  const [value, setValue] = useState([25, 100]);
 
   const filterSearchMeals = (query: string) => {
     const regExp = new RegExp(query, "i");
@@ -41,23 +45,6 @@ export default function MenuSidebar({
 
   return (
     <div className="flex flex-col sidebar">
-      <div className="h-full  border-2 rounded-2xl p-4 space-y-6">
-        <div className="flex justify-between gap-4">
-          <h2 className="font-black text-lg">{trans("categories")}</h2>
-          <button
-            className="bg-primary-main/60 hover:bg-primary-main transition-colors rounded-full w-6 h-6 p-1"
-            onClick={() => {
-              onCategorySelect("");
-              queryString.update({});
-            }}>
-            <MdOutlineClose />
-          </button>
-        </div>
-        <CategoriesList
-          categoriesDic={categoriesDic}
-          onCategorySelect={onCategorySelect}
-        />
-      </div>
       <div>
         <input
           value={search}
@@ -66,6 +53,37 @@ export default function MenuSidebar({
           placeholder={trans("searchProducts")}
         />
       </div>
+      <div className="h-full  border-2 rounded-2xl p-4 space-y-6 mt-8">
+        <div className="flex justify-between gap-4">
+          <h2 className="font-black text-lg">{trans("categories")}</h2>
+          {activeCategory !== "" && (
+            <button
+              className="bg-primary-main/60 hover:bg-primary-main transition-colors rounded-full w-6 h-6 p-1"
+              onClick={() => {
+                onCategorySelect("");
+                filteredMealsAtom.change("activeCategory", "");
+                queryString.update({});
+              }}>
+              <MdOutlineClose />
+            </button>
+          )}
+        </div>
+        <CategoriesList
+          categoriesDic={categoriesDic}
+          onCategorySelect={onCategorySelect}
+        />
+      </div>
+      <div className="mt-8">
+        <h2 className="font-black text-lg mb-4">{trans("filterByPrice")}</h2>
+        <RangeSlider value={value} onInput={setValue} />
+        <div className="mt-4">
+          <p className="text-slate-600">{`Price: $ ${value[0]} - ${value[1]}`}</p>
+          <button className="bg-primary-main hover:bg-primary-main transition-colors rounded-[10px] px-3 py-1 mt-4 font-medium text-sm">
+            Filter
+          </button>
+        </div>
+      </div>
+
       {/* <div className="mt-6">
         <BestDealItemList />
       </div> */}
@@ -78,9 +96,10 @@ export function CategoriesList({
   onCategorySelect,
 }: MenuSidebarProps) {
   const keysArr = Object.keys(categoriesDic);
-  const [activeCategory, setActiveCategory] = useState(
-    queryString.get("cat") || "",
-  );
+  // const [activeCategory, setActiveCategory] = useState(
+  //   queryString.get("cat") || "",
+  // );
+  const activeCategory = filteredMealsAtom.use("activeCategory");
 
   return (
     <ul role="list" className="categoryList rounded-2xl p-2">
@@ -94,7 +113,7 @@ export function CategoriesList({
               )}
               onClick={() => {
                 onCategorySelect(category);
-                setActiveCategory(category);
+                filteredMealsAtom.change("activeCategory", category);
                 queryString.update({ cat: category });
               }}>
               <div className="flex flex-row">

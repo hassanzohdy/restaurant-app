@@ -22,8 +22,8 @@ export default function Modal({ title, variant, children }: ModalProps) {
           variant === "textContent"
             ? "bg-white"
             : variant === "video"
-            ? "bg-transparent"
-            : ""
+              ? "bg-transparent"
+              : ""
         } modal-content w-[90%] max-w-[900px] rounded-lg overflow-hidden z-50  `}>
         <div className="modal-header">
           {title ? (

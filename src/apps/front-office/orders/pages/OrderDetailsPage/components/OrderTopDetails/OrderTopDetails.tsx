@@ -18,8 +18,8 @@ export default function OrderTopDetails({
     orderStatus === "delivered"
       ? "bg-secondary"
       : orderStatus === "delivering"
-      ? "bg-[#fc8019]"
-      : "bg-red-500";
+        ? "bg-[#fc8019]"
+        : "bg-red-500";
 
   const statusIcon =
     orderStatus === "delivered" ? (

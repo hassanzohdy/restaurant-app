@@ -24,11 +24,11 @@ export default function Pagination({ pagination }: PaginationProps) {
           <Link
             to={`${URLS.blog.list}?page=${1}`}
             className=" flex items-center justify-center h-8 w-8 border-2  border-primary-main
-               rounded-full hover:bg-primary-hover hover:text-white">
+               rounded-full hover:bg-primary-hover text-gray-500 hover:text-white">
             {isLTR() ? (
-              <FaChevronLeft size=".7rem" color="gray" />
+              <FaChevronLeft size=".7rem" />
             ) : (
-              <FaChevronRight size=".7rem" color="gray" />
+              <FaChevronRight size=".7rem" />
             )}
           </Link>
         )}
@@ -36,7 +36,7 @@ export default function Pagination({ pagination }: PaginationProps) {
           <Link
             to={`${URLS.blog.list}?page=${page}`}
             key={page}
-            className={` flex h-8 rounded-full border-2 items-center justify-center  hover:bg-primary-hover  hover:text-white border-primary-main
+            className={` flex h-8 rounded-full border-2 items-center justify-center  hover:bg-primary-hover  hover:text-white text-gray-500 border-primary-main
                w-8 ${num === page && "bg-primary-main  text-white"}`}>
             {page}
           </Link>
@@ -45,11 +45,11 @@ export default function Pagination({ pagination }: PaginationProps) {
           <Link
             to={`${URLS.blog.list}?page=${totalPages}`}
             className=" flex items-center justify-center h-8 border-2  border-primary-main
-            rounded-full w-8 hover:bg-primary-hover hover:text-white">
+            rounded-full w-8 text-gray-500 hover:bg-primary-hover hover:text-white">
             {isLTR() ? (
-              <FaChevronRight size=".7rem" color="gray" />
+              <FaChevronRight size=".7rem" />
             ) : (
-              <FaChevronLeft size=".7rem" color="gray" />
+              <FaChevronLeft size=".7rem" />
             )}
           </Link>
         )}

@@ -12,15 +12,20 @@ import { getMeals } from "apps/front-office/menu/services/meals-service";
 import Breadcrumb from "design-system/layouts/Breadcrumb";
 import { useState } from "react";
 import { filteredMealsAtom } from "../../atoms/filtered-meals-atom";
-import MenuSidebar from "../../components/MenuSidebarSidebar";
+import MenuSidebar, {
+  type MenuSidebarProps,
+} from "../../components/MenuSidebarSidebar";
 import "./MenuPage.scss";
 
 export default function MenuPage() {
   const [isLoading, setIsLoading] = useState(true);
   const meals = filteredMealsAtom.use("meals");
 
-  const [mealsCategories, setMealsCategories] = useState<any>({});
   const [error, setError] = useState<any>(null);
+  const [sidebarData, setSidebarData] = useState<MenuSidebarProps>({
+    categories: [],
+    price: [0, 0],
+  });
 
   useOnce(() => {
     const category = queryString.get("cat");
@@ -53,9 +58,23 @@ export default function MenuPage() {
 
   function getMealsCategoryCount(meals: Meal[]) {
     const categoriesObj = {};
+    let minPrice = 0;
+    let maxPrice = 0;
 
     meals.forEach(meal => {
       const catId = meal.category.id;
+
+      if (!minPrice) {
+        minPrice = meal.price;
+      } else if (meal.price < minPrice) {
+        minPrice = meal.price;
+      }
+
+      if (!maxPrice) {
+        maxPrice = meal.price;
+      } else if (meal.price > maxPrice) {
+        maxPrice = meal.price;
+      }
 
       if (!categoriesObj[catId]) {
         categoriesObj[catId] = {
@@ -68,7 +87,10 @@ export default function MenuPage() {
       categoriesObj[catId].total += 1;
     });
 
-    setMealsCategories(Object.values(categoriesObj));
+    setSidebarData({
+      categories: Object.values(categoriesObj),
+      price: [minPrice, maxPrice],
+    });
   }
 
   function filterMealsByCategory(cat: string, mealsList = meals) {
@@ -88,7 +110,10 @@ export default function MenuPage() {
       <div className="container">
         <div className="flex flex-row mt-12 mb-12">
           <div className="basis-1/4">
-            <MenuSidebar categories={mealsCategories} />
+            <MenuSidebar
+              categories={sidebarData.categories}
+              price={sidebarData.price}
+            />
           </div>
           <div className="basis-3/4 shopItems">
             <ViewDisplayMode />

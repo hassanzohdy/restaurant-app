@@ -28,6 +28,7 @@ export default function BlogPage() {
       setIsLoading(false);
     });
   });
+
   return (
     <>
       {loading && (

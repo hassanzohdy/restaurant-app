@@ -10,6 +10,7 @@ import { getPost } from "../../services";
 import PostSiblings from "../BlogPage/components/PostSiblings";
 import BlogSidebar from "./BlogSidebar";
 import "./style.scss";
+
 export default function PostDetailsPage({ params }: { params: any }) {
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setIsLoading] = useState(true);
@@ -22,11 +23,7 @@ export default function PostDetailsPage({ params }: { params: any }) {
   });
 
   if (loading) {
-    return (
-      <>
-        <Loader />
-      </>
-    );
+    return <Loader />;
   }
 
   if (!post) return null;

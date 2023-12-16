@@ -16,6 +16,7 @@ export default function BookAddresses() {
   );
 
   const defaultSelectedId = addresses.find(address => address.isPrimary)?.id;
+
   useEffect(() => {
     setSelectedAddressId(defaultSelectedId);
   }, [addresses]);
@@ -39,7 +40,7 @@ export default function BookAddresses() {
         {trans("bookAddresses")}
       </h4>
       <div className="flex flex-col gap-2">
-        {addresses?.map((address, index) => (
+        {addresses.map((address, index) => (
           <div
             key={index}
             className={cn(
@@ -94,6 +95,7 @@ export default function BookAddresses() {
             </div>
           </div>
         ))}
+
         <Button
           className="bg-primary-main ltr:ml-auto rtl:mr-auto w-fit py-1 px-2 rounded-xl hover:bg-primary-hover mt-3"
           onClick={() => selectAddress(selectedAddressId)}>

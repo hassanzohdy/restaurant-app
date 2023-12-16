@@ -8,11 +8,12 @@ import { Button } from "apps/front-office/design-system/components/Button";
 export default function DefaultSelectedAddress() {
   const addresses = addressesAtom.useValue();
 
-  const selectedAddress =
-    addresses.find(address => address.isPrimary) ||
-    defaultAddressAtom.update(false);
+  const selectedAddress = addresses.find(address => address.isPrimary);
 
-  if (!selectedAddress) return null;
+  if (!selectedAddress) {
+    defaultAddressAtom.update(false);
+    return null;
+  }
 
   const handelChangeAddress = () => {
     defaultAddressAtom.update(false);

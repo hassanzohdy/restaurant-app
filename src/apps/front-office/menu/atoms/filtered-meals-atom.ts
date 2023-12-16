@@ -11,8 +11,41 @@ type FilteredMealsAtom = {
 
 export const filteredMealsAtom = atom<FilteredMealsAtom>({
   key: "filteredMeals",
-  beforeUpdate: value => {
-    return value;
+  beforeUpdate: data => {
+    const { search, activeCategory, meals, price } = data;
+
+    if (!search && !activeCategory && !price[0] && !price[1]) {
+      data.filteredMealsList = [...meals];
+    } else {
+      data.filteredMealsList = meals.filter(meal => {
+        // filter by search text
+        if (search) {
+          const found = meal.name.match(new RegExp(search, "i"));
+
+          if (!found) return false;
+        }
+
+        // filter by category
+        if (activeCategory) {
+          if (meal.category.id !== activeCategory) return false;
+        }
+
+        // filter by price
+        if (price[0] && price[1]) {
+          const mealPrice = meal.price;
+          const minPrice = price[0];
+          const maxPrice = price[1];
+
+          if (mealPrice < minPrice) return false;
+
+          if (mealPrice > maxPrice) return false;
+        }
+
+        return true;
+      });
+    }
+
+    return data;
   },
   default: {
     meals: [],

@@ -88,3 +88,26 @@ export default function useCart() {
     state,
   };
 }
+
+function addMealCart(id: number, amount: number) {
+  addToCart(id, amount)
+    .then(() => {
+      showToastMessage({
+        message: trans("addedToCart"),
+        type: "success",
+      });
+    })
+    .catch(error => {
+      if (error.response?.data.maxAmountPerOrder) {
+        toastError(error.response.data.maxAmountPerOrder);
+      } else {
+        toastError(trans("somethingWentWrong"));
+      }
+    });
+}
+
+export function useCart2() {
+  return {
+    addToCart: addMealCart,
+  };
+}

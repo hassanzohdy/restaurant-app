@@ -4,6 +4,7 @@ import Stars from "apps/front-office/design-system/components/Stars";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
 import { TbShoppingBag } from "react-icons/tb";
+import { useCart2 } from "shared/hooks/useCart";
 import { Meal } from "../../utils/types";
 import MealCardFavorite from "./MealCardFavorite";
 
@@ -14,6 +15,7 @@ export type MealCardProps = {
 export default function MealCard({ meal }: MealCardProps) {
   const displayedPrice = price(meal?.price);
   const displayedSale = price(meal?.salePrice);
+  const { addToCart } = useCart2();
 
   return (
     <div className="p-3 group rounded-[2rem] border relative">
@@ -55,6 +57,7 @@ export default function MealCard({ meal }: MealCardProps) {
             </span>
           </div>
           <button
+            onClick={() => addToCart(meal.id, 1)}
             title={trans("addToCart")}
             className="bg-primary-main p-2 rounded-2xl hover:bg-primary-hover transition-colors">
             <TbShoppingBag color="#000"></TbShoppingBag>

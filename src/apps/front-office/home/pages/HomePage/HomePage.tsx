@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
+import InViewPort from "apps/front-office/design-system/components/InViewPort";
 import PopularDishes from "apps/front-office/home/pages/HomePage/PopularDishes";
 import Banners from "./components/Banners";
 import HomeBanner from "./components/HomeBanner";
@@ -16,7 +17,7 @@ export default function HomePage() {
       <Banners />
       <PopularDishes />
       <HomeBanner />
-      <LatestNews />
+      <InViewPort component={<LatestNews />} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { burgerAtom } from "../../../atoms/header-atoms";
+import { burgerAtom } from "../../../../../atoms/header-atoms";
 
 export default function BurgerIcon() {
   return (

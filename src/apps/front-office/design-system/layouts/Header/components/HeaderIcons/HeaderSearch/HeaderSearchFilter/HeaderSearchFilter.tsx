@@ -1,7 +1,7 @@
 import { Link } from "@mongez/react-router";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
-import { searchMealsAtom } from "../../../../atoms/header-atoms";
+import { searchMealsAtom } from "../../../../../../atoms/header-atoms";
 
 export default function HeaderSearchFilter() {
   const meals = searchMealsAtom.useValue();

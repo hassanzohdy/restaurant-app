@@ -1,5 +1,5 @@
 import { trans } from "@mongez/localization";
-import { wishListAtom } from "apps/front-office/design-system/layouts/Header/atoms/header-atoms";
+import { wishListAtom } from "apps/front-office/design-system/atoms/header-atoms";
 import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { toggleWishlist } from "apps/front-office/menu/services/wishlist-service";
 import { useState } from "react";

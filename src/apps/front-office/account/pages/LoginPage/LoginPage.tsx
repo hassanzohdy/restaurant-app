@@ -55,7 +55,7 @@ export default function LoginPage() {
             <div className="flex gap-5 place-items-center p-4 px-10 flex-col min-w-full">
               <LoginForm submitLogin={submitLogin} />
             </div>
-            <div className="min-w-full p-4 bg-[#f6f6f6]">
+            <div className="min-w-full p-4 bg-[#f6f6f6] invisible">
               <OtpForm />
             </div>
           </div>

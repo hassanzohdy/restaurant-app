@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
+import { useHeaderStateOpen } from "apps/front-office/design-system/hooks/headerStateHook";
 import { BsSearch } from "react-icons/bs";
-import { useHeaderStateOpen } from "../../Hooks/headerStateHook";
 import HeaderSearchForm from "../HeaderIcons/HeaderSearch/HeaderSearchForm";
 
 export default function HeaderSearch() {

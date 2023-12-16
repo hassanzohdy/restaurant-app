@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { useOnce } from "@mongez/react-hooks";
+import InViewPort from "apps/front-office/design-system/components/InViewPort";
 import Loader, {
   Error,
 } from "apps/front-office/design-system/components/Indicators/Indicators";
@@ -70,7 +71,7 @@ export default function MealDetailsPage({ params }: MealDetailsPageProps) {
       </div>
       <MealDetailsSection />
       <DescriptionAndReviews />
-      <YouMayAlsoWantToTrySection />
+      <InViewPort component={<YouMayAlsoWantToTrySection />} />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { useOnce } from "@mongez/react-hooks";
+import { queryString } from "@mongez/react-router";
 import Loader, {
   Error,
 } from "apps/front-office/design-system/components/Indicators/Indicators";
@@ -10,22 +11,25 @@ import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { getMeals } from "apps/front-office/menu/services/meals-service";
 import Breadcrumb from "design-system/layouts/Breadcrumb";
 import { useState } from "react";
+import { filteredMealsAtom } from "../../atoms/filtered-meals-atom";
 import MenuSidebar from "../../components/MenuSidebarSidebar";
 import "./MenuPage.scss";
 
 export default function MenuPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const [meals, setMeals] = useState<Meal[]>([]);
-  const [filteredMeals, setFilteredMeals] = useState<Meal[]>([]);
-  const [MealsCategories, setMealsCategories] = useState<any>({});
+  const meals = filteredMealsAtom.use("meals");
+
+  const [mealsCategories, setMealsCategories] = useState<any>({});
   const [error, setError] = useState<any>(null);
 
   useOnce(() => {
+    const category = queryString.get("cat");
+
     getMeals()
       .then(response => {
-        setMeals(response.data.meals);
-        setFilteredMeals(response.data.meals);
         getMealsCategoryCount(response.data.meals);
+        filteredMealsAtom.change("meals", response.data.meals);
+        filterMealsByCategory(category, response.data.meals);
       })
       .catch(error => {
         setError(
@@ -48,20 +52,30 @@ export default function MenuPage() {
   }
 
   function getMealsCategoryCount(meals: Meal[]) {
-    //This function is called directly after getting meals from Api
-    //It returns a dictionary with each category as a key and count of meals as value
-    const categoryDictionary = {};
+    const categoriesDic = {};
+
     meals.forEach(meal => {
-      categoryDictionary[meal.category.name]
-        ? (categoryDictionary[meal.category.name] += 1)
-        : (categoryDictionary[meal.category.name] = 1);
+      const catName = meal.category.name;
+
+      if (!categoriesDic[catName]) {
+        categoriesDic[catName] = 1;
+        return;
+      }
+
+      categoriesDic[catName] += 1;
     });
-    setMealsCategories(categoryDictionary);
+
+    setMealsCategories(categoriesDic);
   }
 
-  function filterMealsByCategory(cat: string) {
-    const filteredMeals = meals.filter(meal => meal.category.name === cat);
-    setFilteredMeals(filteredMeals);
+  function filterMealsByCategory(cat: string, mealsList = meals) {
+    if (!cat) {
+      filteredMealsAtom.change("filteredMealsList", mealsList);
+      return;
+    }
+
+    const filteredMeals = mealsList.filter(meal => meal.category.name === cat);
+    filteredMealsAtom.change("filteredMealsList", filteredMeals);
   }
 
   return (
@@ -73,12 +87,12 @@ export default function MenuPage() {
           <div className="basis-1/4">
             <MenuSidebar
               onCategorySelect={filterMealsByCategory}
-              categories={MealsCategories}
+              categoriesDic={mealsCategories}
             />
           </div>
           <div className="basis-3/4 shopItems">
             <ViewDisplayMode />
-            <MealsContainer meals={filteredMeals} />
+            <MealsContainer />
           </div>
         </div>
       </div>

@@ -38,7 +38,11 @@ export default function BlogSearchPage({ params }: { params: any }) {
       )}
       {!loading && (
         <>
-          <BlogList blogData={blogData} pagination={pagination} />
+          <BlogList
+            blogData={blogData}
+            params={params}
+            pagination={pagination}
+          />
         </>
       )}
     </>

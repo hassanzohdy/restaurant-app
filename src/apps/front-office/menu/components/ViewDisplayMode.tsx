@@ -1,12 +1,17 @@
+import { trans } from "@mongez/localization";
 import { menuDisplayModeAtom } from "apps/front-office/menu/atoms/menu-display-mode-atom";
 import { BsGrid, BsGridFill, BsList } from "react-icons/bs";
+import { filteredMealsAtom } from "../atoms/filtered-meals-atom";
 
 export default function ViewDisplayMode() {
+  const { filteredMealsList, meals } = filteredMealsAtom.useValue();
   const displayMode = menuDisplayModeAtom.useValue();
 
   return (
     <>
-      <p className="float-left text-gray-400 pl-9"> Showing 6 of 10 results</p>
+      <div className="float-left text-gray-400 pl-9">
+        {trans("showing")} ({filteredMealsList.length} - {meals.length})
+      </div>
       <div className="flex flex-row justify-end">
         <button onClick={() => menuDisplayModeAtom.update("grid")}>
           {displayMode === "grid" ? (

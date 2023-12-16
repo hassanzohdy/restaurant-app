@@ -1,4 +1,4 @@
-import { useHeaderStateToggle } from "apps/front-office/design-system/layouts/Header/Hooks/headerStateHook";
+import { useHeaderStateToggle } from "apps/front-office/design-system/hooks/headerStateHook";
 import { BiUser } from "react-icons/bi";
 import UserDropDown from "../../DropDown/UserDropDown";
 

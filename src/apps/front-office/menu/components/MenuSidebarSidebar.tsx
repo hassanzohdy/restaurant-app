@@ -1,59 +1,108 @@
 import { CiBowlNoodles, CiBurger, CiCoffeeCup, CiPizza } from "react-icons/ci";
 import { TbCake } from "react-icons/tb";
 
-import { BestDealItemList } from "./BestDealItem";
+import { trans } from "@mongez/localization";
+import { queryString } from "@mongez/react-router";
+import { cn } from "apps/front-office/design-system/utils/cn";
+import { useState } from "react";
+import { MdOutlineClose } from "react-icons/md";
+import { filteredMealsAtom } from "../atoms/filtered-meals-atom";
 import "./MenuSidebarSidebar.scss";
 
 type MenuSidebarProps = {
-  categories: any;
+  categoriesDic: { [key: string]: number };
   onCategorySelect: (cat: string) => void;
 };
 
-export default function MenuSidebar(props: MenuSidebarProps) {
-  const { categories } = props;
+export default function MenuSidebar({
+  categoriesDic,
+  onCategorySelect,
+}: MenuSidebarProps) {
+  const [search, setSearch] = useState("");
+  const { meals } = filteredMealsAtom.value;
+
+  const filterSearchMeals = (query: string) => {
+    const regExp = new RegExp(query, "i");
+    const filteredMeals = query
+      ? meals.filter(
+          meal => regExp.test(meal.name) || regExp.test(meal.description),
+        )
+      : meals;
+
+    filteredMealsAtom.change("filteredMealsList", filteredMeals);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    filterSearchMeals(value);
+    setSearch(value);
+  };
 
   return (
     <div className="flex flex-col sidebar">
-      <div className="h-full  border-2 rounded-2xl">
-        <h2 className="font-black my-4 ml-4 text-lg">Categories</h2>
-        {/* Category list component takes categories object (key-CategoryName: value-CategoryCount) from parent component
-        and loop on it to create category list */}
-        <CateogoryList
-          categories={categories}
-          onCategorySelect={props.onCategorySelect}
+      <div className="h-full  border-2 rounded-2xl p-4 space-y-6">
+        <div className="flex justify-between gap-4">
+          <h2 className="font-black text-lg">{trans("categories")}</h2>
+          <button
+            className="bg-primary-main/60 hover:bg-primary-main transition-colors rounded-full w-6 h-6 p-1"
+            onClick={() => {
+              onCategorySelect("");
+              queryString.update({});
+            }}>
+            <MdOutlineClose />
+          </button>
+        </div>
+        <CategoriesList
+          categoriesDic={categoriesDic}
+          onCategorySelect={onCategorySelect}
         />
       </div>
       <div>
         <input
-          className="w-full h-12 border-2 rounded-2xl border-amber-400 mt-6 py-2 px-3"
-          placeholder="Search products..."
+          value={search}
+          onChange={handleSearchChange}
+          className="w-full h-12 border-2 capitalize rounded-2xl focus-within:border-primary-main mt-6 py-2 px-3"
+          placeholder={trans("searchProducts")}
         />
       </div>
-      <div className="mt-6">
+      {/* <div className="mt-6">
         <BestDealItemList />
-      </div>
+      </div> */}
     </div>
   );
 }
 
-export function CateogoryList(props: MenuSidebarProps) {
-  const { categories } = props;
-  const keysArr = Object.keys(categories);
+export function CategoriesList({
+  categoriesDic,
+  onCategorySelect,
+}: MenuSidebarProps) {
+  const keysArr = Object.keys(categoriesDic);
+  const [activeCategory, setActiveCategory] = useState(
+    queryString.get("cat") || "",
+  );
 
   return (
-    <ul role="list" className="m-4 p-4 categoryList rounded-2xl">
+    <ul role="list" className="categoryList rounded-2xl p-2">
       {keysArr.map((category, index) => {
         return (
           <li key={index} className="mb-3">
             <button
-              className="flex justify-between"
-              onClick={() => props.onCategorySelect(category)}>
+              className={cn(
+                "flex justify-between",
+                activeCategory === category && "text-primary-main",
+              )}
+              onClick={() => {
+                onCategorySelect(category);
+                setActiveCategory(category);
+                queryString.update({ cat: category });
+              }}>
               <div className="flex flex-row">
                 <CategoryImage categoryName={category} />
                 <p>{category}</p>
               </div>
               <div>
-                <p>({categories[category] ?? 0})</p>
+                <p>({categoriesDic[category] ?? 0})</p>
               </div>
             </button>
           </li>

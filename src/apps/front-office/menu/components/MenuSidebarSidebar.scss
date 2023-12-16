@@ -13,6 +13,24 @@
   cursor: pointer;
 }
 
+.sidebar ul {
+  margin-top: 10px !important;
+}
+
 .sidebar ul li:hover p {
   color: #ffc222;
+}
+
+.range-slider {
+  background-color: lightgray;
+  height: 5px;
+}
+
+.range-slider .range-slider__range {
+  background-color: #ffc222;
+}
+.range-slider .range-slider__thumb {
+  width: 15px;
+  height: 15px;
+  background-color: #ffc222;
 }

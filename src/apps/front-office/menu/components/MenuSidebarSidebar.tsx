@@ -1,26 +1,21 @@
 import { trans } from "@mongez/localization";
-import { queryString } from "@mongez/react-router";
-import { cn } from "apps/front-office/design-system/utils/cn";
 import { useState } from "react";
 import { CiBowlNoodles, CiBurger, CiCoffeeCup, CiPizza } from "react-icons/ci";
-import { MdOutlineClose } from "react-icons/md";
 import { TbCake } from "react-icons/tb";
 import RangeSlider from "react-range-slider-input";
 import { filteredMealsAtom } from "../atoms/filtered-meals-atom";
 
+import { Category } from "apps/front-office/utils/types";
 import "react-range-slider-input/dist/style.css";
 import "./MenuSidebarSidebar.scss";
+import SidebarCategoryItem from "./SidebarCategoryItem";
+import UnselectCategoryButton from "./UnselectCategoryButton";
 
 type MenuSidebarProps = {
-  categoriesDic: { [key: string]: number };
-  onCategorySelect: (cat: string) => void;
+  categories: Category[];
 };
 
-export default function MenuSidebar({
-  categoriesDic,
-  onCategorySelect,
-}: MenuSidebarProps) {
-  const [search, setSearch] = useState("");
+export default function MenuSidebar({ categories }: MenuSidebarProps) {
   const { meals } = filteredMealsAtom.value;
   const activeCategory = filteredMealsAtom.use("activeCategory");
   const [value, setValue] = useState([25, 100]);
@@ -37,41 +32,51 @@ export default function MenuSidebar({
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+    const value = e.target.value.trim();
 
-    filterSearchMeals(value);
-    setSearch(value);
+    //filterSearchMeals(value);
+    filteredMealsAtom.change("search", value);
   };
+
+  // function filterMeals(
+  //   searchString: string,
+  //   categoryType?: string,
+  //   priceRange?: [number, number],
+  // ) {
+  //   //meals array from response
+  //   //1- search input
+  //   const regExp = new RegExp(search, "i");
+  //   let filteredMeals = searchString
+  //     ? meals.filter(
+  //         meal => regExp.test(meal.name) || regExp.test(meal.description),
+  //       )
+  //     : meals;
+
+  //   console.log(filteredMeals);
+
+  //   //2- category filter
+  //   filteredMeals = filteredMeals.filter(
+  //     meal => meal.category.name === categoryType,
+  //   );
+
+  //   filteredMealsAtom.change("filteredMealsList", filteredMeals);
+  // }
 
   return (
     <div className="flex flex-col sidebar">
       <div>
         <input
-          value={search}
           onChange={handleSearchChange}
           className="w-full h-12 border-2 capitalize rounded-2xl focus-within:border-primary-main mt-6 py-2 px-3"
           placeholder={trans("searchProducts")}
         />
       </div>
-      <div className="h-full  border-2 rounded-2xl p-4 space-y-6 mt-8">
+      <div className="h-full border-2 rounded-2xl p-4 space-y-6 mt-8">
         <div className="flex justify-between gap-4">
           <h2 className="font-black text-lg">{trans("categories")}</h2>
-          {activeCategory !== "" && (
-            <button
-              className="bg-primary-main/60 hover:bg-primary-main transition-colors rounded-full w-6 h-6 p-1"
-              onClick={() => {
-                onCategorySelect("");
-                filteredMealsAtom.change("activeCategory", "");
-                queryString.update({});
-              }}>
-              <MdOutlineClose />
-            </button>
-          )}
+          <UnselectCategoryButton />
         </div>
-        <CategoriesList
-          categoriesDic={categoriesDic}
-          onCategorySelect={onCategorySelect}
-        />
+        <CategoriesList categories={categories} />
       </div>
       <div className="mt-8">
         <h2 className="font-black text-lg mb-4">{trans("filterByPrice")}</h2>
@@ -91,41 +96,11 @@ export default function MenuSidebar({
   );
 }
 
-export function CategoriesList({
-  categoriesDic,
-  onCategorySelect,
-}: MenuSidebarProps) {
-  const keysArr = Object.keys(categoriesDic);
-  // const [activeCategory, setActiveCategory] = useState(
-  //   queryString.get("cat") || "",
-  // );
-  const activeCategory = filteredMealsAtom.use("activeCategory");
-
+export function CategoriesList({ categories }: MenuSidebarProps) {
   return (
     <ul role="list" className="categoryList rounded-2xl p-2">
-      {keysArr.map((category, index) => {
-        return (
-          <li key={index} className="mb-3">
-            <button
-              className={cn(
-                "flex justify-between",
-                activeCategory === category && "text-primary-main",
-              )}
-              onClick={() => {
-                onCategorySelect(category);
-                filteredMealsAtom.change("activeCategory", category);
-                queryString.update({ cat: category });
-              }}>
-              <div className="flex flex-row">
-                <CategoryImage categoryName={category} />
-                <p>{category}</p>
-              </div>
-              <div>
-                <p>({categoriesDic[category] ?? 0})</p>
-              </div>
-            </button>
-          </li>
-        );
+      {categories.map((category, index) => {
+        return <SidebarCategoryItem key={index} category={category} />;
       })}
     </ul>
   );

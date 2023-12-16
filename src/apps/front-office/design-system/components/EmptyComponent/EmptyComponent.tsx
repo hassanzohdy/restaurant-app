@@ -6,12 +6,14 @@ export type EmptyComponentProps = {
   title: string;
   description?: string;
   icon?: React.ReactNode;
+  goBackPath?: string;
 };
 
 export default function EmptyComponent({
   title,
   description,
   icon,
+  goBackPath = URLS.home,
 }: EmptyComponentProps) {
   return (
     <div className="empty text-center py-[100px] max-lg:py-[80px] max-sm:py-[70px]">
@@ -26,7 +28,7 @@ export default function EmptyComponent({
           {description}
         </p>
         <BaseLink
-          href={URLS.home}
+          href={goBackPath}
           variant="primary"
           className="px-6 py-4 text-[18px] max-sm:text-[16px] max-sm:px-4 max-sm:py-3">
           {trans("continueShopping")}

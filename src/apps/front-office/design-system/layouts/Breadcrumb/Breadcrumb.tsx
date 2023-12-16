@@ -1,12 +1,13 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import { isLTR } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
-import { BiChevronRight } from "react-icons/bi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import styles from "./_Breadcrumb.module.scss";
 
 export type BreadcrumbProps = {
   title: string;
-  navItems: { name: string; url?: string }[];
+  navItems: { name: string; url?: string }[] | undefined;
 };
 
 export default function Breadcrumb({ title, navItems }: BreadcrumbProps) {
@@ -20,27 +21,41 @@ export default function Breadcrumb({ title, navItems }: BreadcrumbProps) {
           </h1>
           <nav className="flex justify-center">
             <ol className="inline-flex items-center justify-center text-[15px]">
-              <li className="flex items-center mr-1">
+              <li className="flex items-center ">
                 <Link
                   to={URLS.home}
-                  className="mr-1 text-gray-400 hover:text-primary-hover">
+                  className="mx-1 text-gray-400 hover:text-primary-hover">
                   {trans("home")}
                 </Link>
-                <BiChevronRight strokeWidth="2" />
+                {isLTR() ? (
+                  <BiChevronRight strokeWidth="2" />
+                ) : (
+                  <BiChevronLeft strokeWidth="2" />
+                )}
               </li>
-              {navItems.map((item, index) => {
+              {navItems?.map((item, index) => {
                 if (item.url) {
                   return (
                     <li className="flex items-center mr-1" key={index}>
-                      <Link to={item.url} className="mr-1 text-gray-400">
+                      <Link
+                        to={item.url}
+                        className="mx-1 hover:text-primary-hover text-gray-400">
                         {trans(item.name)}
                       </Link>
-                      <BiChevronRight strokeWidth="2" />
+                      {index !== navItems.length - 1 && (
+                        <>
+                          {isLTR() ? (
+                            <BiChevronRight strokeWidth="2" />
+                          ) : (
+                            <BiChevronLeft strokeWidth="2" />
+                          )}
+                        </>
+                      )}
                     </li>
                   );
                 } else {
                   return (
-                    <li className="flex items-center" key={index}>
+                    <li className="flex mx-1 items-center" key={index}>
                       <span>{trans(item.name)}</span>
                     </li>
                   );

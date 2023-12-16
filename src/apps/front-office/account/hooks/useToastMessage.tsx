@@ -28,9 +28,26 @@ export const showToastMessage = ({
   return toastId;
 };
 
+export const toastSuccess = (message: string) => {
+  return showToastMessage({
+    message,
+    type: "success",
+    position: "TOP_RIGHT",
+  });
+};
+
 export const toastError = (message: string) => {
   return showToastMessage({
     message,
     type: "error",
+    position: "TOP_LEFT",
+  });
+};
+
+export const toastWarning = (message: string) => {
+  return showToastMessage({
+    message,
+    type: "warning",
+    position: "TOP_LEFT",
   });
 };

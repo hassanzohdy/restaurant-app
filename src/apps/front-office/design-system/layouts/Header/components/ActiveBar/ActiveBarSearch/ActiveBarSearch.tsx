@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { AiOutlineSearch } from "react-icons/ai";
-import useResetStatesOnAction from "../../../Hooks/useResetStatesOnAction";
+import useResetStatesOnAction from "../../../../../hooks/useResetStatesOnAction";
 import { searchActiveBarAtom } from "../activebar-atom/acivebar-atom";
 
 export default function ActiveBarMyAccount() {

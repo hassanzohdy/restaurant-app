@@ -54,9 +54,7 @@ export default function PostDetailsPage({ params }: { params: any }) {
                   />
                 </div>
                 <div className="p-5 pb-10 flex flex-col gap-2">
-                  <h2 className="font-bold text-3xl w-fit hover:text-primary-hover transition duration-150 cursor-pointer">
-                    {post.title}
-                  </h2>
+                  <h2 className="font-bold text-3xl w-fit   ">{post.title}</h2>
 
                   <p
                     className="text-gray-600 text-md break-keep"
@@ -74,14 +72,14 @@ export default function PostDetailsPage({ params }: { params: any }) {
                       }}
                     />
                   </div>
-                  <div className="text-gray-600 text-md break-all">
+                  {/* <div className="text-gray-600 text-md break-all">
                     <p
                       className="text-gray-600 text-md break-all w-full code"
                       dangerouslySetInnerHTML={{
                         __html: post.description,
                       }}
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <PostSiblings params={params} />

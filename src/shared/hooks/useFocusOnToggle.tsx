@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export default function useFocusOnToggle(
   inputRef: HTMLInputElement | null,
-  watchState: boolean,
+  watchState: boolean | undefind,
 ) {
   useEffect(() => {
     if (inputRef && watchState) {

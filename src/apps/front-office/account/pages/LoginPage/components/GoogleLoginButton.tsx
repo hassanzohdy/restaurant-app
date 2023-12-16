@@ -2,25 +2,24 @@ import { trans } from "@mongez/localization";
 import { TokenResponse, useGoogleLogin } from "@react-oauth/google";
 import { showToastMessage } from "apps/front-office/account/hooks/useToastMessage";
 import { loginByGoogle } from "apps/front-office/account/service/auth";
-import { useEffect } from "react";
+import { googleIcon } from "shared/assets";
 
 export default function GoogleLoginButton() {
-  useEffect(() => {}, []);
-
   const handleOnSuccess = (tokenResponse: TokenResponse) => {
-    console.log(tokenResponse);
     loginByGoogle(tokenResponse.access_token)
-      .then(response => {
-        console.log(response);
-        // user.login(response.data.user);
+      .then(() => {
+        showToastMessage({
+          message: trans("successfullyLogin"),
+        });
+        location.reload();
       })
       .catch(({ response }) => {
-        console.log(response);
         const error = response.data?.message;
 
         showToastMessage({
           message: error || trans("somethingWentWrong"),
           type: "error",
+          position: "TOP_LEFT",
         });
       });
   };
@@ -30,8 +29,11 @@ export default function GoogleLoginButton() {
   });
 
   return (
-    <div className="div-button">
-      <button onClick={() => login()}>google</button>
-    </div>
+    <button
+      onClick={() => login()}
+      className="flex flex-row items-center gap-2 border w-fit border-gray-300 py-1 px-2 rounded-md shadow-md">
+      <img src={googleIcon} alt="login with google" />
+      <p>Login with Google</p>
+    </button>
   );
 }

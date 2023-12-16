@@ -39,7 +39,11 @@ export default function BlogPageTags({ params }: { params: any }) {
       )}
       {!loading && (
         <>
-          <BlogList blogData={blogData} pagination={pagination} />
+          <BlogList
+            params={params}
+            blogData={blogData}
+            pagination={pagination}
+          />
         </>
       )}
     </>

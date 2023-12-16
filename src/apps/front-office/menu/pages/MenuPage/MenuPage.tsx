@@ -52,20 +52,23 @@ export default function MenuPage() {
   }
 
   function getMealsCategoryCount(meals: Meal[]) {
-    const categoriesDic = {};
+    const categoriesObj = {};
 
     meals.forEach(meal => {
-      const catName = meal.category.name;
+      const catId = meal.category.id;
 
-      if (!categoriesDic[catName]) {
-        categoriesDic[catName] = 1;
+      if (!categoriesObj[catId]) {
+        categoriesObj[catId] = {
+          ...meal.category,
+          total: 1,
+        };
         return;
       }
 
-      categoriesDic[catName] += 1;
+      categoriesObj[catId].total += 1;
     });
 
-    setMealsCategories(categoriesDic);
+    setMealsCategories(Object.values(categoriesObj));
   }
 
   function filterMealsByCategory(cat: string, mealsList = meals) {
@@ -85,10 +88,7 @@ export default function MenuPage() {
       <div className="container">
         <div className="flex flex-row mt-12 mb-12">
           <div className="basis-1/4">
-            <MenuSidebar
-              onCategorySelect={filterMealsByCategory}
-              categoriesDic={mealsCategories}
-            />
+            <MenuSidebar categories={mealsCategories} />
           </div>
           <div className="basis-3/4 shopItems">
             <ViewDisplayMode />

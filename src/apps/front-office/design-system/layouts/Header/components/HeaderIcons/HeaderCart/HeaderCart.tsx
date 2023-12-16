@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { userAtom } from "apps/front-office/account/atoms/user-atom";
 import { TiShoppingCart } from "react-icons/ti";
-import { useHeaderStateOpen } from "../../../Hooks/headerStateHook";
+import { useHeaderStateOpen } from "../../../../../hooks/headerStateHook";
 import CartMenu from "./CartMenu";
 
 export default function HeaderCart() {

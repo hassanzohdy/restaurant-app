@@ -13,13 +13,6 @@ export default function AddMealToCart() {
   const [amount, setAmount] = useState(1);
   const { maxAmountPerOrder, isAddingToCart, addMealToCart } = useCart();
 
-  // TODO: REVIEW MY CODE :)
-
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [maxAmountPerOrder, setMaxAmountPerOrder] = useState(
-  //   meal.maxAmountPerOrder,
-  // );
-
   const incrementAmount = () => {
     if (maxAmountPerOrder && amount >= maxAmountPerOrder) {
       return;
@@ -32,31 +25,6 @@ export default function AddMealToCart() {
     const newAmount = amount === 1 ? 1 : amount - 1;
     setAmount(newAmount);
   };
-
-  // const addMealToCart = () => {
-  //   setIsLoading(true);
-  //   addToCart(meal.id, amount)
-  //     .then(() => {
-  //       showToastMessage({
-  //         message: trans("addedToCart"),
-  //         type: "success",
-  //       });
-  //     })
-  //     .catch(error => {
-  //       showToastMessage({
-  //         message: trans("somethingWentWrong"),
-  //         type: "error",
-  //       });
-
-  //       if (error.response?.data.maxAmountPerOrder) {
-  //         setAmount(error.response.data.maxAmountPerOrder);
-  //         setMaxAmountPerOrder(error.response.data.maxAmountPerOrder);
-  //       }
-  //     })
-  //     .finally(() => {
-  //       setIsLoading(false);
-  //     });
-  // };
 
   return (
     <>

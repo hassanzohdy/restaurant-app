@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { Link } from "@mongez/react-router";
-import CheckoutPhoneInput from "apps/front-office/checkout/components/Form/CheckoutPhoneInput";
+import CheckoutPhoneInput from "apps/front-office/checkout/components/Checkout/Form/CheckoutPhoneInput";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";

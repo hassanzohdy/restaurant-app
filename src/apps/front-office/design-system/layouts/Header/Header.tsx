@@ -1,9 +1,9 @@
-import useIsScrollTop from "./Hooks/useIsScrollTop";
+import useIsScrollTop from "../../hooks/useIsScrollTop";
 import HeaderContact from "./components/HeaderContact";
 import HeaderIcons from "./components/HeaderIcons";
 import BurgerIcon from "./components/HeaderIcons/BurgerIcon";
 import HeaderLogo from "./components/HeaderLogo";
-import HeaderMenus from "./components/HeaderMenus";
+import HeaderMenus from "./components/HeaderLinks";
 import HeaderPhone from "./components/HeaderPhone";
 
 export default function Header() {

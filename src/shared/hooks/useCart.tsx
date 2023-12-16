@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { current } from "@mongez/react";
 import {
   showToastMessage,
   toastError,
@@ -8,10 +9,12 @@ import {
   getCart,
   removeFromCart,
 } from "apps/front-office/cart/services/cart-service";
-import { useHeaderState } from "apps/front-office/design-system/layouts/Header/Hooks/headerStateHook";
+import { useHeaderState } from "apps/front-office/design-system/hooks/headerStateHook";
 import { State } from "apps/front-office/design-system/layouts/Header/components/HeaderIcons/HeaderCart/CartProducts/CartProducts";
 import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
+import URLS from "apps/front-office/utils/urls";
 import { useEffect, useState } from "react";
+import useGetBaseRoute from "./useGetBaseRoute";
 
 export default function useCart() {
   const meal = mealAtom.useValue();
@@ -24,6 +27,8 @@ export default function useCart() {
   const [maxAmountPerOrder, setMaxAmountPerOrder] = useState(
     meal.maxAmountPerOrder,
   );
+  // basePath(root route) is need for fetching the data on checkout page if this page is reloaded
+  const basePath = useGetBaseRoute(current("route"));
 
   const addMealToCart = (id: number, amount: number) => {
     setIsLoading(true);
@@ -53,8 +58,9 @@ export default function useCart() {
     });
   };
 
+  const onCheckoutPage = basePath === URLS.checkout.page;
   useEffect(() => {
-    if (state !== "initial" || !opened) return;
+    if (state !== "initial" || (!onCheckoutPage && !opened)) return;
 
     setState("loading");
 

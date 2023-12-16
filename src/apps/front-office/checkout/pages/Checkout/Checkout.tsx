@@ -19,7 +19,7 @@ const emptyCartInfo = {
 };
 
 export default function Checkout() {
-  const items = cartAtom.useValue().items;
+  const items = cartAtom.use("items");
   const { state, error } = useCart();
 
   if (state === "loading") {

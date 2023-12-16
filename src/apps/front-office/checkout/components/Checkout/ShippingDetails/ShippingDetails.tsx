@@ -16,7 +16,7 @@ export default function ShippingDetails() {
   const { state, error } = getAddressesData();
   const addresses = addressesAtom.useValue();
 
-  const isDefaultAddress = defaultAddressAtom.useValue() ? (
+  const addressesContent = defaultAddressAtom.useValue() ? (
     <DefaultSelectedAddress />
   ) : (
     <>
@@ -24,6 +24,7 @@ export default function ShippingDetails() {
       <AddNewAddressesForm />
     </>
   );
+
   if (state === "loading") {
     return (
       <div className="w-full flex flex-col gap-3">
@@ -46,7 +47,7 @@ export default function ShippingDetails() {
       </h3>
       <div className="border rounded-xl p-3 w-full">
         <div>
-          {addresses.length === 0 ? <AddAddressBookForm /> : isDefaultAddress}
+          {addresses.length === 0 ? <AddAddressBookForm /> : addressesContent}
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import useAddresses from "shared/hooks/useAddresses";
 import EditThisAddress from "../EditThisAddress";
 
 export default function BookAddresses() {
-  const { selectAddress, handleDeleteAddress } = useAddresses();
+  const { selectAddress } = useAddresses();
   const addresses = addressesAtom.useValue();
 
   const [selectedAddressId, setSelectedAddressId] = useState<number>();

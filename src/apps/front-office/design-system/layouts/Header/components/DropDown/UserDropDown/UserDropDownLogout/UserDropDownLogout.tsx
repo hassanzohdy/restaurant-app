@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { useLogout } from "apps/front-office/account/hooks";
-import { useHeaderState } from "apps/front-office/design-system/layouts/Header/Hooks/headerStateHook";
+import { useHeaderState } from "apps/front-office/design-system/hooks/headerStateHook";
 import URLS from "apps/front-office/utils/urls";
 import { IoMdLogOut } from "react-icons/io";
 

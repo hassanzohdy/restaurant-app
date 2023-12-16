@@ -11,10 +11,10 @@ groupedTranslations({
   },
   menu: {
     en: "Menu",
-    ar: "قائمة الطعام",
+    ar: "القائمة",
   },
   about: {
-    en: "About Us",
+    en: "About us",
     ar: "من نحن",
   },
   blog: {
@@ -22,7 +22,7 @@ groupedTranslations({
     ar: "المدونة",
   },
   contactUs: {
-    en: "Contact Us",
+    en: "Contact us",
     ar: "اتصل بنا",
   },
 
@@ -140,19 +140,7 @@ groupedTranslations({
   },
   close: {
     en: "CLOSE",
-    ar: "أغلاق",
-  },
-  Home: {
-    en: "Home",
-    ar: "الرئيسية",
-  },
-  Menu: {
-    en: "Menu",
-    ar: "القائمة",
-  },
-  About: {
-    en: "About",
-    ar: "من نحن",
+    ar: "إغلاق",
   },
   shop: {
     en: "Shop",
@@ -487,7 +475,7 @@ groupedTranslations({
     ar: "عنوان الشحن",
   },
   cashOnDelivery: {
-    en: "cash on delivery",
+    en: "Cash on Delivery",
     ar: "الدفع عند  الاستلام",
   },
   // Privacy Policy
@@ -705,5 +693,101 @@ groupedTranslations({
   showing: {
     en: "Showing",
     ar: "عرض",
+  },
+  removeFromCart: {
+    en: "Remove from cart",
+    ar: "إزالة من العربة",
+  },
+  shippingDetails: {
+    en: "Shipping Details",
+    ar: "تفاصيل الشحن",
+  },
+  bookAddresses: {
+    en: "Book Addresses",
+    ar: "كتاب العناوين",
+  },
+  addNewAddress: {
+    en: "Add New Address",
+    ar: "إضافة عنوان جديد",
+  },
+  save: {
+    en: "Save",
+    ar: "حفظ",
+  },
+  changeThisAddress: {
+    en: "Change this address",
+    ar: "تغيير هذا العنوان",
+  },
+  selectedAddress: {
+    en: "Selected Address",
+    ar: "العنوان المحدد",
+  },
+  fullName: {
+    en: "Full Name",
+    ar: "الاسم الكامل",
+  },
+  streetAddress: {
+    en: "Street Address",
+    ar: "عنوان الشارع",
+  },
+  useThisAddress: {
+    en: "Use this address",
+    ar: "استخدام هذا العنوان",
+  },
+  editThisAddress: {
+    en: "Edit this address",
+    ar: "تعديل هذا العنوان",
+  },
+  edit: {
+    en: "Edit",
+    ar: "تعديل",
+  },
+  addressHasSelected: {
+    en: "Address has been selected",
+    ar: "تم تحديد العنوان",
+  },
+  addressSuccessfullyAdded: {
+    en: "Address successfully added",
+    ar: "تمت اضافة العنوان بنجاح",
+  },
+  addressHasUpdated: {
+    en: "Address has been updated",
+    ar: "تم تحديث العنوان",
+  },
+  addressSuccessfullyDeleted: {
+    en: "Address successfully deleted",
+    ar: "تم حذف العنوان بنجاح",
+  },
+  paymentDetails: {
+    en: "Payment Details",
+    ar: "تفاصيل الدفع",
+  },
+  paymentOptions: {
+    en: "Payment Options",
+    ar: "خيارات الدفع",
+  },
+  couponCode: {
+    en: "Coupon Code",
+    ar: "كود الخصم",
+  },
+  apply: {
+    en: "Apply",
+    ar: "تطبيق",
+  },
+  enterYourCouponCode: {
+    en: "Enter your coupon code",
+    ar: "ادخل كود الخصم",
+  },
+  addressSelectedButNotEdited: {
+    en: "Address is selected but it's not edited.",
+    ar: "تم تحديد العنوان ولكن لم يتم تعديله.",
+  },
+  orderNotes2: {
+    en: "Order Notes",
+    ar: "ملاحظات الطلب",
+  },
+  enterYourNotes: {
+    en: "Enter your notes",
+    ar: "ادخل ملاحظاتك",
   },
 });

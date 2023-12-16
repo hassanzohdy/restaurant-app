@@ -4,6 +4,7 @@ import { navigateTo } from "@mongez/react-router";
 import { userAtom } from "apps/front-office/account/atoms/user-atom";
 import user from "apps/front-office/account/user";
 import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
+import { addressesAtom } from "apps/front-office/checkout/atom/checkout-atoms";
 import { currentLocaleCode } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { AxiosResponse } from "axios";
@@ -43,6 +44,10 @@ endpointEvents.onSuccess((response: AxiosResponse) => {
 
   if (response?.data?.cart) {
     cartAtom.update(response.data.cart);
+  }
+
+  if (response?.data?.addresses) {
+    addressesAtom.update(response.data.addresses);
   }
 });
 

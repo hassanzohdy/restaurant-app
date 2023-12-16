@@ -1,12 +1,22 @@
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { cn } from "../../utils/cn";
 
-export default function Loader() {
+interface LoaderProps {
+  size?: number;
+  className?: string;
+}
+
+export default function Loader({ size = 50, className = "" }: LoaderProps) {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className={cn("flex justify-center items-center h-screen", className)}>
       <div className="animate-spin">
-        <AiOutlineLoading3Quarters size={50} className="text-primary-main" />
+        <AiOutlineLoading3Quarters
+          size={size}
+          title="loading"
+          className="text-primary-main"
+        />
       </div>
     </div>
   );

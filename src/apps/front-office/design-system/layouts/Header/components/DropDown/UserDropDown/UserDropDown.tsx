@@ -6,12 +6,13 @@ import {
   loginNeedVerifyAtom,
 } from "apps/front-office/account/atoms/auth-atoms";
 import { showToastMessage } from "apps/front-office/account/hooks/useToastMessage";
+import GoogleLoginButton from "apps/front-office/account/pages/LoginPage/components/GoogleLoginButton";
 import { login } from "apps/front-office/account/service/auth";
 import user from "apps/front-office/account/user";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import { EmailInputV2 } from "apps/front-office/design-system/components/Form/EmailInput";
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";
-import { useHeaderState } from "apps/front-office/design-system/layouts/Header/Hooks/headerStateHook";
+import { useHeaderState } from "apps/front-office/design-system/hooks/headerStateHook";
 import URLS from "apps/front-office/utils/urls";
 import UserDropDownLogout from "./UserDropDownLogout";
 import "./_userDropDown.scss";
@@ -52,7 +53,7 @@ export default function UserDropDown() {
   return (
     <div>
       <div
-        className={`absolute top-[59px] border-primary-main overflow-hidden border-t duration-200 shadow-list transition-all bg-white flex flex-col w-[300px] h-[380px] p-5  ${
+        className={`absolute top-[59px] border-primary-main overflow-hidden border-t duration-200 shadow-list transition-all bg-white flex flex-col w-[300px] p-5  ${
           opened ? "opacity-100 visible" : "opacity-0 invisible"
         } rtl:left-[0px] ltr:-right-[125px] pt-5 focus:opacity-100`}>
         <div className="h-[48px]">
@@ -86,6 +87,9 @@ export default function UserDropDown() {
 
           <SubmitButton>{trans("login")}</SubmitButton>
         </Form>
+        <div className="flex justify-center w-full my-3">
+          <GoogleLoginButton />
+        </div>
         <div>
           <Link
             to={URLS.auth.forgotPassword}

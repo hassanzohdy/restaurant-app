@@ -6,6 +6,7 @@ import Loader, {
 } from "apps/front-office/design-system/components/Indicators/Indicators";
 import URLS from "apps/front-office/utils/urls";
 import useCart from "shared/hooks/useCart";
+import CouponCode from "../CouponCode";
 import OrderDetailsTable from "../OrderDetailsTable";
 
 export default function UserOrder() {
@@ -31,6 +32,8 @@ export default function UserOrder() {
         {trans("yourOrder")}
       </h3>
       <OrderDetailsTable />
+
+      <CouponCode />
 
       <p className="font-thin text-sm">
         {trans("personalDataNotice")}{" "}

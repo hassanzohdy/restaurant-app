@@ -3,8 +3,8 @@ import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
 import { price } from "apps/front-office/utils/price";
 
 export default function OrderDetailsTable() {
-  const items = cartAtom.useValue().items;
-  const total = cartAtom.useValue().total.price;
+  const items = cartAtom.use("items");
+  const total = cartAtom.use("total").price;
 
   return (
     <table className="w-full">
@@ -18,9 +18,15 @@ export default function OrderDetailsTable() {
         {items.map(item => (
           <tr
             key={item.meal.id}
-            className="flex justify-between text-[#1E1D23] py-4 border-b w-full">
-            <th className="text-sm text-black font-thin">
-              {item.meal.name} x {item.quantity}
+            className="flex justify-between items-center text-[#1E1D23] py-4 border-b w-full">
+            <th className="text-sm text-black flex items-center gap-2">
+              <div className=" bg-border rounded-[44%] w-[64px] ">
+                <img src={item.meal.image.url} alt={item.meal.name} />
+              </div>
+              <div className="flex flex-col items-start gap-2">
+                <div className="text-primary-text">{item.meal.name}</div>
+                <div className="text-primary-main">x {item.quantity}</div>
+              </div>
             </th>
             <th className="text-sm">{price(Number(item.totalPrice))}</th>
           </tr>

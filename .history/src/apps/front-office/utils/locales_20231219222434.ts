@@ -795,8 +795,4 @@ groupedTranslations({
     en: "Enter your notes",
     ar: "ادخل ملاحظاتك",
   },
-  congratsSuccessfullySubscribed: {
-    en: "Congratulations! You have successfully subscribed.",
-    ar: "تهانينا! لقد قمت بالاشتراك بنجاح.",
-  },
 });

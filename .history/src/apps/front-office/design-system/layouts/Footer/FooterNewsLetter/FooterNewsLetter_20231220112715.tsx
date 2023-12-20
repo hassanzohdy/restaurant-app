@@ -1,23 +1,17 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
-import {
-  toastError,
-  toastSuccess,
-} from "apps/front-office/account/hooks/useToastMessage";
 import SubscriptionInput from "../SubscriptionInput";
 import emailSubscription from "../service/emailSubscription";
+import { toastError, toastSuccess } from "apps/front-office/account/hooks/useToastMessage";
 
 export default function FooterNewsLetter() {
   const handleSubmit = (e: any) => {
     console.log(e.values);
-    emailSubscription(e.values)
-      .then(() => {
-        toastSuccess(trans("congratsSuccessfullySubscribed"));
-      })
-      .catch(error => {
-        toastError(error.response.data.messages[0].error);
-      });
-  };
+    emailSubscription(e.values).then(() => {toastSuccess("congrats successfully subscribed..")}).
+    catch(() => {toastError("failed subscription")}))
+  }
+
+
 
   return (
     <>

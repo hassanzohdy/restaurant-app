@@ -1,22 +1,10 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
-import {
-  toastError,
-  toastSuccess,
-} from "apps/front-office/account/hooks/useToastMessage";
 import SubscriptionInput from "../SubscriptionInput";
-import emailSubscription from "../service/emailSubscription";
 
 export default function FooterNewsLetter() {
   const handleSubmit = (e: any) => {
-    console.log(e.values);
-    emailSubscription(e.values)
-      .then(() => {
-        toastSuccess(trans("congratsSuccessfullySubscribed"));
-      })
-      .catch(error => {
-        toastError(error.response.data.messages[0].error);
-      });
+    console.log(e.value);
   };
 
   return (
@@ -31,7 +19,7 @@ export default function FooterNewsLetter() {
         <div className="newsletter mt-[20px]">
           <Form onSubmit={handleSubmit}>
             <div className="form-group flex justify-between h-[54px] m-auto p-[5px] border border-[#262626] rounded max-lg:max-w-[320px] max-sm:max-w-[290px]">
-              <SubscriptionInput required name="email" type="email" />
+              <SubscriptionInput required emailRule />
               <button
                 type="submit"
                 className="rounded uppercase font-semibold px-[15px] text-[#1e1d23] bg-primary-main hover:bg-primary-hover hover:text-white duration-700 transition-all ease-in-out max-2xl:px-[8px] max-xl:px-[5px] max-xl:text-[13px] max-lg:px-[15px] max-lg:text-[14px]">

@@ -12,10 +12,11 @@ export default function FooterNewsLetter() {
     console.log(e.values);
     emailSubscription(e.values)
       .then(() => {
-        toastSuccess(trans("congratsSuccessfullySubscribed"));
+        toastSuccess("congrats successfully subscribed");
       })
       .catch(error => {
-        toastError(error.response.data.messages[0].error);
+        toastError(error.response.data);
+        // console.log(error.response.data.message[0].error);
       });
   };
 

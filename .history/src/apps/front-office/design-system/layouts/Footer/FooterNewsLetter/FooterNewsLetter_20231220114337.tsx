@@ -11,8 +11,9 @@ export default function FooterNewsLetter() {
   const handleSubmit = (e: any) => {
     console.log(e.values);
     emailSubscription(e.values)
-      .then(() => {
-        toastSuccess(trans("congratsSuccessfullySubscribed"));
+      .then(response => {
+        toastSuccess("congrats successfully subscribed");
+        console.log(response.data.messages[0]);
       })
       .catch(error => {
         toastError(error.response.data.messages[0].error);

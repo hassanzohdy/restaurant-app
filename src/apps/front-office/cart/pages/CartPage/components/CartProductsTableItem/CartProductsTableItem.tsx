@@ -8,10 +8,16 @@ import useCart from "shared/hooks/useCart";
 export type CartProductsTableItemProps = {
   cartItem: CartItem;
 };
-export default function CartProductsTableItem({
+export default function CartTableItem({
   cartItem,
 }: CartProductsTableItemProps) {
-  const { removeItemFromCart } = useCart();
+  const { removeItemFromCart, updateCartItem, isLoading } = useCart();
+
+  const handleUpdateCartItem = (quantity: number) => {
+    const newAmount = quantity > 0 ? quantity : 1;
+
+    updateCartItem(cartItem.id, newAmount);
+  };
 
   return (
     <tr className="border-b max-sm:block max-sm:pl-[100px] max-sm:relative">
@@ -38,8 +44,20 @@ export default function CartProductsTableItem({
         <span className="text-primary-main">{price(cartItem.price)}</span>
       </td>
       <td className="product-quantity w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3 max-sm:border-b">
-        <div className="quantity">
+        <div className="quantity flex items-center gap-2">
+          <button
+            disabled={isLoading}
+            className="w-8 h-8 disabled:opacity-60 disabled:cursor-not-allowed bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
+            onClick={() => handleUpdateCartItem(cartItem.quantity - 1)}>
+            -
+          </button>
           <span className="px-4 py-2">{cartItem.quantity}</span>
+          <button
+            disabled={isLoading}
+            className="w-8 h-8 disabled:opacity-60 disabled:cursor-not-allowed bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
+            onClick={() => handleUpdateCartItem(cartItem.quantity + 1)}>
+            +
+          </button>
         </div>
       </td>
       <td className="product-subtotal w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3">

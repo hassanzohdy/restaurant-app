@@ -7,7 +7,7 @@ export type CartProductsTableProps = {
   cartProducts: CartItem[];
 };
 
-export default function CartProductsTable({
+export default function CartItemsTable({
   cartProducts,
 }: CartProductsTableProps) {
   return (

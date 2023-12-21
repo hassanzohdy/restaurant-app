@@ -331,6 +331,14 @@ groupedTranslations({
     en: "Added to Cart",
     ar: "تمت اضافته",
   },
+  addedToWishlist: {
+    en: "Added to Wishlist",
+    ar: "تمت اضافتها",
+  },
+  removedFromWishlist: {
+    en: "Removed from Wishlist",
+    ar: "تمت إزالتها",
+  },
   call: {
     en: "Call and Order in",
     ar: "اتصل واطلب على",
@@ -706,6 +714,10 @@ groupedTranslations({
   shippingDetails: {
     en: "Shipping Details",
     ar: "تفاصيل الشحن",
+  },
+  shipping: {
+    en: "Shipping",
+    ar: "شحن",
   },
   bookAddresses: {
     en: "Book Addresses",

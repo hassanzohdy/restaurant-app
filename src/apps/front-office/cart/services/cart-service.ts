@@ -14,6 +14,10 @@ export function addToCart(meal: number, quantity = 1) {
   return endpoint.post("/cart", { meal, quantity });
 }
 
+export function updateCart(item: number, quantity: number) {
+  return endpoint.put("/cart/items/" + item, { quantity });
+}
+
 /**
  * Remove item from cart
  */

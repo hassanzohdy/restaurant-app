@@ -8,6 +8,7 @@ import {
   addToCart,
   getCart,
   removeFromCart,
+  updateCart,
 } from "apps/front-office/cart/services/cart-service";
 import { useHeaderState } from "apps/front-office/design-system/hooks/headerStateHook";
 import { State } from "apps/front-office/design-system/layouts/Header/components/HeaderIcons/HeaderCart/CartProducts/CartProducts";
@@ -23,7 +24,7 @@ export default function useCart() {
   const [state, setState] = useState<State>("initial");
   const [error, setError] = useState<any>(null);
 
-  const [isAddingToCart, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [maxAmountPerOrder, setMaxAmountPerOrder] = useState(
     meal.maxAmountPerOrder,
   );
@@ -41,15 +42,29 @@ export default function useCart() {
         });
       })
       .catch(error => {
-        toastError(trans("somethingWentWrong"));
-
         if (error.response?.data.maxAmountPerOrder) {
+          toastError(error.response.data.maxAmountPerOrder);
           setMaxAmountPerOrder(error.response.data.maxAmountPerOrder);
+        } else {
+          toastError(trans("somethingWentWrong"));
         }
       })
       .finally(() => {
         setIsLoading(false);
       });
+  };
+
+  const updateCartItem = (id: number, amount: number) => {
+    setIsLoading(true);
+
+    updateCart(id, amount)
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const removeItemFromCart = (id: number) => {
@@ -59,6 +74,7 @@ export default function useCart() {
   };
 
   const onCheckoutPage = basePath === URLS.checkout.page;
+
   useEffect(() => {
     if (state !== "initial" || (!onCheckoutPage && !opened)) return;
 
@@ -81,33 +97,34 @@ export default function useCart() {
 
   return {
     addMealToCart,
+    updateCartItem,
     removeItemFromCart,
-    isAddingToCart,
+    isLoading,
     maxAmountPerOrder,
     error,
     state,
   };
 }
 
-function addMealCart(id: number, amount: number) {
-  addToCart(id, amount)
-    .then(() => {
-      showToastMessage({
-        message: trans("addedToCart"),
-        type: "success",
-      });
-    })
-    .catch(error => {
-      if (error.response?.data.maxAmountPerOrder) {
-        toastError(error.response.data.maxAmountPerOrder);
-      } else {
-        toastError(trans("somethingWentWrong"));
-      }
-    });
-}
+// function addMealCart(id: number, amount: number) {
+//   addToCart(id, amount)
+//     .then(() => {
+//       showToastMessage({
+//         message: trans("addedToCart"),
+//         type: "success",
+//       });
+//     })
+//     .catch(error => {
+//       if (error.response?.data.maxAmountPerOrder) {
+//         toastError(error.response.data.maxAmountPerOrder);
+//       } else {
+//         toastError(trans("somethingWentWrong"));
+//       }
+//     });
+// }
 
-export function useCart2() {
-  return {
-    addToCart: addMealCart,
-  };
-}
+// export function useCart2() {
+//   return {
+//     addToCart: addMealCart,
+//   };
+// }

@@ -1,0 +1,19 @@
+.rtl {
+  @apply rtl:bg-red-500 ltr:bg-black;
+}
+
+.register {
+  border: 1px solid rgb(233, 236, 239);
+}
+
+@media (max-width: 330px) {
+  .hr::before,
+  .hr::after {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}
+
+.register input {
+  @apply mt-1 block w-full px-3 py-2 bg-white rounded-md;
+}

@@ -1,0 +1,115 @@
+.PopularDishesItemWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  .PopularDishesItem {
+    // padding: 10px;
+    border-radius: 30px;
+    position: relative;
+    flex-basis: 21%;
+    transition: all 0.5s ease-in-out;
+    padding: 15px;
+    width: 18%;
+    cursor: pointer;
+    background: linear-gradient(#fff, #fff 50%, #ffc22285 50%, #ffc22285);
+    background-size: 100% 200%;
+    /*trasition effect for background*/
+    transition: background 1s;
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    @media (max-width: 1300px) {
+      flex-basis: 45%;
+    }
+    @media (max-width: 768px) {
+      flex-basis: 45%;
+    }
+    @media (max-width: 425px) {
+      flex-basis: 100%;
+    }
+    &:hover {
+      background-position: 100% 100%;
+      transition: all 0.5s ease-in-out;
+    }
+    .heartIcon {
+      position: absolute;
+      inset-inline-end: 15px;
+      cursor: pointer;
+    }
+    .imageWrapper {
+      margin-top: 20px;
+      transition: all 0.5s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover .image {
+        img {
+          transform: scale(1.1);
+          transition: all 0.5s ease-in-out;
+        }
+      }
+      .image {
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          height: 100%;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+    .info {
+      padding-bottom: 10px;
+      position: relative;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 6px;
+        text-transform: capitalize;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+        min-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        margin-bottom: 10px;
+      }
+      .itemPrice {
+        color: #ffc222;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .itemPriceDel {
+        color: #999999;
+        font-weight: 700;
+        font-size: 18px;
+        display: inline-block;
+        margin-inline-end: 10px;
+      }
+      .shopCard {
+        position: absolute;
+        background-color: #ffc222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        width: 40px;
+        height: 40px;
+        border-radius: 16px;
+        inset-inline-end: -5px;
+        bottom: 0px;
+        &:hover {
+          background-color: #fff;
+          // svg{
+          //   stroke:#fff;
+          //   transition: all  .5s ease-in-out;
+          // }
+        }
+      }
+    }
+  }
+}

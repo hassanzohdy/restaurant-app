@@ -1,0 +1,64 @@
+{
+  "path": "/",
+  "name": "front-office",
+  "modules": [
+    {
+      "entry": [
+        "/account",
+        "/login",
+        "/register",
+        "/forgot-password",
+        "/reset-password"
+      ],
+      "name": "account"
+    },
+    {
+      "entry": ["/", "/404"],
+      "name": "home"
+    },
+    {
+      "entry": ["/about-us", "/privacy-policy", "/terms-conditions"],
+      "name": "informative-pages"
+    },
+    {
+      "entry": ["/blog"],
+      "name": "blog"
+    },
+    {
+      "entry": ["/posts"],
+      "name": "posts"
+    },
+    {
+      "entry": ["/menu"],
+      "name": "menu"
+    },
+    {
+      "entry": ["/cart"],
+      "name": "cart"
+    },
+    {
+      "entry": ["/checkout"],
+      "name": "checkout"
+    },
+    {
+      "entry": ["/orders"],
+      "name": "orders"
+    },
+    {
+      "entry": ["/faq"],
+      "name": "faq"
+    },
+    {
+      "entry": ["/faq"],
+      "name": "faq"
+    },
+    {
+      "entry": ["/wishlist"],
+      "name": "wishlist"
+    },
+    {
+      "entry": ["/contact-us"],
+      "name": "contact-us"
+    }
+  ]
+}

@@ -719,6 +719,10 @@ groupedTranslations({
     en: "Shipping Details",
     ar: "تفاصيل الشحن",
   },
+  shipping: {
+    en: "Shipping",
+    ar: "شحن",
+  },
   bookAddresses: {
     en: "Book Addresses",
     ar: "كتاب العناوين",

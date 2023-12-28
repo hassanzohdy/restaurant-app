@@ -1,12 +1,17 @@
 import { trans } from "@mongez/localization";
-import { Link } from "@mongez/react-router";
-import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
+import { CartItem } from "apps/front-office/cart/utils/types";
 import { BaseLink } from "apps/front-office/design-system/components/Link";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
 
-export default function CartTotals() {
-  const  totalPrice = cartAtom.useValue().total.price;
+type CartTotalsProps = {
+  cartItems: CartItem[];
+};
+
+export default function CartTotals({ cartItems }: CartTotalsProps) {
+  const total = cartItems.reduce((acc, item) => {
+    return acc + item.totalPrice;
+  }, 0);
 
   return (
     <div className="cart-totals pt-4 pb-7 px-10 bg-white border-[6px] border-[#e5e5e5] max-xl:px-5">
@@ -18,20 +23,16 @@ export default function CartTotals() {
           <strong className="w-[35%] flex-custom capitalize text-[15px] text-black font-semibold">
             {trans("subtotal")}
           </strong>
-          <span className="text-[18px] font-bold text-right">{price(Number(totalPrice))}</span>
+          <span className="text-[18px] font-bold text-right">
+            {price(total)}
+          </span>
         </li>
         <li className="flex justify-between py-4 border-b">
           <strong className="w-[35%] flex-custom capitalize text-[15px] text-black font-semibold max-xl:w-[30%] max-xl:text[14px]">
             {trans("shipping")}
           </strong>
           <span className="text-[15px] text-primary-text text-right max-xl:text-[14px] max-sm:text-[12px]">
-            {trans("personalDataNotice")}
-            <Link
-              className="text-primary-main font-normal hover:text-primary-hover focus:text-primary-hover"
-              to={URLS.privacyPolicy}>
-              {trans("privacyPolicy")}
-            </Link>
-            .
+            {trans("shippingCosts")}
           </span>
         </li>
         <li className="flex justify-between items-center py-7">
@@ -39,7 +40,7 @@ export default function CartTotals() {
             {trans("total")}
           </strong>
           <span className="text-[24px] font-bold text-right text-primary-main">
-            {price(Number(totalPrice))}
+            {price(total)}
           </span>
         </li>
       </ul>

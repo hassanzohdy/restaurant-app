@@ -6,9 +6,9 @@ groupedTranslations({
     en: "Product Thumbnail",
     ar: "الصورة المصغرة للمنتج",
   },
-  meal: {
-    en: "Meal",
-    ar: "الوجبة",
+  product: {
+    en: "Product",
+    ar: "المنتج",
   },
   price: {
     en: "Price",
@@ -20,15 +20,11 @@ groupedTranslations({
   },
   subtotal: {
     en: "Subtotal",
-    ar: "الإجمالي",
+    ar: "المجموع الفرعي",
   },
   cartTotals: {
     en: "Cart Totals",
-    ar: "الإجمالي",
-  },
-  shipping: {
-    en: "Shipping",
-    ar: "الشحن",
+    ar: "المجموع الكلى",
   },
   shippingCosts: {
     en: "Shipping costs are calculated during checkout.",
@@ -38,20 +34,4 @@ groupedTranslations({
     en: "Proceed to checkout",
     ar: "انهاء الطلب",
   },
-  personalDataNotice: {
-    en: "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our",
-    ar: "سيتم استخدام بياناتك الشخصية لمعالجة طلبك، ودعم تجربتك على هذا الموقع، ولأغراض أخرى موضحة في سياسة الخصوصية الخاصة بنا.",
-  },
-  updateCart: {
-    en: "Update Cart",
-    ar: "تحديث السلة"
-  },
-  applyCoupon: {
-    en: "Apply Coupon",
-    ar: "تفعيل كود الخصم"
-  },
-  couponCode: {
-    "en": "couponCode",
-    "ar": "كود الخصم"
-  }
 });

@@ -1,17 +1,15 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
+import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TbShoppingCartQuestion } from "react-icons/tb";
-import CartMealsTable from "./components/CartMealsTable";
-import CartTotals from "./components/CartTotals";
-import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
-import { useOnce } from "@mongez/react-hooks";
-import { getCart } from "../../services/cart-service";
+import { toast } from "react-toastify";
 import { cartAtom } from "../../atoms/cart-atom";
-import useCart from "shared/hooks/useCart";
-import Loader, { Error } from "apps/front-office/design-system/components/Indicators/Indicators";
+import { getCart } from "../../services/cart-service";
+import CartProductsTable from "./components/CartProductsTable";
+import CartTotals from "./components/CartTotals";
 
 const emptyCartInfo = {
   title: trans("emptyCart"),
@@ -20,32 +18,39 @@ const emptyCartInfo = {
 };
 
 function _CartPage() {
+  const [isLoading, setIsLoading] = useState(true);
+  const cart = cartAtom.useValue();
 
-  const items = cartAtom.use("items");
-  const { state, error } = useCart();
+  useEffect(() => {
+    setIsLoading(true);
 
+    getCart()
+      .then(({ data }) => {
+        cartAtom.update(data.cart);
+      })
+      .catch(() => {
+        toast.error(trans("somethingWentWrong"));
+      })
+      .finally(() => setIsLoading(false));
+  }, []);
 
-  if (state === "loading") {
+  if (isLoading) {
     return <Loader />;
-  }
-
-  if (error) {
-    return <Error error={error} />;
   }
 
   return (
     <>
       <Helmet title="Cart" />
-      <Breadcrumb title={trans("cart")} navItems={[{ name: "cart" }]} />
-      {items ? (
+      <Breadcrumb title="Cart" navItems={[{ name: "cart" }]} />
+      {cart.items?.length > 0 ? (
         <div className="cart-details py-[100px] max-lg:py-[80px] max-sm:py-[70px]">
           <div className="container">
             <div className="flex justify-between flex-wrap">
               <div className="w-[calc(70%-40px)] max-xl:w-[calc(65%-30px)] max-lg:w-[100%]">
-                <CartMealsTable />
+                <CartProductsTable cartProducts={cart.items} />
               </div>
               <div className="w-[30%] max-xl:w-[35%] max-lg:w-[100%]">
-                <CartTotals />
+                <CartTotals cartItems={cart.items} />
               </div>
             </div>
           </div>

@@ -50,11 +50,8 @@ export const DetailsSide = () => {
             </span>
           </div>
         </div>
-
         <AddMealToCart />
-
         <DetailsCategorySection />
-
         <ShippingFeatures />
         <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
           <p className="font-bold">{trans("guaranteedSafeCheckout")}</p>

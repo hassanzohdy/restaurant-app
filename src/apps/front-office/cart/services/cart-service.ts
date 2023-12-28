@@ -14,9 +14,6 @@ export function addToCart(meal: number, quantity = 1) {
   return endpoint.post("/cart", { meal, quantity });
 }
 
-/**
- * Update cart quantity
- */
 export function updateCart(item: number, quantity: number) {
   return endpoint.put("/cart/items/" + item, { quantity });
 }

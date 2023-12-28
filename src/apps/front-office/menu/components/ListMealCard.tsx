@@ -4,7 +4,7 @@ import MealCardFavorite from "apps/front-office/menu/pages/MealDetailsPage/compo
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
 import { FaBasketShopping } from "react-icons/fa6";
-import { useCart2 } from "shared/hooks/useCart";
+import useCart from "shared/hooks/useCart";
 import { Meal } from "../pages/MealDetailsPage/utils/types";
 
 export type ListMealCardProps = {
@@ -12,7 +12,7 @@ export type ListMealCardProps = {
 };
 
 export default function ListMealCard({ meal }: ListMealCardProps) {
-  const { addToCart } = useCart2();
+  const { addMealToCart } = useCart();
 
   return (
     <div className="relative flex flex-row h-60 ml-10 mt-6 border-2 rounded-2xl">
@@ -48,7 +48,7 @@ export default function ListMealCard({ meal }: ListMealCardProps) {
           </span>
         </div>
         <button
-          onClick={() => addToCart(meal.id, 1)}
+          onClick={() => addMealToCart(meal.id, 1)}
           title={trans("addToCart")}
           aria-aria-label={trans("addToCart")}
           className="w-10 h-10 flex items-center justify-center rounded-2xl bg-amber-400 absolute bottom-2 right-4">

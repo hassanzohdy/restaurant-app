@@ -11,7 +11,11 @@ export default function AddMealToCart() {
   const meal = mealAtom.useValue();
 
   const [amount, setAmount] = useState(1);
-  const { maxAmountPerOrder, isAddingToCart, addMealToCart } = useCart();
+  const {
+    maxAmountPerOrder,
+    isLoading: isAddingToCart,
+    addMealToCart,
+  } = useCart();
 
   const incrementAmount = () => {
     if (maxAmountPerOrder && amount >= maxAmountPerOrder) {

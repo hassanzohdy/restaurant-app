@@ -1,9 +1,13 @@
 import { trans } from "@mongez/localization";
 import CommonTitle from "apps/front-office/design-system/components/CommonTitle";
 import { BaseLink } from "apps/front-office/design-system/components/Link";
+import { Banner } from "apps/front-office/design-system/utils/types";
 import URLS from "apps/front-office/utils/urls";
 
-export default function HomeBanner() {
+export default function HomeBanner({ banner }: { banner: Banner }) {
+  return <img src={banner.image.url} alt="banner" className="w-full" />;
+}
+function _HomeBanner({ banner: _ }: { banner: Banner }) {
   return (
     <section className="py-[140px] bg-[url('assets/images/home-banner/banner-bg.png')] bg-no-repeat">
       <div className="container">

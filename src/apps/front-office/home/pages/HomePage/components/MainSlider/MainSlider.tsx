@@ -1,16 +1,14 @@
+import { Banner } from "apps/front-office/design-system/utils/types";
 import Slider from "react-slick";
-
-import banner1 from "assets/images/main-slider/slide1.png";
-import banner2 from "assets/images/main-slider/slide2.png";
-import banner3 from "assets/images/main-slider/slide3.png";
-import banner4 from "assets/images/main-slider/slide4.png";
-import banner5 from "assets/images/main-slider/slide5.png";
-import banner6 from "assets/images/main-slider/slide6.png";
 import SliderBanner from "./SliderBanner";
 
-const banners = [banner1, banner2, banner3, banner4, banner5, banner6];
+export type MainSliderProps = {
+  slider: {
+    banners: Banner[];
+  };
+};
 
-export default function MainSlider() {
+export default function MainSlider({ slider }: MainSliderProps) {
   const settings = {
     dots: true,
     arrows: false,
@@ -24,7 +22,7 @@ export default function MainSlider() {
   return (
     <section className="slick-slider">
       <Slider {...settings}>
-        {banners.map((banner, index) => (
+        {slider.banners.map((banner, index) => (
           <SliderBanner key={index} banner={banner} />
         ))}
       </Slider>

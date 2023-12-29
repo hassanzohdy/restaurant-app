@@ -2,13 +2,11 @@ import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
 import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
-import Loader, {
-  Error,
-} from "apps/front-office/design-system/components/Indicators/Indicators";
+import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import URLS from "apps/front-office/utils/urls";
 import { TbShoppingCartQuestion } from "react-icons/tb";
-import useCart from "shared/hooks/useCart";
+import { useCart2 } from "shared/hooks/use-cart-2";
 import CheckoutDetails from "../../components/Checkout/CheckoutDetails";
 
 const emptyCartInfo = {
@@ -20,14 +18,11 @@ const emptyCartInfo = {
 
 export default function Checkout() {
   const items = cartAtom.use("items");
-  const { state, error } = useCart();
+  const { useCartLoader } = useCart2();
+  const { isLoading } = useCartLoader();
 
-  if (state === "loading") {
+  if (isLoading) {
     return <Loader />;
-  }
-
-  if (error) {
-    return <Error error={error} />;
   }
 
   return (

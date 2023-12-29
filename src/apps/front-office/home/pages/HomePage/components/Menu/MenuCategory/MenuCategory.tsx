@@ -1,11 +1,12 @@
 import { Link } from "@mongez/react-router";
+import { ImageType } from "apps/front-office/design-system/utils/types";
 import URLS from "apps/front-office/utils/urls";
 
 export type MenuCategoryProps = {
   category: {
     id: number;
-    title: string;
-    image: string;
+    name: string;
+    image: ImageType;
   };
 };
 export default function MenuCategory({ category }: MenuCategoryProps) {
@@ -16,11 +17,9 @@ export default function MenuCategory({ category }: MenuCategoryProps) {
       to={URLS.menu.list}
       className={`menu-category flex-col relative hover:text-primary duration-700 transition-all ease-in-out ${categoryBefore}  hover:before:opacity-100`}>
       <span className="image block max-w-[120px] mb-1">
-        <img src={category.image} alt={category.title} className="w-full" />
+        <img src={category.image.url} alt={category.name} className="w-full" />
       </span>
-      <h3 className="title text-[13px] uppercase font-bold">
-        {category.title}
-      </h3>
+      <h3 className="title text-[13px] uppercase font-bold">{category.name}</h3>
     </Link>
   );
 }

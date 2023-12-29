@@ -1,13 +1,12 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
+import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
 import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { TbShoppingCartQuestion } from "react-icons/tb";
-import { toast } from "react-toastify";
-import { cartAtom } from "../../atoms/cart-atom";
-import { getCart } from "../../services/cart-service";
+import { useCart2 } from "shared/hooks/use-cart-2";
 import CartProductsTable from "./components/CartProductsTable";
 import CartTotals from "./components/CartTotals";
 
@@ -18,21 +17,9 @@ const emptyCartInfo = {
 };
 
 function _CartPage() {
-  const [isLoading, setIsLoading] = useState(true);
+  const { useCartLoader } = useCart2();
+  const { isLoading } = useCartLoader();
   const cart = cartAtom.useValue();
-
-  useEffect(() => {
-    setIsLoading(true);
-
-    getCart()
-      .then(({ data }) => {
-        cartAtom.update(data.cart);
-      })
-      .catch(() => {
-        toast.error(trans("somethingWentWrong"));
-      })
-      .finally(() => setIsLoading(false));
-  }, []);
 
   if (isLoading) {
     return <Loader />;

@@ -28,6 +28,7 @@ export default function useCart() {
   const [maxAmountPerOrder, setMaxAmountPerOrder] = useState(
     meal.maxAmountPerOrder,
   );
+
   // basePath(root route) is need for fetching the data on checkout page if this page is reloaded
   const basePath = useGetBaseRoute(current("route"));
 

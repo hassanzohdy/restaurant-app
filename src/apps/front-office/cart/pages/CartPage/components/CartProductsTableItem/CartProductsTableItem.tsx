@@ -2,8 +2,9 @@ import { Link } from "@mongez/react-router";
 import { CartItem } from "apps/front-office/cart/utils/types";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
+import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import useCart from "shared/hooks/useCart";
+import { useCart2 } from "shared/hooks/use-cart-2";
 
 export type CartProductsTableItemProps = {
   cartItem: CartItem;
@@ -11,11 +12,13 @@ export type CartProductsTableItemProps = {
 export default function CartTableItem({
   cartItem,
 }: CartProductsTableItemProps) {
-  const { removeItemFromCart, updateCartItem, isLoading } = useCart();
+  const { removeItemFromCart, updateCartItem } = useCart2();
+  const [quantity, setQuantity] = useState(cartItem.quantity);
 
-  const handleUpdateCartItem = (quantity: number) => {
-    const newAmount = quantity > 0 ? quantity : 1;
+  const handleUpdateCartItem = (newQuantity: number) => {
+    const newAmount = newQuantity > 0 ? newQuantity : 1;
 
+    setQuantity(newAmount);
     updateCartItem(cartItem.id, newAmount);
   };
 
@@ -46,16 +49,14 @@ export default function CartTableItem({
       <td className="product-quantity w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3 max-sm:border-b">
         <div className="quantity flex items-center gap-2">
           <button
-            disabled={isLoading}
             className="w-8 h-8 disabled:opacity-60 disabled:cursor-not-allowed bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
-            onClick={() => handleUpdateCartItem(cartItem.quantity - 1)}>
+            onClick={() => handleUpdateCartItem(quantity - 1)}>
             -
           </button>
-          <span className="px-4 py-2">{cartItem.quantity}</span>
+          <span className="px-4 py-2">{quantity}</span>
           <button
-            disabled={isLoading}
             className="w-8 h-8 disabled:opacity-60 disabled:cursor-not-allowed bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
-            onClick={() => handleUpdateCartItem(cartItem.quantity + 1)}>
+            onClick={() => handleUpdateCartItem(quantity + 1)}>
             +
           </button>
         </div>

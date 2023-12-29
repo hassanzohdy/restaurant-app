@@ -39,7 +39,6 @@ export default function Checkout() {
       />
       {items ? (
         <div className="my-20">
-          {/* <CheckoutCoupon /> */}
           <CheckoutDetails />
         </div>
       ) : (

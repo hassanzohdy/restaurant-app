@@ -3,7 +3,7 @@ import { trans } from "@mongez/localization";
 export default function OrderNotes() {
   return (
     <div className="w-full gap-3">
-      <h3 className="font-bold text-[1.6em] clear-both">
+      <h3 className="font-bold text-[1.6em] clear-both mb-2">
         {trans("orderNotes2")}
       </h3>
       <div className="border rounded-xl p-3 w-full">

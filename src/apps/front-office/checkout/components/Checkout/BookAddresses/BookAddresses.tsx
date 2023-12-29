@@ -26,12 +26,16 @@ export default function BookAddresses() {
   };
 
   const toggleEditForm = (id: number) => {
-    setEditFormOpen(prevEditFormOpen => ({
-      ...Object.fromEntries(
-        Object.entries(prevEditFormOpen).map(([key]) => [key, false]),
-      ),
-      [id]: !prevEditFormOpen[id],
-    }));
+    setEditFormOpen(prevEditFormOpen => {
+      const updatedFormOpen = { ...prevEditFormOpen };
+
+      Object.keys(updatedFormOpen).forEach(key => {
+        updatedFormOpen[key] = false;
+      });
+
+      updatedFormOpen[id] = !prevEditFormOpen[id];
+      return updatedFormOpen;
+    });
   };
 
   return (
@@ -67,8 +71,8 @@ export default function BookAddresses() {
                 </div>
                 <Button
                   className={cn(
-                    "bg-primary-main w-fit py-1 px-2 rounded-xl hover:bg-primary-hover ltr:mr-2 rtl:ml-2 capitalize opacity-0  focus:opacity-100",
-                    selectedAddressId === address.id && "opacity-100",
+                    "bg-primary-main w-fit py-1 px-2 rounded-xl invisible hover:bg-primary-hover ltr:mr-2 rtl:ml-2 capitalize opacity-0  focus:opacity-100",
+                    selectedAddressId === address.id && "opacity-100 visible",
                   )}
                   onClick={() => toggleEditForm(address.id)}>
                   {trans("edit")}

@@ -40,12 +40,14 @@ export default function EditAddress({ id }: any) {
   };
 
   const handleSubmit = ({ values }) => {
-    const { firstName, lastName, address, phoneNumber } = selectedAddress || {};
+    const { firstName, lastName, address, phoneNumber, isPrimary } =
+      selectedAddress || {};
     if (
       firstName === formData?.firstName &&
       lastName === formData?.lastName &&
       address === formData?.address &&
-      phoneNumber === formData?.phoneNumber
+      phoneNumber === formData?.phoneNumber &&
+      isPrimary
     ) {
       toastWarning(trans("addressSelectedButNotEdited"));
       return defaultAddressAtom.update(true);

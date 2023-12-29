@@ -361,7 +361,7 @@ groupedTranslations({
   },
   newsletterText: {
     en: "Subscribe to the weekly newsletter for all the latest updates",
-    ar: "اشترك في النشرة الأسبوعية للحصول على كافة التحديثات"
+    ar: "اشترك في النشرة الأسبوعية للحصول على كافة التحديثات",
   },
   yourEmail: {
     en: "Your Email...",
@@ -810,5 +810,5 @@ groupedTranslations({
   enterYourNotes: {
     en: "Enter your notes",
     ar: "ادخل ملاحظاتك",
-  }
+  },
 });

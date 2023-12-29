@@ -1,15 +1,12 @@
 import { trans } from "@mongez/localization";
+import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
 import { Button } from "apps/front-office/design-system/components/Button";
 import { AiOutlineClose } from "react-icons/ai";
 import CartCouponCode from "../CartCouponCode";
 import CartMealsTableItem from "../CartMealsTableItem";
-import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
-import { useState } from "react";
 
 export default function CartMealsTable() {
-
   const items = cartAtom.use("items");
-
 
   return (
     <div className="cart-products-table max-lg:mb-8 max-sm:mb-5">

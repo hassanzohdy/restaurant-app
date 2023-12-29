@@ -1,17 +1,17 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { currentRoute, navigateTo } from "@mongez/react-router";
+import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import { isLTR } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import { MdManageSearch } from "react-icons/md";
 import blogBanner from "shared/assets/images/Blog/blog-banner.png";
 import BlogCard from "../BlogCard";
 import { PaginationInfo } from "../BlogPage";
 import Pagination from "./Pagination";
-import { MdManageSearch } from "react-icons/md";
-import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 export type BlogListProps = {
   blogData: any;
   pagination: PaginationInfo;

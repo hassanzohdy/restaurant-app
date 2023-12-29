@@ -48,7 +48,7 @@ export default function OrdersListItem({ order }: OrdersListItemProps) {
           href={URLS.orders.viewOrder(order)}
           variant="primary"
           className="px-3 py-2 max-sm:w-full">
-          Order Details
+          {trans("orderDetails")}
         </BaseLink>
       </div>
     </li>

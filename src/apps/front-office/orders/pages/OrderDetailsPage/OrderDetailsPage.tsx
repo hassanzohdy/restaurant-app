@@ -69,7 +69,7 @@ export default function OrderDetailsPage() {
             href={URLS.cart}
             variant="primary"
             className="float-right px-8 py-3 text-[16px] max-sm:w-full">
-            {trans("reOrder")}
+            {trans("reorder")}
           </BaseLink>
         </div>
       </div>

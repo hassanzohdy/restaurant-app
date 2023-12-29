@@ -1,60 +1,67 @@
-import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import { CartItem } from "apps/front-office/cart/utils/types";
+import { price } from "apps/front-office/utils/price";
+import URLS from "apps/front-office/utils/urls";
 import { AiOutlineClose } from "react-icons/ai";
+import useCart from "shared/hooks/useCart";
 
 export type CartProductsTableItemProps = {
-  productDetails: {
-    id: string;
-    name: string;
-    thumbnail: string;
-    price: string;
-    subtotal: string;
-  };
+  cartItem: CartItem;
 };
-export default function CartProductsTableItem({
-  productDetails,
+export default function CartTableItem({
+  cartItem,
 }: CartProductsTableItemProps) {
+  const { removeItemFromCart, updateCartItem, isLoading } = useCart();
+
+  const handleUpdateCartItem = (quantity: number) => {
+    const newAmount = quantity > 0 ? quantity : 1;
+
+    updateCartItem(cartItem.id, newAmount);
+  };
+
   return (
     <tr className="border-b max-sm:block max-sm:pl-[100px] max-sm:relative">
       <td className="product-remove w-[5%] px-3 py-5 pl-0 max-sm:absolute max-sm:w-auto max-sm:right-1 max-sm:top-6 max-sm:p-0">
-        <AiOutlineClose className="w-[15px] h-[15px] p-[2px] border rounded-full text-[#b3b3b3] border-[#b3b3b3] cursor-pointer hover:text-[#f00] hover:border-[#f00] duration-700 transition-all ease-in-out" />
-      </td>
-      <td className="product-thumbnail w-[17%] py-3 px-6 h-[140px] max-sm:absolute max-sm:w-auto max-sm:left-1 max-sm:top-6 max-sm:p-0">
-        <Link to="#">
-          <img className="max-w-[90px]" src={productDetails.thumbnail} alt="" />
-        </Link>
+        <button
+          onClick={() => removeItemFromCart(cartItem.id)}
+          className="rounded-full p-1 hover:bg-gray-100 transition-colors w-6 text-bodyTextColor h-6 flex items-center justify-center border">
+          <AiOutlineClose size={15} className="w-full h-full" />
+        </button>
       </td>
       <td className="product-name w-[30%] px-3 py-5 max-sm:block max-sm:w-full max-sm:pl-0 max-sm:px-2 max-sm:pr-5 max-sm:border-b">
         <Link
-          to="#"
-          className="hover:text-primary-hover duration-700 transition-all ease-in-out">
-          {productDetails.name}
+          to={URLS.menu.viewMeal(cartItem.meal)}
+          className="flex items-center gap-2 hover:text-primary-hover duration-700 transition-all ease-in-out">
+          <img
+            className="max-w-[90px]"
+            src={cartItem.meal.image.url}
+            alt={cartItem.meal.name}
+          />
+          {cartItem.meal.name}
         </Link>
       </td>
       <td className="product-price w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3 max-sm:border-b">
-        <label className="hidden max-sm:block text-[12px] text-[#1e1d23] font-normal">
-          {trans("price")}
-        </label>
-        <span>{productDetails.price}</span>
+        <span className="text-primary-main">{price(cartItem.price)}</span>
       </td>
       <td className="product-quantity w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3 max-sm:border-b">
-        <label className="hidden max-sm:block text-[12px] text-[#1e1d23] font-normal">
-          {trans("quantity")}
-        </label>
-        <div className="quantity">
-          <input
-            type="number"
-            name="product-quantity"
-            id={`quantity${productDetails.id}`}
-            className="w-[55px] h-[40px] p-3 border rounded-md"
-          />
+        <div className="quantity flex items-center gap-2">
+          <button
+            disabled={isLoading}
+            className="w-8 h-8 disabled:opacity-60 disabled:cursor-not-allowed bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
+            onClick={() => handleUpdateCartItem(cartItem.quantity - 1)}>
+            -
+          </button>
+          <span className="px-4 py-2">{cartItem.quantity}</span>
+          <button
+            disabled={isLoading}
+            className="w-8 h-8 disabled:opacity-60 disabled:cursor-not-allowed bg-primary-light hover:bg-primary-light hover:text-primary-main p-1 rounded-full"
+            onClick={() => handleUpdateCartItem(cartItem.quantity + 1)}>
+            +
+          </button>
         </div>
       </td>
       <td className="product-subtotal w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3">
-        <label className="hidden max-sm:block text-[12px] text-[#1e1d23] font-normal">
-          {trans("subtotal")}
-        </label>
-        <span>{productDetails.subtotal}</span>
+        <span className="text-primary-main">{price(cartItem.totalPrice)}</span>
       </td>
     </tr>
   );

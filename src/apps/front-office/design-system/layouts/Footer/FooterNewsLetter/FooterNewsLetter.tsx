@@ -5,10 +5,10 @@ export default function FooterNewsLetter() {
     <>
       <div>
         <h3 className="heading text-xl text-[20px] font-bold uppercase text-white mb-[20px] mx-lg:text-[18px]">
-          {trans("newsLetter")}
+          {trans("newsletter")}
         </h3>
         <p className="w-[85%] m-auto text-[15px] text-primary-text leading-7 max-lg:w-full">
-          Subscribe to the weekly newsletter for all the latest updates
+          {trans("newsletterText")}
         </p>
         <div className="newsletter mt-[20px]">
           <form>

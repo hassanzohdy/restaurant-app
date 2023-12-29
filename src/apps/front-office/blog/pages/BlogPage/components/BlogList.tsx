@@ -1,11 +1,13 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { currentRoute, navigateTo } from "@mongez/react-router";
+import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import { isLTR } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import { MdManageSearch } from "react-icons/md";
 import blogBanner from "shared/assets/images/Blog/blog-banner.png";
 import BlogCard from "../BlogCard";
 import { PaginationInfo } from "../BlogPage";
@@ -15,6 +17,12 @@ export type BlogListProps = {
   pagination: PaginationInfo;
   params?: any;
 };
+
+const NoBlogInfo = {
+  title: trans("noBlogHere"),
+  icon: <MdManageSearch size="150" />,
+};
+
 export default function BlogList({
   blogData,
   pagination,
@@ -59,9 +67,7 @@ export default function BlogList({
         <div className="container">
           {!blogData ||
             (blogData.length === 0 ? (
-              <h3 className="mt-10 text-center text-primary-main font-bold text-3xl">
-                {trans("noBlogHere")}
-              </h3>
+              <EmptyComponent {...NoBlogInfo} />
             ) : (
               <div className="flex justify-between gap-4 flex-wrap">
                 <div className="grid grid-cols-1  lg:grid-cols-3 w-[100%] gap-6 lg:w-[75%]">

@@ -19,12 +19,12 @@ export default function FooterPaymentMethods() {
 
   return (
     <>
-      <ul className="footer-payment-methods flex items-center">
+      <ul className="footer-payment-methods flex items-center gap-2">
         {paymentMethods.map(item => (
           <span
-            className="payment-method mr-[12px] last-of-type:mr-0"
+            className="payment-method rounded-sm overflow-hidden"
             key={item.name}>
-            <img src={item.icon} className="logo" alt={item.name} />
+            <img src={item.icon} className="m-0" alt={item.name} />
           </span>
         ))}
       </ul>

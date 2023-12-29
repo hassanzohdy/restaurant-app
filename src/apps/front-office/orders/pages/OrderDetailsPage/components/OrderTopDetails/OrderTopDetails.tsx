@@ -40,8 +40,8 @@ export default function OrderTopDetails({
           <span className="date">{orderDate}</span>
         </div>
         <div
-          className={`${statusClasses} order-status flex items-center px-3 py-2 capitalize text-[18px] text-white font-semibold rounded-md max-sm:px-2 max-sm:py-1 max-sm:text-[14px]`}>
-          <span className="mr-1">{statusIcon}</span> {orderStatus}
+          className={`${statusClasses} order-status flex items-center px-3 py-2 gap-1 capitalize text-[18px] text-white font-semibold rounded-md max-sm:px-2 max-sm:py-1 max-sm:text-[14px]`}>
+          <span>{statusIcon}</span> {orderStatus}
         </div>
       </div>
     </>

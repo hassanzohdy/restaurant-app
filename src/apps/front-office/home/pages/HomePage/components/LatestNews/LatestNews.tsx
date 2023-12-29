@@ -43,9 +43,9 @@ export default function LatestNews() {
           <h2 className="text-[42px] font-bold">{trans("latestNews")}</h2>
           <Link
             to={URLS.blog.list}
-            className="flex text-[15px] font-semibold group">
+            className="flex text-[15px] font-semibold group gap-2">
             {trans("seeMore")}
-            <MdKeyboardArrowRight className="ltr:ml-1 rtl:mr-1 w-[24px] h-[24px] rounded-md bg-secondary text-white group-hover:bg-primary-main duration-500 transition-all ease-in-out" />
+            <MdKeyboardArrowRight className="w-[24px] h-[24px] rounded-md bg-secondary text-white rtl:rotate-180 group-hover:bg-primary-main duration-500 transition-all ease-in-out" />
           </Link>
         </div>
         <div className="grid grid-cols-3 gap-8">

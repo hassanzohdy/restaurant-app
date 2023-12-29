@@ -29,8 +29,13 @@ export default function OrdersListItem({ order }: OrdersListItemProps) {
         </p>
       </div>
       <div className="flex items-center justify-between max-sm:flex-col max-sm:items-start">
+<<<<<<< HEAD
+        <div className="flex max-sm:mb-4 gap-3">
+          <span className="flex flex-custom items-center justify-center image w-[80px] h-[65px] rounded-md bg-[#ddd] p-2">
+=======
         <div className="flex max-sm:mb-4">
           <span className="flex flex-custom items-center justify-center image w-[80px] h-[65px] rounded-md bg-[#ddd] p-2 mr-3">
+>>>>>>> c3cb905dbd9ce38a164b3376d827395fc683c76e
             <img src={logo} alt="" className="max-w-full" />
           </span>
           <div>
@@ -48,7 +53,11 @@ export default function OrdersListItem({ order }: OrdersListItemProps) {
           href={URLS.orders.viewOrder(order)}
           variant="primary"
           className="px-3 py-2 max-sm:w-full">
+<<<<<<< HEAD
+          {trans("orderDetails")}
+=======
           Order Details
+>>>>>>> c3cb905dbd9ce38a164b3376d827395fc683c76e
         </BaseLink>
       </div>
     </li>

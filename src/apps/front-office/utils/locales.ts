@@ -280,7 +280,7 @@ groupedTranslations({
   },
   cart: {
     en: "Cart",
-    ar: "العربة",
+    ar: "سلة المشتريات",
   },
   categories: {
     en: "Categories",
@@ -331,14 +331,6 @@ groupedTranslations({
     en: "Added to Cart",
     ar: "تمت اضافته",
   },
-  addedToWishlist: {
-    en: "Added to Wishlist",
-    ar: "تمت اضافتها",
-  },
-  removedFromWishlist: {
-    en: "Removed from Wishlist",
-    ar: "تمت إزالتها",
-  },
   call: {
     en: "Call and Order in",
     ar: "اتصل واطلب على",
@@ -363,9 +355,13 @@ groupedTranslations({
     en: "Opening Hours",
     ar: "ساعات العمل",
   },
-  newsLetter: {
+  newsletter: {
     en: "NewsLetter",
     ar: "النشرة البريدية",
+  },
+  newsletterText: {
+    en: "Subscribe to the weekly newsletter for all the latest updates",
+    ar: "اشترك في النشرة الأسبوعية للحصول على كافة التحديثات"
   },
   yourEmail: {
     en: "Your Email...",
@@ -457,6 +453,10 @@ groupedTranslations({
     en: "My Orders",
     ar: "طلباتى",
   },
+  order: {
+    en: "Order",
+    ar: "طلب",
+  },
   pastOrders: {
     en: "Past Orders",
     ar: "طلبات سابقة",
@@ -477,6 +477,10 @@ groupedTranslations({
   orderMenu: {
     en: "Order Menu",
     ar: "قائمة الطلب",
+  },
+  paymentMethod: {
+    en: "Payment Method",
+    ar: "وسيلة الدفع",
   },
   deliveryAddress: {
     en: "Delivery Address",
@@ -523,15 +527,15 @@ groupedTranslations({
   //Empty Componenet
   continueShopping: {
     en: "Continue Shopping",
-    ar: "س للمينتو",
+    ar: "استمرار التسوق",
   },
   emptyCart: {
     en: "Empty Cart 😒",
-    ar: "السلة فارغة",
+    ar: "السلة فارغة😒",
   },
   cartEmptyDescription: {
     en: "Your cart is empty add someting to make me happy",
-    ar: "سلتك فارفة ... اضف شىء يجعلنى سعيد",
+    ar: "السلة فارغة ... اضف شىء يجعلنى سعيد",
   },
   //WhishListPage
   wishlist: {
@@ -539,12 +543,12 @@ groupedTranslations({
     ar: "قائمة الرغبات",
   },
   emptyWishlist: {
-    en: "Empty Whishlist 😒",
-    ar: "قائمة الرغبات فارغة",
+    en: "Empty Whishlist😒",
+    ar: "قائمةالرغبات فارغة😒",
   },
   wishlistEmptyDescription: {
     en: "Your Whishlist is empty add someting to make me happy",
-    ar: "قائمة رغباتك ... اضف شىء يجعلنى سعيد",
+    ar: "قائمة رغباتك فارغة ... اضف شىء يجعلنى سعيد",
   },
   addToWishlistError: {
     en: "Couldn't add to wishlist.",
@@ -806,5 +810,5 @@ groupedTranslations({
   enterYourNotes: {
     en: "Enter your notes",
     ar: "ادخل ملاحظاتك",
-  },
+  }
 });

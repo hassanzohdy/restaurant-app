@@ -6,7 +6,7 @@ import URLS from "apps/front-office/utils/urls";
 export default function AboutUsWelcomeText() {
   return (
     <>
-      <div className="about-us-welcome-text animate-fade w-[40%] max-xl:w-[45%] max-md:w-[100%] max-md:mb-10">
+      <div className="about-us-welcome-text w-[40%] max-xl:w-[45%] max-md:w-[100%] max-md:mb-10">
         <CommonTitle className="block text-[42px] text-primary-main capitalize mb-2 max-lg:text-[36px] max-sm:text-[30px]">
           {trans("welcome")}
         </CommonTitle>

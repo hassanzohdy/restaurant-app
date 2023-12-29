@@ -10,11 +10,19 @@ import blogBanner from "shared/assets/images/Blog/blog-banner.png";
 import BlogCard from "../BlogCard";
 import { PaginationInfo } from "../BlogPage";
 import Pagination from "./Pagination";
+import { MdManageSearch } from "react-icons/md";
+import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 export type BlogListProps = {
   blogData: any;
   pagination: PaginationInfo;
   params?: any;
 };
+
+const NoBlogInfo = {
+  title: trans("noBlogHere"),
+  icon: <MdManageSearch size="150" />,
+};
+
 export default function BlogList({
   blogData,
   pagination,
@@ -59,9 +67,7 @@ export default function BlogList({
         <div className="container">
           {!blogData ||
             (blogData.length === 0 ? (
-              <h3 className="mt-10 text-center text-primary-main font-bold text-3xl">
-                {trans("noBlogHere")}
-              </h3>
+              <EmptyComponent {...NoBlogInfo} />
             ) : (
               <div className="flex justify-between gap-4 flex-wrap">
                 <div className="grid grid-cols-1  lg:grid-cols-3 w-[100%] gap-6 lg:w-[75%]">

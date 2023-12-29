@@ -13,9 +13,9 @@ const socialLinks = [
 export default function FooterSocialIcons() {
   return (
     <>
-      <ul className="footer-social-icons flex justify-center mt-[20px]">
+      <ul className="footer-social-icons flex justify-center mt-[20px] gap-2">
         {socialLinks.map((item, index) => (
-          <li key={index} className="mr-[10px] last-of-type:mr-0">
+          <li key={index}>
             <Link
               to={item.href}
               className="flex items-center justify-center  w-[36px] h-[36px] rounded-full bg-white text-dark hover:bg-[#ffc222] duration-700 transition-all ease-in-out max-lg:px-[5px] max-lg:text-[13px]">

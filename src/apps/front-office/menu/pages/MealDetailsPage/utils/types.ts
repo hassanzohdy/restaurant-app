@@ -25,6 +25,7 @@ export type Meal = {
   description: string;
   image: Image;
   price: number;
+  totalPrice:number;
   salePrice?: number;
   category: MealCategory;
   isFavorite: boolean;

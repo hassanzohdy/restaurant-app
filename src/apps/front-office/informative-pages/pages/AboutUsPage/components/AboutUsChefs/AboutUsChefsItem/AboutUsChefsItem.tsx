@@ -35,20 +35,20 @@ export default function AboutUsChefsItem({ chefInfo }: AboutUsChefsItemProps) {
           <p className="text-[15px] text-primary-text mb-4 max-lg:text-[14px]">
             {chefInfo.details}
           </p>
-          <ul className="flex items-center justify-center">
+          <ul className="flex items-center justify-center gap-2">
             <Link
               to={chefInfo.socialLinks.facebook}
-              className="mx-1 hover:text-primary-main transition-all duration-1000">
+              className="hover:text-primary-main transition-all duration-1000">
               <FiFacebook size={18} />
             </Link>
             <Link
               to={chefInfo.socialLinks.facebook}
-              className="mx-1 hover:text-primary-main transition-all duration-1000">
+              className="hover:text-primary-main transition-all duration-1000">
               <FaXTwitter size={18} />
             </Link>
             <Link
               to={chefInfo.socialLinks.facebook}
-              className="mx-1 hover:text-primary-main transition-all duration-1000">
+              className="hover:text-primary-main transition-all duration-1000">
               <FaInstagram size={18} />
             </Link>
           </ul>

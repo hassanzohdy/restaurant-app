@@ -25,7 +25,7 @@ export default function OrderBottomDetails({
         </span>
       </div>
       <div className="payment flex align-middle justify-between ">
-        <span>{trans("payment")}</span>{" "}
+        <span>{trans("paymentMethod")}</span>{" "}
         <span className="text-[18px] font-semibold max-md:text-[16px] max-sm:text-[12px]">
           {paymentMethod}
         </span>

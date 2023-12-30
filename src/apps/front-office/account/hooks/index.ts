@@ -16,7 +16,7 @@ import {
   verifyForgetPassword,
 } from "../service/auth";
 import user from "../user";
-import { showToastMessage } from "./useToastMessage";
+import { showToastMessage, toastSuccess } from "./useToastMessage";
 
 const goBack = () => {
   setTimeout(() => {
@@ -169,6 +169,7 @@ export function useResetPassword() {
     })
       .then(() => {
         navigateTo(URLS.auth.login);
+        toastSuccess("yourPasswordHasBeenReset");
         resetPasswordAtom.reset();
       })
       .catch(error => {

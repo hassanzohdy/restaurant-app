@@ -811,4 +811,8 @@ groupedTranslations({
     en: "Enter your notes",
     ar: "ادخل ملاحظاتك",
   },
+  yourPasswordHasBeenReset: {
+    en: "Your password has been reset.",
+    ar: "تم إعادة تعيين كلمة المرور الخاصة بك.",
+  },
 });

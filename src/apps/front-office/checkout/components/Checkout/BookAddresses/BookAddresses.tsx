@@ -26,23 +26,16 @@ export default function BookAddresses() {
   };
 
   const toggleEditForm = (id: number) => {
-    setEditFormOpen(prevEditFormOpen => {
-      const updatedFormOpen = { ...prevEditFormOpen };
-
-      Object.keys(updatedFormOpen).forEach(key => {
-        updatedFormOpen[key] = false;
-      });
-
-      updatedFormOpen[id] = true;
-      return updatedFormOpen;
-    });
+    setEditFormOpen(prevEditFormOpen => ({
+      ...Object.fromEntries(
+        Object.entries(prevEditFormOpen).map(([key]) => [key, false]),
+      ),
+      [id]: !prevEditFormOpen[id],
+    }));
   };
 
   return (
     <>
-      <h4 className="font-bold text-[1.3em] clear-both border-b mb-2">
-        {trans("bookAddresses")}
-      </h4>
       <div className="flex flex-col gap-2">
         {addresses.map((address, index) => (
           <div

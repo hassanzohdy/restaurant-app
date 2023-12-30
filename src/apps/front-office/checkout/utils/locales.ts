@@ -70,10 +70,6 @@ groupedTranslations({
     en: "Email address",
     ar: "عنوان البريد الإلكتروني",
   },
-  yourOrder: {
-    en: "Your order",
-    ar: "طلبك",
-  },
   product: {
     en: "Product",
     ar: "المنتج",
@@ -157,5 +153,9 @@ groupedTranslations({
   orderNotes: {
     en: "Order notes (optional)",
     ar: "ملاحظات الطلب (اختياري)",
+  },
+  orderSummary: {
+    en: "Order Summary",
+    ar: "ملخص الطلب",
   },
 });

@@ -2,18 +2,15 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import URLS from "apps/front-office/utils/urls";
-import CouponCode from "../CouponCode";
 import OrderDetailsTable from "../OrderDetailsTable";
 
 export default function UserOrder() {
   return (
     <div className="xl:w-[40%] w-full border-[6px] border-border h-fit py-5 px-9">
       <h3 className="font-bold text-[1.6em] clear-both">
-        {trans("yourOrder")}
+        {trans("orderSummary")}
       </h3>
       <OrderDetailsTable />
-
-      <CouponCode />
 
       <p className="font-thin text-sm">
         {trans("personalDataNotice")}{" "}

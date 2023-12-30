@@ -33,7 +33,7 @@ export default function BookAddresses() {
         updatedFormOpen[key] = false;
       });
 
-      updatedFormOpen[id] = !prevEditFormOpen[id];
+      updatedFormOpen[id] = true;
       return updatedFormOpen;
     });
   };
@@ -48,10 +48,10 @@ export default function BookAddresses() {
           <div
             key={index}
             className={cn(
-              "flex flex-col border rounded-md group",
+              "flex flex-col border rounded-md group focus:ring-1 focus:ring-primary-main",
               selectedAddressId === address.id && "bg-border border-gray-400",
             )}>
-            <div className="flex flx-row gap-2 group2:focus:ring-1">
+            <div className="flex flx-row gap-2">
               <input
                 type="radio"
                 name="addresses"
@@ -63,8 +63,8 @@ export default function BookAddresses() {
               <label
                 htmlFor={`${address.id}`}
                 className="cursor-pointer w-full h-full py-2 flex flex-row justify-between items-center gap-2">
-                <div className="text-sm">
-                  <span className="font-bold ">
+                <div className={"text-sm"}>
+                  <span className="font-bold">
                     {address.firstName} {address.lastName}
                   </span>{" "}
                   {address.address}
@@ -77,14 +77,6 @@ export default function BookAddresses() {
                   onClick={() => toggleEditForm(address.id)}>
                   {trans("edit")}
                 </Button>
-                {/* <Button
-                  className={cn(
-                    "bg-primary-main w-fit py-1 px-2 rounded-xl hover:bg-primary-hover mr-2 capitalize ml-auto opacity-0 group-hover:opacity-100 focus:opacity-100",
-                    editFormOpen[address.id] && "opacity-100",
-                  )}
-                  onClick={() => handleDeleteAddress(address.id)}>
-                  delete
-                </Button> */}
               </label>
             </div>
 

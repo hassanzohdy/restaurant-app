@@ -815,4 +815,12 @@ groupedTranslations({
     en: "Your password has been reset.",
     ar: "تم إعادة تعيين كلمة المرور الخاصة بك.",
   },
+  addedToWishlist: {
+    en: "Item added to wishlist.",
+    ar: "تمت إضافة العنصر إلى قائمة الرغبات.",
+  },
+  removedFromWishlist: {
+    en: "Item removed from wishlist.",
+    ar: "تمت إزالة العنصر من قائمة الرغبات.",
+  },
 });

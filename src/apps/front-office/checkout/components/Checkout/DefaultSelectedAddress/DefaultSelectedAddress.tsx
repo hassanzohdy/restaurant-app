@@ -21,9 +21,6 @@ export default function DefaultSelectedAddress() {
 
   return (
     <div className="w-full">
-      <h4 className="font-bold text-[1.3em] clear-both border-b mb-2">
-        {trans("selectedAddress")}
-      </h4>
       <div>
         <span className="font-bold">{trans("fullName")} :</span>{" "}
         {selectedAddress.firstName} {selectedAddress.lastName}

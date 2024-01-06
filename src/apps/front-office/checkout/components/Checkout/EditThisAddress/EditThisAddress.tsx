@@ -11,7 +11,7 @@ import { SubmitButton } from "apps/front-office/design-system/components/Button"
 import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { useEffect, useState } from "react";
-import useAddresses from "shared/hooks/useAddresses";
+import useAddresses from "shared/hooks/use-addresses";
 import CheckoutPhoneNumber from "../Form/CheckoutPhoneInput";
 
 export default function EditAddress({ id }: any) {
@@ -19,7 +19,7 @@ export default function EditAddress({ id }: any) {
   const [selectedAddress, setSelectedAddress] = useState<
     BookAddressesType | undefined
   >();
-  const { updateAddress } = useAddresses();
+  const { updateData } = useAddresses();
 
   const addresses = addressesAtom.useValue();
   const userEmail = userAtom.useValue().email;
@@ -57,7 +57,7 @@ export default function EditAddress({ id }: any) {
       email: userEmail,
       id: selectedAddress?.id, // cuz response dons't have the updated form to update the atom with
     };
-    updateAddress(id, updatedData);
+    updateData(id, updatedData, trans("addressHasUpdated"));
   };
 
   if (!formData) return null;

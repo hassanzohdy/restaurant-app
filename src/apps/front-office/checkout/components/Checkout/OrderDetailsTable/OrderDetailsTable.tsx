@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
 import { price } from "apps/front-office/utils/price";
+import CouponCode from "../CouponCode";
 
 export default function OrderDetailsTable() {
   const items = cartAtom.use("items");
@@ -44,6 +45,9 @@ export default function OrderDetailsTable() {
           <th className="text-sm rtl:text-left ltr:text-right font-thin text-black">
             {trans("noShippingOptions")}
           </th>
+        </tr>
+        <tr className="flex py-4 border-b">
+          <CouponCode />
         </tr>
         <tr className="flex flex-row justify-between items-center text-[#1E1D23] py-4">
           <th className="text-sm rtl:text-right ltr:text-left">

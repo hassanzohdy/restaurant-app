@@ -6,7 +6,7 @@ import { cn } from "apps/front-office/design-system/utils/cn";
 
 export default function CouponCode() {
   return (
-    <div className="mb-3">
+    <div className="w-full">
       <Form className={cn("grid grid-rows-[1fr] transition-all duration-500")}>
         <div className="overflow-hidden flex flex-row gap-3 items-center">
           <TextInputV2

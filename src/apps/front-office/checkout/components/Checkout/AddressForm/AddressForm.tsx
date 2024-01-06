@@ -4,7 +4,7 @@ import { SubmitButton } from "apps/front-office/design-system/components/Button"
 import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { useRef } from "react";
-import useAddresses from "shared/hooks/useAddresses";
+import useAddresses from "shared/hooks/use-addresses";
 import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
 import CheckoutPhoneNumber from "../Form/CheckoutPhoneInput";
 
@@ -19,9 +19,13 @@ export default function AddressFrom({ newAddress }: PostNewAddressType) {
 
   useFocusOnToggle(firstNameRef.current, newAddress);
 
+  const handelPostNewAddress = form => {
+    postNewAddress({ ...form, isPrimary: false });
+  };
+
   return (
     <Form
-      onSubmit={e => postNewAddress(e.values)}
+      onSubmit={e => handelPostNewAddress(e.values)}
       className={cn(
         "grid grid-rows-[0fr] transition-all duration-500",
         newAddress && "grid-rows-[1fr]",

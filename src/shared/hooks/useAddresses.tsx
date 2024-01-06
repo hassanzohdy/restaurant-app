@@ -53,6 +53,7 @@ export default function useAddresses() {
           const deletedAddress = oldAddresses.find(
             address => address.id === id,
           );
+
           const isPrimaryDeleted = deletedAddress?.isPrimary || false;
 
           const nextAddress = updatedAddresses.find(

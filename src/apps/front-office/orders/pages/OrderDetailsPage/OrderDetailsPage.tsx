@@ -4,16 +4,12 @@ import { useOnce } from "@mongez/react-hooks";
 import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import URLS from "apps/front-office/utils/urls";
-import popularMealImage1 from "assets/images/about-us/popular-meal-image-1.png";
-import popularMealImage2 from "assets/images/about-us/popular-meal-image-2.png";
-import popularMealImage3 from "assets/images/about-us/popular-meal-image-3.png";
 import { useState } from "react";
 import { getOrder } from "../../services/orders-service";
 import { Order } from "../OrdersPage/components/OrdersListItem/OrdersListItem";
 import OrderBottomDetails from "./components/OrderBottomDetails";
 import OrderMealsList from "./components/OrderMealsList";
 import OrderTopDetails from "./components/OrderTopDetails";
-
 
 export type OrderDetailsPageProps = {
   params: {

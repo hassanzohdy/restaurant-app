@@ -1,9 +1,11 @@
 import { trans } from "@mongez/localization";
 import {
   addressesAtom,
+  checkoutAtom,
   defaultAddressAtom,
 } from "apps/front-office/checkout/atom/checkout-atoms";
 import { Button } from "apps/front-office/design-system/components/Button";
+import { useEffect } from "react";
 
 export default function DefaultSelectedAddress() {
   const addresses = addressesAtom.useValue();
@@ -14,6 +16,12 @@ export default function DefaultSelectedAddress() {
     defaultAddressAtom.update(false);
     return null;
   }
+
+  useEffect(() => {
+    if (selectedAddress) {
+      checkoutAtom.change("shippingAddress", selectedAddress.id);
+    }
+  }, [selectedAddress]);
 
   const handelChangeAddress = () => {
     defaultAddressAtom.update(false);

@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { updateCart } from "apps/front-office/cart/services/cart-service";
-import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
+import { CartItem } from "apps/front-office/cart/utils/types";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
@@ -9,12 +9,7 @@ import { IoClose } from "react-icons/io5";
 import useCart from "shared/hooks/useCart";
 
 export type CartMealsTableItemProps = {
-  item: {
-    id: number;
-    meal: Meal;
-    quantity: number;
-    totalPrice: number;
-  };
+  item: CartItem;
 };
 export default function CartMealsTableItem({ item }: CartMealsTableItemProps) {
   const { maxAmountPerOrder, removeItemFromCart } = useCart();
@@ -85,7 +80,7 @@ export default function CartMealsTableItem({ item }: CartMealsTableItemProps) {
         <label className="hidden max-sm:block text-[12px] text-[#1e1d23] font-normal">
           {trans("subtotal")}
         </label>
-        <span>{price(Number(item?.totalPrice))}</span>
+        <span>{price(Number(item.subTotal))}</span>
       </td>
     </tr>
   );

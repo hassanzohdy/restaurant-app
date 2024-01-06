@@ -62,7 +62,7 @@ export default function CartTableItem({
         </div>
       </td>
       <td className="product-subtotal w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3">
-        <span className="text-primary-main">{price(cartItem.totalPrice)}</span>
+        <span className="text-primary-main">{price(cartItem.subTotal)}</span>
       </td>
     </tr>
   );

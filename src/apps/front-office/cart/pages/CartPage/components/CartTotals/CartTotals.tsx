@@ -10,7 +10,7 @@ type CartTotalsProps = {
 
 export default function CartTotals({ cartItems }: CartTotalsProps) {
   const total = cartItems.reduce((acc, item) => {
-    return acc + item.totalPrice;
+    return acc + item.price;
   }, 0);
 
   return (

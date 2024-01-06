@@ -351,6 +351,30 @@ groupedTranslations({
     en: "Book a table",
     ar: "حجز تربيزة",
   },
+  bookTableDescription: {
+    en: "Call us now to book a table in your desired time",
+    ar: "اتصل بنا الآن لحجز طاولة في الوقت المطلوب",
+  },
+  couponHasBeenApplied: {
+    en: "Coupon has been applied successfully",
+    ar: "تم تطبيق الكوبون بنجاح",
+  },
+  removedCouponSuccessfully: {
+    en: "Coupon has been removed successfully",
+    ar: "تمت إزالة الكوبون بنجاح",
+  },
+  pleaseSelectShippingAddress: {
+    en: "Please select shipping address",
+    ar: "الرجاء تحديد عنوان الشحن",
+  },
+  orderCreatedSuccessfully: {
+    en: "Order has been created successfully",
+    ar: "تم إنشاء الطلب بنجاح",
+  },
+  coupon: {
+    en: "Coupon",
+    ar: "كوبون",
+  },
   openingHours: {
     en: "Opening Hours",
     ar: "ساعات العمل",

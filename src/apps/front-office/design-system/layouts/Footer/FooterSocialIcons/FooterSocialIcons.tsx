@@ -1,26 +1,30 @@
+import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import { settingsAtom } from "apps/general/atoms/settings-atom";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiFacebook, FiYoutube } from "react-icons/fi";
 
-const socialLinks = [
-  { name: "facebook", href: "#", icon: <FiFacebook size="20" /> },
-  { name: "twitter", href: "#", icon: <FaXTwitter size="20" /> },
-  { name: "youtube", href: "#", icon: <FiYoutube size="20" /> },
-  { name: "instagram", href: "#", icon: <FaInstagram size="20" /> },
-];
+const socialIcons = {
+  facebook: <FiFacebook size="20" />,
+  youtube: <FiYoutube size="20" />,
+  twitter: <FaXTwitter size="20" />,
+  instagram: <FaInstagram size="20" />,
+};
 
 export default function FooterSocialIcons() {
+  const social = settingsAtom.use("social");
   return (
     <>
       <ul className="footer-social-icons flex justify-center mt-[20px] gap-2">
-        {socialLinks.map((item, index) => (
+        {Object.keys(social).map((socialMedia, index) => (
           <li key={index}>
             <Link
-              to={item.href}
+              to={social[socialMedia]}
+              newTab
               className="flex items-center justify-center  w-[36px] h-[36px] rounded-full bg-white text-dark hover:bg-[#ffc222] duration-700 transition-all ease-in-out max-lg:px-[5px] max-lg:text-[13px]">
-              {item.icon}
-              <span className="sr-only">item.name</span>
+              {socialIcons[socialMedia]}
+              <span className="sr-only">{trans(socialMedia)}</span>
             </Link>
           </li>
         ))}

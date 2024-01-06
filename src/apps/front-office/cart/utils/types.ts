@@ -5,17 +5,22 @@ export type CartItem = {
   meal: Meal;
   price: number;
   salePrice: number;
-  totalPrice: number;
   quantity: number;
+  subTotal: number;
 };
 
 export type Cart = {
   id: number;
+  coupon?: {
+    code: string;
+    value: number;
+  };
   items: CartItem[];
   total: {
     quantity: number;
     price: number;
     finalPrice: number;
     salePrice: number;
+    coupon?: number;
   };
 };

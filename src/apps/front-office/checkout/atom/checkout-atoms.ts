@@ -10,3 +10,18 @@ export const addressesAtom = atom<BookAddressesType[]>({
   key: "address-book",
   default: [],
 });
+
+export type Checkout = {
+  notes: string;
+  shippingAddress: number;
+  paymentMethod: "cashOnDelivery" | "card";
+};
+
+export const checkoutAtom = atom<Checkout>({
+  key: "checkout",
+  default: {
+    notes: "",
+    shippingAddress: 0,
+    paymentMethod: "cashOnDelivery",
+  },
+});

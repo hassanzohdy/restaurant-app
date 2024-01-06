@@ -3,9 +3,10 @@ import Helmet from "@mongez/react-helmet";
 import { useOnce } from "@mongez/react-hooks";
 import InViewPort from "apps/front-office/design-system/components/InViewPort";
 import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
-import PopularDishes from "apps/front-office/home/pages/HomePage/PopularDishes";
+import PopularDishes from "apps/front-office/home/pages/HomePage/components/PopularDishes";
 import { getHome } from "apps/front-office/home/services/home-service";
 import { useState } from "react";
+import { popularDishesAtom } from "../../atoms/popular-dishes-atom";
 import Banners from "./components/Banners";
 import HomeBanner from "./components/HomeBanner";
 import LatestNews from "./components/LatestNews";
@@ -20,6 +21,7 @@ export default function HomePage() {
     getHome()
       .then(response => {
         setData(response.data);
+        popularDishesAtom.change("meals", response.data.popularMeals);
         setLoading(false);
       })
       .catch(_error => {
@@ -37,7 +39,7 @@ export default function HomePage() {
       {data.slider && <MainSlider slider={data.slider} />}
       {data.categories && <Menu categories={data.categories} />}
       {data.middleBanners && <Banners banners={data.middleBanners} />}
-      {data.popularMeals && <PopularDishes meals={data.popularMeals} />}
+      {data.popularMeals && <PopularDishes />}
       {data.offerBanner && <HomeBanner banner={data.offerBanner} />}
 
       <InViewPort component={<LatestNews />} />

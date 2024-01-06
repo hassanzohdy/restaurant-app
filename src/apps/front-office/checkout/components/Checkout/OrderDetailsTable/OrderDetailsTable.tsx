@@ -5,7 +5,7 @@ import CouponCode from "../CouponCode";
 
 export default function OrderDetailsTable() {
   const items = cartAtom.use("items");
-  const total = cartAtom.use("total").price;
+  const { price: total, finalPrice, coupon } = cartAtom.use("total") || {};
 
   return (
     <table className="w-full">
@@ -29,7 +29,7 @@ export default function OrderDetailsTable() {
                 <div className="text-primary-main">x {item.quantity}</div>
               </div>
             </th>
-            <th className="text-sm">{price(Number(item.totalPrice))}</th>
+            <th className="text-sm">{price(Number(item.subTotal))}</th>
           </tr>
         ))}
       </tbody>
@@ -38,6 +38,12 @@ export default function OrderDetailsTable() {
           <th className="text-sm">{trans("subtotal")}</th>
           <th className="text-sm">{price(Number(total))}</th>
         </tr>
+        {coupon !== undefined && coupon > 0 && (
+          <tr className="flex justify-between text-secondary py-4 border-b">
+            <th className="text-sm">{trans("coupon")}</th>
+            <th className="text-sm">{price(Number(coupon))}</th>
+          </tr>
+        )}
         <tr className="grid grid-cols-2 text-[#1E1D23] py-4 border-b">
           <th className="text-sm rtl:text-right ltr:text-left">
             {trans("shipping")}
@@ -54,7 +60,7 @@ export default function OrderDetailsTable() {
             {trans("total")}
           </th>
           <th className="text-2xl rtl:text-left ltr:text-right font-bold text-primary-main">
-            {price(Number(total))}
+            {price(Number(finalPrice))}
           </th>
         </tr>
       </tfoot>

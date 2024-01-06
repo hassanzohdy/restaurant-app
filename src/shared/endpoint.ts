@@ -7,6 +7,8 @@ import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
 import { addressesAtom } from "apps/front-office/checkout/atom/checkout-atoms";
 import { currentLocaleCode } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import { settingsAtom } from "apps/general/atoms/settings-atom";
+import { WithSettingsHeader } from "apps/general/utils/flags";
 import { AxiosResponse } from "axios";
 import { apiBaseUrl } from "./flags";
 
@@ -30,6 +32,11 @@ endpointEvents.beforeSending(config => {
   }
 
   headers["locale-code"] = currentLocaleCode();
+
+  if (settingsAtom.get("state") === "initial") {
+    headers[WithSettingsHeader] = true;
+    settingsAtom.change("state", "loading");
+  }
 });
 
 endpointEvents.onSuccess((response: AxiosResponse) => {
@@ -48,6 +55,10 @@ endpointEvents.onSuccess((response: AxiosResponse) => {
 
   if (response?.data?.addresses) {
     addressesAtom.update(response.data.addresses);
+  }
+
+  if (response.data.settings) {
+    settingsAtom.update(response.data.settings);
   }
 });
 

@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { checkoutAtom } from "apps/front-office/checkout/atom/checkout-atoms";
 
 export default function OrderNotes() {
   return (
@@ -10,6 +11,9 @@ export default function OrderNotes() {
         <div>
           <textarea
             name="orderNotes"
+            onChange={e => {
+              checkoutAtom.change("notes", e.target.value.trim());
+            }}
             id="orderNotes"
             className="w-full h-full outline-none mt-1 block p-2 bg-white border border-border rounded-md text-base placeholder-slate-400 focus:outline-none focus:border-primary-main "
             placeholder={trans("enterYourNotes")}

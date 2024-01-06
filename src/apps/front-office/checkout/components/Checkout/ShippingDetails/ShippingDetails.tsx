@@ -1,6 +1,8 @@
 import { trans } from "@mongez/localization";
+import { useEvent } from "@mongez/react-hooks";
 import {
   addressesAtom,
+  checkoutAtom,
   defaultAddressAtom,
 } from "apps/front-office/checkout/atom/checkout-atoms";
 import { getAddressesData } from "apps/front-office/checkout/utils/get-address-data";
@@ -15,6 +17,18 @@ import DefaultSelectedAddress from "../DefaultSelectedAddress";
 export default function ShippingDetails() {
   const { state, error } = getAddressesData();
   const addresses = addressesAtom.useValue();
+
+  useEvent(() =>
+    defaultAddressAtom.onChange(() => {
+      const addresses = addressesAtom.value;
+
+      const selectedAddress = addresses.find(address => address.isPrimary);
+
+      if (selectedAddress) {
+        checkoutAtom.change("shippingAddress", selectedAddress.id);
+      }
+    }),
+  );
 
   const addressesContent = defaultAddressAtom.useValue() ? (
     <DefaultSelectedAddress />

@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import {
   addressesAtom,
+  checkoutAtom,
   defaultAddressAtom,
 } from "apps/front-office/checkout/atom/checkout-atoms";
 import { Button } from "apps/front-office/design-system/components/Button";
@@ -13,12 +14,17 @@ export default function BookAddresses() {
   const { updateData } = useAddresses();
   const addresses = addressesAtom.useValue();
 
-  const [selectedAddressId, setSelectedAddressId] = useState<number>();
+  const [selectedAddressId, changeAddress] = useState<number>();
   const [editFormOpen, setEditFormOpen] = useState<{ [key: number]: boolean }>(
     {},
   );
 
   const defaultSelectedId = addresses.find(address => address.isPrimary)?.id;
+
+  const setSelectedAddressId = (id: number | undefined) => {
+    changeAddress(id);
+    checkoutAtom.change("shippingAddress", id);
+  };
 
   useEffect(() => {
     setSelectedAddressId(defaultSelectedId);

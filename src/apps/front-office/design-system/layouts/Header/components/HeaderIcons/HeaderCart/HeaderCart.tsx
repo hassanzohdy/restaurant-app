@@ -15,9 +15,11 @@ export default function HeaderCart() {
         title={trans("shoppingCart")}
         onClick={openCart}>
         <TiShoppingCart />
-        <div className="absolute right-[7px] top-[8px] text-[10px] font-bold bg-primary-main rounded-full w-4 h-4 flex items-center justify-center">
-          {cart}
-        </div>
+        {cart > 0 && (
+          <div className="absolute right-[7px] top-[8px] text-[10px] font-bold bg-primary-main rounded-full w-4 h-4 flex items-center justify-center">
+            {cart}
+          </div>
+        )}
       </button>
       <CartMenu />
     </div>

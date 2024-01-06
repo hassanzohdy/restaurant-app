@@ -45,7 +45,7 @@ const URLS = {
   },
   checkout: {
     page: "/checkout",
-    success: "/checkout/success",
+    success: "/checkout/success/:id",
     failed: "/checkout/failed",
   },
   auth: {

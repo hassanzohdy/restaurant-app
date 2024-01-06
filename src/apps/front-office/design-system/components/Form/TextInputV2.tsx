@@ -9,8 +9,16 @@ import { cn } from "apps/front-office/design-system/utils/cn";
 import { forwardRef } from "react";
 
 function _TextInputV2(props: FormControlProps, ref: any) {
-  const { value, id, error, type, name, changeValue, inputRef, otherProps } =
-    useFormControl(props);
+  const {
+    value,
+    id,
+    error,
+    type,
+    disabled,
+    changeValue,
+    inputRef,
+    otherProps,
+  } = useFormControl(props);
 
   return (
     <div className="w-full">
@@ -27,7 +35,6 @@ function _TextInputV2(props: FormControlProps, ref: any) {
         type={type || "text"}
         value={value}
         id={id}
-        name={name}
         onChange={e => {
           changeValue(e.target.value);
         }}
@@ -37,6 +44,7 @@ function _TextInputV2(props: FormControlProps, ref: any) {
             ref.current = _ref;
           }
         }}
+        disabled={disabled}
         {...otherProps}
         className={cn(
           "mt-1 block w-full p-2 bg-white border border-border rounded-md text-base placeholder-slate-400 focus:outline-none focus:border-primary-main ",

@@ -13,7 +13,7 @@ export default function EmptyComponent({
   title,
   description,
   icon,
-  goBackPath = URLS.home,
+  goBackPath = URLS.menu.list,
 }: EmptyComponentProps) {
   return (
     <div className="empty text-center py-[100px] max-lg:py-[80px] max-sm:py-[70px]">

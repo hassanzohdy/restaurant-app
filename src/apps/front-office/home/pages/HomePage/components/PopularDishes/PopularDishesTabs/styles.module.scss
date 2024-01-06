@@ -24,6 +24,10 @@
       }
       //   flex-basis: 18%;
 
+      &.active {
+        background-color: #ffc222;
+        border-color: #ffc222;
+      }
       &:hover {
         background-color: #ffc222;
       }

@@ -1,103 +1,33 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
+import { useOnce } from "@mongez/react-hooks";
+import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
-import popularMealImage1 from "assets/images/about-us/popular-meal-image-1.png";
-import popularMealImage2 from "assets/images/about-us/popular-meal-image-2.png";
-import popularMealImage3 from "assets/images/about-us/popular-meal-image-3.png";
-import React from "react";
+import React, { useState } from "react";
+import { getOrdersList } from "../../services/orders-service";
 import OrdersListItem from "../OrdersPage/components/OrdersListItem";
 
-const ordersList = [
-  {
-    id: "12458667823",
-    orderNumber: "1",
-    orderMeals: [
-      {
-        name: "Chicken",
-        image: popularMealImage1,
-        price: 50,
-        quantity: 2,
-      },
-      {
-        name: "Burger",
-        image: popularMealImage2,
-        price: 50,
-        quantity: 2,
-      },
-      {
-        name: "Pizza Douce",
-        image: popularMealImage3,
-        price: 50,
-        quantity: 2,
-      },
-    ],
-    orderDate: "Fri,Mar 17, 2023, 04:46 PM",
-    totalPrice: 300,
-    address: "Elm Street, 23",
-    paymentMethod: "cash on delivery",
-    delivered: true,
-  },
-  {
-    id: "12485667869",
-    orderNumber: "2",
-    orderMeals: [
-      {
-        name: "Chicken",
-        image: popularMealImage1,
-        price: 50,
-        quantity: 2,
-      },
-      {
-        name: "Burger",
-        image: popularMealImage2,
-        price: 50,
-        quantity: 2,
-      },
-      {
-        name: "Pizza Douce",
-        image: popularMealImage3,
-        price: 50,
-        quantity: 2,
-      },
-    ],
-    orderDate: "Fri,Mar 17, 2023, 04:46 PM",
-    totalPrice: 300,
-    address: "Elm Street, 23",
-    paymentMethod: "cash on delivery",
-    delivered: true,
-  },
-  {
-    id: "15658662323",
-    orderNumber: "3",
-    orderMeals: [
-      {
-        name: "Chicken",
-        image: popularMealImage1,
-        price: 50,
-        quantity: 2,
-      },
-      {
-        name: "Burger",
-        image: popularMealImage2,
-        price: 50,
-        quantity: 2,
-      },
-      {
-        name: "Pizza Douce",
-        image: popularMealImage3,
-        price: 50,
-        quantity: 2,
-      },
-    ],
-    orderDate: "Fri,Mar 17, 2023, 04:46 PM",
-    totalPrice: 300,
-    address: "Elm Street, 23",
-    paymentMethod: "cash on delivery",
-    delivered: true,
-  },
-];
-
 function _OrdersPage() {
+  const [orders, setOrders] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useOnce(() => {
+    getOrdersList()
+      .then(response => {
+        setOrders(response.data.orders);
+        setIsLoading(false);
+      })
+      .catch(_error => {
+        // TODO: handle error
+      });
+  });
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  // TODO: Handle empty orders list
+
   return (
     <>
       <Helmet title={trans("myOrders")} />
@@ -111,7 +41,7 @@ function _OrdersPage() {
             {trans("pastOrders")}
           </h2>
           <ul className="orders-list">
-            {ordersList.map((order, index) => (
+            {orders.map((order, index) => (
               <OrdersListItem key={index} order={order} />
             ))}
           </ul>

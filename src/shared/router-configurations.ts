@@ -5,7 +5,7 @@ import URLS from "apps/front-office/utils/urls";
 import { productionBasePath } from "./flags";
 
 export const routerConfigurations: RouterConfigurations = {
-  strictMode: true,
+  strictMode: false,
   forceRefresh: true,
   basePath: productionBasePath,
   scrollToTop: "smooth",

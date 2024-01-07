@@ -72,7 +72,7 @@ const _removeAddress = id => {
     });
 };
 
-const _updateData = (id, form, successMassage) => {
+const _updateAddressData = (id, form, successMassage) => {
   updateAddressData(id, form)
     .then(res => {
       console.log(res);
@@ -98,6 +98,6 @@ export default function useAddresses() {
   return {
     postNewAddress: _postNewAddress,
     removeAddress: _removeAddress,
-    updateData: _updateData,
+    updateAddressData: _updateAddressData,
   };
 }

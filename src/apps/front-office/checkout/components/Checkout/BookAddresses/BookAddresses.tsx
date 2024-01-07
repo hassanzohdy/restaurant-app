@@ -11,7 +11,7 @@ import useAddresses from "shared/hooks/use-addresses";
 import EditThisAddress from "../EditThisAddress";
 
 export default function BookAddresses() {
-  const { updateData } = useAddresses();
+  const { updateAddressData } = useAddresses();
   const addresses = addressesAtom.useValue();
 
   const [selectedAddressId, changeAddress] = useState<number>();
@@ -51,7 +51,7 @@ export default function BookAddresses() {
       return;
     }
 
-    updateData(
+    updateAddressData(
       id,
       { ...selectedAddress, isPrimary: true },
       trans("addressHasSelected"),

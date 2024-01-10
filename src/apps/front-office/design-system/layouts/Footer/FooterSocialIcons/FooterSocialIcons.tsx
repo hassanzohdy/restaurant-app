@@ -13,7 +13,7 @@ const socialIcons = {
 };
 
 export default function FooterSocialIcons() {
-  const social = settingsAtom.use("social");
+  const social = settingsAtom.use("social") || {};
   return (
     <>
       <ul className="footer-social-icons flex justify-center mt-[20px] gap-2">

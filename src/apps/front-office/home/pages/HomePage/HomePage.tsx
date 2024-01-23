@@ -26,6 +26,7 @@ export default function HomePage() {
       })
       .catch(_error => {
         // TODO: handle error
+        console.log(_error);
       });
   });
 

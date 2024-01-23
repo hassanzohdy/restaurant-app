@@ -27,6 +27,8 @@ const endpointEvents = endpoint.events;
 endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
 
+  headers["client-id"] = "restaurant.mentoor.io";
+
   if (user.isLoggedIn()) {
     headers.Authorization = `Bearer ${user.getAccessToken()}`;
   }

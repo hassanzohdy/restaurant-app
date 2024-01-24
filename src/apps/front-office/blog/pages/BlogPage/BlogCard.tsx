@@ -18,12 +18,16 @@ export default function BlogCard({ blog }: { blog: Post }) {
       <div className="p-6 flex flex-col">
         <Link to={URLS.blog.viewPost(blog)}>
           <h3 className="font-bold  hover:text-primary-hover transition duration-150 cursor-pointer">
-            {blog.title.substring(0, 22)}...
+            {blog.title}
           </h3>
         </Link>
-        <p className="text-gray-500 text-md h-16">
-          {blog.shortDescription.substring(0, 60)}...
-        </p>
+        {blog.shortDescription.length <= 85 ? (
+          <p className="text-gray-500 text-md h-16">{blog.shortDescription}</p>
+        ) : (
+          <p className="text-gray-500 text-md h-16">
+            {blog.shortDescription.substring(0, 85)}...
+          </p>
+        )}
         <Link to={URLS.blog.viewPost(blog)}>
           <button
             type="button"

@@ -13,11 +13,11 @@ export default function Menu({ categories }: any) {
           className="inline-block px-12 py-4 min-h-[54px] text-[14px] font-semibold">
           {trans("menu")}
         </BaseLink>
-        <div className="flex justify-around items-end py-10">
+        <div className="flex flex-row justify-center items-center gap-16">
           {categories.map((category, index) => (
             <div
               key={category.id}
-              className="w-[10%] flex items-center justify-center">
+              className="flex items-center justify-center ">
               <MenuCategory key={index} category={category} />
             </div>
           ))}

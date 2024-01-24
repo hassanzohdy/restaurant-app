@@ -1,11 +1,16 @@
 import { trans } from "@mongez/localization";
+import { Link } from "@mongez/react-router";
 import CommonTitle from "apps/front-office/design-system/components/CommonTitle";
 import { BaseLink } from "apps/front-office/design-system/components/Link";
 import { Banner } from "apps/front-office/design-system/utils/types";
 import URLS from "apps/front-office/utils/urls";
 
 export default function HomeBanner({ banner }: { banner: Banner }) {
-  return <img src={banner.image.url} alt="banner" className="w-full" />;
+  return (
+    <Link to={URLS.menu.list}>
+      <img src={banner.image.url} alt="banner" className="w-full" />
+    </Link>
+  );
 }
 function _HomeBanner({ banner: _ }: { banner: Banner }) {
   return (

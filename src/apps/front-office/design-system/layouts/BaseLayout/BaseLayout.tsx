@@ -1,3 +1,5 @@
+import { setHelmetConfigurations } from "@mongez/react-helmet";
+import { settingsAtom } from "apps/general/atoms/settings-atom";
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import Footer from "../Footer";
@@ -13,6 +15,12 @@ export type BaseLayoutProps = {
  * Base layout can be used to wrap all pages
  */
 export default function BaseLayout({ children }: BaseLayoutProps) {
+  const settings = settingsAtom.use("general");
+
+  setHelmetConfigurations({
+    appName: settings.appName,
+  });
+
   return (
     <div className="relative">
       <Header />

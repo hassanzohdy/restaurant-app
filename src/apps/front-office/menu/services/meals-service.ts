@@ -19,3 +19,7 @@ export function getSearchMeals(searchInput) {
     name: searchInput,
   });
 }
+
+export function updateMeal(id, values) {
+  return endpoint.post("/meals/" + id, { values });
+}

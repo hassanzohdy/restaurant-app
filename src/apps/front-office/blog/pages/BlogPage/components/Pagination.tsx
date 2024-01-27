@@ -9,6 +9,7 @@ import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { PaginationInfo } from "../BlogPage";
+
 export default function Pagination({ pagination }: PaginationProps) {
   const [num] = useState(pagination.page);
   const totalPages = pagination.pages;

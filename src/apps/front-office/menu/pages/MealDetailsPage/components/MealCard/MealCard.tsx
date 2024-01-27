@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import Stars from "apps/front-office/design-system/components/Stars";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -41,13 +42,13 @@ export default function MealCard({ meal }: MealCardProps) {
       </Link>
       <div className="mt-6 space-y-2 m-3">
         {/* Starts */}
-        {/* <Stars ratings={meal.ratings} /> */}
+        <Stars ratings={meal.ratings} />
         <Link
           to={URLS.menu.viewMeal(meal)}
           className="font-bold text-lg inline-block">
           {meal.name}
         </Link>
-        <p title={meal.description} className="line-clamp-2 font-light">
+        <p title={meal.name} className="line-clamp-2 font-light">
           {meal.description}
         </p>
         <div className="flex items-center justify-between gap-4">

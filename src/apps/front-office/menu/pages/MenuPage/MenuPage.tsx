@@ -106,16 +106,16 @@ export default function MenuPage() {
   return (
     <>
       <Helmet title={trans("menu")} />
-      <Breadcrumb title="Menu" navItems={[{ name: "Menu" }]} />
+      <Breadcrumb title={trans("menu")} navItems={[{ name: trans("menu") }]} />
       <div className="container">
-        <div className="flex flex-row mt-12 mb-12">
-          <div className="basis-1/4">
+        <div className="flex flex-row justify-between gap-12 my-12">
+          <div className="basis-1/4 mt-7">
             <MenuSidebar
               categories={sidebarData.categories}
               price={sidebarData.price}
             />
           </div>
-          <div className="basis-3/4 shopItems">
+          <div className="basis-3/4">
             <ViewDisplayMode />
             <MealsContainer />
           </div>

@@ -28,7 +28,7 @@ const ImagesSide = () => {
   return (
     <>
       {isOverlayOpen && (
-        <Overlay onClose={overlayHandler}>
+        <Overlay atom={mealAtom}>
           <div className="relative flex items-center justify-center w-full h-full">
             <img
               onClick={e => e.stopPropagation()}

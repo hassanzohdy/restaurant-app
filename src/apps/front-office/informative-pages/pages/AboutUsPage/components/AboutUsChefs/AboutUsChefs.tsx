@@ -9,8 +9,8 @@ export default function AboutUsChefs() {
   const chefs = [
     {
       name: "William Smith",
-      position: "Chef",
-      details: "Everything We Pizza, We Pizza With Love. Designer Fast food.",
+      position: trans("chef"),
+      details: trans("everythingWePizzaWePizzaWithLove"),
       image: chef1,
       socialLinks: {
         facebook: "#",
@@ -20,8 +20,8 @@ export default function AboutUsChefs() {
     },
     {
       name: "John Doe",
-      position: "Manager",
-      details: "Everything We Pizza, We Pizza With Love. Designer Fast food.",
+      position: trans("manager"),
+      details: trans("everythingWePizzaWePizzaWithLove"),
       image: chef2,
       socialLinks: {
         facebook: "#",
@@ -31,8 +31,8 @@ export default function AboutUsChefs() {
     },
     {
       name: "Brad L.",
-      position: "Chef",
-      details: "Everything We Pizza, We Pizza With Love. Designer Fast food.",
+      position: trans("chef"),
+      details: trans("everythingWePizzaWePizzaWithLove"),
       image: chef3,
       socialLinks: {
         facebook: "#",

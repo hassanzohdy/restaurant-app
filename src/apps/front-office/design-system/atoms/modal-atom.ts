@@ -1,12 +1,7 @@
-import { atom } from "@mongez/react-atom";
+import { openAtom } from "@mongez/react-atom";
 
 export type modalAtomType = {
   opened: boolean;
 };
 
-export const modalAtom = atom<modalAtomType>({
-  key: "modal",
-  default: {
-    opened: false,
-  },
-});
+export const modalAtom = openAtom("ModelAtom");

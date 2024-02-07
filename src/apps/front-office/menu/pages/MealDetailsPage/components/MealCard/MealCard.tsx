@@ -15,7 +15,11 @@ export type MealCardProps = {
 
 export default function MealCard({ meal }: MealCardProps) {
   const displayedPrice = price(meal?.price);
-  const displayedSale = price(meal?.salePrice);
+  let displayedSale = price(meal?.salePrice);
+
+  if (displayedPrice === displayedSale) {
+    displayedSale = "";
+  }
 
   const { addMealToCart, isLoading } = useCart();
 

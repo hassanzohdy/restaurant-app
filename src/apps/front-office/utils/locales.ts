@@ -458,7 +458,7 @@ groupedTranslations({
   },
   WeGuarantee: {
     en: "We Guarantee",
-    ar: "",
+    ar: "نحن نضمن",
   },
   minutesDelivery: {
     en: "Minutes Delivary",
@@ -846,5 +846,21 @@ groupedTranslations({
   removedFromWishlist: {
     en: "Item removed from wishlist.",
     ar: "تمت إزالة العنصر من قائمة الرغبات.",
+  },
+  bestPizzaIdeas: {
+    en: "Best Pizza ideas & traditions from the whole world",
+    ar: "أفضل أفكار وتقاليد البيتزا من جميع أنحاء العالم",
+  },
+  chef: {
+    en: "Chef",
+    ar: "الشيف",
+  },
+  manager: {
+    en: "Manager",
+    ar: "مدير",
+  },
+  everythingWePizzaWePizzaWithLove: {
+    en: "Everything We Pizza, We Pizza With Love. Designer Fast food.",
+    ar: "كل شيء نحن بيتزا، نحن بيتزا بالحب. الوجبات السريعة المصممة.",
   },
 });

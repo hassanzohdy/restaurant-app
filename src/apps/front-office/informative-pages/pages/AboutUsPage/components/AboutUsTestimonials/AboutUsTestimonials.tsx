@@ -1,5 +1,3 @@
-import client1 from "assets/images/about-us/client-1.jpg";
-import client2 from "assets/images/about-us/client-2.jpg";
 import client3 from "assets/images/about-us/client-3.jpg";
 import Slider from "react-slick";
 import AboutUsTestimonialsItem from "./AboutUsTestimonialsItem";
@@ -12,7 +10,7 @@ export default function AboutUsTestimonials() {
       job: "CEO,apple",
       feedback:
         "“Forget the trendy pizza shops, This hidden spot makes the best New York-style pizza slice in naples” ",
-      image: client1,
+      image: client3,
       ratings: 4,
     },
     {
@@ -20,7 +18,7 @@ export default function AboutUsTestimonials() {
       job: "CEO,apple",
       feedback:
         "I would be lost without restaurant. I would like to personally thank you for your outstanding product.",
-      image: client2,
+      image: client3,
       ratings: 4,
     },
     {
@@ -36,7 +34,7 @@ export default function AboutUsTestimonials() {
       job: "Manager",
       feedback:
         "Without food, we would have gone bankrupt by now. Thanks food! The service was excellent.",
-      image: client1,
+      image: client3,
       ratings: 3,
     },
   ];

@@ -26,12 +26,15 @@ export default function AccordionItem({ item }: AccordionItemProps) {
         </span>
       </h2>
       <div
-        hidden={!opened}
-        className={`accordion-collapse overflow-hidden duration-700 transition-all ease-in-out`}>
-        <div className="accordion-body p-6 max-md:p-4">
-          <p className="text-[16px] leading-loose text-primary-text max-sm:text-[14px]">
-            {item.answer}
-          </p>
+        className={`grid duration-300 transition-all ease-in-out ${
+          !opened ? "grid-rows-[0fr]" : "grid-rows-[1fr]"
+        }`}>
+        <div className={`accordion-collapse overflow-hidden  `}>
+          <div className="accordion-body p-6 max-md:p-4">
+            <p className="text-[16px] leading-loose text-primary-text max-sm:text-[14px]">
+              {item.answer}
+            </p>
+          </div>
         </div>
       </div>
     </div>

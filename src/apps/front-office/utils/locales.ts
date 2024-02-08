@@ -863,4 +863,8 @@ groupedTranslations({
     en: "Everything We Pizza, We Pizza With Love. Designer Fast food.",
     ar: "كل شيء نحن بيتزا، نحن بيتزا بالحب. الوجبات السريعة المصممة.",
   },
+  feelFreeToContact: {
+    en: "Feel free to drop us a line anytime; we're here to listen and assist!",
+    ar: "لا تتردد في التواصل معنا في أي وقت؛ نحن هنا للإستماع والمساعدة!",
+  },
 });

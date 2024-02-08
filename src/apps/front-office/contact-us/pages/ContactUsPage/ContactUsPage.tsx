@@ -32,9 +32,6 @@ function _ContactUsPage() {
           <h2 className="font-bold text-2xl lg:text-4xl">
             {trans("callUsOrVisit")}
           </h2>
-          {/* <p className="text-primary-text mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p> */}
         </div>
 
         <div className="mt-10 flex flex-col md:flex-row items-center text-center md:text-start justify-between md:items-start gap-10">

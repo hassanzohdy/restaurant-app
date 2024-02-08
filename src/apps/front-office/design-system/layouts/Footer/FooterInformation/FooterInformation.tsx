@@ -22,6 +22,8 @@ export default function FooterInformation() {
   const { address, phoneNumber, workingDays } =
     settingsAtom.use("contact") || {};
 
+  console.log(settingsAtom.use("contact"));
+
   const workingDaysList = parseWorkingDays(workingDays);
 
   return (

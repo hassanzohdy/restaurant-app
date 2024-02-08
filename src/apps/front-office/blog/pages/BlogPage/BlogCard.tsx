@@ -5,9 +5,9 @@ import URLS from "apps/front-office/utils/urls";
 
 export default function BlogCard({ blog }: { blog: Post }) {
   return (
-    <div className="rounded-lg flex flex-col h-full justify-between border border-gray-300 ">
+    <div className="rounded-lg flex flex-col h-full justify-between border border-gray-300">
       <Link to={URLS.blog.viewPost(blog)}>
-        <div className="w-full h-[200px] overflow-hidden rounded-tr-lg rounded-tl-lg ">
+        <div className="w-full h-[200px] max-lg:h-[250px] overflow-hidden rounded-tr-lg rounded-tl-lg ">
           <img
             src={blog.image.url}
             alt={blog.title}

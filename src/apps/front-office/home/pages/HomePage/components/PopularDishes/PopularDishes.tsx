@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 
 export default function PopularDishes() {
   return (
-    <div className={styles.popularDishes}>
+    <div className={`${styles.popularDishes} container py-20`}>
       <h1>{trans("PopularDishes")}</h1>
       <PopularDishesTabs />
       <PopularDishesItem />

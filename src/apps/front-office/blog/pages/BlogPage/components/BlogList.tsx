@@ -3,7 +3,6 @@ import Helmet from "@mongez/react-helmet";
 import { currentRoute, navigateTo } from "@mongez/react-router";
 import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
-import { isLTR } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
@@ -89,10 +88,7 @@ export default function BlogList({
                       defaultValue={searchText}
                       onKeyDown={handleKeyDown}
                     />
-                    <BsSearch
-                      color="gray"
-                      className="ltr:-ml-10 rtl:-mr-8" 
-                    />
+                    <BsSearch color="gray" className="ltr:-ml-10 rtl:-mr-8" />
                   </div>
                   <div>
                     <img

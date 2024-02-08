@@ -33,9 +33,8 @@ endpointEvents.beforeSending(config => {
   if (user.isLoggedIn()) {
     headers.Authorization = `Bearer ${user.getAccessToken()}`;
   }
-  console.log(settingsAtom.get("state"));
-  headers[WithSettingsHeader] = true;
   if (settingsAtom.get("state") === "initial") {
+    headers[WithSettingsHeader] = true;
     settingsAtom.change("state", "loading");
   }
 });

@@ -139,7 +139,7 @@ groupedTranslations({
     ar: "عربه التسوق",
   },
   close: {
-    en: "CLOSE",
+    en: "Close",
     ar: "إغلاق",
   },
   shop: {

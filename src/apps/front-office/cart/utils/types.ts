@@ -1,12 +1,18 @@
 import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 
+type Total = {
+  discount: number;
+  originalPrice: number;
+  subtotal: number;
+};
+
 export type CartItem = {
   id: number;
   meal: Meal;
   price: number;
   salePrice: number;
   quantity: number;
-  subTotal: number;
+  total: Total;
 };
 
 export type Cart = {

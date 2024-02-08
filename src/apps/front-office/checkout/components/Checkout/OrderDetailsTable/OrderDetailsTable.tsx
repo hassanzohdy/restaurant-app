@@ -29,7 +29,7 @@ export default function OrderDetailsTable() {
                 <div className="text-primary-main">x {item.quantity}</div>
               </div>
             </th>
-            <th className="text-sm">{price(Number(item.subTotal))}</th>
+            <th className="text-sm">{price(item.total.subtotal)}</th>
           </tr>
         ))}
       </tbody>

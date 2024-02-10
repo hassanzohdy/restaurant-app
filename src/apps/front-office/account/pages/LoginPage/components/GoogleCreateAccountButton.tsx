@@ -7,16 +7,15 @@ import {
 import { loginByGoogle } from "apps/front-office/account/service/auth";
 import { googleIcon } from "shared/assets";
 
-export default function GoogleLoginButton() {
+export default function GoogleCreateAccountButton() {
   const handleOnSuccess = (tokenResponse: TokenResponse) => {
     loginByGoogle(tokenResponse.access_token)
-      .then(() => {
+      .then(res => {
         toastSuccess(trans("successfullyLogin"));
-        location.reload();
+        // location.reload();
+        console.log(res);
       })
-      .catch(({ response }) => {
-        const error = response.data?.message;
-
+      .catch(({ error }) => {
         toastError(error || trans("somethingWentWrong"));
       });
   };
@@ -29,8 +28,8 @@ export default function GoogleLoginButton() {
     <button
       onClick={() => login()}
       className="flex flex-row items-center gap-2 border w-fit border-gray-300 py-1 px-2 rounded-md shadow-md">
-      <img src={googleIcon} alt="login with google" />
-      <p>Login with Google</p>
+      <img src={googleIcon} alt="Create Account with google" />
+      <p>Create Account with google</p>
     </button>
   );
 }

@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import { current } from "@mongez/react";
 import {
-  showToastMessage,
   toastError,
+  toastMealToCart,
 } from "apps/front-office/account/hooks/useToastMessage";
 import {
   addToCart,
@@ -12,7 +12,9 @@ import {
 } from "apps/front-office/cart/services/cart-service";
 import { useHeaderState } from "apps/front-office/design-system/hooks/headerStateHook";
 import { State } from "apps/front-office/design-system/layouts/Header/components/HeaderIcons/HeaderCart/CartProducts/CartProducts";
+import { filteredMealsAtom } from "apps/front-office/menu/atoms/filtered-meals-atom";
 import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
+import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import URLS from "apps/front-office/utils/urls";
 import { useEffect, useState } from "react";
 import useGetBaseRoute from "./useGetBaseRoute";
@@ -20,6 +22,7 @@ import useGetBaseRoute from "./useGetBaseRoute";
 export default function useCart() {
   const meal = mealAtom.useValue();
   const opened = useHeaderState("cartIcon");
+  const meals = filteredMealsAtom.use("meals");
 
   const [state, setState] = useState<State>("initial");
   const [error, setError] = useState<any>(null);
@@ -35,12 +38,22 @@ export default function useCart() {
   const addMealToCart = (id: number, amount: number) => {
     setIsLoading(true);
 
+    const mealData: Meal = meals.filter(meal => meal.id === id)[0];
+
+    const massage = () => {
+      return (
+        <div className="flex flex-row gap-5 items-center">
+          <div className="bg-slate-100 rounded-[44%] w-[50px]">
+            <img src={mealData.image.url} alt={mealData.name} />
+          </div>
+          <span>{trans("addedToCart")}</span>
+        </div>
+      );
+    };
+
     addToCart(id, amount)
       .then(() => {
-        showToastMessage({
-          message: trans("addedToCart"),
-          type: "success",
-        });
+        toastMealToCart(massage());
       })
       .catch(error => {
         if (error.response?.data.maxAmountPerOrder) {
@@ -106,26 +119,3 @@ export default function useCart() {
     state,
   };
 }
-
-// function addMealCart(id: number, amount: number) {
-//   addToCart(id, amount)
-//     .then(() => {
-//       showToastMessage({
-//         message: trans("addedToCart"),
-//         type: "success",
-//       });
-//     })
-//     .catch(error => {
-//       if (error.response?.data.maxAmountPerOrder) {
-//         toastError(error.response.data.maxAmountPerOrder);
-//       } else {
-//         toastError(trans("somethingWentWrong"));
-//       }
-//     });
-// }
-
-// export function useCart2() {
-//   return {
-//     addToCart: addMealCart,
-//   };
-// }

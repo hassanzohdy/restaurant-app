@@ -5,7 +5,10 @@ import {
   OTPEmailAtom,
   loginNeedVerifyAtom,
 } from "apps/front-office/account/atoms/auth-atoms";
-import { showToastMessage } from "apps/front-office/account/hooks/useToastMessage";
+import {
+  toastError,
+  toastSuccess,
+} from "apps/front-office/account/hooks/useToastMessage";
 import GoogleLoginButton from "apps/front-office/account/pages/LoginPage/components/GoogleLoginButton";
 import { login } from "apps/front-office/account/service/auth";
 import user from "apps/front-office/account/user";
@@ -29,9 +32,7 @@ export default function UserDropDown() {
       .then(response => {
         user.login(response.data.user);
 
-        showToastMessage({
-          message: trans("successfullyLogin"),
-        });
+        toastSuccess(trans("successfullyLogin"));
 
         location.reload();
       })
@@ -41,11 +42,7 @@ export default function UserDropDown() {
           OTPEmailAtom.update(values.email);
           navigateTo(URLS.auth.login);
         }
-        showToastMessage({
-          message: error.response.data.error,
-          type: "error",
-          position: "TOP_LEFT",
-        });
+        toastError(error.response.data.error);
 
         form.submitting(false);
       });

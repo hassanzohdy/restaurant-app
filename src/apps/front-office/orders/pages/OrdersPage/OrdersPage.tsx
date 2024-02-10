@@ -1,15 +1,26 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { useOnce } from "@mongez/react-hooks";
-import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
+import EmptyComponent from "apps/front-office/design-system/components/EmptyComponent";
+import Loader, {
+  Error,
+} from "apps/front-office/design-system/components/Indicators/Indicators";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import React, { useState } from "react";
+import { TbShoppingCartQuestion } from "react-icons/tb";
 import { getOrdersList } from "../../services/orders-service";
 import OrdersListItem from "../OrdersPage/components/OrdersListItem";
+
+const emptyCartInfo = {
+  title: trans("noOrdersYet"),
+  description: trans("cartEmptyDescription"),
+  icon: <TbShoppingCartQuestion size="150" />,
+};
 
 function _OrdersPage() {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState();
 
   useOnce(() => {
     getOrdersList()
@@ -18,7 +29,7 @@ function _OrdersPage() {
         setIsLoading(false);
       })
       .catch(_error => {
-        // TODO: handle error
+        setError(_error);
       });
   });
 
@@ -26,7 +37,13 @@ function _OrdersPage() {
     return <Loader />;
   }
 
-  // TODO: Handle empty orders list
+  if (error) {
+    return <Error error={error} />;
+  }
+
+  if (orders.length === 0) {
+    return <EmptyComponent {...emptyCartInfo} />;
+  }
 
   return (
     <>

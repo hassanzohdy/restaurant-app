@@ -15,11 +15,9 @@ export type MealCardProps = {
 
 export default function MealCard({ meal }: MealCardProps) {
   const displayedPrice = price(meal?.price);
-  let displayedSale = price(meal?.salePrice);
+  const displayedSale = price(meal?.salePrice);
 
-  if (displayedPrice === displayedSale) {
-    displayedSale = "";
-  }
+  const isOnSale = displayedPrice !== displayedSale;
 
   const { addMealToCart, isLoading } = useCart();
 
@@ -27,7 +25,7 @@ export default function MealCard({ meal }: MealCardProps) {
     <div className="p-3 group rounded-[2rem] border relative">
       <MealCardFavorite meal={meal} />
       {/* Sale */}
-      {displayedSale && (
+      {isOnSale && (
         <div className="absolute z-20 top-6 left-6 font-bold bg-gray-800 text-white rounded-xl px-2 text-[13px]">
           Sale !
         </div>
@@ -59,13 +57,13 @@ export default function MealCard({ meal }: MealCardProps) {
           <div className="flex gap-2">
             <span
               className={`inline-block self-end font-bold ${
-                displayedSale
+                isOnSale
                   ? "text-gray-700 line-through "
                   : "text-primary-main text-xl"
               }`}>
               {displayedPrice}
             </span>
-            {displayedSale && (
+            {isOnSale && (
               <span className="inline-block self-start text-primary-main font-bold text-xl">
                 {displayedSale}
               </span>

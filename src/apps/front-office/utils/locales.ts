@@ -867,4 +867,12 @@ groupedTranslations({
     en: "Feel free to drop us a line anytime; we're here to listen and assist!",
     ar: "لا تتردد في التواصل معنا في أي وقت؛ نحن هنا للإستماع والمساعدة!",
   },
+  noOrdersYet: {
+    en: "No orders yet",
+    ar: "لا توجد طلبات حتى الآن",
+  },
+  accountCreated: {
+    en: "Your account has been created",
+    ar: "تم إنشاء حسابك",
+  },
 });

@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import {
-  showToastMessage,
   toastError,
+  toastSuccess,
 } from "apps/front-office/account/hooks/useToastMessage";
 import { wishListAtom } from "apps/front-office/design-system/atoms/header-atoms";
 import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
@@ -21,14 +21,10 @@ export function useWishlist(meal: Meal) {
       .then(response => {
         if (response.data.wishlist.meals) {
           wishListAtom.update(response.data.wishlist.meals.length);
-          showToastMessage({
-            message: trans("addedToWishlist"),
-          });
+          toastSuccess(trans("addedToWishlist"));
         } else {
           wishListAtom.reset();
-          showToastMessage({
-            message: trans("removedFromWishlist"),
-          });
+          toastSuccess(trans("removedFromWishlist"));
         }
       })
       .catch(() => {

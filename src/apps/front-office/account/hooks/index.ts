@@ -16,7 +16,7 @@ import {
   verifyForgetPassword,
 } from "../service/auth";
 import user from "../user";
-import { showToastMessage, toastSuccess } from "./useToastMessage";
+import { toastError, toastSuccess } from "./useToastMessage";
 
 const goBack = () => {
   setTimeout(() => {
@@ -30,7 +30,7 @@ const goBack = () => {
 
 const onSuccessLogin = () => {
   goBack();
-  showToastMessage({ message: "you have login successfully" });
+  toastSuccess("you have login successfully");
 };
 
 /**
@@ -81,11 +81,7 @@ export function useCreateAccountVerifyCode(otpEmail: string) {
       })
       .catch(error => {
         form.submitting(false);
-        showToastMessage({
-          message: error.response.data.error,
-          type: "error",
-          position: "TOP_LEFT",
-        });
+        toastError(error.response.data.error);
       });
   };
 
@@ -125,11 +121,7 @@ export function useForgetPassword() {
       })
       .catch(error => {
         form.submitting(false);
-        showToastMessage({
-          message: error.response.data.error,
-          type: "error",
-          position: "TOP_LEFT",
-        });
+        toastError(error.response.data.error);
       });
   };
 
@@ -174,11 +166,7 @@ export function useResetPassword() {
       })
       .catch(error => {
         form.submitting(false);
-        showToastMessage({
-          message: error.response.data.error,
-          type: "error",
-          position: "TOP_LEFT",
-        });
+        toastError(error.response.data.error);
       });
   };
 

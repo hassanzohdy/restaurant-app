@@ -28,7 +28,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
       <main>{children}</main>
       <Footer />
       <ActiveBar />
-      <ToastContainer />
+      <ToastContainer stacked closeOnClick draggable />
     </div>
   );
 }

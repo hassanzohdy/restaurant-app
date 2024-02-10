@@ -7,6 +7,7 @@ import { EmailInputV2 } from "apps/front-office/design-system/components/Form/Em
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";
 import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
 import URLS from "apps/front-office/utils/urls";
+import GoogleCreateAccountButton from "../../../LoginPage/components/GoogleCreateAccountButton";
 
 export type RegisterFormProps = {
   submit: any;
@@ -17,7 +18,7 @@ export default function RegisterForm({ submit }: RegisterFormProps) {
       <h2 className="text-heading text-2xl font-bold pb-6">
         {trans("createAccount")}
       </h2>
-
+      <GoogleCreateAccountButton />
       <div className={`opacity-40 text-sm flex items-center mt-1`}>
         {trans("doViaEmail")}
       </div>

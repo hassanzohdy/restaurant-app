@@ -879,5 +879,4 @@ groupedTranslations({
     en: "Select a payment method",
     ar: "اختر طريقة الدفع",
   },
-  
 });

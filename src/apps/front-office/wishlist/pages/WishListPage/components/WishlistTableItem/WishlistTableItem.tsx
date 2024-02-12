@@ -7,6 +7,7 @@ import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
 import { IoClose } from "react-icons/io5";
 import { TbShoppingBag } from "react-icons/tb";
+import useCart from "shared/hooks/useCart";
 
 export type WishlistTableItemProps = {
   meal: Meal;
@@ -18,6 +19,7 @@ export default function WishlistTableItem({
   removeMeal,
 }: WishlistTableItemProps) {
   const { toggleWishlist } = useWishlist(meal);
+  const { addMealToCart } = useCart();
   const displayedPrice = price(meal?.price);
   const displayedSale = price(meal?.salePrice);
 
@@ -45,29 +47,31 @@ export default function WishlistTableItem({
           {meal.name}
         </Link>
       </td>
-      <td className="product-price w-[17%] px-3 py-5 max-lg:flex max-lg:justify-between max-lg:items-center max-lg:w-full max-lg:px-0 max-lg:py-3 max-lg:border-b">
-        <label className="hidden max-lg:block text-[15px]  text-[#1e1d23] font-normal max-sm:text-[12px]">
+      <td className="product-price w-[17%] px-3 py-5 max-lg:flex max-lg:justify-between max-lg:items-center max-lg:w-full max-lg:px-0 max-lg:py-3 max-lg:border-b text-center">
+        <label className="hidden max-lg:block text-[15px] text-[#1e1d23] font-normal max-sm:text-[12px] ">
           {trans("price")}
         </label>
-        <div>
-          {displayedSale && (
-            <span className="inline-block text-secondary mr-1">
-              {displayedSale}
-            </span>
-          )}
+        <div className="gap-3 flex text-center justify-center">
           <span
-            className={`inline-block  ${
-              displayedSale ? "text-black line-through" : "text-primary-main"
+            className={`inline-block self-end ${
+              displayedPrice !== displayedSale
+                ? "text-black line-through"
+                : "text-primary-main text-xl"
             }`}>
             {displayedPrice}
           </span>
+          {displayedPrice !== displayedSale && (
+            <span className="inline-block text-primary-main text-xl mr-1">
+              {displayedSale}
+            </span>
+          )}
         </div>
       </td>
       <td className="product-quantity w-[20%] px-3 py-5 max-lg:flex max-lg:justify-between max-lg:items-center max-lg:w-full max-lg:px-0 max-lg:py-3 max-lg:border-b">
         <label className="hidden max-lg:block text-[15px]  text-[#1e1d23] font-normal max-sm:text-[12px]">
           {trans("quantity")}
         </label>
-        <div className="stock-status">
+        <div className="stock-status text-center">
           <span className="text-secondary">{trans("inStock")}</span>
         </div>
       </td>
@@ -77,6 +81,7 @@ export default function WishlistTableItem({
         </span>
         <Button
           variant="primary"
+          onClick={() => addMealToCart(meal.id, 1)}
           className="px-3 py-2 max-sm:px-2 max-sm:py-1 max-sm:text-[0]">
           {trans("addToCart")}
           <span className="hidden max-sm:block">

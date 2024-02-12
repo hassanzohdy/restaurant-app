@@ -48,7 +48,7 @@ export default function LatestNews() {
             <MdKeyboardArrowRight className="w-[24px] h-[24px] rounded-md bg-secondary text-white rtl:rotate-180 group-hover:bg-primary-main duration-500 transition-all ease-in-out" />
           </Link>
         </div>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           {blogData.map(data => {
             return <BlogCard blog={data} key={data.id} />;
           })}

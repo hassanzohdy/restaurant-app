@@ -875,4 +875,9 @@ groupedTranslations({
     en: "Your account has been created",
     ar: "تم إنشاء حسابك",
   },
+  selectPaymentMethod: {
+    en: "Select a payment method",
+    ar: "اختر طريقة الدفع",
+  },
+  
 });

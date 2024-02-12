@@ -84,7 +84,7 @@ export default function BlogList({
                   <div className="flex items-center">
                     <input
                       placeholder={trans("search")}
-                      className="border py-2 px-5 rounded-full w-full focus:border-primary-main"
+                      className="border py-2 px-5 rounded-full w-full focus:border-primary-main rtl:pl-12 ltr:pr-12"
                       defaultValue={searchText}
                       onKeyDown={handleKeyDown}
                     />

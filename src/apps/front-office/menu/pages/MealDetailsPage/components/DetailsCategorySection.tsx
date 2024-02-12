@@ -6,15 +6,15 @@ import { BiLogoPinterestAlt } from "react-icons/bi";
 
 const socialLinks: { href: string; icon: ReactNode }[] = [
   {
-    href: "https://www.facebook.com/dialog/share?href=",
+    href: "https://www.facebook.com/",
     icon: <AiFillFacebook />,
   },
   {
-    href: "https://twitter.com/intent/tweet?text=",
+    href: "https://twitter.com/intent/",
     icon: <AiFillTwitterCircle />,
   },
   {
-    href: "https://www.pinterest.com/pin-builder/?description=",
+    href: "https://www.pinterest.com/",
     icon: <BiLogoPinterestAlt />,
   },
 ];
@@ -30,7 +30,8 @@ export const DetailsCategorySection = () => {
           <Link
             key={index}
             className="hover:text-primary-main"
-            to={link.href + hashedUrl}>
+            to={link.href + hashedUrl}
+            newTab>
             {link.icon}
           </Link>
         ))}

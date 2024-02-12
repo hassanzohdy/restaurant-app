@@ -22,6 +22,8 @@ function PopupMeal({ meal, navigationMeal }: PopupMealProps) {
   const displayedPrice = formatPrice(meal.price);
   const displayedSale = formatPrice(meal.salePrice);
 
+  const iHaveSale = displayedSale !== displayedPrice;
+
   return (
     <div
       className={cn(
@@ -40,13 +42,19 @@ function PopupMeal({ meal, navigationMeal }: PopupMealProps) {
       <div className="flex flex-col gap-2 items-start shrink">
         <p className="">{meal.name}</p>
         <div className="flex gap-2">
-          <span className="inline-block text-rose-600">{displayedSale}</span>
           <span
-            className={`inline-block  ${
-              displayedSale ? "text-black line-through" : "text-primary-main"
+            className={`flex items-end ${
+              iHaveSale
+                ? "text-black line-through"
+                : "text-primary-main text-xl font-bold"
             }`}>
             {displayedPrice}
           </span>
+          {iHaveSale && (
+            <span className="inline-block text-primary-main text-base font-bold">
+              {displayedSale}
+            </span>
+          )}
         </div>
       </div>
     </div>

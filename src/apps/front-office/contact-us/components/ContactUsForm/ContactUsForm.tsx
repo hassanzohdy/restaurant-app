@@ -59,7 +59,7 @@ export default function ContactUsForm() {
           {trans("sendUsMessage")}
         </div>
         <div className="text-primary-text mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <p>{trans("feelFreeToContact")}</p>
         </div>
       </div>
       <div className="flex flex-col gap-4">

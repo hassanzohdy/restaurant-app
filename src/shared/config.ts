@@ -15,8 +15,6 @@ setHelmetConfigurations({
   appNameSeparator: " | ",
   translatable: true,
   translateAppName: true,
-  // TODO: not translated in the page
-  appName: "appName",
 });
 
 // keep this for the app handling, just change the values

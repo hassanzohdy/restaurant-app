@@ -8,16 +8,16 @@ export default function ViewDisplayMode() {
   const displayMode = menuDisplayModeAtom.useValue();
 
   return (
-    <>
-      <div className="float-left text-gray-400 pl-9">
+    <div className="flex justify-between">
+      <div className=" text-gray-400">
         {trans("showing")} ({filteredMealsList.length} - {meals.length})
       </div>
-      <div className="flex flex-row justify-end">
+      <div className="flex flex-row gap-3 items-center">
         <button onClick={() => menuDisplayModeAtom.update("grid")}>
           {displayMode === "grid" ? (
-            <BsGridFill className="text-xl mt-0.5 mr-3" />
+            <BsGridFill className="text-xl mt-0.5" />
           ) : (
-            <BsGrid className="text-xl mt-0.5 mr-3 text-gray-500" />
+            <BsGrid className="text-xl text-gray-500" />
           )}
         </button>
         <button onClick={() => menuDisplayModeAtom.update("list")}>
@@ -28,6 +28,6 @@ export default function ViewDisplayMode() {
           )}
         </button>
       </div>
-    </>
+    </div>
   );
 }

@@ -31,15 +31,12 @@ export default function BlogPage() {
 
   return (
     <>
-      {loading && (
+      {loading ? (
         <>
           <Loader />
         </>
-      )}
-      {!loading && (
-        <>
-          <BlogList blogData={blogData} pagination={pagination} />
-        </>
+      ) : (
+        <BlogList blogData={blogData} pagination={pagination} />
       )}
     </>
   );

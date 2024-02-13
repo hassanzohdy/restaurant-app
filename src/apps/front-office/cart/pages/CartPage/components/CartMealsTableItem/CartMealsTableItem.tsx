@@ -80,7 +80,7 @@ export default function CartMealsTableItem({ item }: CartMealsTableItemProps) {
         <label className="hidden max-sm:block text-[12px] text-[#1e1d23] font-normal">
           {trans("subtotal")}
         </label>
-        <span>{price(Number(item.subTotal))}</span>
+        <span>{price(Number(item.total.subtotal))}</span>
       </td>
     </tr>
   );

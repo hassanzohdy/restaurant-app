@@ -29,6 +29,8 @@ export const DetailsSide = () => {
   const displayedSale = price(meal?.salePrice);
   const displayedPrice = price(meal.price);
 
+  const iHaveSale = displayedSale !== displayedPrice;
+
   return (
     <div className="flex-1">
       <div className="sticky top-20 space-y-6">
@@ -37,29 +39,31 @@ export const DetailsSide = () => {
           <Stars ratings={ratings} />
           <p className="text-primary-text text-base">{meal.description}</p>
           <div className="flex gap-4 text-2xl font-bold">
-            {displayedSale && (
-              <span className="inline-block text-secondary">
-                {displayedSale}
-              </span>
-            )}
             <span
-              className={`inline-block  ${
-                displayedSale ? "text-black line-through" : "text-primary-main"
+              className={` flex items-end ${
+                iHaveSale
+                  ? "text-black line-through text-xl"
+                  : "text-primary-main text-3xl"
               }`}>
               {displayedPrice}
             </span>
+            {iHaveSale && (
+              <span className="inline-block text-3xl text-primary-main">
+                {displayedSale}
+              </span>
+            )}
           </div>
         </div>
         <AddMealToCart />
         <DetailsCategorySection />
         <ShippingFeatures />
-        <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+        {/* <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
           <p className="font-bold">{trans("guaranteedSafeCheckout")}</p>
           <img
             src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/08/trust-symbols.png"
             alt="payment methods image"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
+import { trans } from "@mongez/localization";
 import { FormSubmitOptions } from "@mongez/react-form";
 import { register } from "apps/front-office/account/service/auth";
 import { useState } from "react";
 import { OTPEmailAtom } from "../atoms/auth-atoms";
-import { showToastMessage } from "./useToastMessage";
+import { toastError, toastSuccess } from "./useToastMessage";
 
 export type State = "initial" | "loading" | "done" | "error";
 
@@ -15,17 +16,13 @@ export function useRegister() {
       .then(() => {
         setState("done");
         OTPEmailAtom.update(values.email);
-        showToastMessage({ message: "you account is created" });
+        toastSuccess(trans("accountCreated"));
       })
       .catch(error => {
         setState("error");
         const errors = error.response?.data?.messages;
 
-        showToastMessage({
-          message: errors,
-          type: "error",
-          position: "TOP_LEFT",
-        });
+        toastError(errors);
         form.submitting(false);
         if (errors) {
           for (const error of errors) {

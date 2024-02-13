@@ -76,7 +76,7 @@ export default function CartProducts() {
                   </Link>
                   <span className="text-sm">x{item.quantity}</span>
                   <span className="text-sm text-primary-main">
-                    {price(item.subTotal)}
+                    {price(item.total.subtotal)}
                   </span>
                 </div>
               </div>

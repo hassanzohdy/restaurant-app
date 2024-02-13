@@ -20,16 +20,16 @@ export default function WishlistTable({
             <th className="product-remove px-3 pb-5">
               <IoClose size="0" />
             </th>
-            <th className="product-thumbnail px-3 pb-5 text-[0px]">
+            <th className="product-thumbnail px-3 pb-5 text-[0px] text-center">
               {trans("productThumbnail")}
             </th>
             <th scope="col" className="product-name px-3 pb-5 text-[12px]">
               {trans("product")}
             </th>
-            <th scope="col" className="product-price px-3 pb-5">
+            <th scope="col" className="product-price px-3 pb-5 text-center">
               {trans("price")}
             </th>
-            <th scope="col" className="stock-status px-3 pb-5">
+            <th scope="col" className="stock-status px-3 pb-5 text-center">
               {trans("stockStatus")}
             </th>
             <th scope="col" className="add-to-cart px-3 pb-5"></th>

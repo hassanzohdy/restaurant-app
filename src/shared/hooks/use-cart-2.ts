@@ -43,7 +43,6 @@ export function useCart2() {
     addToCart: _addToCart,
     removeItemFromCart: _removeItemFromCart,
     updateCartItem: debounce(_updateCartItem, 500),
-    // flushCart,
     useCartLoader,
   };
 }

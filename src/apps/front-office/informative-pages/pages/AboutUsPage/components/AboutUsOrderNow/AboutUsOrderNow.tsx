@@ -22,7 +22,7 @@ export default function AboutUsOrderNow() {
           <BaseLink
             className="py-4 px-10 max-lg:py-3 max-lg:px-8"
             variant="primary"
-            href={URLS.contactUs}>
+            href={URLS.menu.list}>
             {trans("makeAnOrder")}
           </BaseLink>
         </div>

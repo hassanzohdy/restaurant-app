@@ -6,7 +6,7 @@ import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import URLS from "apps/front-office/utils/urls";
 import { OTPEmailAtom, loginNeedVerifyAtom } from "../../atoms/auth-atoms";
-import { showToastMessage } from "../../hooks/useToastMessage";
+import { toastError, toastSuccess } from "../../hooks/useToastMessage";
 import { login } from "../../service/auth";
 import user from "../../user";
 import OtpForm from "../Register/components/OtpForm";
@@ -20,18 +20,14 @@ export default function LoginPage() {
       .then(response => {
         user.login(response.data.user);
         navigateBack();
-        showToastMessage({ message: trans("successfullyLogin") });
+        toastSuccess(trans("successfullyLogin"));
       })
       .catch(error => {
         if (error.response.data.activateAccount) {
           loginNeedVerifyAtom.update(error.response.data.activateAccount);
         }
         form.submitting(false);
-        showToastMessage({
-          message: error.response.data.error,
-          type: "error",
-          position: "TOP_LEFT",
-        });
+        toastError(error.response.data.error);
       });
   };
   return (
@@ -55,7 +51,11 @@ export default function LoginPage() {
             <div className="flex gap-5 place-items-center p-4 px-10 flex-col min-w-full">
               <LoginForm submitLogin={submitLogin} />
             </div>
-            <div className="min-w-full p-4 bg-[#f6f6f6] invisible">
+            <div
+              className={cn(
+                "min-w-full p-4 bg-[#f6f6f6]",
+                loginNeedVerifyAtom.useValue() && "invisible",
+              )}>
               <OtpForm />
             </div>
           </div>

@@ -3,7 +3,7 @@ import URLS from "apps/front-office/utils/urls";
 import { settingsAtom } from "apps/general/atoms/settings-atom";
 
 export default function HeaderLogo() {
-  const { logo, appName } = settingsAtom.use("general") || {}
+  const { logo, appName } = settingsAtom.use("general") || {};
 
   if (!logo) return null;
 

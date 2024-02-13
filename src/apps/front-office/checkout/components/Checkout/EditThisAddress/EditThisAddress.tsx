@@ -19,7 +19,7 @@ export default function EditAddress({ id }: any) {
   const [selectedAddress, setSelectedAddress] = useState<
     BookAddressesType | undefined
   >();
-  const { updateData } = useAddresses();
+  const { updateAddressData } = useAddresses();
 
   const addresses = addressesAtom.useValue();
   const userEmail = userAtom.useValue().email;
@@ -57,7 +57,7 @@ export default function EditAddress({ id }: any) {
       email: userEmail,
       id: selectedAddress?.id, // cuz response dons't have the updated form to update the atom with
     };
-    updateData(id, updatedData, trans("addressHasUpdated"));
+    updateAddressData(id, updatedData, trans("addressHasUpdated"));
   };
 
   if (!formData) return null;

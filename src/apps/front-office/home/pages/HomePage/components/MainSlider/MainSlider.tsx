@@ -14,7 +14,7 @@ export default function MainSlider({ slider }: MainSliderProps) {
     arrows: false,
     infinite: true,
     autoplay: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
   };

@@ -7,17 +7,20 @@ import TextareaInput from "apps/front-office/design-system/components/Form/Texta
 
 import { isEmpty } from "@mongez/supportive-is";
 import user from "apps/front-office/account/user";
-import { ratingAtom } from "../../atoms/rating-atom";
+import { updateMeal } from "apps/front-office/menu/services/meals-service";
+import { mealAtom } from "../../atoms/meal-atom";
 import AddRatings from "../AddRatings";
 import { ReviewCard } from "./ReviewCard";
 
 export default function ReviewsSection() {
   const reviews = [];
+  const id = mealAtom.use("id");
+  console.log(id);
 
   function handSubmit({ values }: FormSubmitOptions) {
-    const body = { ...values, ratings: ratingAtom.value };
-
-    console.log(body);
+    updateMeal(id, values)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   }
 
   return (

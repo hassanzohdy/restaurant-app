@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --toastify-color-progress-light: #00a149;
+}
+
 input:focus-visible {
   outline: none;
 }

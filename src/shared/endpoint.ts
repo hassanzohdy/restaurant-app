@@ -27,12 +27,12 @@ const endpointEvents = endpoint.events;
 endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
 
+  headers["client-id"] = "restaurant.mentoor.io";
+  headers["locale-code"] = currentLocaleCode();
+
   if (user.isLoggedIn()) {
     headers.Authorization = `Bearer ${user.getAccessToken()}`;
   }
-
-  headers["locale-code"] = currentLocaleCode();
-
   if (settingsAtom.get("state") === "initial") {
     headers[WithSettingsHeader] = true;
     settingsAtom.change("state", "loading");

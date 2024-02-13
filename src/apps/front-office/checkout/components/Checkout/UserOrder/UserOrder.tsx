@@ -18,7 +18,10 @@ export default function UserOrder() {
       return toastError(trans("pleaseSelectShippingAddress"));
     }
 
-    // TODO: validate the payment method
+    if (!checkout.paymentMethod) {
+      return toastError(trans("selectPaymentMethod"));
+    }
+
     finishCheckout(checkout)
       .then(response => {
         // TODO: create the success checkout
@@ -27,7 +30,6 @@ export default function UserOrder() {
         toastSuccess(trans("orderCreatedSuccessfully"));
       })
       .catch(error => {
-        //
         const errorText = error?.response?.data?.error || error.message;
         toastError(errorText);
       });

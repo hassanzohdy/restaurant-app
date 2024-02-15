@@ -6,6 +6,10 @@ import router, {
 } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import React from "react";
+import {
+  toastError,
+  toastSuccess,
+} from "../../../../shared/hooks/useToastMessage";
 import { resetPasswordAtom } from "../pages/Register/atoms";
 import {
   forgetPassword,
@@ -16,7 +20,6 @@ import {
   verifyForgetPassword,
 } from "../service/auth";
 import user from "../user";
-import { toastError, toastSuccess } from "./useToastMessage";
 
 const goBack = () => {
   setTimeout(() => {

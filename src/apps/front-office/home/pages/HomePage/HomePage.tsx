@@ -1,13 +1,13 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { useOnce } from "@mongez/react-hooks";
-import { toastError } from "apps/front-office/account/hooks/useToastMessage";
 import InViewPort from "apps/front-office/design-system/components/InViewPort";
 import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
 import PopularDishes from "apps/front-office/home/pages/HomePage/components/PopularDishes";
 import { getHome } from "apps/front-office/home/services/home-service";
 import { settingsAtom } from "apps/general/atoms/settings-atom";
 import { useState } from "react";
+import { toastError } from "shared/hooks/useToastMessage";
 import { popularDishesAtom } from "../../atoms/popular-dishes-atom";
 import Banners from "./components/Banners";
 import HomeBanner from "./components/HomeBanner";

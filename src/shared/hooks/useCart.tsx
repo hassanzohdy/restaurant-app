@@ -1,10 +1,6 @@
 import { trans } from "@mongez/localization";
 import { current } from "@mongez/react";
 import {
-  toastError,
-  toastMealToCart,
-} from "apps/front-office/account/hooks/useToastMessage";
-import {
   addToCart,
   getCart,
   removeFromCart,
@@ -17,6 +13,7 @@ import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/mea
 import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import URLS from "apps/front-office/utils/urls";
 import { useEffect, useState } from "react";
+import { toastError, toastMealToCart } from "shared/hooks/useToastMessage";
 import useGetBaseRoute from "./useGetBaseRoute";
 
 export default function useCart() {

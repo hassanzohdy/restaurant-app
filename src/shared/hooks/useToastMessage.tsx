@@ -1,10 +1,10 @@
 import { toast } from "react-toastify";
 
-export const toastMealToCart = message => {
+export const toastMealToCart = (message: React.ReactNode) => {
   return toast(message);
 };
 
-export const toastSuccess = message => {
+export const toastSuccess = (message: string) => {
   return toast(message, {
     type: "success",
   });

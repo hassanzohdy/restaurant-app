@@ -1,10 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Form, FormSubmitOptions } from "@mongez/react-form";
 import { useEvent } from "@mongez/react-hooks";
-import {
-  toastError,
-  toastSuccess,
-} from "apps/front-office/account/hooks/useToastMessage";
 import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
 import {
   applyCoupon,
@@ -14,6 +10,7 @@ import { Button } from "apps/front-office/design-system/components/Button";
 import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { useState } from "react";
+import { toastError, toastSuccess } from "shared/hooks/useToastMessage";
 
 export default function CouponCode() {
   const couponCode = cartAtom.use("coupon")?.code;

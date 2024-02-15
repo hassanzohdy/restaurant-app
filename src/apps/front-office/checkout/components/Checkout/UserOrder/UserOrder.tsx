@@ -1,13 +1,10 @@
 import { trans } from "@mongez/localization";
 import { Link, navigateTo } from "@mongez/react-router";
-import {
-  toastError,
-  toastSuccess,
-} from "apps/front-office/account/hooks/useToastMessage";
 import { checkoutAtom } from "apps/front-office/checkout/atom/checkout-atoms";
 import { finishCheckout } from "apps/front-office/checkout/services/checkout-services";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import URLS from "apps/front-office/utils/urls";
+import { toastError, toastSuccess } from "shared/hooks/useToastMessage";
 import OrderDetailsTable from "../OrderDetailsTable";
 
 export default function UserOrder() {

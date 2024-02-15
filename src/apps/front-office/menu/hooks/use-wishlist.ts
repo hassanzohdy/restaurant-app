@@ -1,12 +1,9 @@
 import { trans } from "@mongez/localization";
-import {
-  toastError,
-  toastSuccess,
-} from "apps/front-office/account/hooks/useToastMessage";
 import { wishListAtom } from "apps/front-office/design-system/atoms/header-atoms";
 import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { toggleWishlist } from "apps/front-office/menu/services/wishlist-service";
 import { useState } from "react";
+import { toastError, toastSuccess } from "shared/hooks/useToastMessage";
 
 export function useWishlist(meal: Meal) {
   const [inWishlist, setIsFavorite] = useState(meal.isFavorite || false);

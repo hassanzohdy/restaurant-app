@@ -49,10 +49,10 @@ const URLS = {
     failed: "/checkout/failed",
   },
   auth: {
-    login: "/login", // UI Rebuild
-    register: "/register", // UI Enhancement
-    forgotPassword: "/forgot-password", // New
-    resetPassword: "/reset-password", // New
+    login: "/login",
+    register: "/register",
+    forgotPassword: "/forgot-password",
+    resetPassword: "/reset-password",
   },
 };
 

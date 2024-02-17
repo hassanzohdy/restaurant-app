@@ -22,10 +22,10 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
   });
 
   return (
-    <div className="relative">
+    <div className="relative flex flex-col min-h-screen">
       <Header />
       <BurgerMenu />
-      <main>{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
       <ActiveBar />
       <ToastContainer stacked closeOnClick draggable />

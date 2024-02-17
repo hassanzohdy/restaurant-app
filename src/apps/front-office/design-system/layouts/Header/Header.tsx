@@ -17,7 +17,7 @@ export default function Header() {
       }>
       <nav
         className={`flex flex-row items-center justify-between relative transition-all container ${
-          scrollTopPosition != 0 ? "h-[70px]" : "h-[90px]"
+          scrollTopPosition !== 0 ? "h-[70px]" : "h-[90px]"
         }`}>
         <BurgerIcon /> {/* for small screens*/}
         <HeaderLogo />

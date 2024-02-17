@@ -72,7 +72,6 @@ const _removeAddress = id => {
 const _updateAddressData = (id, form, successMassage) => {
   updateAddressData(id, form)
     .then(res => {
-      console.log(res);
       addressesAtom.update(oldAddresses => {
         const updatedData = oldAddresses.map(address =>
           address.id === id

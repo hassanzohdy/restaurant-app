@@ -58,8 +58,10 @@ export const settingsAtom = atom<Settings>({
   },
   default: {
     state: "initial",
-    general: {},
-    contact: {},
-    social: {},
+    ...cache.get(settingsCacheKey, {
+      general: {},
+      contact: {},
+      social: {},
+    }),
   } as Settings,
 });

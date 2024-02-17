@@ -2,7 +2,6 @@ import FooterCopyRights from "./FooterCopyRights";
 import FooterInformation from "./FooterInformation";
 import FooterLogo from "./FooterLogo";
 import FooterNewsLetter from "./FooterNewsLetter";
-import FooterPaymentMethods from "./FooterPaymentMethods";
 
 export default function Footer() {
   return (
@@ -18,9 +17,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom py-[32px] bg-secondary max-lg:pb-[64px]">
-          <div className="container flex items-center justify-between mx-auto px-4 max-md:text-center max-md:flex-col">
+          <div className="container flex items-center justify-center mx-auto px-4 max-md:text-center max-md:flex-col">
             <FooterCopyRights />
-            <FooterPaymentMethods />
+            {/* <FooterPaymentMethods /> */}
           </div>
         </div>
       </footer>

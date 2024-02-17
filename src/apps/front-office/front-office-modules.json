@@ -3,13 +3,7 @@
   "name": "front-office",
   "modules": [
     {
-      "entry": [
-        "/account",
-        "/login",
-        "/register",
-        "/forgot-password",
-        "/reset-password"
-      ],
+      "entry": ["/login", "/register", "/forgot-password", "/reset-password"],
       "name": "account"
     },
     {
@@ -59,6 +53,10 @@
     {
       "entry": ["/contact-us"],
       "name": "contact-us"
+    },
+    {
+      "entry": ["/account"],
+      "name": "profile"
     }
   ]
 }

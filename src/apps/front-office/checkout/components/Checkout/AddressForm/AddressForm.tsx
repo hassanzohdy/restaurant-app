@@ -10,9 +10,13 @@ import CheckoutPhoneNumber from "../Form/CheckoutPhoneInput";
 
 type PostNewAddressType = {
   newAddress?: boolean;
+  setNewAddress: (value: boolean) => void;
 };
 
-export default function AddressFrom({ newAddress }: PostNewAddressType) {
+export default function AddressFrom({
+  newAddress,
+  setNewAddress,
+}: PostNewAddressType) {
   const { postNewAddress } = useAddresses();
 
   const firstNameRef = useRef(null);
@@ -20,7 +24,8 @@ export default function AddressFrom({ newAddress }: PostNewAddressType) {
   useFocusOnToggle(firstNameRef.current, newAddress);
 
   const handelPostNewAddress = form => {
-    postNewAddress({ ...form, isPrimary: false });
+    setNewAddress(false);
+    postNewAddress({ ...form, isPrimary: true });
   };
 
   return (

@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { current } from "@mongez/react";
 import {
   addressesAtom,
   checkoutAtom,
@@ -11,8 +12,9 @@ import useAddresses from "shared/hooks/use-addresses";
 import EditThisAddress from "../EditThisAddress";
 
 export default function BookAddresses() {
-  const { updateAddressData } = useAddresses();
+  const { updateAddressData, removeAddress } = useAddresses();
   const addresses = addressesAtom.useValue();
+  const url = current("route");
 
   const [selectedAddressId, changeAddress] = useState<number>();
   const [editFormOpen, setEditFormOpen] = useState<{ [key: number]: boolean }>(
@@ -85,14 +87,24 @@ export default function BookAddresses() {
                 </span>{" "}
                 {address.address}
               </div>
-              <Button
-                className={cn(
-                  "bg-primary-main w-fit py-1 px-2 rounded-xl invisible hover:bg-primary-hover ltr:mr-2 rtl:ml-2 capitalize opacity-0  focus:opacity-100",
-                  selectedAddressId === address.id && "opacity-100 visible",
-                )}
-                onClick={() => toggleEditForm(address.id)}>
-                {trans("edit")}
-              </Button>
+              <div>
+                <Button
+                  className={cn(
+                    "bg-red-600 text-white w-fit py-1 px-2 rounded-xl invisible hover:bg-red-500 ltr:mr-2 rtl:ml-2 capitalize opacity-0  focus:opacity-100",
+                    selectedAddressId === address.id && "opacity-100 visible",
+                  )}
+                  onClick={() => removeAddress(address.id)}>
+                  {trans("delete")}
+                </Button>
+                <Button
+                  className={cn(
+                    "bg-primary-main w-fit py-1 px-2 rounded-xl invisible hover:bg-primary-hover ltr:mr-2 rtl:ml-2 capitalize opacity-0  focus:opacity-100",
+                    selectedAddressId === address.id && "opacity-100 visible",
+                  )}
+                  onClick={() => toggleEditForm(address.id)}>
+                  {trans("edit")}
+                </Button>
+              </div>
             </label>
           </div>
 
@@ -107,12 +119,22 @@ export default function BookAddresses() {
           </div>
         </div>
       ))}
-
-      <Button
-        className="bg-primary-main ltr:ml-auto rtl:mr-auto w-fit py-1 px-2 rounded-xl hover:bg-primary-hover mt-3"
-        onClick={() => handelSelectedAddress(selectedAddressId)}>
-        {trans("useThisAddress")}
-      </Button>
+      {url === "/checkout" && (
+        <Button
+          className="bg-primary-main ltr:ml-auto rtl:mr-auto w-fit py-1 px-2 rounded-xl hover:bg-primary-hover mt-3"
+          onClick={() => handelSelectedAddress(selectedAddressId)}>
+          {trans("useThisAddress")}
+        </Button>
+      )}
+      {url !== "/checkout" &&
+        addresses.length > 1 &&
+        selectedAddressId !== defaultSelectedId && (
+          <Button
+            className="bg-primary-main ltr:ml-auto rtl:mr-auto w-fit py-1 px-2 rounded-xl hover:bg-primary-hover mt-3"
+            onClick={() => handelSelectedAddress(selectedAddressId)}>
+            {trans("useThisAddress")}
+          </Button>
+        )}
     </div>
   );
 }

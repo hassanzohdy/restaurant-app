@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
 import { useOnce } from "@mongez/react-hooks";
-import { toastError } from "apps/front-office/account/hooks/useToastMessage";
 import Loader from "apps/front-office/design-system/components/Indicators/Indicators";
 import { popularDishesAtom } from "apps/front-office/home/atoms/popular-dishes-atom";
 import { getHome } from "apps/front-office/home/services/home-service";
 import { useState } from "react";
+import { toastError } from "shared/hooks/useToastMessage";
 import PopularMealItem from "./PopularMealItem";
 
 export default function AboutUsPopularMeals() {

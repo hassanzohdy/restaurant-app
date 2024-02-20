@@ -5,6 +5,7 @@ import {
   hasOTP,
 } from "apps/front-office/account/middleware";
 import BaseLayout from "../design-system/layouts/BaseLayout";
+import UpdateProfileLayout from "../profile/layout/UpdateProfileLayout";
 // import AccountLayout from "../design-system/layouts/AccountLayout";
 
 /**
@@ -49,7 +50,7 @@ export function guardedRoutes(routes: Route[]) {
 export function accountRoutes(routes: Route[]) {
   return router.group({
     middleware: [Guardian],
-    layout: BaseLayout,
+    layout: UpdateProfileLayout,
     routes,
   });
 }

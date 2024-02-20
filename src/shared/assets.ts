@@ -1,7 +1,5 @@
 import avatar from "assets/images/avatar.webp";
 import googleIcon from "assets/images/google.svg";
-import shopDropDownImg from "assets/images/header/banner_menu.jpg";
-import langIcon from "assets/images/header/langIcon.png";
 import logo from "assets/images/logo.svg";
 import americanExpress from "assets/images/payment-methods/american-express.png";
 import cod from "assets/images/payment-methods/cod.png";
@@ -17,11 +15,9 @@ export {
   cod,
   discover,
   googleIcon,
-  langIcon,
   logo,
   mastercard,
   paypal,
   poco,
-  shopDropDownImg,
   visa,
 };

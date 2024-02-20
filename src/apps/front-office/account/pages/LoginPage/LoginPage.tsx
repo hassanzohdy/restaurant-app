@@ -5,8 +5,11 @@ import { Link, navigateBack } from "@mongez/react-router";
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import { cn } from "apps/front-office/design-system/utils/cn";
 import URLS from "apps/front-office/utils/urls";
+import {
+  toastError,
+  toastSuccess,
+} from "../../../../../shared/hooks/useToastMessage";
 import { OTPEmailAtom, loginNeedVerifyAtom } from "../../atoms/auth-atoms";
-import { toastError, toastSuccess } from "../../hooks/useToastMessage";
 import { login } from "../../service/auth";
 import user from "../../user";
 import OtpForm from "../Register/components/OtpForm";

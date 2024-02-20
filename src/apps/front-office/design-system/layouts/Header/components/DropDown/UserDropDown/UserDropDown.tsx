@@ -5,10 +5,6 @@ import {
   OTPEmailAtom,
   loginNeedVerifyAtom,
 } from "apps/front-office/account/atoms/auth-atoms";
-import {
-  toastError,
-  toastSuccess,
-} from "apps/front-office/account/hooks/useToastMessage";
 import GoogleLoginButton from "apps/front-office/account/pages/LoginPage/components/GoogleLoginButton";
 import { login } from "apps/front-office/account/service/auth";
 import user from "apps/front-office/account/user";
@@ -17,6 +13,7 @@ import { EmailInputV2 } from "apps/front-office/design-system/components/Form/Em
 import { PasswordInputV2 } from "apps/front-office/design-system/components/Form/PasswordInput";
 import { useHeaderState } from "apps/front-office/design-system/hooks/headerStateHook";
 import URLS from "apps/front-office/utils/urls";
+import { toastError, toastSuccess } from "shared/hooks/useToastMessage";
 import UserDropDownLogout from "./UserDropDownLogout";
 import "./_userDropDown.scss";
 

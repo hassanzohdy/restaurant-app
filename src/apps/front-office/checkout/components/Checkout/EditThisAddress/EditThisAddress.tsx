@@ -1,7 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { userAtom } from "apps/front-office/account/atoms/user-atom";
-import { toastWarning } from "apps/front-office/account/hooks/useToastMessage";
 import {
   addressesAtom,
   defaultAddressAtom,
@@ -12,6 +11,7 @@ import TextInputV2 from "apps/front-office/design-system/components/Form/TextInp
 import { cn } from "apps/front-office/design-system/utils/cn";
 import { useEffect, useState } from "react";
 import useAddresses from "shared/hooks/use-addresses";
+import { toastWarning } from "shared/hooks/useToastMessage";
 import CheckoutPhoneNumber from "../Form/CheckoutPhoneInput";
 
 export default function EditAddress({ id }: any) {

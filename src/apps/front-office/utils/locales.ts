@@ -55,7 +55,7 @@ groupedTranslations({
     ar: "الاسم الأخير",
   },
   name: {
-    en: "Name",
+    en: "name",
     ar: "الاسم",
   },
   phoneNumber: {
@@ -878,5 +878,21 @@ groupedTranslations({
   selectPaymentMethod: {
     en: "Select a payment method",
     ar: "اختر طريقة الدفع",
+  },
+  general: {
+    en: "General",
+    ar: "عام",
+  },
+  currentPassword: {
+    en: "Current Password",
+    ar: "كلمة المرور الحالية",
+  },
+  useInfoUpdated: {
+    en: "Your account has been updated",
+    ar: "تم تحديث معلومات حسابك",
+  },
+  passwordHasChanged: {
+    en: "Your password has been changed",
+    ar: "تم تغيير كلمة المرور الخاصة بك",
   },
 });

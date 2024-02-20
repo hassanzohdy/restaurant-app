@@ -1,11 +1,8 @@
 import { trans } from "@mongez/localization";
 import { TokenResponse, useGoogleLogin } from "@react-oauth/google";
-import {
-  toastError,
-  toastSuccess,
-} from "apps/front-office/account/hooks/useToastMessage";
 import { loginByGoogle } from "apps/front-office/account/service/auth";
 import { googleIcon } from "shared/assets";
+import { toastError, toastSuccess } from "shared/hooks/useToastMessage";
 
 export default function GoogleCreateAccountButton() {
   const handleOnSuccess = (tokenResponse: TokenResponse) => {

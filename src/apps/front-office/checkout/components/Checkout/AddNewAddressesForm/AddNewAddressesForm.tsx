@@ -12,6 +12,7 @@ export default function AddNewAddressesForm() {
           type="checkbox"
           name="newAddress"
           id="newAddress"
+          checked={newAddress}
           onChange={() => setNewAddress(prev => !prev)}
         />
         <label
@@ -20,7 +21,7 @@ export default function AddNewAddressesForm() {
           {trans("addNewAddress")}
         </label>
       </h4>
-      <AddressFrom newAddress={newAddress} />
+      <AddressFrom newAddress={newAddress} setNewAddress={setNewAddress} />
     </div>
   );
 }

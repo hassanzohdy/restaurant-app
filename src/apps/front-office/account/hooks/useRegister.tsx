@@ -2,8 +2,11 @@ import { trans } from "@mongez/localization";
 import { FormSubmitOptions } from "@mongez/react-form";
 import { register } from "apps/front-office/account/service/auth";
 import { useState } from "react";
+import {
+  toastError,
+  toastSuccess,
+} from "../../../../shared/hooks/useToastMessage";
 import { OTPEmailAtom } from "../atoms/auth-atoms";
-import { toastError, toastSuccess } from "./useToastMessage";
 
 export type State = "initial" | "loading" | "done" | "error";
 

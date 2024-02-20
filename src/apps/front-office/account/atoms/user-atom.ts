@@ -7,6 +7,9 @@ export type UserData = {
   email: string;
   cart?: number;
   wishlist?: number;
+  phoneNumber?: number;
+  firstName?: string;
+  lastName?: string;
 };
 
 export const userAtom = atom<UserData>({

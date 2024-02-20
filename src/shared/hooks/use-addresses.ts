@@ -1,9 +1,5 @@
 import { trans } from "@mongez/localization";
 import {
-  toastError,
-  toastSuccess,
-} from "apps/front-office/account/hooks/useToastMessage";
-import {
   addressesAtom,
   defaultAddressAtom,
 } from "apps/front-office/checkout/atom/checkout-atoms";
@@ -12,6 +8,7 @@ import {
   deleteAddress,
   updateAddressData,
 } from "apps/front-office/checkout/services/checkout-services";
+import { toastError, toastSuccess } from "shared/hooks/useToastMessage";
 
 const handleError = error => {
   toastError(
@@ -75,7 +72,6 @@ const _removeAddress = id => {
 const _updateAddressData = (id, form, successMassage) => {
   updateAddressData(id, form)
     .then(res => {
-      console.log(res);
       addressesAtom.update(oldAddresses => {
         const updatedData = oldAddresses.map(address =>
           address.id === id

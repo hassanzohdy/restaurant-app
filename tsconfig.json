@@ -35,6 +35,6 @@
       }
     ]
   },
-  "include": ["src"],
+  "include": ["src", "src/apps/front-office/profile/layout/.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -59,7 +59,7 @@ export default function ListMealCard({ meal }: ListMealCardProps) {
           onClick={() => addMealToCart(meal.id, 1)}
           title={trans("addToCart")}
           aria-aria-label={trans("addToCart")}
-          className="w-10 h-10 flex items-center justify-center rounded-2xl bg-amber-400 absolute md:bottom-2 md:right-4 top-[-230px] left-1">
+          className="w-10 h-10 flex items-center justify-center rounded-2xl bg-amber-400 absolute md:bottom-2 md:right-4 top-[-230px] left-1 md:left-[unset] md:top-[unset]">
           <FaBasketShopping className="text-lg" />
         </button>
       </div>

@@ -1,8 +1,8 @@
 import { accountRoutes } from "apps/front-office/utils/router";
 import URLS from "apps/front-office/utils/urls";
-import BookAddresses from "./pages/UpdateProfileBookAddresses";
 import ChangePassword from "./pages/ChangePassword";
 import ProfilePage from "./pages/UpdateProfile";
+import BookAddresses from "./pages/UpdateProfileBookAddresses";
 
 accountRoutes([
   {

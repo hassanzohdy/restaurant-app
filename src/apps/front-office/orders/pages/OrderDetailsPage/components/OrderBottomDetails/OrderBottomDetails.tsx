@@ -11,7 +11,7 @@ export default function OrderBottomDetails({
   paymentMethod,
 }: OrderBottomDetailsProps) {
   return (
-    <div className="bottom-details px-6 text-[20px] font-bold  capitalize max-md:px-4 max-md:text-[18px] max-sm:px-0 max-sm:text-[14px]">
+    <div className="bottom-details px-6 text-[20px] font-bold capitalize max-md:px-4 max-md:text-[18px] max-sm:px-0 max-sm:text-[14px]">
       <div className="total flex align-middle justify-between mb-3 max-md:mb-1">
         <span>{trans("total")}</span>{" "}
         <span className="text-[24px] text-secondary font-bold max-sm:text-[16px]">

@@ -27,7 +27,7 @@ function PopupMeal({ meal, navigationMeal }: PopupMealProps) {
   return (
     <div
       className={cn(
-        "transition-all opacity-0 duration-300 group-hover:opacity-100 w-max text-sm z-10 shadow-lg flex gap-4 absolute top-[calc(100%+10px)] right-0  p-4 rounded-xl bg-white",
+        "hidden md:flex transition-all opacity-0 duration-300 group-hover:opacity-100 w-max text-sm z-10 shadow-lg gap-4 absolute top-[calc(100%+10px)] right-0 p-4 rounded-xl bg-white",
         navigationMeal.next || navigationMeal.prev
           ? "pointer-events-auto"
           : "pointer-events-none ",
@@ -135,7 +135,7 @@ const MealsNavigateBtns = ({ meal }: MealsNavigateBtnsProps) => {
   };
 
   return (
-    <div className="flex items-center absolute sm:top-1/2 -translate-y-1/2 sm:right-20 right-1/2 translate-x-[50%] bottom-0 gap-4 text-2xl text-black">
+    <div className="flex items-center absolute sm:top-1/2 -translate-y-1/2 sm:right-20 right-1/2 translate-x-[50%] bottom-28 gap-4 text-2xl text-black">
       <button
         className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary-main btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("prev")}

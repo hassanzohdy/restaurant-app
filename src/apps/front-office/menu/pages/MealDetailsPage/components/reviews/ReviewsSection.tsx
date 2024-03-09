@@ -60,7 +60,7 @@ export default function ReviewsSection() {
         </div>
       )}
       {!user.isGuest() && !canReview && !submitClicked ? (
-        <div className="text-primary-text space-y-6 w-[400px]">
+        <div className="text-primary-text space-y-6 w-full md:w-1/2">
           <AddRatings />
           <Form onSubmit={handleAddReviewSubmit} className="space-y-6">
             <TextareaInput name="review" label="your review" required />

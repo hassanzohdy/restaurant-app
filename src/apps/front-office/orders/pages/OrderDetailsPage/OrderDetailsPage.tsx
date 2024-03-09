@@ -5,6 +5,7 @@ import Loader from "apps/front-office/design-system/components/Indicators/Indica
 import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
+import { toastError } from "shared/hooks/useToastMessage";
 import { getOrder } from "../../services/orders-service";
 import { Order } from "../OrdersPage/components/OrdersListItem/OrdersListItem";
 import OrderBottomDetails from "./components/OrderBottomDetails";
@@ -28,7 +29,7 @@ export default function OrderDetailsPage({ params }: OrderDetailsPageProps) {
         setIsLoading(false);
       })
       .catch(_error => {
-        // TODO: handle error
+        toastError(_error || trans("someThingWantWrong"));
       });
   });
 
@@ -48,13 +49,13 @@ export default function OrderDetailsPage({ params }: OrderDetailsPageProps) {
         ]}
         title={`#${order.id}`}
       />
-      <div className="order-details pt-[60px] pb-[100px] max-lg:pb-[80px] max-sm:pb-[70px]">
-        <div className="container overflow-hidden">
-          <div className="flex gap-3">
+      <div className="order-details container pt-[60px] pb-[100px] max-lg:pb-[80px] max-sm:pb-[70px]">
+        <div className=" overflow-hidden">
+          <div className="flex md:flex-row-reverse flex-col-reverse justify-between gap-5 w-full">
             <div className="flex-grow">
               <OrderMealsList order={order} />
             </div>
-            <div className="w-[400px] details mt-9 px-5 py-8 mb-5 border border-[#eee] rounded-lg max-sm:px-4 max-sm:py-4">
+            <div className="w-full md:w-1/2 details mt-9 px-5 py-8 mb-5 border border-[#eee] rounded-lg max-sm:px-4 max-sm:py-4">
               {/* Top Details */}
               <OrderTopDetails
                 orderDate={order.createdAt.text}

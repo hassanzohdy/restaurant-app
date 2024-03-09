@@ -1,6 +1,5 @@
 import { trans } from "@mongez/localization";
 import { cartAtom } from "apps/front-office/cart/atoms/cart-atom";
-import { Button } from "apps/front-office/design-system/components/Button";
 import { AiOutlineClose } from "react-icons/ai";
 import CartCouponCode from "../CartCouponCode";
 import CartMealsTableItem from "../CartMealsTableItem";
@@ -44,13 +43,6 @@ export default function CartMealsTable() {
               colSpan={6}
               className="pt-8 pb-0 max-sm:flex max-sm:flex-col-reverse max-sm:pt-5">
               <CartCouponCode />
-              <Button
-                type="submit"
-                disabled
-                variant="primary"
-                className="h-[54px] uppercase px-11 font-semibold cursor-not-allowed opacity-[.5] float-right max-sm:mb-5">
-                {trans("updateCart")}
-              </Button>
             </td>
           </tr>
         </tfoot>

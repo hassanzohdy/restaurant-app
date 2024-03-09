@@ -11,7 +11,7 @@ export default function FooterNewsLetter() {
           {trans("newsletterText")}
         </p>
         <div className="newsletter mt-[20px]">
-          <form>
+          <div>
             <div className="form-group flex justify-between h-[54px] m-auto p-[5px] border border-[#262626] rounded max-lg:max-w-[320px] max-sm:max-w-[290px]">
               <input
                 type="email"
@@ -26,7 +26,7 @@ export default function FooterNewsLetter() {
                 {trans("subscribe")}
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </>

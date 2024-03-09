@@ -27,8 +27,8 @@ function _CartPage() {
 
   return (
     <>
-      <Helmet title="Cart" />
-      <Breadcrumb title="Cart" navItems={[{ name: "cart" }]} />
+      <Helmet title={trans("cart")} />
+      <Breadcrumb title={trans("cart")} navItems={[{ name: trans("cart") }]} />
       {cart.items?.length > 0 ? (
         <div className="cart-details py-[100px] max-lg:py-[80px] max-sm:py-[70px]">
           <div className="container">

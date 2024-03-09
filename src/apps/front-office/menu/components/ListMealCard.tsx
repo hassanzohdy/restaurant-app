@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import Stars from "apps/front-office/design-system/components/Stars";
 import MealCardFavorite from "apps/front-office/menu/pages/MealDetailsPage/components/MealCard/MealCardFavorite";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
@@ -12,10 +13,14 @@ export type ListMealCardProps = {
 };
 
 export default function ListMealCard({ meal }: ListMealCardProps) {
+  const displayedPrice = price(meal?.price);
+  const displayedSale = price(meal?.salePrice);
+
+  const isOnSale = displayedPrice !== displayedSale;
   const { addMealToCart } = useCart();
 
   return (
-    <div className="relative flex flex-row h-60 ml-10 mt-6 border-2 rounded-2xl">
+    <div className="relative flex md:flex-row flex-col md:h-60 md:ml-10 p-4 mt-6 border-2 rounded-2xl">
       <MealCardFavorite meal={meal} />
 
       <div className="basis-1/4 h-full">
@@ -31,27 +36,30 @@ export default function ListMealCard({ meal }: ListMealCardProps) {
       </div>
       <div className="basis-3/4 pt-8 relative">
         <Link to={URLS.menu.viewMeal(meal)}>
-          <h2 className="font-bold">{meal.name}</h2>
+          <h2 className="font-bold">{meal.name}</h2>{" "}
         </Link>
-        <p className="font-light mt-1">{meal.description}</p>
-        <div className="flex mt-2 gap-2">
-          {meal.salePrice !== 0 && (
-            <span className="inline-block text-secondary">
-              {price(meal.salePrice)}
+        <Stars ratings={meal.rating} />
+        <p className="font-light mt-1 line-clamp-3">{meal.description}</p>
+        <div className="flex gap-2">
+          <span
+            className={`inline-block self-end font-bold ${
+              isOnSale
+                ? "text-gray-700 line-through "
+                : "text-primary-main text-xl"
+            }`}>
+            {displayedPrice}
+          </span>
+          {isOnSale && (
+            <span className="inline-block self-start text-primary-main font-bold text-xl">
+              {displayedSale}
             </span>
           )}
-          <span
-            className={`inline-block font-bold ${
-              meal.salePrice ? "text-black line-through" : "text-primary-main"
-            }`}>
-            {price(meal.price)}
-          </span>
         </div>
         <button
           onClick={() => addMealToCart(meal.id, 1)}
           title={trans("addToCart")}
           aria-aria-label={trans("addToCart")}
-          className="w-10 h-10 flex items-center justify-center rounded-2xl bg-amber-400 absolute bottom-2 right-4">
+          className="w-10 h-10 flex items-center justify-center rounded-2xl bg-amber-400 absolute md:bottom-2 md:right-4 top-[-230px] left-1">
           <FaBasketShopping className="text-lg" />
         </button>
       </div>

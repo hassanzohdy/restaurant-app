@@ -28,7 +28,7 @@ export default function MenuCategory({ category }: MenuCategoryProps) {
         <img
           src={category.image.url}
           alt={category.name}
-          className={`max-w-36 min-h-10 h-[80px]`}
+          className={`max-w-36 min-h-10 h-[80px] sm:max-h-[100px]`}
         />
       </div>
       <h3 className="title text-[13px] uppercase font-bold group-hover:text-primary-hover transition-all duration-700">

@@ -8,9 +8,8 @@ import {
 } from "apps/front-office/cart/services/cart-service";
 import { useHeaderState } from "apps/front-office/design-system/hooks/headerStateHook";
 import { State } from "apps/front-office/design-system/layouts/Header/components/HeaderIcons/HeaderCart/CartProducts/CartProducts";
-import { filteredMealsAtom } from "apps/front-office/menu/atoms/filtered-meals-atom";
+import { popularDishesAtom } from "apps/front-office/home/atoms/popular-dishes-atom";
 import { mealAtom } from "apps/front-office/menu/pages/MealDetailsPage/atoms/meal-atom";
-import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import URLS from "apps/front-office/utils/urls";
 import { useEffect, useState } from "react";
 import { toastError, toastMealToCart } from "shared/hooks/useToastMessage";
@@ -19,7 +18,7 @@ import useGetBaseRoute from "./useGetBaseRoute";
 export default function useCart() {
   const meal = mealAtom.useValue();
   const opened = useHeaderState("cartIcon");
-  const meals = filteredMealsAtom.use("meals");
+  const meals = popularDishesAtom.use("meals");
 
   const [state, setState] = useState<State>("initial");
   const [error, setError] = useState<any>(null);
@@ -35,9 +34,7 @@ export default function useCart() {
   const addMealToCart = (id: number, amount: number) => {
     setIsLoading(true);
 
-    const mealData: Meal = meals.filter(meal => meal.id === id)[0];
-
-    const massage = () => {
+    const massage = mealData => {
       return (
         <div className="flex flex-row gap-5 items-center">
           <div className="bg-slate-100 rounded-[44%] w-[50px]">
@@ -50,12 +47,15 @@ export default function useCart() {
 
     addToCart(id, amount)
       .then(() => {
-        toastMealToCart(massage());
+        const mealData = meals.find(item => item.id === id);
+        console.log(mealData);
+        console.log(meals);
+        toastMealToCart(massage(mealData));
       })
       .catch(error => {
-        if (error.response?.data.maxAmountPerOrder) {
-          toastError(error.response.data.maxAmountPerOrder);
-          setMaxAmountPerOrder(error.response.data.maxAmountPerOrder);
+        if (error.response?.data.error) {
+          toastError(error.response.data.error);
+          setMaxAmountPerOrder(error.response.data.error);
         } else {
           toastError(trans("somethingWentWrong"));
         }

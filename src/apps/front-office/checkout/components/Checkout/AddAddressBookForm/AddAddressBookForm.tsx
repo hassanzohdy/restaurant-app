@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { SubmitButton } from "apps/front-office/design-system/components/Button";
 import TextInputV2 from "apps/front-office/design-system/components/Form/TextInputV2";
-import useAddresses from "shared/hooks/useAddresses";
+import useAddresses from "shared/hooks/use-addresses";
 import CheckoutPhoneNumber from "../Form/CheckoutPhoneInput";
 
 export default function AddAddressBookForm() {

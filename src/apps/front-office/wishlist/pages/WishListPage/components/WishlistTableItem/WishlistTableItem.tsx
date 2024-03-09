@@ -29,13 +29,13 @@ export default function WishlistTableItem({
   }
 
   return (
-    <tr className="border-b max-lg:block max-lg:pl-[100px] max-lg:relative">
+    <tr className="border-b max-lg:block mb:pl-[100px] max-lg:relative">
       <td className="product-remove w-[3%] px-3 py-5 pl-0 max-lg:absolute max-lg:w-auto max-lg:right-1 max-lg:top-6 max-lg:p-0">
         <button onClick={deleteMealHandler}>
           <IoClose className="w-[15px] h-[15px] p-[2px] border rounded-full text-[#b3b3b3] border-[#b3b3b3] cursor-pointer hover:text-[#f00] hover:border-[#f00] duration-700 transition-all ease-in-out" />
         </button>
       </td>
-      <td className="product-thumbnail w-[10%] py-3 px-6 h-[140px] max-lg:absolute max-lg:w-auto max-lg:left-1 max-lg:top-6 max-lg:p-0">
+      <td className="product-thumbnail w-[15%] py-3 px-6 h-[140px]  max-lg:w-auto max-lg:left-1 max-lg:top-6 max-lg:p-0">
         <Link to={URLS.menu.viewMeal(meal)}>
           <img src={meal?.image?.url} alt={meal.name} />
         </Link>

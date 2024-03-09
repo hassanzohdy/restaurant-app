@@ -40,7 +40,9 @@ export default function LatestNews() {
     <section className="latest-news py-[100px] max-lg:py-[80px] max-sm:py-[70px]">
       <div className="container">
         <div className="heading flex justify-between items-center mb-10">
-          <h2 className="text-[42px] font-bold">{trans("latestNews")}</h2>
+          <h2 className="sm:text-[42px] text-2xl font-bold">
+            {trans("latestNews")}
+          </h2>
           <Link
             to={URLS.blog.list}
             className="flex text-[15px] font-semibold group gap-2">

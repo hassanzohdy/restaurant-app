@@ -14,7 +14,7 @@ export default function AddRatings() {
   return (
     <div>
       {trans("yourRating")}
-      <span className="text-red-500">*</span>
+      <span className="text-red-500 pl-1">*</span>
       <div className="flex items-center mt-2">
         {[1, 2, 3, 4, 5].map(star => (
           <span
@@ -25,6 +25,14 @@ export default function AddRatings() {
             }}
             onMouseLeave={() => !clickedRef.current && handleStartHover(0)}
             onClick={() => {
+              clickedRef.current = true;
+              handleStartHover(rating);
+            }}
+            onTouchStart={() => {
+              clickedRef.current = false;
+              handleStartHover(star);
+            }}
+            onTouchEnd={() => {
               clickedRef.current = true;
               handleStartHover(rating);
             }}

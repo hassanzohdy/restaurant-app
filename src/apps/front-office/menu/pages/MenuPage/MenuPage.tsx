@@ -5,13 +5,18 @@ import { queryString } from "@mongez/react-router";
 import Loader, {
   Error,
 } from "apps/front-office/design-system/components/Indicators/Indicators";
+import OverLay from "apps/front-office/design-system/layouts/OverLay";
+import { cn } from "apps/front-office/design-system/utils/cn";
 import MealsContainer from "apps/front-office/menu/components/MealsContainer";
 import ViewDisplayMode from "apps/front-office/menu/components/ViewDisplayMode";
 import { Meal } from "apps/front-office/menu/pages/MealDetailsPage/utils/types";
 import { getMeals } from "apps/front-office/menu/services/meals-service";
 import Breadcrumb from "design-system/layouts/Breadcrumb";
 import { useState } from "react";
-import { filteredMealsAtom } from "../../atoms/filtered-meals-atom";
+import {
+  filteredMealsAtom,
+  toggleFilterAtom,
+} from "../../atoms/filtered-meals-atom";
 import MenuSidebar, {
   type MenuSidebarProps,
 } from "../../components/MenuSidebarSidebar";
@@ -20,6 +25,7 @@ import "./MenuPage.scss";
 export default function MenuPage() {
   const [isLoading, setIsLoading] = useState(true);
   const meals = filteredMealsAtom.use("meals");
+  const filterOpened = toggleFilterAtom.use("opened");
 
   const [error, setError] = useState<any>(null);
   const [sidebarData, setSidebarData] = useState<MenuSidebarProps>({
@@ -107,15 +113,22 @@ export default function MenuPage() {
     <>
       <Helmet title={trans("menu")} />
       <Breadcrumb title={trans("menu")} navItems={[{ name: trans("menu") }]} />
+      <OverLay atom={toggleFilterAtom} opened={filterOpened} />
       <div className="container">
-        <div className="flex flex-row justify-between gap-12 my-12">
-          <div className="basis-1/4 mt-7">
+        <div className="md:flex md:flex-row md:justify-between md:gap-12 md:my-12">
+          <div
+            className={cn(
+              "md:basis-1/4 md:mt-7 md:visible md:block md:z-0 z-[60] top-0 h-screen fixed md:relative rtl:right-0 ltr:left-0 w-10/12 sm:w-1/2 md:w-1/3 bg-white p-[10px] transition-all ",
+              !filterOpened
+                ? "ltr:-translate-x-full rtl:translate-x-full md:!translate-x-0"
+                : "translate-x-0 shadow-list md:shadow-none",
+            )}>
             <MenuSidebar
               categories={sidebarData.categories}
               price={sidebarData.price}
             />
           </div>
-          <div className="basis-3/4">
+          <div className="md:basis-3/4 mt-5 md:mt-0">
             <ViewDisplayMode />
             <MealsContainer />
           </div>

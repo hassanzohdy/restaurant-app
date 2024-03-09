@@ -7,7 +7,7 @@ export default function ActiveBarCart() {
   return (
     <Link to={URLS.cart} className="activeIcons">
       <TiShoppingCart />
-      <p>{trans("cart")}</p>
+      <p className="text-center">{trans("cart")}</p>
     </Link>
   );
 }

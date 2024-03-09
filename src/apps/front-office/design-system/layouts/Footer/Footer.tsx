@@ -16,8 +16,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="footer-bottom py-[32px] bg-secondary max-lg:pb-[64px]">
-          <div className="container flex items-center justify-center mx-auto px-4 max-md:text-center max-md:flex-col">
+        <div className="footer-bottom bg-secondary flex items-center justify-center">
+          <div className="flex items-center py-7">
             <FooterCopyRights />
             {/* <FooterPaymentMethods /> */}
           </div>

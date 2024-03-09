@@ -44,7 +44,7 @@ export default function MealCard({ meal }: MealCardProps) {
       </Link>
       <div className="mt-6 space-y-2 m-3">
         {/* Starts */}
-        <Stars ratings={meal.ratings} />
+        <Stars ratings={meal.rating} />
         <Link
           to={URLS.menu.viewMeal(meal)}
           className="font-bold text-lg inline-block">

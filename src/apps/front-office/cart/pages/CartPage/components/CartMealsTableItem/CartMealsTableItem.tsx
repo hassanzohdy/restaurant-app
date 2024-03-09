@@ -72,7 +72,7 @@ export default function CartMealsTableItem({ item }: CartMealsTableItemProps) {
             id={`quantity${item?.id}`}
             value={amount}
             onChange={e => handleQuantityChange(e.target.value)}
-            className="w-[80px] h-[40px] p-3 border rounded-md"
+            className="w-[80px] h-[40px] p-3 border text-center rounded-md"
           />
         </div>
       </td>

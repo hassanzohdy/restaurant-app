@@ -27,7 +27,6 @@ export default function OverLay({ onClick, atom, opened }: OverLayProps) {
         }  w-full h-full fixed inset-0 backdrop-blur-[5px] bg-[#00000099] duration-300 transition-all ease-in-out z-40`}
         onClick={() => {
           atom?.change("opened", false);
-          console.log(opened, "i'm clicked");
           onClick?.();
         }}></div>
     </>,

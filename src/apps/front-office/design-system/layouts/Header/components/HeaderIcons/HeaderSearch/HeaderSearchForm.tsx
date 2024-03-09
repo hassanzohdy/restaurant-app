@@ -1,9 +1,7 @@
 import { trans } from "@mongez/localization";
-import { GenericObject, debounce } from "@mongez/reinforcements";
-import { searchMealsAtom } from "apps/front-office/design-system/atoms/header-atoms";
+import searchFilter from "apps/front-office/design-system/hooks/handelSearchFilter";
 import OverLay from "apps/front-office/design-system/layouts/OverLay";
-import { getMeals } from "apps/front-office/menu/services/meals-service";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import useFocusOnToggle from "shared/hooks/useFocusOnToggle";
 import {
@@ -13,47 +11,16 @@ import {
 import useEscapeToClose from "../../../../../hooks/useEscapeToClose";
 import HeaderSearchFilter from "./HeaderSearchFilter";
 
-const searchResults: GenericObject = {}; // not with SSR
-
 export default function HeaderSearchForm() {
   const opened = useHeaderState("headerSearch");
   const closeSearch = useHeaderStateClose("headerSearch");
+  const { handelSearchInput, error } = searchFilter();
 
-  const [error, setError] = useState();
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useFocusOnToggle(inputRef.current, opened);
 
   useEscapeToClose(opened, closeSearch);
-
-  const handelSearchInput = debounce(e => {
-    const value = e.target.value.trim();
-
-    if (!value) {
-      searchMealsAtom.update([]);
-      return;
-    }
-
-    if (!searchResults[value]) {
-      getMeals({
-        name: value,
-      })
-        .then(response => {
-          const meals = response.data.meals;
-          searchMealsAtom.update(meals);
-          searchResults[value] = meals;
-        })
-        .catch(error => {
-          setError(
-            error?.response?.data?.error ||
-              error?.message ||
-              trans("somethingWentWrong"),
-          );
-        });
-    } else {
-      searchMealsAtom.update(searchResults[value]);
-    }
-  }, 350);
 
   return (
     <>

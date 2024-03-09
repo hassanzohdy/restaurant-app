@@ -3,30 +3,36 @@ import { Link } from "@mongez/react-router";
 import { userAtom } from "apps/front-office/account/atoms/user-atom";
 import { useLogout } from "apps/front-office/account/hooks";
 import { useHeaderState } from "apps/front-office/design-system/hooks/headerStateHook";
+import useResetStatesOnAction from "apps/front-office/design-system/hooks/useResetStatesOnAction";
 import URLS from "apps/front-office/utils/urls";
 import { IoMdLogOut } from "react-icons/io";
+import { userAccountAtom } from "../../../ActiveBar/activeBar-atom/activeBar-atom";
 
 export default function UserDropDownLogout() {
   const opened = useHeaderState("userIcon");
+  const mobilePopup = userAccountAtom.use("opened");
+  useResetStatesOnAction(userAccountAtom);
 
   const logout = useLogout();
 
   return (
     <div
       className={`
-    absolute top-[59px] border-primary-main overflow-hidden border-t 
-    duration-200 shadow-list transition-all bg-white -right-[70px] focus:opacity-100 w-[190px] flex flex-col
-    ${opened ? "opacity-100 visible" : "opacity-0 invisible"}
+      fixed md:left-[-75px] md:top-[55px] left-0 w-full overflow-hidden border-t border-primary-main
+      shadow-list transition-all bg-white
+      ${opened ? "md:opacity-100 md:visible" : "md:opacity-0 md:invisible"}
+      ${mobilePopup ? `bottom-[50px]` : `bottom-[-150px] left-0`}
+      flex-col md:flex md:flex-col md:w-[190px]
     `}>
       <UserAccount />
       <Link
         to={URLS.account.updateProfile}
-        className="hover:text-primary-hover hover:ml-1 rtl:hover:mr-1 transition-all p-2 border-b">
+        className="hover:text-primary-hover hover:ml-1 rtl:hover:mr-1 transition-all p-2 border-b block w-full">
         {trans("updateProfile")}
       </Link>
       <Link
         to={URLS.orders.list}
-        className="hover:text-primary-hover hover:ml-1 rtl:hover:mr-1 transition-all p-2 border-b">
+        className="hover:text-primary-hover hover:ml-1 rtl:hover:mr-1 transition-all p-2 border-b block w-full">
         {trans("myOrders")}
       </Link>
       <button

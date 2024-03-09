@@ -1,9 +1,16 @@
 export type ReviewType = {
   name: string;
   image: string;
-  ratings: number;
+  rating: number;
   body: string;
-  date: string;
+  review: string;
+  id: number;
+  updatedAt: {
+    date: string;
+  };
+  createdBy: {
+    id: number;
+  };
 };
 
 export type Image = {
@@ -29,8 +36,23 @@ export type Meal = {
   salePrice?: number;
   category: MealCategory;
   isFavorite: boolean;
-  ratings: number;
+  rating: number;
   ingredients: string[];
   reviews: number;
+  totalReviews: number;
   maxAmountPerOrder?: number;
+};
+
+export type Review = {
+  name: string;
+  review: string;
+  rating: number;
+  email: string;
+  meal: number;
+  updatedAt: {
+    date: string;
+  };
+  createdBy: {
+    id: number;
+  };
 };

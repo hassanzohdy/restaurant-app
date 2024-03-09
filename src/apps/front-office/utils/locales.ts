@@ -895,4 +895,28 @@ groupedTranslations({
     en: "Your password has been changed",
     ar: "تم تغيير كلمة المرور الخاصة بك",
   },
+  filter: {
+    en: "Filter",
+    ar: "تصفية",
+  },
+  reviewSubmitted: {
+    en: "Your review has been submitted",
+    ar: "تم تقديم مراجعتك",
+  },
+  reviewUpdated: {
+    en: "Your review has been updated",
+    ar: "تم تحديث مراجعتك",
+  },
+  delete: {
+    en: "Delete",
+    ar: "حذف",
+  },
+  profile: {
+    en: "Profile",
+    ar: "الملف الشخصي",
+  },
+  reset: {
+    en: "Reset",
+    ar: "اعادة تعيين",
+  },
 });

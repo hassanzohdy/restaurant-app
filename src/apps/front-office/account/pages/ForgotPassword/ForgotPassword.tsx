@@ -10,7 +10,7 @@ export default function ForgotPassword() {
   const submit = useForgetPassword();
 
   return (
-    <div>
+    <>
       <Helmet title={trans("lostYourPassword")} />
       <Breadcrumb
         title={trans("lostYourPassword")}
@@ -18,7 +18,7 @@ export default function ForgotPassword() {
       />
       <div className="flex flex-col container w-fit justify-center items-center my-[90px]">
         <Form
-          className="form flex justify-center p-[40px] flex-col text-left transition-all bg-[#f6f6f6] sm:w-[600px] w-[350px] gap-5"
+          className="form flex justify-center p-[40px] flex-col text-left transition-all bg-[#f6f6f6] gap-5"
           onSubmit={submit}>
           <h1 className="text-4xl text-center font-bold">
             {trans("lostYourPassword")} ?
@@ -32,6 +32,6 @@ export default function ForgotPassword() {
           <SubmitButton>{trans("resetPassword")}</SubmitButton>
         </Form>
       </div>
-    </div>
+    </>
   );
 }

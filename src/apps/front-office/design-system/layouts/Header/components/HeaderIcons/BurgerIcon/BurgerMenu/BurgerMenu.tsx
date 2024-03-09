@@ -10,7 +10,7 @@ export default function BurgerMenu() {
       <OverLay atom={burgerAtom} opened={Opened} />
 
       <div
-        className={`fixed xl:hidden z-50 top-0 h-screen rtl:right-0 text-white ltr:left-0 w-10/12 sm:w-1/2 md:w-1/3 bg-black p-[10px]  transition-all ${
+        className={`fixed xl:hidden z-[60] top-0 h-screen rtl:right-0 text-white ltr:left-0 w-10/12 sm:w-1/2 md:w-1/3 bg-black p-[10px]  transition-all ${
           !Opened
             ? "ltr:-translate-x-full rtl:translate-x-full "
             : "translate-x-0 shadow-list"

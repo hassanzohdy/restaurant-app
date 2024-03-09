@@ -21,8 +21,6 @@ export default function UserOrder() {
 
     finishCheckout(checkout)
       .then(response => {
-        // TODO: create the success checkout
-        // navigateTo(URLS.checkout.success);
         navigateTo(URLS.orders.viewOrder(response.data.order));
         toastSuccess(trans("orderCreatedSuccessfully"));
       })

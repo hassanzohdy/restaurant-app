@@ -10,7 +10,7 @@ export default function PopularMealItem({ meal }) {
     <div
       className={`${styles.popularMealItem} max-md:mb-14 max-md:last-of-type:mb-0 container`}>
       <div
-        className={`${styles.itemWrapper} flex justify-between items-center`}>
+        className={`${styles.itemWrapper} flex justify-between items-center flex-col-reverse md:flex-row`}>
         <div className="w-[45%] max-xl:w-[48%] max-md:w-full mx-auto">
           <div className={` ${styles.itemWrapper}`}>
             <CommonTitle className="text-[25px] text-primary-main capitalize max-md:text-[20px]">

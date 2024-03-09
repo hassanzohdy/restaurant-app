@@ -1,4 +1,4 @@
-import { atom } from "@mongez/react-atom";
+import { atom, openAtom } from "@mongez/react-atom";
 import { Meal } from "../pages/MealDetailsPage/utils/types";
 
 type FilteredMealsAtom = {
@@ -55,3 +55,5 @@ export const filteredMealsAtom = atom<FilteredMealsAtom>({
     price: [0, 0],
   },
 });
+
+export const toggleFilterAtom = openAtom("toggle filter");

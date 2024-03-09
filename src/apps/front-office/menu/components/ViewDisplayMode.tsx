@@ -1,14 +1,28 @@
 import { trans } from "@mongez/localization";
+import { Button } from "apps/front-office/design-system/components/Button";
 import { menuDisplayModeAtom } from "apps/front-office/menu/atoms/menu-display-mode-atom";
 import { BsGrid, BsGridFill, BsList } from "react-icons/bs";
-import { filteredMealsAtom } from "../atoms/filtered-meals-atom";
+import { CiFilter } from "react-icons/ci";
+import {
+  filteredMealsAtom,
+  toggleFilterAtom,
+} from "../atoms/filtered-meals-atom";
 
 export default function ViewDisplayMode() {
   const { filteredMealsList, meals } = filteredMealsAtom.useValue();
   const displayMode = menuDisplayModeAtom.useValue();
+  const openMenuFilter = toggleFilterAtom.get("open");
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between items-center">
+      <div className="md:hidden">
+        <Button
+          className="bg-primary-main hover:bg-primary-hover py-1 px-2"
+          onClick={openMenuFilter}>
+          <p className="rtl:pl-1 ltr:pr-1">{trans("filter")}</p>
+          <CiFilter />
+        </Button>
+      </div>
       <div className=" text-gray-400">
         {trans("showing")} ({filteredMealsList.length} - {meals.length})
       </div>

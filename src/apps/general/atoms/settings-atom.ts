@@ -1,4 +1,3 @@
-import cache from "@mongez/cache";
 import { atom } from "@mongez/react-atom";
 
 type Location = {
@@ -48,20 +47,20 @@ type Settings = {
   social: Social;
 };
 
-const settingsCacheKey = "settings";
+// const settingsCacheKey = "settings";
 
 export const settingsAtom = atom<Settings>({
   key: "settings",
-  beforeUpdate(data) {
-    cache.set(settingsCacheKey, data);
-    return data;
-  },
+  // beforeUpdate(data) {
+  //   cache.set(settingsCacheKey, data);
+  //   return data;
+  // },
   default: {
     state: "initial",
-    ...cache.get(settingsCacheKey, {
-      general: {},
-      contact: {},
-      social: {},
-    }),
+    // ...cache.get(settingsCacheKey, {
+    general: {},
+    contact: {},
+    social: {},
+    // }),
   } as Settings,
 });

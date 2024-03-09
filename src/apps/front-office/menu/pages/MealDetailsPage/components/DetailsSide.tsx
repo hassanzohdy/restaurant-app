@@ -24,7 +24,7 @@ const ShippingFeatures = () => {
 export const DetailsSide = () => {
   const meal = mealAtom.useValue();
 
-  const ratings = meal.ratings || 0;
+  const ratings = meal.rating || 0;
 
   const displayedSale = price(meal?.salePrice);
   const displayedPrice = price(meal.price);
@@ -36,7 +36,14 @@ export const DetailsSide = () => {
       <div className="sticky top-20 space-y-6">
         <div className="space-y-6 border-b pb-6">
           <h1 className="text-5xl font-bold">{meal.name}</h1>
-          <Stars ratings={ratings} />
+          <div className="flex flex-row items-center gap-2">
+            <Stars ratings={ratings} />{" "}
+            {meal.totalReviews > 0 && (
+              <p className="text-sm text-primary-text">
+                ({meal.totalReviews} Customer Reviews)
+              </p>
+            )}
+          </div>
           <p className="text-primary-text text-base">{meal.description}</p>
           <div className="flex gap-4 text-2xl font-bold">
             <span

@@ -14,7 +14,7 @@ export default function BurgerMenuList() {
           to={URLS.home}
           onClick={handelLinkClick}
           className="border-b border-headingTextColor block  hover:text-primary-hover p-[7.5px]">
-          {trans("Home")}
+          {trans("home")}
         </Link>
       </li>
       <li>
@@ -22,7 +22,7 @@ export default function BurgerMenuList() {
           to={URLS.menu.list}
           onClick={handelLinkClick}
           className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
-          {trans("Menu")}
+          {trans("menu")}
         </Link>
       </li>
       <li>
@@ -30,7 +30,7 @@ export default function BurgerMenuList() {
           to={URLS.aboutUs}
           onClick={handelLinkClick}
           className="border-b border-headingTextColor block hover:text-primary-hover p-[7.5px]">
-          {trans("About")}
+          {trans("about")}
         </Link>
       </li>
       <li className="flex flex-row justify-between items-center border-b border-headingTextColor ">

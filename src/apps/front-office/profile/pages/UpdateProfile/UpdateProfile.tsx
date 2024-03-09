@@ -53,7 +53,7 @@ function _UpdateProfile() {
           onChange={value => upDateData("phoneNumber", value)}
         />
       </div>
-      <div className="w-1/5 mx-auto mt-5">
+      <div className="w-full md:w-1/5 mx-auto mt-5">
         <SubmitButton>{trans("updateProfile")}</SubmitButton>
       </div>
     </Form>

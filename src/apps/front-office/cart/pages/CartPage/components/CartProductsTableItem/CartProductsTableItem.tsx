@@ -23,10 +23,8 @@ export default function CartTableItem({
     updateCartItem(cartItem.id, newAmount);
   };
 
-  console.log(cartItem);
-
   return (
-    <tr className="border-b max-sm:block max-sm:pl-[100px] max-sm:relative">
+    <tr className="border-b max-sm:block md:pl-[100px] max-sm:relative">
       <td className="product-remove w-[5%] px-3 py-5 pl-0 max-sm:absolute max-sm:w-auto max-sm:right-1 max-sm:top-6 max-sm:p-0">
         <button
           onClick={() => removeItemFromCart(cartItem.id)}

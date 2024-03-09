@@ -23,3 +23,19 @@ export function getSearchMeals(searchInput) {
 export function updateMeal(id, values) {
   return endpoint.post("/meals/" + id, { values });
 }
+
+export function getReviews(id) {
+  return endpoint.get("/reviews/" + id);
+}
+
+export function addReview(values) {
+  return endpoint.post("/reviews", values);
+}
+
+export function deleteReview(id) {
+  return endpoint.delete("/reviews/" + id);
+}
+
+export function updateReview(id, values) {
+  return endpoint.put("/reviews/" + id, values);
+}

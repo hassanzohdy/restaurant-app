@@ -13,7 +13,7 @@ export default function CartItemsTable({
   return (
     <div className="cart-products-table max-lg:mb-8 max-sm:mb-5">
       <table className="table-auto w-full bg-white text-left text-[15px] font-bold capitalize max-md:text-[12px]">
-        <thead className="max-sm:hidden w-full">
+        <thead className="w-full">
           <tr className="bg-white border-b uppercase text-[12px]">
             <th className="product-remove px-3 pb-5">
               <AiOutlineClose size="0" />

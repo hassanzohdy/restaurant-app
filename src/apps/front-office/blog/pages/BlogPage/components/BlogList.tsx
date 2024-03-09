@@ -73,7 +73,7 @@ export default function BlogList({
           (blogData.length === 0 ? (
             <EmptyComponent {...NoBlogInfo} />
           ) : (
-            <div className="flex justify-between gap-4 flex-wrap">
+            <div className="flex justify-between gap-4 flex-col-reverse md:flex-row">
               <div className="grid grid-cols-1  lg:grid-cols-3 w-[100%] gap-6 lg:w-[75%]">
                 {blogData.map(data => {
                   return <BlogCard blog={data} key={data.id} />;

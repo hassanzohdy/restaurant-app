@@ -8,7 +8,7 @@ export default function Banners({ banners }: BannersProps) {
   return (
     <>
       <div className="bg-red-50 py-20 ">
-        <div className="  flex flex-col gap-4 md:flex-row md:container md:mx-auto justify-center ">
+        <div className="flex flex-col gap-4 md:flex-row container md:mx-auto justify-center ">
           {banners.map((banner, index) => {
             return (
               <div

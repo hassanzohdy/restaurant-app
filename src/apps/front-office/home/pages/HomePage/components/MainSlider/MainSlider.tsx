@@ -17,6 +17,14 @@ export default function MainSlider({ slider }: MainSliderProps) {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          dots: false,
+        },
+      },
+    ],
   };
 
   return (

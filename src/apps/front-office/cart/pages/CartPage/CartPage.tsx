@@ -7,7 +7,7 @@ import Breadcrumb from "apps/front-office/design-system/layouts/Breadcrumb";
 import React from "react";
 import { TbShoppingCartQuestion } from "react-icons/tb";
 import { useCart2 } from "shared/hooks/use-cart-2";
-import CartProductsTable from "./components/CartProductsTable";
+import CartMealsTable from "./components/CartMealsTable";
 import CartTotals from "./components/CartTotals";
 
 const emptyCartInfo = {
@@ -34,7 +34,7 @@ function _CartPage() {
           <div className="container">
             <div className="flex justify-between flex-wrap">
               <div className="w-[calc(70%-40px)] max-xl:w-[calc(65%-30px)] max-lg:w-[100%]">
-                <CartProductsTable cartProducts={cart.items} />
+                <CartMealsTable />
               </div>
               <div className="w-[30%] max-xl:w-[35%] max-lg:w-[100%]">
                 <CartTotals cartItems={cart.items} />

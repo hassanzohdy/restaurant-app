@@ -7,6 +7,7 @@ export type PopularDishesItemProps = {
 
 export default function PopularDishesItem() {
   const meals = popularDishesAtom.use("activeMeals");
+  meals.length = 8;
 
   return <MealsGrid meals={meals} />;
 }

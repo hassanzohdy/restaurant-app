@@ -10,7 +10,7 @@ function _ChangePassword() {
 
   return (
     <Form onSubmit={({ values }) => changePassword(values)}>
-      <div className="grid md:grid-cols-2  gap-3">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
         <PasswordInputV2
           label={trans("currentPassword")}
           name="currentPassword"
@@ -23,7 +23,7 @@ function _ChangePassword() {
           minLength={8}
           required
         />
-        <div className="col-span-2 w-1/2 mx-auto">
+        <div className="md:col-span-2 md:w-1/2 w-full mx-auto">
           <PasswordInputV2
             label={trans("confirmPassword")}
             name="confirmPassword"
@@ -32,7 +32,7 @@ function _ChangePassword() {
           />
         </div>
       </div>
-      <div className="w-1/5 mx-auto mt-5">
+      <div className="w-full md:w-1/5 mx-auto mt-5">
         <SubmitButton>{trans("changePassword")}</SubmitButton>
       </div>
     </Form>

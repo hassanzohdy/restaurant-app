@@ -18,6 +18,7 @@ const handleError = error => {
 
 function addPrimaryAddress(res) {
   addressesAtom.update(oldAddresses => {
+    console.log(oldAddresses);
     const updatedAddresses = oldAddresses.map(address => ({
       ...address,
       isPrimary: false,
@@ -27,7 +28,7 @@ function addPrimaryAddress(res) {
 }
 
 const _postNewAddress = form => {
-  addNewAddress(form)
+  addNewAddress({ ...form, isPrimary: true })
     .then(res => {
       addPrimaryAddress(res);
 

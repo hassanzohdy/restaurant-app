@@ -135,7 +135,7 @@ const MealsNavigateBtns = ({ meal }: MealsNavigateBtnsProps) => {
   };
 
   return (
-    <div className="flex items-center absolute top-1/2 -translate-y-1/2 right-6 gap-4 text-2xl text-black">
+    <div className="flex items-center absolute sm:top-1/2 -translate-y-1/2 sm:right-6 right-1/2 translate-x-[50%] bottom-0 gap-4 text-2xl text-black">
       <button
         className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary-main btn btn-primary flex group items-center justify-center rounded-full w-8 h-8 bg-primary-main hover:bg-primary-hover cursor-pointer hover:text-black relative"
         onMouseOver={() => mouseEnterHandler("prev")}

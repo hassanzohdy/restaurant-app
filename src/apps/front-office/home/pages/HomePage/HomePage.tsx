@@ -38,7 +38,12 @@ export default function HomePage() {
 
   return (
     <>
-      <Helmet title={trans("home")} description={settings.description} />
+      <Helmet
+        title={trans("home")}
+        description={settings.description}
+        image={settings.logo.hash}
+        appName={settings.appName}
+      />
       {data.slider && <MainSlider slider={data.slider} />}
       {data.categories && <Menu categories={data.categories} />}
       {data.middleBanners && <Banners banners={data.middleBanners} />}

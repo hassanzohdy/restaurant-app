@@ -5,7 +5,7 @@ export default function FooterCopyRights() {
   const currentYear = new Date().getFullYear();
   return (
     <>
-      <p className="copy-rights text-[14px] font-normal max-md:mb-[15px]">
+      <p className="copy-rights text-[13px] sm:text-[14px] font-normal">
         {trans("copyRights")} &copy; {currentYear}{" "}
         <Link
           to="https://demo2.pavothemes.com/poco/"

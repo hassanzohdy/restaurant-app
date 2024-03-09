@@ -45,6 +45,14 @@ export default function AboutUsTestimonials() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 641,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (

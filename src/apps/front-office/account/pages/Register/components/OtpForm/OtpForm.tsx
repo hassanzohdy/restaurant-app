@@ -15,7 +15,7 @@ export default function OtpForm() {
 
   return (
     <>
-      <div className="flex flex-col items-center mb-5">
+      <div className="flex flex-col items-center mb-5 text-center">
         <BsEnvelopeCheck className="text-green-500 text-6xl mb-5" />
         <h1 className="text-4xl font-bold mb-10">{trans("verifyYourEmail")}</h1>
         <p className="px-6 text-center text-gray-600">

@@ -15,6 +15,7 @@ export type Checkout = {
   notes: string;
   shippingAddress: number;
   paymentMethod: "cashOnDelivery" | "card";
+  useShippingAddressForBilling: boolean;
 };
 
 export const checkoutAtom = atom<Checkout>({
@@ -23,5 +24,6 @@ export const checkoutAtom = atom<Checkout>({
     notes: "",
     shippingAddress: 0,
     paymentMethod: "cashOnDelivery",
+    useShippingAddressForBilling: true,
   },
 });

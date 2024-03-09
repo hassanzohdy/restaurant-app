@@ -18,7 +18,7 @@ export default function UserDropDownLogout() {
   return (
     <div
       className={`
-      fixed md:left-[-75px] md:top-[55px] left-0 w-full overflow-hidden border-t border-primary-main
+      fixed md:absolute md:h-fit md:left-[-75px] md:top-[55px] left-0 w-full overflow-hidden border-t border-primary-main
       shadow-list transition-all bg-white
       ${opened ? "md:opacity-100 md:visible" : "md:opacity-0 md:invisible"}
       ${mobilePopup ? `bottom-[50px]` : `bottom-[-150px] left-0`}

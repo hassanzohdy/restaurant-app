@@ -7,7 +7,7 @@ export default function HeaderSearchFilter() {
   const meals = searchMealsAtom.useValue();
 
   return (
-    <div className="bg-white w-full absolute left-0 sm:top-[100px] bottom-[60px] px-5 max-h-[67vh] overflow-auto rounded-md">
+    <div className="bg-white w-full absolute left-0 md:top-[100px] bottom-[60px] md:bottom-[unset] px-5 max-h-[67vh] overflow-auto rounded-md">
       {meals?.map(meal => (
         <Link
           to={`/${URLS.menu.list}/${meal.id}/${meal.slug}`}

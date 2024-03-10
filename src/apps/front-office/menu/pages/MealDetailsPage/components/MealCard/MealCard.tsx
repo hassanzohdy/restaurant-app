@@ -27,7 +27,7 @@ export default function MealCard({ meal }: MealCardProps) {
       {/* Sale */}
       {isOnSale && (
         <div className="absolute z-20 top-6 left-6 font-bold bg-gray-800 text-white rounded-xl px-2 text-[13px]">
-          Sale !
+          {trans("sale")} !
         </div>
       )}
       <Link

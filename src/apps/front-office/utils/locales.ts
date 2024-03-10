@@ -919,4 +919,28 @@ groupedTranslations({
     en: "Reset",
     ar: "اعادة تعيين",
   },
+  all: {
+    en: "All",
+    ar: "الكل",
+  },
+  sale: {
+    en: "Sale",
+    ar: "خصم",
+  },
+  subTotal: {
+    en: "Subtotal",
+    ar: "المجموع الفرعي",
+  },
+  quantity: {
+    en: "Quantity",
+    ar: "الكمية",
+  },
+  price: {
+    en: "Price",
+    ar: "السعر",
+  },
+  product: {
+    en: "Product",
+    ar: "المنتج",
+  },
 });

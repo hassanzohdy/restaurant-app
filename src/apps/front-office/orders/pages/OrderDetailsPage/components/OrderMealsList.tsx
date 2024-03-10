@@ -33,13 +33,13 @@ export default function OrderMealsList({ order }: OrderMealsListProps) {
             {order.items.map(item => (
               <tr
                 key={item.id}
-                className="border-b max-sm:block max-sm:pl-[100px] max-sm:relative">
-                <td className="product-name w-[30%] px-3 py-5 max-sm:block max-sm:w-full max-sm:pl-0 max-sm:px-2 max-sm:pr-5 max-sm:border-b">
+                className="border-b max-sm:block md:pl-[100px] max-sm:relative">
+                <td className="product-name w-[30%]  px-3 py-5 max-sm:block max-sm:w-full max-sm:pl-0 max-sm:px-2 max-sm:pr-5 max-sm:border-b">
                   <Link
                     to={URLS.menu.viewMeal(item.meal)}
-                    className="flex items-center gap-2 hover:text-primary-hover duration-700 transition-all ease-in-out">
+                    className="flex items-center gap-2 hover:text-primary-hover duration-700 transition-all ease-in-out flex-col md:flex-row text-2xl md:text-base">
                     <img
-                      className="max-w-[90px]"
+                      className="md:max-w-[90px] max-w-[150px]"
                       src={item.meal.image.url}
                       alt={item.meal.name}
                     />
@@ -47,16 +47,29 @@ export default function OrderMealsList({ order }: OrderMealsListProps) {
                   </Link>
                 </td>
                 <td className="product-price w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3 max-sm:border-b">
-                  <span className="text-primary-main">{price(item.price)}</span>
+                  <span className="text-primary-main flex justify-between w-full">
+                    {price(item.price)}{" "}
+                    <p className="text-primary-text md:hidden">
+                      {trans("price")}
+                    </p>
+                  </span>
                 </td>
                 <td className="product-quantity w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3 max-sm:border-b">
-                  <div className="quantity flex items-center gap-2">
-                    <span className="px-4 py-2">{item.quantity}</span>
+                  <div className="quantity flex items-center gap-2 w-full">
+                    <span className="flex justify-between w-full">
+                      <p className="px-3 text-primary-main">{item.quantity}</p>
+                      <p className="text-primary-text md:hidden">
+                        {trans("quantity")}
+                      </p>
+                    </span>
                   </div>
                 </td>
                 <td className="product-subtotal w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3">
-                  <span className="text-primary-main">
+                  <span className="text-primary-main flex justify-between w-full">
                     {price(item.total.price)}
+                    <p className="text-primary-text md:hidden">
+                      {trans("subTotal")}
+                    </p>
                   </span>
                 </td>
               </tr>

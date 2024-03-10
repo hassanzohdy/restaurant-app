@@ -1,10 +1,8 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { updateCart } from "apps/front-office/cart/services/cart-service";
 import { CartItem } from "apps/front-office/cart/utils/types";
 import { price } from "apps/front-office/utils/price";
 import URLS from "apps/front-office/utils/urls";
-import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import useCart from "shared/hooks/useCart";
 
@@ -12,26 +10,27 @@ export type CartMealsTableItemProps = {
   item: CartItem;
 };
 export default function CartMealsTableItem({ item }: CartMealsTableItemProps) {
-  const { maxAmountPerOrder, removeItemFromCart } = useCart();
-  const [amount, setAmount] = useState(item.quantity);
+  const { removeItemFromCart } = useCart();
 
-  const handleQuantityChange = newQuantity => {
-    if (maxAmountPerOrder && newQuantity > maxAmountPerOrder) {
-      return;
-    }
+  // ToDo: Add functionality to change item quantity
 
-    if (newQuantity < 1) {
-      setAmount(1);
-    } else {
-      setAmount(newQuantity);
-      console.log(item);
-    }
-    updateCart(item.id, newQuantity);
-  };
+  // const handleQuantityChange = newQuantity => {
+  //   if (maxAmountPerOrder && newQuantity > maxAmountPerOrder) {
+  //     return;
+  //   }
+
+  //   if (newQuantity < 1) {
+  //     setAmount(1);
+  //   } else {
+  //     setAmount(newQuantity);
+  //     console.log(item);
+  //   }
+  //   updateCart(item.id, newQuantity);
+  // };
 
   return (
     <tr className="border-b max-sm:block max-sm:pl-[100px] max-sm:relative">
-      <td className="product-remove w-[5%] px-3 py-5 pl-0 max-sm:absolute max-sm:w-auto max-sm:right-1 max-sm:top-6 max-sm:p-0">
+      <td className="product-remove w-[5%] px-3 py-5 pl-0 max-sm:absolute max-sm:w-auto max-sm:right-1 max-sm:top-6 max-sm:p-0 rtl:left-24 rtl:right-[unset]">
         <button
           onClick={() => removeItemFromCart(item.id)}
           className="self-center border-gray-400 rounded-full border w-4 h-4 flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-500"
@@ -59,21 +58,14 @@ export default function CartMealsTableItem({ item }: CartMealsTableItemProps) {
         <label className="hidden max-sm:block text-[12px] text-[#1e1d23] font-normal">
           {trans("price")}
         </label>
-        <span>{price(Number(item?.meal.price))}</span>
+        <span>{price(item.price)}</span>
       </td>
       <td className="product-quantity w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3 max-sm:border-b">
         <label className="hidden max-sm:block text-[12px] text-[#1e1d23] font-normal">
           {trans("quantity")}
         </label>
         <div className="quantity">
-          <input
-            type="number"
-            name="product-quantity"
-            id={`quantity${item?.id}`}
-            value={amount}
-            onChange={e => handleQuantityChange(e.target.value)}
-            className="w-[80px] h-[40px] p-3 border text-center rounded-md"
-          />
+          <p className="px-3 py-5text-center rounded-md">{item.quantity}</p>
         </div>
       </td>
       <td className="product-subtotal w-[16%] px-3 py-5 max-sm:flex max-sm:justify-between max-sm:items-center max-sm:w-full max-sm:px-0 max-sm:py-3">

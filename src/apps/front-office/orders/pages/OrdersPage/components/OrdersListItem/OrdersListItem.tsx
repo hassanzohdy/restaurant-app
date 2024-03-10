@@ -81,7 +81,7 @@ export default function OrdersListItem({ order }: OrdersListItemProps) {
         </p>
       </div>
       <div className="flex items-center justify-between max-sm:flex-col max-sm:items-start">
-        <div className="flex max-sm:mb-4">
+        <div className="flex max-sm:mb-4 gap-4">
           <span className="flex flex-custom items-center justify-center image w-[80px] h-[65px] rounded-md bg-[#ddd] p-2 mr-3">
             <img src={logo} alt="" className="max-w-full" />
           </span>
